@@ -1,0 +1,141 @@
+Build WhichDog.com — a fully functional dog breed directory for all 205 AKC-recognized breeds.
+
+The site's purpose is to educate people on dog breeds and help them find the right dog for their lifestyle. The tone should be warm, approachable, and educational — not clinical. Think "knowledgeable friend who loves dogs" rather than encyclopedia. Design-wise, model the layout after WhichLeader.com: clean card grids, two-column detail pages, prominent search/filter bar, responsive design, dark mode support.
+
+Data Model
+Each breed entry needs the following fields:
+
+Identity:
+
+Breed name (e.g., "Golden Retriever")
+Slug (URL-friendly, e.g., "golden-retriever")
+AKC breed group (Sporting, Hound, Working, Terrier, Toy, Non-Sporting, Herding)
+Origin country
+Year AKC recognized
+Image URL (placeholder initially, admin-editable)
+Physical Characteristics:
+
+Size category (Small, Medium, Large, Giant)
+Weight range (e.g., "55–75 lbs")
+Height range (e.g., "21–24 inches")
+Lifespan (e.g., "10–12 years")
+Coat type (Short, Medium, Long, Wiry, Curly, Double, Hairless)
+Coat colors (text, e.g., "Golden, Light Golden, Dark Golden")
+Shedding level (Low, Moderate, High, Very High)
+Hypoallergenic (boolean)
+Temperament & Behavior:
+
+Temperament summary (2–3 sentence description)
+Energy level (Low, Moderate, High, Very High)
+Trainability (Easy, Moderate, Challenging, Independent)
+Barking tendency (Rare, Occasional, Frequent, Vocal)
+Good with kids (1–5 rating)
+Good with other dogs (1–5 rating)
+Good with cats (1–5 rating)
+Stranger friendliness (1–5 rating)
+Apartment suitable (boolean)
+Care Requirements:
+
+Exercise needs (minutes per day, e.g., "60–90 min")
+Grooming frequency (e.g., "Weekly brushing, professional grooming every 6–8 weeks")
+Common health issues (text list, e.g., "Hip dysplasia, elbow dysplasia, cataracts")
+Diet notes (text, e.g., "Prone to obesity — measure portions carefully")
+Training notes (text, specific to breed)
+Content Sections (longer text):
+
+Breed history/origin story (2–3 paragraphs)
+Personality deep dive (2–3 paragraphs)
+Living with this breed (what daily life looks like)
+Health and care guide
+Fun fact (one-liner)
+Famous quote or saying about the breed
+Pages
+Homepage
+Hero section with tagline: "Find your perfect companion" and a prominent "Take the Quiz" call-to-action button
+Search bar that filters breeds by name in real-time
+Filter controls: breed group, size, energy level, good with kids, apartment suitable, hypoallergenic
+Sort options: alphabetical, popularity, size, lifespan
+Grid of breed cards showing: breed image/placeholder, breed name, breed group badge, size, energy level, a 1-line temperament summary
+Each card links to the breed's detail page
+Stats bar showing: "205 AKC-Recognized Breeds | 7 Breed Groups"
+Individual Breed Page (/breed/[slug]/)
+Breadcrumb: Home > [Breed Group] > [Breed Name]
+Header with breed name, breed group badge, origin country flag
+Two-column layout:
+Left column: "About [Breed Name]" with personality deep dive, then "Living With a [Breed Name]"
+Right column: Quick Facts card (size, weight, height, lifespan, energy, trainability, shedding, hypoallergenic), then Compatibility Ratings card (kids, dogs, cats, strangers, apartment — shown as visual rating bars)
+Full-width sections below the two columns:
+"History & Origins" section
+"Health & Care" section
+"Recommended Products" section (food, toys, grooming tools — with space for sponsor placements, each recommendation includes product name, why it's good for this breed, and link placeholder)
+"Finding a [Breed Name]" section — breed-specific sourcing tips plus link to the main ethical sourcing guide
+FAQ section for SEO (3–5 common questions about the breed, answered concisely)
+"Back to all breeds" navigation link (or "Back to quiz results" if they came from the quiz)
+"Which Dog Is Best for You?" Quiz (/quiz/)
+Prominent, visually engaging page — this is a primary feature, not an afterthought
+8–10 questions, one per screen, with progress bar:
+Where do you live? (Apartment, House with small yard, House with large yard, Rural/farm property)
+How much time can you spend exercising your dog each day? (Under 30 min, 30–60 min, 60–90 min, 90+ min)
+How much experience do you have with dogs? (First-time owner, Some experience, Experienced owner, Professional/trainer)
+Do you have children? (No, Yes — under 5, Yes — 5 to 12, Yes — teenagers)
+Do you have other pets? (No, Yes — dogs, Yes — cats, Yes — both)
+How much grooming are you willing to do? (Minimal, Weekly brushing, Regular grooming, Doesn't matter)
+How important is a hypoallergenic breed? (Not important, Somewhat important, Very important)
+What size dog do you prefer? (Small, Medium, Large, No preference)
+What personality do you value most? (Loyal and protective, Playful and energetic, Calm and gentle, Independent and low-maintenance)
+How much training time can you commit? (Minimal — want an easy dog, Moderate — happy to do basic training, Extensive — enjoy the challenge, Love training — want a working partner)
+Results page: Top 5 recommended breeds with match percentage, brief explanation of why each breed matches, link to full breed page
+"Retake Quiz" and "Share Results" options
+Store quiz results in session so "Back to quiz results" works from breed pages
+Ethical Sourcing Guide (/find-a-dog/)
+Take a clear, opinionated stance: never buy from pet stores or puppy mills
+Sections:
+"Why Where You Get Your Dog Matters" — brief, impactful intro about puppy mills
+"How to Find a Responsible Breeder" — AKC Marketplace, breed club referrals, questions to ask breeders, red flags to watch for, what a good breeder looks like (health testing, socialization, contracts)
+"Adopting From a Rescue or Shelter" — breed-specific rescues, general shelters, what to expect, benefits of adopting adult dogs
+"Red Flags to Avoid" — pet stores, online sellers without verification, breeders who won't let you visit, no health clearances, multiple breeds available
+"Resources" — links to AKC Marketplace, Petfinder, Adopt-a-Pet, breed-specific rescue organizations
+This page should be linked from every breed page
+Product Recommendations (/products/)
+Overview page organized by category: Food, Toys, Training, Grooming, Health/Supplements
+Each product listing: product name, photo placeholder, description, which breeds/sizes it's best for, why it's recommended (health-focused — emphasize nutrition, natural ingredients, durability)
+Filter by breed size (Small, Medium, Large) and category
+Individual breed pages pull relevant products into their "Recommended Products" section
+Design the layout with future sponsor placements in mind — each product card should have space for a "Sponsored" badge and affiliate link
+Strong editorial stance: recommend healthy, high-quality products. No junk food, no cheaply made toys. Frame recommendations around dog health and longevity.
+HTML Sitemap (/sitemap/)
+All breeds organized by breed group
+Links to quiz, ethical sourcing guide, product recommendations
+Admin Panel (/admin/)
+Password-protected (use ADMIN_PASSWORD environment variable)
+List all 205 breeds with search
+Edit any breed's fields including all text content, ratings, and image URL
+Add/edit/remove product recommendations
+Preview changes before saving
+Technical Requirements
+Full SEO: unique title tags, meta descriptions, Open Graph tags for every page
+XML sitemap at /sitemap.xml with all breed pages, quiz, products, and guide pages
+robots.txt allowing all pages except /admin
+Responsive design: mobile-first, works beautifully on phone, tablet, and desktop
+Dark mode toggle
+Fast loading: lazy load images, skeleton loading states
+Structured data (JSON-LD) for each breed page — use the "Animal" or "Thing" schema type
+Canonical URLs with trailing slashes
+data-testid attributes on all interactive and meaningful display elements
+Data Seeding
+Pre-populate all 205 AKC-recognized breeds with accurate data for every field
+Breed groups: Sporting (32 breeds), Hound (34), Working (31), Terrier (31), Toy (25), Non-Sporting (29), Herding (23)
+Use real, accurate data for all physical characteristics, temperament ratings, and text content
+Product recommendations: seed 20–30 high-quality product recommendations across all categories, mapped to appropriate breed sizes
+All data should be editable via admin panel and synced on startup via upsert (same pattern as WhichLeader.com)
+Design Notes
+Color-code breed groups like WhichLeader color-codes continents (each group gets a unique color for badges and filters)
+Breed cards on homepage: show image placeholder (initials-based like WhichLeader's LeaderAvatar until real photos are added), breed name, group badge, and 2–3 key traits as small pills (e.g., "High Energy", "Good with Kids", "Large")
+Compatibility ratings on breed pages: use filled/empty paw icons instead of stars
+Quiz: use illustrations or icons for each answer option, make it feel fun and engaging, not like a form
+That covers the full scope. You can copy this entire prompt into a new Replit project to get started. A few notes:
+
+Start with the data model and seeding — getting all 205 breeds populated accurately is the biggest chunk of work.
+The quiz logic is the feature that will set this apart from other breed directories. It's worth getting the matching algorithm right.
+Product recommendations are designed to be sponsor-ready from day one, even if you launch without sponsors initially.
+The ethical sourcing page is your credibility differentiator — most breed sites don't take a clear stance.
