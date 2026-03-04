@@ -53,7 +53,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             <Link href="/" data-testid="link-home-logo">
               <div className="flex items-center gap-2 cursor-pointer">
                 <Dog className="h-8 w-8 text-primary" />
-                <span className="text-xl font-bold text-primary">Dog Breeds & Needs</span>
+                <span className="text-xl font-bold text-primary leading-tight">Dog Breeds<br/>& Needs</span>
               </div>
             </Link>
 
@@ -120,7 +120,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             <div>
               <div className="flex items-center gap-2 mb-4">
                 <Dog className="h-6 w-6 text-primary" />
-                <span className="text-lg font-bold text-primary">Dog Breeds & Needs</span>
+                <span className="text-lg font-bold text-primary leading-tight">Dog Breeds<br/>& Needs</span>
               </div>
               <p className="text-sm text-muted-foreground">
                 Your complete guide to all 205 AKC-recognized dog breeds. Find the perfect companion for your lifestyle.
