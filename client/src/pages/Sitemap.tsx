@@ -1,0 +1,87 @@
+import { useQuery } from "@tanstack/react-query";
+import { Link } from "wouter";
+import { Map } from "lucide-react";
+import { Skeleton } from "@/components/ui/skeleton";
+import type { Breed } from "@shared/schema";
+import { breedGroups } from "@shared/schema";
+
+export default function Sitemap() {
+  const { data: breeds, isLoading } = useQuery<Breed[]>({
+    queryKey: ["/api/breeds"],
+  });
+
+  const breedsByGroup = breedGroups.reduce((acc, group) => {
+    acc[group] = breeds?.filter((b) => b.breedGroup === group) || [];
+    return acc;
+  }, {} as Record<string, Breed[]>);
+
+  return (
+    <div className="py-8 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-5xl mx-auto">
+        <div className="text-center mb-10">
+          <Map className="h-12 w-12 mx-auto text-primary mb-3" />
+          <h1 className="text-3xl sm:text-4xl font-bold mb-2" data-testid="text-sitemap-title">Sitemap</h1>
+          <p className="text-muted-foreground">Complete directory of all pages on WhichDog.com</p>
+        </div>
+
+        <div className="space-y-8">
+          <section>
+            <h2 className="text-xl font-bold mb-3 border-b pb-2">Main Pages</h2>
+            <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2">
+              {[
+                { href: "/", label: "Home" },
+                { href: "/breeds", label: "All Breeds" },
+                { href: "/quiz", label: "Breed Quiz" },
+                { href: "/ethical-sourcing", label: "Ethical Sourcing Guide" },
+                { href: "/products", label: "Products" },
+                { href: "/sitemap", label: "Sitemap" },
+              ].map((link) => (
+                <li key={link.href}>
+                  <Link href={link.href}>
+                    <span className="text-sm text-primary hover:underline cursor-pointer" data-testid={`link-sitemap-${link.label.toLowerCase().replace(/\s+/g, "-")}`}>
+                      {link.label}
+                    </span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-bold mb-4 border-b pb-2" data-testid="text-sitemap-breeds">
+              All Breeds by Group ({breeds?.length || 0} total)
+            </h2>
+            {isLoading ? (
+              <div className="space-y-4">
+                {Array.from({ length: 7 }).map((_, i) => (
+                  <Skeleton key={i} className="h-24 rounded-lg" />
+                ))}
+              </div>
+            ) : (
+              <div className="space-y-6">
+                {breedGroups.map((group) => (
+                  <div key={group}>
+                    <h3 className="text-base font-semibold mb-2 text-primary">
+                      {group} Group ({breedsByGroup[group]?.length || 0})
+                    </h3>
+                    <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-1">
+                      {breedsByGroup[group]?.map((breed) => (
+                        <li key={breed.id}>
+                          <Link href={`/breeds/${breed.slug}`}>
+                            <span className="text-sm hover:text-primary hover:underline cursor-pointer" data-testid={`link-sitemap-breed-${breed.slug}`}>
+                              {breed.name}
+                            </span>
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            )}
+          </section>
+        </div>
+      </div>
+    </div>
+  );
+}
