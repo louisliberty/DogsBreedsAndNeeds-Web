@@ -134,7 +134,7 @@ export default function Home() {
 
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-2xl sm:text-3xl font-bold text-center mb-8" data-testid="text-features-title">Why Dog Breeds and Needs?</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold text-center mb-8" data-testid="text-features-title">Why Dog Breeds & Needs?</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <Card>
               <CardContent className="p-6 text-center">
