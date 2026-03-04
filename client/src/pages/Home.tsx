@@ -56,7 +56,7 @@ export default function Home() {
                 <Dog className="mr-2 h-5 w-5" /> Browse All Breeds
               </Button>
             </Link>
-            <Link href="/quiz">
+            <Link href="/dog-breed-selector">
               <Button size="lg" variant="outline" data-testid="button-take-quiz">
                 <Heart className="mr-2 h-5 w-5" /> Take the Breed Quiz
               </Button>

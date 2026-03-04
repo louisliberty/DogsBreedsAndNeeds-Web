@@ -39,7 +39,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   const navLinks = [
     { href: "/", label: "Home" },
     { href: "/breeds", label: "Breeds" },
-    { href: "/quiz", label: "Breed Quiz" },
+    { href: "/dog-breed-selector", label: "Breed Quiz" },
     { href: "/ethical-sourcing", label: "Ethical Sourcing" },
     { href: "/products", label: "Products" },
     { href: "/sitemap", label: "Sitemap" },

@@ -21,7 +21,7 @@ function Router() {
         <Route path="/" component={Home} />
         <Route path="/breeds" component={Breeds} />
         <Route path="/breeds/:slug" component={BreedDetail} />
-        <Route path="/quiz" component={Quiz} />
+        <Route path="/dog-breed-selector" component={Quiz} />
         <Route path="/ethical-sourcing" component={EthicalSourcing} />
         <Route path="/products" component={Products} />
         <Route path="/sitemap" component={Sitemap} />
