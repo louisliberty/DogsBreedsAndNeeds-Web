@@ -11,19 +11,21 @@ A fully functional dog breed directory website featuring all 205 AKC-recognized 
 
 ## Key Files
 - `shared/schema.ts` - Database schema (breeds, products tables) and Zod validation schemas
-- `server/routes.ts` - API endpoints (breeds CRUD, products, admin auth)
+- `server/routes.ts` - API endpoints (breeds CRUD, products, admin auth, robots.txt, sitemap.xml)
 - `server/storage.ts` - DatabaseStorage class implementing IStorage interface
 - `server/seed.ts` - Database seeding orchestrator
 - `server/breedData.ts` - 205 AKC breed records with compact format and expand helper
 - `server/productData.ts` - 20 product records across 5 categories
 - `client/src/App.tsx` - Route configuration with Layout wrapper
 - `client/src/components/Layout.tsx` - Header/footer with navigation and theme toggle
+- `client/src/lib/breedImages.ts` - Breed image loader using Vite import.meta.glob
+- `attached_assets/breeds/*.png` - 205 AI-generated breed portrait images (4:3 aspect ratio)
 
 ## Pages
 - `/` - Home page with hero, breed groups, popular breeds, features
 - `/breeds` - Full breed directory with search and filters (group, size, energy)
 - `/breeds/:slug` - Breed detail page with all traits, ratings, history, and product recommendations
-- `/quiz` - 7-question breed matching quiz with scored results
+- `/dog-breed-selector` - 7-question breed matching quiz with scored results
 - `/ethical-sourcing` - Guide on responsible breeders, adoption, and red flags
 - `/products` - Product recommendations with category filtering
 - `/sitemap` - Complete sitemap with all breeds organized by group

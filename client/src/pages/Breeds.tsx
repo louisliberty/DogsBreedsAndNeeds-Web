@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button";
 import { useState, useMemo, useEffect } from "react";
 import { breedGroups, sizeCategories, energyLevels } from "@shared/schema";
 import type { Breed } from "@shared/schema";
+import { getBreedImage } from "@/lib/breedImages";
 
 export default function Breeds() {
   const searchString = useSearch();
@@ -151,7 +152,18 @@ export default function Breeds() {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {filtered.map((breed) => (
               <Link key={breed.id} href={`/breeds/${breed.slug}`}>
-                <Card className="cursor-pointer hover:border-primary transition-colors h-full" data-testid={`card-breed-${breed.slug}`}>
+                <Card className="cursor-pointer hover:border-primary transition-colors h-full overflow-hidden" data-testid={`card-breed-${breed.slug}`}>
+                  {getBreedImage(breed.slug) && (
+                    <div className="aspect-[4/3] overflow-hidden bg-muted">
+                      <img
+                        src={getBreedImage(breed.slug)}
+                        alt={breed.name}
+                        className="w-full h-full object-cover"
+                        loading="lazy"
+                        data-testid={`img-breed-${breed.slug}`}
+                      />
+                    </div>
+                  )}
                   <CardContent className="p-4">
                     <div className="flex items-start justify-between mb-2">
                       <h3 className="font-semibold text-sm">{breed.name}</h3>

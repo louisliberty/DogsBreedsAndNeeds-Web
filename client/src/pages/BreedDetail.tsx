@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Progress } from "@/components/ui/progress";
 import type { Breed, Product } from "@shared/schema";
+import { getBreedImage } from "@/lib/breedImages";
 
 function RatingBar({ label, value, max = 5 }: { label: string; value: number; max?: number }) {
   return (
@@ -65,19 +66,35 @@ export default function BreedDetail() {
         </Link>
 
         <div className="mb-8">
-          <div className="flex flex-wrap items-center gap-3 mb-3">
-            <h1 className="text-3xl sm:text-4xl font-bold" data-testid="text-breed-name">{breed.name}</h1>
-            <Badge data-testid="badge-breed-popularity">#{breed.popularity} Most Popular</Badge>
+          <div className="flex flex-col md:flex-row gap-6">
+            {getBreedImage(breed.slug) && (
+              <div className="w-full md:w-80 shrink-0">
+                <div className="aspect-[4/3] overflow-hidden rounded-xl bg-muted">
+                  <img
+                    src={getBreedImage(breed.slug)}
+                    alt={breed.name}
+                    className="w-full h-full object-cover"
+                    data-testid={`img-breed-${breed.slug}`}
+                  />
+                </div>
+              </div>
+            )}
+            <div className="flex-1">
+              <div className="flex flex-wrap items-center gap-3 mb-3">
+                <h1 className="text-3xl sm:text-4xl font-bold" data-testid="text-breed-name">{breed.name}</h1>
+                <Badge data-testid="badge-breed-popularity">#{breed.popularity} Most Popular</Badge>
+              </div>
+              <div className="flex flex-wrap gap-2 mb-4">
+                <Badge variant="outline">{breed.breedGroup} Group</Badge>
+                <Badge variant="outline">{breed.sizeCategory}</Badge>
+                <Badge variant="outline">{breed.originCountry}</Badge>
+                {breed.hypoallergenic && <Badge variant="secondary">Hypoallergenic</Badge>}
+              </div>
+              <p className="text-lg text-muted-foreground italic" data-testid="text-breed-quote">
+                {breed.famousQuote}
+              </p>
+            </div>
           </div>
-          <div className="flex flex-wrap gap-2 mb-4">
-            <Badge variant="outline">{breed.breedGroup} Group</Badge>
-            <Badge variant="outline">{breed.sizeCategory}</Badge>
-            <Badge variant="outline">{breed.originCountry}</Badge>
-            {breed.hypoallergenic && <Badge variant="secondary">Hypoallergenic</Badge>}
-          </div>
-          <p className="text-lg text-muted-foreground italic" data-testid="text-breed-quote">
-            {breed.famousQuote}
-          </p>
         </div>
 
         <div className="grid gap-6 md:grid-cols-2">
