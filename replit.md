@@ -1,7 +1,7 @@
-# WhichDog.com
+# DogBreedsAndNeeds.com
 
 ## Overview
-A fully functional dog breed directory website featuring all 205 AKC-recognized breeds, a dog breed quiz, ethical sourcing guide, product recommendations, admin panel for breed management, and a sitemap page.
+A fully functional dog breed directory website featuring all 205 AKC-recognized breeds, a dog breed quiz, ethical sourcing guide, product recommendations, admin panel for breed management, and a sitemap page. Domain: dogbreedsandneeds.com
 
 ## Architecture
 - **Frontend**: React + Vite + TypeScript with wouter routing and TanStack Query
