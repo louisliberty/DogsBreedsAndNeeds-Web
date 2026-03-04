@@ -10,6 +10,40 @@ export async function registerRoutes(
 ): Promise<Server> {
   await seedDatabase();
 
+  const DOMAIN = "https://dogbreedsandneeds.com";
+
+  app.get("/robots.txt", (_req, res) => {
+    res.type("text/plain").send(
+      `User-agent: *\nAllow: /\nDisallow: /admin\nDisallow: /api/\n\nSitemap: ${DOMAIN}/sitemap.xml\n`
+    );
+  });
+
+  app.get("/sitemap.xml", async (_req, res) => {
+    try {
+      const breeds = await storage.getAllBreeds();
+      const staticPages = [
+        { loc: "/", priority: "1.0", changefreq: "weekly" },
+        { loc: "/breeds", priority: "0.9", changefreq: "weekly" },
+        { loc: "/dog-breed-selector", priority: "0.8", changefreq: "monthly" },
+        { loc: "/ethical-sourcing", priority: "0.7", changefreq: "monthly" },
+        { loc: "/products", priority: "0.7", changefreq: "weekly" },
+        { loc: "/sitemap", priority: "0.3", changefreq: "monthly" },
+      ];
+      const today = new Date().toISOString().split("T")[0];
+      let xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n`;
+      for (const page of staticPages) {
+        xml += `  <url>\n    <loc>${DOMAIN}${page.loc}</loc>\n    <lastmod>${today}</lastmod>\n    <changefreq>${page.changefreq}</changefreq>\n    <priority>${page.priority}</priority>\n  </url>\n`;
+      }
+      for (const breed of breeds) {
+        xml += `  <url>\n    <loc>${DOMAIN}/breeds/${breed.slug}</loc>\n    <lastmod>${today}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.6</priority>\n  </url>\n`;
+      }
+      xml += `</urlset>`;
+      res.type("application/xml").send(xml);
+    } catch (error) {
+      res.status(500).send("Failed to generate sitemap");
+    }
+  });
+
   app.get("/api/breeds", async (_req, res) => {
     try {
       const { group, search, limit } = _req.query;
