@@ -1,7 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Heart, ArrowLeft, ExternalLink, Mail, Phone } from "lucide-react";
+import { Heart, ArrowLeft, Mail, Phone } from "lucide-react";
 import { Link } from "wouter";
 import { useCanonical } from "@/hooks/useCanonical";
 import { usePageMeta } from "@/hooks/usePageMeta";
@@ -112,13 +112,26 @@ export default function PoodleRescue() {
                     <TableHead className="min-w-[200px]">Organization</TableHead>
                     <TableHead className="w-[60px]">State</TableHead>
                     <TableHead className="min-w-[200px]">Contact</TableHead>
-                    <TableHead className="min-w-[180px]">Website</TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>
                   {rescueOrganizations.map((org, i) => (
                     <TableRow key={i} data-testid={`row-rescue-${i}`}>
-                      <TableCell className="font-medium">{org.name}</TableCell>
+                      <TableCell className="font-medium">
+                        {org.website ? (
+                          <a
+                            href={org.website}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-primary hover:underline"
+                            data-testid={`link-org-${i}`}
+                          >
+                            {org.name}
+                          </a>
+                        ) : (
+                          org.name
+                        )}
+                      </TableCell>
                       <TableCell>
                         <Badge variant="outline">{org.state}</Badge>
                       </TableCell>
@@ -147,22 +160,6 @@ export default function PoodleRescue() {
                             <span className="text-sm text-muted-foreground">—</span>
                           )}
                         </div>
-                      </TableCell>
-                      <TableCell>
-                        {org.website ? (
-                          <a
-                            href={org.website}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex items-center gap-1.5 text-sm text-primary hover:underline"
-                            data-testid={`link-website-${i}`}
-                          >
-                            <ExternalLink className="h-3.5 w-3.5 shrink-0" />
-                            <span className="break-all">{org.website.replace(/^https?:\/\/(www\.)?/, "")}</span>
-                          </a>
-                        ) : (
-                          <span className="text-sm text-muted-foreground">—</span>
-                        )}
                       </TableCell>
                     </TableRow>
                   ))}
