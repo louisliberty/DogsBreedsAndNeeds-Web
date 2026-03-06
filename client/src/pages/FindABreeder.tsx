@@ -72,9 +72,9 @@ export default function FindABreeder() {
     return `https://marketplace.akc.org/puppies/${slug}`;
   };
 
-  const getAkcRescueUrl = (breedName: string) => {
-    const query = encodeURIComponent(`${breedName} rescue`);
-    return `https://www.akc.org/dog-breeds/rescue-network/?search=${query}`;
+  const getBreedRescueUrl = (breedName: string) => {
+    const query = encodeURIComponent(`${breedName} breed rescue organization`);
+    return `https://www.google.com/search?q=${query}`;
   };
 
   return (
@@ -176,7 +176,7 @@ export default function FindABreeder() {
                           <ExternalLink className="mr-1.5 h-3.5 w-3.5" /> AKC Marketplace
                         </Button>
                       </a>
-                      <a href={getAkcRescueUrl(selectedBreed.name)} target="_blank" rel="noopener noreferrer">
+                      <a href={getBreedRescueUrl(selectedBreed.name)} target="_blank" rel="noopener noreferrer">
                         <Button size="sm" variant="outline" data-testid="button-akc-rescue">
                           <Heart className="mr-1.5 h-3.5 w-3.5" /> Breed Rescue
                         </Button>
