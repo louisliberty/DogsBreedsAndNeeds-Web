@@ -22,7 +22,7 @@ export default function Sitemap() {
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-10">
           <Map className="h-12 w-12 mx-auto text-primary mb-3" />
-          <h1 className="text-3xl sm:text-4xl font-bold mb-2" data-testid="text-sitemap-title">Sitemap</h1>
+          <h1 className="text-3xl sm:text-4xl font-bold mb-2" data-testid="text-sitemap-title">Dog Breeds & Needs Sitemap</h1>
           <p className="text-muted-foreground">Complete directory of all pages on DogBreedsAndNeeds.com</p>
         </div>
 

@@ -155,7 +155,7 @@ export default function Quiz() {
       <div className="py-8 px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-8">
-            <h1 className="text-3xl font-bold mb-2" data-testid="text-quiz-results-title">Your Top Breed Matches</h1>
+            <h2 className="text-3xl font-bold mb-2" data-testid="text-quiz-results-title">Your Top Breed Matches</h2>
             <p className="text-muted-foreground">Based on your answers, here are the best breeds for you</p>
           </div>
 
@@ -201,7 +201,7 @@ export default function Quiz() {
       <div className="max-w-2xl mx-auto">
         <div className="text-center mb-8">
           <Dog className="h-12 w-12 mx-auto text-primary mb-3" />
-          <h1 className="text-3xl font-bold mb-2" data-testid="text-quiz-title">Find Your Perfect Breed</h1>
+          <h1 className="text-3xl font-bold mb-2" data-testid="text-quiz-title">Dog Breed Selector Quiz</h1>
           <p className="text-muted-foreground">Answer {questions.length} quick questions to find your ideal match</p>
         </div>
 

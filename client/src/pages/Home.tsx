@@ -30,7 +30,7 @@ export default function Home() {
       <section className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-primary/10 via-background to-primary/5">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6" data-testid="text-hero-title">
-            Find Your Perfect <span className="text-primary">Dog Breed</span>
+            Complete Guide to Every <span className="text-primary">Dog Breed</span>
           </h1>
           <p className="text-lg sm:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto" data-testid="text-hero-subtitle">
             Explore all {breedCount?.count || 205} AKC-recognized breeds. Compare traits, take our breed quiz, and find your ideal companion.

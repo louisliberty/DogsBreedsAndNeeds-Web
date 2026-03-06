@@ -26,7 +26,7 @@ export default function Products() {
         <div className="text-center mb-8">
           <ShoppingBag className="h-12 w-12 mx-auto text-primary mb-3" />
           <h1 className="text-3xl sm:text-4xl font-bold mb-2" data-testid="text-products-title">
-            Recommended Products
+            Dog Product Recommendations
           </h1>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             Curated products for your dog's health, happiness, and well-being. All recommendations are based on quality, safety, and value.
