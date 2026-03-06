@@ -2,9 +2,14 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Heart, Shield, Search, AlertTriangle, CheckCircle, XCircle, Home } from "lucide-react";
 import { useCanonical } from "@/hooks/useCanonical";
+import { usePageMeta } from "@/hooks/usePageMeta";
 
 export default function EthicalSourcing() {
   useCanonical("/ethical-sourcing");
+  usePageMeta(
+    "Ethical Dog Sourcing Guide – Find Responsible Breeders & Rescues | Dog Breeds & Needs",
+    "Learn how to find a reputable breeder, adopt from a rescue, and avoid puppy mills. Our ethical sourcing guide helps you bring home a healthy, happy dog."
+  );
   return (
     <div className="py-8 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto">

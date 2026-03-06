@@ -7,6 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import type { Breed } from "@shared/schema";
 import { useCanonical } from "@/hooks/useCanonical";
+import { usePageMeta } from "@/hooks/usePageMeta";
 
 interface Question {
   id: string;
@@ -120,6 +121,10 @@ function scoreBreed(breed: Breed, answers: Record<string, string>): number {
 
 export default function Quiz() {
   useCanonical("/dog-breed-selector");
+  usePageMeta(
+    "Dog Breed Selector Quiz – Find Your Perfect Breed | Dog Breeds & Needs",
+    "Not sure which dog breed is right for you? Take our free 7-question breed selector quiz and get personalized matches based on your lifestyle. Start now!"
+  );
   const [currentQ, setCurrentQ] = useState(0);
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [showResults, setShowResults] = useState(false);

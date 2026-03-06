@@ -11,9 +11,14 @@ import type { Breed } from "@shared/schema";
 import { breedGroups } from "@shared/schema";
 import { getBreedImage } from "@/lib/breedImages";
 import { useCanonical } from "@/hooks/useCanonical";
+import { usePageMeta } from "@/hooks/usePageMeta";
 
 export default function Home() {
   useCanonical("/");
+  usePageMeta(
+    "Dog Breeds & Needs – Complete Guide to All 205 AKC Dog Breeds",
+    "Explore all 205 AKC-recognized dog breeds with detailed profiles, temperament ratings, and care guides. Take our breed quiz to find your perfect match today!"
+  );
   const [searchQuery, setSearchQuery] = useState("");
   const [, navigate] = useLocation();
 

@@ -11,9 +11,14 @@ import { useToast } from "@/hooks/use-toast";
 import { apiRequest, queryClient } from "@/lib/queryClient";
 import type { Breed } from "@shared/schema";
 import { useCanonical } from "@/hooks/useCanonical";
+import { usePageMeta } from "@/hooks/usePageMeta";
 
 export default function Admin() {
   useCanonical("/admin");
+  usePageMeta(
+    "Admin – Breed Management | Dog Breeds & Needs",
+    "Admin panel for managing dog breed data on Dog Breeds & Needs."
+  );
   const [password, setPassword] = useState("");
   const [authed, setAuthed] = useState(false);
   const [authToken, setAuthToken] = useState("");

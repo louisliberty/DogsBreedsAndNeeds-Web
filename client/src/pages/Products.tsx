@@ -7,9 +7,14 @@ import { useState } from "react";
 import { productCategories } from "@shared/schema";
 import type { Product } from "@shared/schema";
 import { useCanonical } from "@/hooks/useCanonical";
+import { usePageMeta } from "@/hooks/usePageMeta";
 
 export default function Products() {
   useCanonical("/products");
+  usePageMeta(
+    "Best Dog Products – Food, Toys, Grooming & Health Picks | Dog Breeds & Needs",
+    "Discover top-rated dog products handpicked for quality and value. Browse food, toys, grooming tools, training aids, and health essentials for every breed."
+  );
   const [selectedCategory, setSelectedCategory] = useState("");
 
   const { data: products, isLoading } = useQuery<Product[]>({

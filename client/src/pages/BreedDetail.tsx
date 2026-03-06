@@ -9,6 +9,7 @@ import { Progress } from "@/components/ui/progress";
 import type { Breed, Product } from "@shared/schema";
 import { getBreedImage } from "@/lib/breedImages";
 import { useCanonical } from "@/hooks/useCanonical";
+import { usePageMeta } from "@/hooks/usePageMeta";
 
 function RatingBar({ label, value, max = 5 }: { label: string; value: number; max?: number }) {
   return (
@@ -32,6 +33,11 @@ export default function BreedDetail() {
     queryKey: [`/api/products?sizes=${breed?.sizeCategory}`],
     enabled: !!breed,
   });
+
+  usePageMeta(
+    breed ? `${breed.name} – Breed Info, Temperament & Care Guide | Dog Breeds & Needs` : "Dog Breed Details | Dog Breeds & Needs",
+    breed ? `Learn everything about the ${breed.name}: temperament, size, exercise needs, health tips, and more. See if this ${breed.breedGroup} breed is right for you!` : "Loading breed details..."
+  );
 
   if (isLoading) {
     return (

@@ -11,9 +11,14 @@ import { breedGroups, sizeCategories, energyLevels } from "@shared/schema";
 import type { Breed } from "@shared/schema";
 import { getBreedImage } from "@/lib/breedImages";
 import { useCanonical } from "@/hooks/useCanonical";
+import { usePageMeta } from "@/hooks/usePageMeta";
 
 export default function Breeds() {
   useCanonical("/breeds");
+  usePageMeta(
+    "All 205 AKC Dog Breeds – Browse, Search & Compare | Dog Breeds & Needs",
+    "Browse the complete list of 205 AKC-recognized dog breeds. Filter by size, energy level, and breed group to compare traits and find your ideal companion."
+  );
   const searchString = useSearch();
   const params = new URLSearchParams(searchString);
   const initialSearch = params.get("search") || "";
