@@ -41,6 +41,7 @@ export default function Sitemap() {
                 { href: "/dog-breed-selector", label: "Breed Quiz" },
                 { href: "/ethical-sourcing", label: "Ethical Sourcing Guide" },
                 { href: "/find-a-breeder", label: "Find an Ethical Breeder" },
+                { href: "/poodle-rescue", label: "Poodle Rescue Organizations" },
                 { href: "/products", label: "Products" },
                 { href: "/sitemap", label: "Sitemap" },
               ].map((link) => (

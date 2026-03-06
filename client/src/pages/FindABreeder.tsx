@@ -176,11 +176,19 @@ export default function FindABreeder() {
                           <ExternalLink className="mr-1.5 h-3.5 w-3.5" /> AKC Marketplace
                         </Button>
                       </a>
-                      <a href={getBreedRescueUrl(selectedBreed.name)} target="_blank" rel="noopener noreferrer">
-                        <Button size="sm" variant="outline" data-testid="button-akc-rescue">
-                          <Heart className="mr-1.5 h-3.5 w-3.5" /> Breed Rescue
-                        </Button>
-                      </a>
+                      {selectedBreed.slug === "poodle" ? (
+                        <Link href="/poodle-rescue">
+                          <Button size="sm" variant="outline" data-testid="button-breed-rescue">
+                            <Heart className="mr-1.5 h-3.5 w-3.5" /> Poodle Rescue
+                          </Button>
+                        </Link>
+                      ) : (
+                        <a href={getBreedRescueUrl(selectedBreed.name)} target="_blank" rel="noopener noreferrer">
+                          <Button size="sm" variant="outline" data-testid="button-breed-rescue">
+                            <Heart className="mr-1.5 h-3.5 w-3.5" /> {selectedBreed.name} Rescue
+                          </Button>
+                        </a>
+                      )}
                     </div>
                   </div>
                 </div>

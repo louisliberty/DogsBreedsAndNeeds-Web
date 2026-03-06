@@ -28,6 +28,7 @@ A fully functional dog breed directory website featuring all 205 AKC-recognized 
 - `/dog-breed-selector` - 7-question breed matching quiz with scored results
 - `/ethical-sourcing` - Guide on responsible breeders, adoption, and red flags
 - `/find-a-breeder` - Ethical breeder finder with AKC Marketplace links, breed-specific health tests, red flags checklist, breeder visit checklist, and adoption resources
+- `/poodle-rescue` - Directory of 24 national Poodle rescue organizations with contact info, emails, and websites
 - `/products` - Product recommendations with category filtering
 - `/sitemap` - Complete sitemap with all breeds organized by group
 - `/admin` - Password-protected admin panel for breed CRUD management

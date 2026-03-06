@@ -11,6 +11,7 @@ import BreedDetail from "@/pages/BreedDetail";
 import Quiz from "@/pages/Quiz";
 import EthicalSourcing from "@/pages/EthicalSourcing";
 import FindABreeder from "@/pages/FindABreeder";
+import PoodleRescue from "@/pages/PoodleRescue";
 import Products from "@/pages/Products";
 import Sitemap from "@/pages/Sitemap";
 import Admin from "@/pages/Admin";
@@ -69,6 +70,7 @@ function Router() {
         <Route path="/dog-breed-selector" component={Quiz} />
         <Route path="/ethical-sourcing" component={EthicalSourcing} />
         <Route path="/find-a-breeder" component={FindABreeder} />
+        <Route path="/poodle-rescue" component={PoodleRescue} />
         <Route path="/products" component={Products} />
         <Route path="/sitemap" component={Sitemap} />
         <Route path="/admin" component={Admin} />
