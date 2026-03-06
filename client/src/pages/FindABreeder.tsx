@@ -62,8 +62,8 @@ export default function FindABreeder() {
   };
 
   const getAkcRescueUrl = (breedName: string) => {
-    const slug = breedName.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
-    return `https://www.akc.org/dog-breeds/${slug}/rescue/`;
+    const query = encodeURIComponent(`${breedName} rescue`);
+    return `https://www.akc.org/dog-breeds/rescue-network/?search=${query}`;
   };
 
   return (
@@ -155,8 +155,13 @@ export default function FindABreeder() {
                       <Badge variant="outline">{selectedBreed.originCountry}</Badge>
                     </div>
                     <div className="flex flex-wrap gap-2">
+                      <Link href={`/breeds/${selectedBreed.slug}`}>
+                        <Button size="sm" data-testid="button-breed-profile">
+                          <Dog className="mr-1.5 h-3.5 w-3.5" /> Full Breed Profile
+                        </Button>
+                      </Link>
                       <a href={getAkcMarketplaceUrl(selectedBreed.name)} target="_blank" rel="noopener noreferrer">
-                        <Button size="sm" data-testid="button-akc-marketplace">
+                        <Button size="sm" variant="outline" data-testid="button-akc-marketplace">
                           <ExternalLink className="mr-1.5 h-3.5 w-3.5" /> AKC Marketplace
                         </Button>
                       </a>
@@ -165,11 +170,6 @@ export default function FindABreeder() {
                           <Heart className="mr-1.5 h-3.5 w-3.5" /> Breed Rescue
                         </Button>
                       </a>
-                      <Link href={`/breeds/${selectedBreed.slug}`}>
-                        <Button size="sm" variant="outline" data-testid="button-breed-profile">
-                          <Dog className="mr-1.5 h-3.5 w-3.5" /> Full Breed Profile
-                        </Button>
-                      </Link>
                     </div>
                   </div>
                 </div>
