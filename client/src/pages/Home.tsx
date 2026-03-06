@@ -10,8 +10,10 @@ import { useState } from "react";
 import type { Breed } from "@shared/schema";
 import { breedGroups } from "@shared/schema";
 import { getBreedImage } from "@/lib/breedImages";
+import { useCanonical } from "@/hooks/useCanonical";
 
 export default function Home() {
+  useCanonical("/");
   const [searchQuery, setSearchQuery] = useState("");
   const [, navigate] = useLocation();
 

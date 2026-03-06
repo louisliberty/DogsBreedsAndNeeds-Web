@@ -6,8 +6,10 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { useState } from "react";
 import { productCategories } from "@shared/schema";
 import type { Product } from "@shared/schema";
+import { useCanonical } from "@/hooks/useCanonical";
 
 export default function Products() {
+  useCanonical("/products");
   const [selectedCategory, setSelectedCategory] = useState("");
 
   const { data: products, isLoading } = useQuery<Product[]>({

@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import type { Breed } from "@shared/schema";
+import { useCanonical } from "@/hooks/useCanonical";
 
 interface Question {
   id: string;
@@ -118,6 +119,7 @@ function scoreBreed(breed: Breed, answers: Record<string, string>): number {
 }
 
 export default function Quiz() {
+  useCanonical("/dog-breed-selector");
   const [currentQ, setCurrentQ] = useState(0);
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [showResults, setShowResults] = useState(false);

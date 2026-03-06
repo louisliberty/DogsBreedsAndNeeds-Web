@@ -10,8 +10,10 @@ import { useState, useMemo, useEffect } from "react";
 import { breedGroups, sizeCategories, energyLevels } from "@shared/schema";
 import type { Breed } from "@shared/schema";
 import { getBreedImage } from "@/lib/breedImages";
+import { useCanonical } from "@/hooks/useCanonical";
 
 export default function Breeds() {
+  useCanonical("/breeds");
   const searchString = useSearch();
   const params = new URLSearchParams(searchString);
   const initialSearch = params.get("search") || "";

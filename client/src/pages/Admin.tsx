@@ -10,8 +10,10 @@ import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { apiRequest, queryClient } from "@/lib/queryClient";
 import type { Breed } from "@shared/schema";
+import { useCanonical } from "@/hooks/useCanonical";
 
 export default function Admin() {
+  useCanonical("/admin");
   const [password, setPassword] = useState("");
   const [authed, setAuthed] = useState(false);
   const [authToken, setAuthToken] = useState("");

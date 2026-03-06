@@ -8,6 +8,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { Progress } from "@/components/ui/progress";
 import type { Breed, Product } from "@shared/schema";
 import { getBreedImage } from "@/lib/breedImages";
+import { useCanonical } from "@/hooks/useCanonical";
 
 function RatingBar({ label, value, max = 5 }: { label: string; value: number; max?: number }) {
   return (
@@ -21,6 +22,7 @@ function RatingBar({ label, value, max = 5 }: { label: string; value: number; ma
 
 export default function BreedDetail() {
   const { slug } = useParams<{ slug: string }>();
+  useCanonical(`/breeds/${slug}`);
 
   const { data: breed, isLoading } = useQuery<Breed>({
     queryKey: ["/api/breeds", slug],

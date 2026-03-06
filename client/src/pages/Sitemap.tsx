@@ -4,8 +4,10 @@ import { Map } from "lucide-react";
 import { Skeleton } from "@/components/ui/skeleton";
 import type { Breed } from "@shared/schema";
 import { breedGroups } from "@shared/schema";
+import { useCanonical } from "@/hooks/useCanonical";
 
 export default function Sitemap() {
+  useCanonical("/sitemap");
   const { data: breeds, isLoading } = useQuery<Breed[]>({
     queryKey: ["/api/breeds"],
   });
