@@ -22,7 +22,7 @@ export async function registerRoutes(
     try {
       const breeds = await storage.getAllBreeds();
       const staticPages = [
-        { loc: "/", priority: "1.0", changefreq: "weekly" },
+        { loc: "", priority: "1.0", changefreq: "weekly" },
         { loc: "/breeds", priority: "0.9", changefreq: "weekly" },
         { loc: "/dog-breed-selector", priority: "0.8", changefreq: "monthly" },
         { loc: "/ethical-sourcing", priority: "0.7", changefreq: "monthly" },
