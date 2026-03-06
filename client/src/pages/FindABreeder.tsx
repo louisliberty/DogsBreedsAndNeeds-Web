@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "wouter";
+import { saveBreederFinderState, breederFinderStore } from "@/App";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -45,12 +46,22 @@ export default function FindABreeder() {
     "Find a responsible, AKC-registered dog breeder near you. Search by breed, learn what health tests to look for, and use our red flags checklist to avoid puppy mills."
   );
 
-  const [breedSearch, setBreedSearch] = useState("");
+  const [breedSearch, setBreedSearch] = useState(breederFinderStore.breedSearch);
   const [selectedBreed, setSelectedBreed] = useState<Breed | null>(null);
 
   const { data: breeds, isLoading: breedsLoading } = useQuery<Breed[]>({
     queryKey: ["/api/breeds"],
   });
+
+  useEffect(() => {
+    if (breeds && breederFinderStore.selectedBreedSlug) {
+      const saved = breeds.find(b => b.slug === breederFinderStore.selectedBreedSlug);
+      if (saved) {
+        setSelectedBreed(saved);
+      }
+      breederFinderStore.selectedBreedSlug = null;
+    }
+  }, [breeds]);
 
   const filteredBreeds = breeds?.filter((b) =>
     b.name.toLowerCase().includes(breedSearch.toLowerCase())
@@ -155,7 +166,7 @@ export default function FindABreeder() {
                       <Badge variant="outline">{selectedBreed.originCountry}</Badge>
                     </div>
                     <div className="flex flex-wrap gap-2">
-                      <Link href={`/breeds/${selectedBreed.slug}`}>
+                      <Link href={`/breeds/${selectedBreed.slug}`} onClick={() => saveBreederFinderState(breedSearch, selectedBreed.slug)}>
                         <Button size="sm" data-testid="button-breed-profile">
                           <Dog className="mr-1.5 h-3.5 w-3.5" /> Full Breed Profile
                         </Button>
@@ -214,7 +225,7 @@ export default function FindABreeder() {
                   <Button
                     variant="ghost"
                     size="sm"
-                    onClick={() => { setSelectedBreed(null); setBreedSearch(""); }}
+                    onClick={() => { setSelectedBreed(null); setBreedSearch(""); breederFinderStore.breedSearch = ""; }}
                     data-testid="button-clear-breed"
                   >
                     Search a different breed

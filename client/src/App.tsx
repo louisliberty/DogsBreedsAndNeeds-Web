@@ -22,6 +22,18 @@ export function saveBreedsScroll() {
   breedsScrollStore.position = window.scrollY;
 }
 
+export const breederFinderStore: { position: number; breedSearch: string; selectedBreedSlug: string | null } = {
+  position: 0,
+  breedSearch: "",
+  selectedBreedSlug: null,
+};
+
+export function saveBreederFinderState(breedSearch: string, selectedBreedSlug: string | null) {
+  breederFinderStore.position = window.scrollY;
+  breederFinderStore.breedSearch = breedSearch;
+  breederFinderStore.selectedBreedSlug = selectedBreedSlug;
+}
+
 function ScrollToTop() {
   const [location] = useLocation();
   const prevLocation = useRef(location);
@@ -32,6 +44,11 @@ function ScrollToTop() {
 
     if (location === "/breeds" && prev.startsWith("/breeds/")) {
       window.scrollTo(0, breedsScrollStore.position);
+      return;
+    }
+
+    if (location === "/find-a-breeder" && prev.startsWith("/breeds/")) {
+      window.scrollTo(0, breederFinderStore.position);
       return;
     }
 

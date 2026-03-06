@@ -1,6 +1,8 @@
+import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { useParams, Link } from "wouter";
-import { ArrowLeft, Heart, Zap, Brain, Volume2, Users, Dog as DogIcon, Home, Activity, Scissors, Stethoscope, Star, Lightbulb } from "lucide-react";
+import { ArrowLeft, Heart, Zap, Brain, Volume2, Users, Dog as DogIcon, Home, Activity, Scissors, Stethoscope, Star, Lightbulb, Search } from "lucide-react";
+import { breederFinderStore } from "@/App";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -23,6 +25,13 @@ function RatingBar({ label, value, max = 5 }: { label: string; value: number; ma
 
 export default function BreedDetail() {
   const { slug } = useParams<{ slug: string }>();
+  const [cameFromBreederFinder] = useState(() => {
+    const fromFinder = breederFinderStore.selectedBreedSlug !== null;
+    if (!fromFinder) {
+      breederFinderStore.breedSearch = "";
+    }
+    return fromFinder;
+  });
   useCanonical(`/breeds/${slug}`);
 
   const { data: breed, isLoading } = useQuery<Breed>({
@@ -67,11 +76,20 @@ export default function BreedDetail() {
   return (
     <div className="py-8 px-4 sm:px-6 lg:px-8">
       <div className="max-w-5xl mx-auto">
-        <Link href="/breeds">
-          <Button variant="ghost" className="mb-4" data-testid="button-back-breeds">
-            <ArrowLeft className="mr-2 h-4 w-4" /> All Breeds
-          </Button>
-        </Link>
+        <div className="flex gap-2 mb-4">
+          <Link href="/breeds">
+            <Button variant="ghost" data-testid="button-back-breeds">
+              <ArrowLeft className="mr-2 h-4 w-4" /> All Breeds
+            </Button>
+          </Link>
+          {cameFromBreederFinder && (
+            <Link href="/find-a-breeder">
+              <Button variant="ghost" data-testid="button-back-breeder-finder">
+                <Search className="mr-2 h-4 w-4" /> Back to Breeder Finder
+              </Button>
+            </Link>
+          )}
+        </div>
 
         <div className="mb-8">
           <div className="flex flex-col md:flex-row gap-6">
