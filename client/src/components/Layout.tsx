@@ -147,11 +147,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                     <span className="hover:text-primary cursor-pointer">Ethical Sourcing Guide</span>
                   </Link>
                 </li>
-                <li>
-                  <Link href="/admin">
-                    <span className="hover:text-primary cursor-pointer">Admin Panel</span>
-                  </Link>
-                </li>
               </ul>
             </div>
           </div>
