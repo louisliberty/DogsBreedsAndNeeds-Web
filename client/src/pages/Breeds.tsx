@@ -16,7 +16,7 @@ import { usePageMeta } from "@/hooks/usePageMeta";
 export default function Breeds() {
   useCanonical("/breeds");
   usePageMeta(
-    "All 205 AKC Dog Breeds – Browse, Search & Compare | Dog Breeds & Needs",
+    "All 205 AKC Dog Breeds: Browse, Search & Compare | Dog Breeds & Needs",
     "Browse the complete list of 205 AKC-recognized dog breeds. Filter by size, energy level, and breed group to compare traits and find your ideal companion."
   );
   const searchString = useSearch();

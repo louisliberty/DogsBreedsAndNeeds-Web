@@ -35,7 +35,7 @@ export default function BreedDetail() {
   });
 
   usePageMeta(
-    breed ? `${breed.name} – Breed Info, Temperament & Care Guide | Dog Breeds & Needs` : "Dog Breed Details | Dog Breeds & Needs",
+    breed ? `${breed.name}: Breed Info, Temperament & Care Guide | Dog Breeds & Needs` : "Dog Breed Details | Dog Breeds & Needs",
     breed ? `Learn everything about the ${breed.name}: temperament, size, exercise needs, health tips, and more. See if this ${breed.breedGroup} breed is right for you!` : "Loading breed details..."
   );
 

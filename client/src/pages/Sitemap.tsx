@@ -10,7 +10,7 @@ import { usePageMeta } from "@/hooks/usePageMeta";
 export default function Sitemap() {
   useCanonical("/sitemap");
   usePageMeta(
-    "Sitemap – All Dog Breeds & Pages | Dog Breeds & Needs",
+    "Sitemap: All Dog Breeds & Pages | Dog Breeds & Needs",
     "View the complete sitemap for Dog Breeds & Needs. Browse all 205 AKC breed pages organized by group, plus guides, products, and tools."
   );
   const { data: breeds, isLoading } = useQuery<Breed[]>({

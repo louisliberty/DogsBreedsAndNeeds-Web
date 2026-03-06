@@ -7,7 +7,7 @@ import { usePageMeta } from "@/hooks/usePageMeta";
 export default function EthicalSourcing() {
   useCanonical("/ethical-sourcing");
   usePageMeta(
-    "Ethical Dog Sourcing Guide – Find Responsible Breeders & Rescues | Dog Breeds & Needs",
+    "Ethical Dog Sourcing Guide: Find Responsible Breeders & Rescues | Dog Breeds & Needs",
     "Learn how to find a reputable breeder, adopt from a rescue, and avoid puppy mills. Our ethical sourcing guide helps you bring home a healthy, happy dog."
   );
   return (

@@ -16,7 +16,7 @@ import { usePageMeta } from "@/hooks/usePageMeta";
 export default function Home() {
   useCanonical("/");
   usePageMeta(
-    "Dog Breeds & Needs – Complete Guide to All 205 AKC Dog Breeds",
+    "Dog Breeds & Needs: Complete Guide to All 205 AKC Dog Breeds",
     "Explore all 205 AKC-recognized dog breeds with detailed profiles, temperament ratings, and care guides. Take our breed quiz to find your perfect match today!"
   );
   const [searchQuery, setSearchQuery] = useState("");

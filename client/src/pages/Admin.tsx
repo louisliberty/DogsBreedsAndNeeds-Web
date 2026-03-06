@@ -16,7 +16,7 @@ import { usePageMeta } from "@/hooks/usePageMeta";
 export default function Admin() {
   useCanonical("/admin");
   usePageMeta(
-    "Admin – Breed Management | Dog Breeds & Needs",
+    "Admin: Breed Management | Dog Breeds & Needs",
     "Admin panel for managing dog breed data on Dog Breeds & Needs."
   );
   const [password, setPassword] = useState("");

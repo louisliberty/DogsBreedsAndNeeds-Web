@@ -12,7 +12,7 @@ import { usePageMeta } from "@/hooks/usePageMeta";
 export default function Products() {
   useCanonical("/products");
   usePageMeta(
-    "Best Dog Products – Food, Toys, Grooming & Health Picks | Dog Breeds & Needs",
+    "Best Dog Products: Food, Toys, Grooming & Health Picks | Dog Breeds & Needs",
     "Discover top-rated dog products handpicked for quality and value. Browse food, toys, grooming tools, training aids, and health essentials for every breed."
   );
   const [selectedCategory, setSelectedCategory] = useState("");
