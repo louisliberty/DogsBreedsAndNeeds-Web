@@ -139,16 +139,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 ))}
               </ul>
             </div>
-            <div>
-              <h3 className="font-semibold mb-3">Resources</h3>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li>
-                  <Link href="/ethical-sourcing">
-                    <span className="hover:text-primary cursor-pointer">Ethical Sourcing Guide</span>
-                  </Link>
-                </li>
-              </ul>
-            </div>
           </div>
           <div className="mt-8 pt-8 border-t text-center text-sm text-muted-foreground">
             DogBreedsAndNeeds.com - All 205 AKC-Recognized Dog Breeds
