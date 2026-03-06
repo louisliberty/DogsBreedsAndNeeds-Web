@@ -40,6 +40,7 @@ export default function Sitemap() {
                 { href: "/breeds", label: "All Breeds" },
                 { href: "/dog-breed-selector", label: "Breed Quiz" },
                 { href: "/ethical-sourcing", label: "Ethical Sourcing Guide" },
+                { href: "/find-a-breeder", label: "Find an Ethical Breeder" },
                 { href: "/products", label: "Products" },
                 { href: "/sitemap", label: "Sitemap" },
               ].map((link) => (

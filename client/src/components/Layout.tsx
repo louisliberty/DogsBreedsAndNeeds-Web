@@ -41,6 +41,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     { href: "/breeds", label: "Breeds" },
     { href: "/dog-breed-selector", label: "Breed Quiz" },
     { href: "/ethical-sourcing", label: "Ethical Sourcing" },
+    { href: "/find-a-breeder", label: "Find a Breeder" },
     { href: "/products", label: "Products" },
     { href: "/sitemap", label: "Sitemap" },
   ];

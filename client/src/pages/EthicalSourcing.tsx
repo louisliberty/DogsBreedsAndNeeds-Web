@@ -1,6 +1,8 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import { Heart, Shield, Search, AlertTriangle, CheckCircle, XCircle, Home } from "lucide-react";
+import { Link } from "wouter";
 import { useCanonical } from "@/hooks/useCanonical";
 import { usePageMeta } from "@/hooks/usePageMeta";
 
@@ -182,6 +184,21 @@ export default function EthicalSourcing() {
                 <li>Do you have a plan for the dog during vacations and emergencies?</li>
                 <li>Have you researched breed-specific needs and potential health issues?</li>
               </ul>
+            </CardContent>
+          </Card>
+
+          <Card className="border-primary/20 bg-primary/5">
+            <CardContent className="p-6 text-center">
+              <Shield className="h-8 w-8 mx-auto text-primary mb-3" />
+              <h3 className="font-semibold text-lg mb-2">Looking for a Breeder?</h3>
+              <p className="text-sm text-muted-foreground mb-4 max-w-lg mx-auto">
+                Use our Ethical Breeder Finder to search for AKC-registered breeders by breed, view breed-specific health certifications, and access our complete red flags checklist.
+              </p>
+              <Link href="/find-a-breeder">
+                <Button data-testid="link-find-breeder">
+                  <Search className="mr-2 h-4 w-4" /> Find an Ethical Breeder
+                </Button>
+              </Link>
             </CardContent>
           </Card>
         </div>

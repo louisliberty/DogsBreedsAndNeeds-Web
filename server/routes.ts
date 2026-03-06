@@ -26,6 +26,7 @@ export async function registerRoutes(
         { loc: "/breeds", priority: "0.9", changefreq: "weekly" },
         { loc: "/dog-breed-selector", priority: "0.8", changefreq: "monthly" },
         { loc: "/ethical-sourcing", priority: "0.7", changefreq: "monthly" },
+        { loc: "/find-a-breeder", priority: "0.8", changefreq: "monthly" },
         { loc: "/products", priority: "0.7", changefreq: "weekly" },
         { loc: "/sitemap", priority: "0.3", changefreq: "monthly" },
       ];
