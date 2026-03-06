@@ -121,7 +121,7 @@ export default function Home() {
                       <div className="aspect-[4/3] overflow-hidden bg-muted">
                         <img
                           src={getBreedImage(breed.slug)}
-                          alt={breed.name}
+                          alt={`${breed.name} dog breed - ${breed.breedGroup} group`}
                           className="w-full h-full object-cover"
                           loading="lazy"
                           data-testid={`img-breed-${breed.slug}`}
