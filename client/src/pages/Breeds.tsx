@@ -3,6 +3,7 @@ import { Link, useSearch } from "wouter";
 import { Search, Dog, SlidersHorizontal } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
+import { saveBreedsScroll } from "@/App";
 import { Badge } from "@/components/ui/badge";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Button } from "@/components/ui/button";
@@ -158,7 +159,7 @@ export default function Breeds() {
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {filtered.map((breed) => (
-              <Link key={breed.id} href={`/breeds/${breed.slug}`}>
+              <Link key={breed.id} href={`/breeds/${breed.slug}`} onClick={saveBreedsScroll}>
                 <Card className="cursor-pointer hover:border-primary transition-colors h-full overflow-hidden" data-testid={`card-breed-${breed.slug}`}>
                   {getBreedImage(breed.slug) && (
                     <div className="aspect-[4/3] overflow-hidden bg-muted">
