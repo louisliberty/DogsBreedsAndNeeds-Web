@@ -15,13 +15,22 @@ export default function EthicalSourcing() {
   return (
     <div className="py-8 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-12">
+        <div className="text-center mb-8">
           <Heart className="h-12 w-12 mx-auto text-primary mb-4" />
           <h1 className="text-3xl sm:text-4xl font-bold mb-3" data-testid="text-ethical-title">
             Ethical Dog Sourcing Guide
           </h1>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Finding a dog should be a responsible decision. This guide helps you navigate finding a healthy, well-bred companion from ethical sources.
+        </div>
+
+        <div className="space-y-4 mb-10 text-sm text-muted-foreground max-w-3xl mx-auto" data-testid="text-ethical-intro">
+          <p>
+            Responsible dog breeding is built around care, health, and long-term breed preservation. Ethical breeders focus on improving and protecting a specific breed rather than producing large numbers of puppies for sale. They perform extensive health testing, carefully select breeding pairs, and raise puppies in environments that support proper socialization and development. Choosing a responsible breeder helps ensure your dog has the best possible start in life while also supporting practices that protect canine health, temperament, and genetic diversity. It also reduces the demand for puppy mills and large commercial breeding operations that prioritize volume over animal welfare.
+          </p>
+          <p>
+            Unlike many other industries, the responsible breeding world is intentionally decentralized. Most ethical breeders participate in small, reputation-based communities centered around individual breeds. National and regional breed clubs establish breeding guidelines, health testing standards, and temperament expectations, while breeders collaborate through shows, working trials, and shared pedigrees. Because every breed has different genetic risks — such as hip dysplasia, cardiac conditions, or inherited eye diseases — standards and testing requirements vary from breed to breed. This is why research often starts with the breed itself before narrowing down to trusted breeders.
+          </p>
+          <p>
+            The decentralized structure also reflects how ethical breeders operate: small-scale, relationship-driven programs rather than high-volume businesses. Responsible breeders typically produce only a few litters each year, maintain waiting lists, and carefully screen potential owners to ensure puppies go to the right homes. Their reputation within breed clubs and breeder networks is one of the most important accountability systems in the dog world. By starting your search with reputable breeders connected to these communities, you greatly increase the chances of finding a healthy, well-raised puppy from someone who is committed to the long-term wellbeing of the breed.
           </p>
         </div>
 
