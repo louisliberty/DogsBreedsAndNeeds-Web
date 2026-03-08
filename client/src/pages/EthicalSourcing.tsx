@@ -1,4 +1,4 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Heart, Shield, Search, AlertTriangle, CheckCircle, XCircle, Home } from "lucide-react";
@@ -37,10 +37,10 @@ export default function EthicalSourcing() {
         <div className="space-y-8">
           <Card>
             <CardHeader>
-              <CardTitle className="flex items-center gap-2">
+              <h2 className="text-2xl font-semibold leading-none tracking-tight flex items-center gap-2">
                 <Shield className="h-5 w-5 text-primary" />
                 What Makes a Responsible Breeder?
-              </CardTitle>
+              </h2>
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="grid gap-3">
@@ -65,10 +65,10 @@ export default function EthicalSourcing() {
 
           <Card className="border-destructive/30">
             <CardHeader>
-              <CardTitle className="flex items-center gap-2 text-destructive">
+              <h2 className="text-2xl font-semibold leading-none tracking-tight flex items-center gap-2 text-destructive">
                 <AlertTriangle className="h-5 w-5" />
                 Red Flags to Watch For
-              </CardTitle>
+              </h2>
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="grid gap-3">
@@ -93,10 +93,10 @@ export default function EthicalSourcing() {
 
           <Card>
             <CardHeader>
-              <CardTitle className="flex items-center gap-2">
+              <h2 className="text-2xl font-semibold leading-none tracking-tight flex items-center gap-2">
                 <Home className="h-5 w-5 text-primary" />
                 Adoption: A Wonderful Option
-              </CardTitle>
+              </h2>
             </CardHeader>
             <CardContent className="space-y-4 text-sm">
               <p>
@@ -151,10 +151,10 @@ export default function EthicalSourcing() {
 
           <Card>
             <CardHeader>
-              <CardTitle className="flex items-center gap-2">
+              <h2 className="text-2xl font-semibold leading-none tracking-tight flex items-center gap-2">
                 <Search className="h-5 w-5 text-primary" />
                 Questions to Ask a Breeder
-              </CardTitle>
+              </h2>
             </CardHeader>
             <CardContent>
               <div className="grid sm:grid-cols-2 gap-3 text-sm">
@@ -181,7 +181,7 @@ export default function EthicalSourcing() {
 
           <Card>
             <CardHeader>
-              <CardTitle>Before You Bring a Dog Home</CardTitle>
+              <h2 className="text-2xl font-semibold leading-none tracking-tight">Before You Bring a Dog Home</h2>
             </CardHeader>
             <CardContent className="text-sm space-y-3">
               <p>Getting a dog is a 10-15+ year commitment. Before making this decision, consider:</p>
