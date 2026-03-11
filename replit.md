@@ -13,6 +13,9 @@ A fully functional dog breed directory website featuring all 205 AKC-recognized 
 - `shared/schema.ts` - Database schema (breeds, products tables) and Zod validation schemas
 - `server/routes.ts` - API endpoints (breeds CRUD, products, admin auth, robots.txt, sitemap.xml)
 - `server/storage.ts` - DatabaseStorage class implementing IStorage interface
+- `server/seo.ts` - Server-side meta tag injection (title, description, canonical, Open Graph) for all pages
+- `server/vite.ts` - Dev server with SEO meta injection before serving HTML
+- `server/static.ts` - Production static file server with SEO meta injection
 - `server/seed.ts` - Database seeding orchestrator
 - `server/breedData.ts` - 205 AKC breed records with compact format and expand helper
 - `server/productData.ts` - 20 product records across 5 categories
