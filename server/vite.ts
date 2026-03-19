@@ -5,7 +5,7 @@ import viteConfig from "../vite.config";
 import fs from "fs";
 import path from "path";
 import { nanoid } from "nanoid";
-import { getPageMeta, injectMeta } from "./seo";
+import { getPageData, injectPageData } from "./seo";
 
 const viteLogger = createLogger();
 
@@ -50,9 +50,9 @@ export async function setupVite(server: Server, app: Express) {
         `src="/src/main.tsx?v=${nanoid()}"`,
       );
 
-      const meta = await getPageMeta(url);
-      if (meta) {
-        template = injectMeta(template, meta);
+      const pageData = await getPageData(url);
+      if (pageData) {
+        template = injectPageData(template, pageData);
       }
 
       const page = await vite.transformIndexHtml(url, template);

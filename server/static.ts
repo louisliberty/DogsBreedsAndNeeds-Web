@@ -1,7 +1,7 @@
 import express, { type Express } from "express";
 import fs from "fs";
 import path from "path";
-import { getPageMeta, injectMeta } from "./seo";
+import { getPageData, injectPageData } from "./seo";
 
 export function serveStatic(app: Express) {
   const distPath = path.resolve(__dirname, "public");
@@ -16,9 +16,9 @@ export function serveStatic(app: Express) {
   app.use(express.static(distPath));
 
   app.use("/{*path}", async (req, res) => {
-    const meta = await getPageMeta(req.path);
-    if (meta) {
-      res.send(injectMeta(indexHtml, meta));
+    const pageData = await getPageData(req.path);
+    if (pageData) {
+      res.send(injectPageData(indexHtml, pageData));
     } else {
       res.send(indexHtml);
     }
