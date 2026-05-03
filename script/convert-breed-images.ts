@@ -2,23 +2,24 @@ import { readdir, stat } from "fs/promises";
 import path from "path";
 import sharp from "sharp";
 
-const BREEDS_DIR = path.resolve(process.cwd(), "attached_assets", "breeds");
+const breedsDir = path.resolve(process.cwd(), "attached_assets", "breeds");
 const QUALITY = 82;
 const MAX_WIDTH = 1280;
 
-async function main() {
-  const entries = await readdir(BREEDS_DIR);
-  const pngs = entries.filter((f) => f.toLowerCase().endsWith(".png"));
-  console.log(`Found ${pngs.length} PNG files in ${BREEDS_DIR}`);
+async function convertAll() {
+  const files = await readdir(breedsDir);
+  const pngFiles = files.filter((f) => f.toLowerCase().endsWith(".png"));
+  console.log(`Found ${pngFiles.length} PNG files in ${breedsDir}`);
 
   let converted = 0;
   let skipped = 0;
   let totalPngBytes = 0;
   let totalWebpBytes = 0;
 
-  for (const file of pngs) {
-    const pngPath = path.join(BREEDS_DIR, file);
-    const webpPath = path.join(BREEDS_DIR, file.replace(/\.png$/i, ".webp"));
+  for (const file of pngFiles) {
+    const pngPath = path.join(breedsDir, file);
+    const base = file.replace(/\.png$/i, "");
+    const webpPath = path.join(breedsDir, `${base}.webp`);
 
     const pngStat = await stat(pngPath);
     totalPngBytes += pngStat.size;
@@ -42,8 +43,8 @@ async function main() {
         ? img.resize({ width: MAX_WIDTH, withoutEnlargement: true })
         : img;
       await pipeline.webp({ quality: QUALITY, effort: 5 }).toFile(webpPath);
-      const out = await stat(webpPath);
-      totalWebpBytes += out.size;
+      const webpStat = await stat(webpPath);
+      totalWebpBytes += webpStat.size;
       converted++;
       if (converted % 25 === 0) {
         console.log(`  ${converted} converted...`);
@@ -51,15 +52,14 @@ async function main() {
     }
   }
 
-  const pngMb = (totalPngBytes / 1024 / 1024).toFixed(2);
-  const webpMb = (totalWebpBytes / 1024 / 1024).toFixed(2);
-  const reduction = ((1 - totalWebpBytes / totalPngBytes) * 100).toFixed(1);
+  const mb = (n: number) => (n / 1024 / 1024).toFixed(2);
   console.log(`\nDone. Converted ${converted}, skipped ${skipped}.`);
-  console.log(`PNG total:  ${pngMb} MB`);
-  console.log(`WebP total: ${webpMb} MB (${reduction}% smaller)`);
+  console.log(`PNG total:  ${mb(totalPngBytes)} MB`);
+  console.log(`WebP total: ${mb(totalWebpBytes)} MB`);
+  console.log(`Savings:    ${mb(totalPngBytes - totalWebpBytes)} MB (${((1 - totalWebpBytes / totalPngBytes) * 100).toFixed(1)}%)`);
 }
 
-main().catch((err) => {
+convertAll().catch((err) => {
   console.error(err);
   process.exit(1);
 });

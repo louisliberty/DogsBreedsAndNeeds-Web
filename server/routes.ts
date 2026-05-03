@@ -17,12 +17,26 @@ export async function registerRoutes(
   const breedImagesDir = path.resolve(process.cwd(), "attached_assets", "breeds");
   app.get(/^\/breeds\/([a-z0-9-]+)\.(png|webp)$/, (req, res, next) => {
     const slug = req.params[0];
-    const ext = req.params[1];
+    const requestedExt = req.params[1];
+    const acceptsWebp = (req.headers.accept || "").includes("image/webp");
+    const ext = requestedExt === "png" && acceptsWebp ? "webp" : requestedExt;
     const filePath = path.join(breedImagesDir, `${slug}.${ext}`);
     res.setHeader("Cache-Control", "public, max-age=2592000, immutable");
-    if (ext === "webp") res.type("image/webp");
+    res.setHeader("Vary", "Accept");
+    if (ext === "webp") {
+      res.type("image/webp");
+    }
     res.sendFile(filePath, (err) => {
-      if (err) next();
+      if (err) {
+        if (ext !== requestedExt) {
+          const fallback = path.join(breedImagesDir, `${slug}.${requestedExt}`);
+          res.sendFile(fallback, (fallbackErr) => {
+            if (fallbackErr) next();
+          });
+        } else {
+          next();
+        }
+      }
     });
   });
 
