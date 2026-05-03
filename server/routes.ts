@@ -3,7 +3,7 @@ import { createServer, type Server } from "http";
 import path from "path";
 import { storage } from "./storage";
 import { seedDatabase } from "./seed";
-import { insertBreedSchema, insertProductSchema, updateBreedSchema, insertQuizResultSchema, insertArticleSchema, updateArticleSchema } from "@shared/schema";
+import { insertBreedSchema, insertProductSchema, updateBreedSchema, insertQuizResultSchema, insertArticleSchema, updateArticleSchema, type Breed, type BreedLite } from "@shared/schema";
 import { ZodError } from "zod";
 import { clearSeoCache } from "./seo";
 
@@ -112,7 +112,7 @@ export async function registerRoutes(
     try {
       const { group, search, limit, fields } = _req.query;
       const lite = fields === "light";
-      let breeds: any[];
+      let breeds: Breed[] | BreedLite[];
       if (search && typeof search === "string") {
         breeds = await storage.searchBreeds(search);
       } else if (group && typeof group === "string") {
@@ -123,7 +123,8 @@ export async function registerRoutes(
         breeds = await storage.getAllBreeds();
       }
       if (limit && typeof limit === "string") {
-        breeds = breeds.slice(0, parseInt(limit));
+        const n = parseInt(limit);
+        breeds = (breeds as Array<Breed | BreedLite>).slice(0, n) as Breed[] | BreedLite[];
       }
       res.setHeader("Cache-Control", "public, max-age=60");
       res.json(breeds);

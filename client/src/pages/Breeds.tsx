@@ -10,7 +10,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { Button } from "@/components/ui/button";
 import { useState, useMemo, useEffect } from "react";
 import { breedGroups, sizeCategories, energyLevels } from "@shared/schema";
-import type { Breed, RescueOrganization } from "@shared/schema";
+import type { BreedLite, RescueOrganization } from "@shared/schema";
 import { getBreedImage } from "@/lib/breedImages";
 import { useCanonical } from "@/hooks/useCanonical";
 import { usePageMeta } from "@/hooks/usePageMeta";
@@ -55,7 +55,7 @@ export default function Breeds() {
     navigate(`/compare?breeds=${compareSlugs.map(encodeURIComponent).join(",")}`);
   };
 
-  const { data: breeds, isLoading } = useQuery<Breed[]>({
+  const { data: breeds, isLoading } = useQuery<BreedLite[]>({
     queryKey: ["/api/breeds?fields=light"],
   });
 

@@ -7,7 +7,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Badge } from "@/components/ui/badge";
 import { useState } from "react";
-import type { Breed } from "@shared/schema";
+import type { BreedLite } from "@shared/schema";
 import { breedGroups } from "@shared/schema";
 
 const groupIcons: Record<typeof breedGroups[number], typeof Dog> = {
@@ -32,7 +32,7 @@ export default function Home() {
   const [searchQuery, setSearchQuery] = useState("");
   const [, navigate] = useLocation();
 
-  const { data: popularBreeds, isLoading } = useQuery<Breed[]>({
+  const { data: popularBreeds, isLoading } = useQuery<BreedLite[]>({
     queryKey: ["/api/breeds?limit=12&fields=light"],
   });
 
