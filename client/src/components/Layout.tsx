@@ -94,7 +94,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               {primaryLinks.map((link) => (
                 <Link key={link.href} href={link.href}>
                   <span
-                    className={`px-2 xl:px-2.5 py-2 rounded-md text-[15px] font-medium cursor-pointer transition-colors whitespace-nowrap ${
+                    className={`px-2 xl:px-2.5 py-2 rounded-md text-base font-medium cursor-pointer transition-colors whitespace-nowrap ${
                       location === link.href
                         ? "bg-primary text-primary-foreground"
                         : "hover:bg-accent"
@@ -108,7 +108,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <button
-                    className={`inline-flex items-center gap-1 px-2 xl:px-2.5 py-2 rounded-md text-[15px] font-medium cursor-pointer transition-colors whitespace-nowrap focus:outline-none ${
+                    className={`inline-flex items-center gap-1 px-2 xl:px-2.5 py-2 rounded-md text-base font-medium cursor-pointer transition-colors whitespace-nowrap focus:outline-none ${
                       isGetADogActive
                         ? "bg-primary text-primary-foreground"
                         : "hover:bg-accent"
@@ -137,7 +137,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               {trailingLinks.map((link) => (
                 <Link key={link.href} href={link.href}>
                   <span
-                    className={`px-2 xl:px-2.5 py-2 rounded-md text-[15px] font-medium cursor-pointer transition-colors whitespace-nowrap ${
+                    className={`px-2 xl:px-2.5 py-2 rounded-md text-base font-medium cursor-pointer transition-colors whitespace-nowrap ${
                       location === link.href
                         ? "bg-primary text-primary-foreground"
                         : "hover:bg-accent"
