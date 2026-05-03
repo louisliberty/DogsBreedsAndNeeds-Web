@@ -2,7 +2,8 @@ import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { seedDatabase } from "./seed";
-import { insertBreedSchema, insertProductSchema } from "@shared/schema";
+import { insertBreedSchema, insertProductSchema, updateBreedSchema } from "@shared/schema";
+import { ZodError } from "zod";
 
 export async function registerRoutes(
   httpServer: Server,
@@ -136,12 +137,19 @@ export async function registerRoutes(
         return res.status(401).json({ message: "Unauthorized" });
       }
       const id = parseInt(req.params.id);
-      const updated = await storage.updateBreed(id, req.body);
+      const parsed = updateBreedSchema.parse({
+        ...req.body,
+        lastUpdated: new Date(),
+      });
+      const updated = await storage.updateBreed(id, parsed);
       if (!updated) {
         return res.status(404).json({ message: "Breed not found" });
       }
       res.json(updated);
     } catch (error) {
+      if (error instanceof ZodError) {
+        return res.status(400).json({ message: "Validation failed", errors: error.errors });
+      }
       res.status(500).json({ message: "Failed to update breed" });
     }
   });
@@ -165,9 +173,13 @@ export async function registerRoutes(
       if (!authHeader || authHeader !== `Bearer ${process.env.ADMIN_PASSWORD}`) {
         return res.status(401).json({ message: "Unauthorized" });
       }
-      const breed = await storage.upsertBreed(req.body);
+      const parsed = insertBreedSchema.parse(req.body);
+      const breed = await storage.upsertBreed(parsed);
       res.json(breed);
     } catch (error) {
+      if (error instanceof ZodError) {
+        return res.status(400).json({ message: "Validation failed", errors: error.errors });
+      }
       res.status(500).json({ message: "Failed to create breed" });
     }
   });

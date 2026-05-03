@@ -1,5 +1,5 @@
 import { db } from "./db";
-import { breeds, products, type Breed, type InsertBreed, type Product, type InsertProduct } from "@shared/schema";
+import { breeds, products, meta, type Breed, type InsertBreed, type Product, type InsertProduct } from "@shared/schema";
 import { eq, ilike, and, sql } from "drizzle-orm";
 
 export interface IStorage {
@@ -20,6 +20,9 @@ export interface IStorage {
   upsertProduct(product: InsertProduct): Promise<Product>;
   updateProduct(id: number, data: Partial<InsertProduct>): Promise<Product | undefined>;
   deleteProduct(id: number): Promise<void>;
+
+  getMeta(key: string): Promise<string | undefined>;
+  setMeta(key: string, value: string): Promise<void>;
 }
 
 export class DatabaseStorage implements IStorage {
@@ -106,6 +109,16 @@ export class DatabaseStorage implements IStorage {
 
   async deleteProduct(id: number): Promise<void> {
     await db.delete(products).where(eq(products.id, id));
+  }
+
+  async getMeta(key: string): Promise<string | undefined> {
+    const [row] = await db.select().from(meta).where(eq(meta.key, key));
+    return row?.value;
+  }
+
+  async setMeta(key: string, value: string): Promise<void> {
+    await db.insert(meta).values({ key, value })
+      .onConflictDoUpdate({ target: meta.key, set: { value } });
   }
 }
 

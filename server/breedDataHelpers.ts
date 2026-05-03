@@ -9,6 +9,8 @@ export function b(d: {
   ex: string; gf: string; hi: string; dn: string; tn: string;
   hist: string; pd: string; lw: string; hcg: string;
   ff: string; fq: string; pop: number;
+  cq?: string; rb?: string | null;
+  ffacts?: string[]; cm?: string; iop?: string; ngf?: string;
 }): InsertBreed {
   const slug = d.n.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
   return {
@@ -22,5 +24,12 @@ export function b(d: {
     commonHealthIssues: d.hi, dietNotes: d.dn, trainingNotes: d.tn,
     history: d.hist, personalityDeepDive: d.pd, livingWith: d.lw,
     healthCareGuide: d.hcg, funFact: d.ff, famousQuote: d.fq, popularity: d.pop,
+    contentQuality: d.cq ?? "draft",
+    lastUpdated: new Date(),
+    reviewedBy: d.rb ?? null,
+    funFacts: d.ffacts ?? [d.ff],
+    commonMisconceptions: d.cm ?? "",
+    idealOwnerProfile: d.iop ?? "",
+    notGoodFor: d.ngf ?? "",
   };
 }

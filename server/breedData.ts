@@ -1,38 +1,12 @@
 import type { InsertBreed } from "@shared/schema";
-
-interface CompactBreed {
-  name: string;
-  group: string;
-  origin: string;
-  size: string;
-  weight: string;
-  height: string;
-  life: string;
-  coat: string;
-  colors: string;
-  shedding: string;
-  hypo: boolean;
-  temperament: string;
-  energy: string;
-  trainability: string;
-  barking: string;
-  kids: number;
-  dogs: number;
-  cats: number;
-  strangers: number;
-  apartment: boolean;
-  exercise: string;
-  grooming: string;
-  health: string;
-  funFact: string;
-  popularity: number;
-}
+import { expandFully, type CompactBreed } from "./contentGenerator";
 
 function slugify(name: string): string {
   return name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
 }
 
 function expand(b: CompactBreed): InsertBreed {
+  const rich = expandFully(b);
   return {
     name: b.name,
     slug: slugify(b.name),
@@ -58,17 +32,24 @@ function expand(b: CompactBreed): InsertBreed {
     strangerFriendliness: b.strangers,
     apartmentSuitable: b.apartment,
     exerciseNeeds: b.exercise,
-    groomingFrequency: b.grooming,
+    groomingFrequency: rich.groomingFrequency,
     commonHealthIssues: b.health,
-    dietNotes: `Feed a high-quality dog food appropriate for the ${b.name}'s age, size, and activity level. Monitor weight and adjust portions accordingly.`,
-    trainingNotes: `The ${b.name} responds best to positive reinforcement training. Start socialization and basic obedience early for best results.`,
-    history: `The ${b.name} has a rich history as a ${b.group.toLowerCase()} breed originating from ${b.origin}. Bred for specific tasks suited to their physical and temperamental traits, this breed has earned devoted followers worldwide.`,
-    personalityDeepDive: `The ${b.name} is known for being ${b.temperament.toLowerCase()}. They thrive with proper socialization and consistent, positive interactions with their family.`,
-    livingWith: `Living with a ${b.name} requires understanding their ${b.energy.toLowerCase()} energy level. They are ${b.apartment ? "adaptable to apartment living" : "better suited to homes with a yard"} and need ${b.exercise.toLowerCase()}.`,
-    healthCareGuide: `Regular veterinary checkups are essential. Common concerns include ${b.health.toLowerCase()}. Keep up with vaccinations, dental care, and parasite prevention.`,
+    dietNotes: rich.dietNotes,
+    trainingNotes: rich.trainingNotes,
+    history: rich.history,
+    personalityDeepDive: rich.personalityDeepDive,
+    livingWith: rich.livingWith,
+    healthCareGuide: rich.healthCareGuide,
     funFact: b.funFact,
     famousQuote: `"Every ${b.name} owner knows the joy of this breed's unique personality."`,
     popularity: b.popularity,
+    contentQuality: "draft",
+    lastUpdated: new Date(),
+    reviewedBy: null,
+    funFacts: rich.funFacts,
+    commonMisconceptions: rich.commonMisconceptions,
+    idealOwnerProfile: rich.idealOwnerProfile,
+    notGoodFor: rich.notGoodFor,
   };
 }
 

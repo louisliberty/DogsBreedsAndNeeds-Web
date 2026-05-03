@@ -1,4 +1,5 @@
-import { pgTable, text, varchar, integer, boolean, serial } from "drizzle-orm/pg-core";
+import { pgTable, text, varchar, integer, boolean, serial, timestamp } from "drizzle-orm/pg-core";
+import { sql } from "drizzle-orm";
 import { createInsertSchema } from "drizzle-zod";
 import { z } from "zod";
 
@@ -43,6 +44,19 @@ export const breeds = pgTable("breeds", {
   funFact: text("fun_fact").notNull(),
   famousQuote: text("famous_quote").notNull(),
   popularity: integer("popularity").notNull().default(100),
+
+  contentQuality: text("content_quality").notNull().default("templated"),
+  lastUpdated: timestamp("last_updated").notNull().defaultNow(),
+  reviewedBy: text("reviewed_by"),
+  funFacts: text("fun_facts").array().notNull().default(sql`ARRAY[]::text[]`),
+  commonMisconceptions: text("common_misconceptions").notNull().default(""),
+  idealOwnerProfile: text("ideal_owner_profile").notNull().default(""),
+  notGoodFor: text("not_good_for").notNull().default(""),
+});
+
+export const meta = pgTable("meta", {
+  key: text("key").primaryKey(),
+  value: text("value").notNull(),
 });
 
 export const products = pgTable("products", {
@@ -59,6 +73,7 @@ export const products = pgTable("products", {
 
 export const insertBreedSchema = createInsertSchema(breeds).omit({ id: true });
 export const insertProductSchema = createInsertSchema(products).omit({ id: true });
+export const updateBreedSchema = insertBreedSchema.partial();
 
 export type InsertBreed = z.infer<typeof insertBreedSchema>;
 export type Breed = typeof breeds.$inferSelect;
@@ -73,3 +88,45 @@ export const sheddingLevels = ["Low", "Moderate", "High", "Very High"] as const;
 export const coatTypes = ["Short", "Medium", "Long", "Wiry", "Curly", "Double", "Hairless"] as const;
 export const barkingTendencies = ["Rare", "Occasional", "Frequent", "Vocal"] as const;
 export const productCategories = ["Food", "Toys", "Training", "Grooming", "Health"] as const;
+export const contentQualityLevels = ["templated", "draft", "reviewed", "verified"] as const;
+
+export const CONTENT_FIELD_MINIMUMS: Record<string, number> = {
+  personalityDeepDive: 150,
+  history: 100,
+  livingWith: 80,
+  healthCareGuide: 80,
+  trainingNotes: 60,
+  dietNotes: 50,
+  groomingFrequency: 30,
+  idealOwnerProfile: 40,
+  notGoodFor: 30,
+  commonMisconceptions: 40,
+};
+
+export function wordCount(text: string | null | undefined): number {
+  if (!text) return 0;
+  return text.trim().split(/\s+/).filter(Boolean).length;
+}
+
+export function computeCompletenessScore(breed: Partial<Breed>): {
+  score: number;
+  missing: string[];
+} {
+  const fields = Object.keys(CONTENT_FIELD_MINIMUMS);
+  let passed = 0;
+  const missing: string[] = [];
+  for (const field of fields) {
+    const min = CONTENT_FIELD_MINIMUMS[field];
+    const value = (breed as any)[field] as string | undefined;
+    if (wordCount(value) >= min) {
+      passed++;
+    } else {
+      missing.push(field);
+    }
+  }
+  const facts = (breed as any).funFacts as string[] | undefined;
+  if (facts && facts.length >= 3) passed++;
+  else missing.push("funFacts");
+  const total = fields.length + 1;
+  return { score: Math.round((passed / total) * 100), missing };
+}

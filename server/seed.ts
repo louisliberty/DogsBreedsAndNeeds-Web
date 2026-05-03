@@ -1,16 +1,19 @@
 import { storage } from "./storage";
-import type { InsertBreed, InsertProduct } from "@shared/schema";
 import { breedSeedData } from "./breedData";
 import { productSeedData } from "./productData";
 
+const SEED_VERSION = "v3-content-foundation-paragraphs";
+
 export async function seedDatabase() {
   const count = await storage.getBreedCount();
-  if (count >= 200) {
-    console.log(`Database already seeded with ${count} breeds`);
+  const versionRow = await storage.getMeta("seedVersion");
+
+  if (count >= 200 && versionRow === SEED_VERSION) {
+    console.log(`Database already seeded with ${count} breeds (${SEED_VERSION})`);
     return;
   }
-  
-  console.log("Seeding breeds...");
+
+  console.log(`Seeding/refreshing breeds (${SEED_VERSION})...`);
   for (const breed of breedSeedData) {
     await storage.upsertBreed(breed);
   }
@@ -21,4 +24,6 @@ export async function seedDatabase() {
     await storage.upsertProduct(product);
   }
   console.log(`Seeded ${productSeedData.length} products`);
+
+  await storage.setMeta("seedVersion", SEED_VERSION);
 }
