@@ -113,7 +113,7 @@ export default function Home() {
               <p className="text-muted-foreground mt-1">Most popular AKC breeds</p>
             </div>
             <Link href="/breeds">
-              <Button variant="outline" data-testid="link-view-all-breeds">
+              <Button data-testid="link-view-all-breeds">
                 View All <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </Link>
