@@ -13,11 +13,23 @@ export function serveStatic(app: Express) {
 
   const indexHtml = fs.readFileSync(path.resolve(distPath, "index.html"), "utf-8");
 
-  app.use(express.static(distPath));
+  app.use(
+    express.static(distPath, {
+      maxAge: "30d",
+      setHeaders: (res, filePath) => {
+        if (filePath.endsWith(".html")) {
+          res.setHeader("Cache-Control", "no-cache");
+        } else if (/\.(png|jpe?g|webp|gif|svg|ico|woff2?)$/i.test(filePath)) {
+          res.setHeader("Cache-Control", "public, max-age=2592000, immutable");
+        }
+      },
+    }),
+  );
 
   app.use("/{*path}", async (req, res) => {
     const pageData = await getPageData(req.path);
     if (pageData) {
+      res.setHeader("Cache-Control", "public, max-age=600, s-maxage=3600");
       res.send(injectPageData(indexHtml, pageData));
     } else {
       res.send(indexHtml);

@@ -40,20 +40,20 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   const navLinks = [
     { href: "/", label: "Home" },
     { href: "/breeds", label: "Breeds" },
-    { href: "/compare", label: "Compare Breeds" },
-    { href: "/dog-breed-selector", label: "Breed Quiz" },
+    { href: "/compare", label: "Compare" },
+    { href: "/dog-breed-selector", label: "Quiz" },
+    { href: "/rescue", label: "Rescue" },
+    { href: "/blog", label: "Blog" },
     { href: "/ethical-sourcing", label: "Ethical Sourcing" },
     { href: "/find-a-breeder", label: "Find a Breeder" },
-    { href: "/blog", label: "Blog" },
     { href: "/products", label: "Products" },
-    { href: "/about", label: "About" },
-    { href: "/sitemap", label: "Sitemap" },
   ];
 
   const footerLegalLinks = [
     { href: "/about", label: "About" },
     { href: "/privacy", label: "Privacy Policy" },
     { href: "/terms", label: "Terms of Service" },
+    { href: "/sitemap", label: "Sitemap" },
   ];
 
   return (

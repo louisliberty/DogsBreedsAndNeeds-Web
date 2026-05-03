@@ -196,18 +196,27 @@ export default function EthicalSourcing() {
             </CardContent>
           </Card>
 
-          <Card className="border-primary/20 bg-primary/5">
-            <CardContent className="p-6 text-center">
-              <Shield className="h-8 w-8 mx-auto text-primary mb-3" />
-              <h3 className="font-semibold text-lg mb-2">Looking for a Breeder?</h3>
-              <p className="text-sm text-muted-foreground mb-4 max-w-lg mx-auto">
-                Use our Ethical Breeder Finder to search for AKC-registered breeders by breed, view breed-specific health certifications, and access our complete red flags checklist.
+          <Card className="border-primary/30 bg-primary/5">
+            <CardContent className="p-8 text-center">
+              <Heart className="h-10 w-10 mx-auto text-primary mb-4" />
+              <h3 className="font-bold text-2xl mb-3" data-testid="text-cta-title">
+                Ready to Find Your Dog Responsibly?
+              </h3>
+              <p className="text-sm text-muted-foreground mb-6 max-w-xl mx-auto">
+                Whether you choose a responsible breeder or a breed-specific rescue, both are ethical paths to bringing home a happy, healthy dog.
               </p>
-              <Link href="/find-a-breeder">
-                <Button data-testid="link-find-breeder">
-                  <Search className="mr-2 h-4 w-4" /> Find an Ethical Breeder
-                </Button>
-              </Link>
+              <div className="grid sm:grid-cols-2 gap-3 max-w-lg mx-auto">
+                <Link href="/find-a-breeder">
+                  <Button className="w-full" data-testid="link-find-breeder">
+                    <Search className="mr-2 h-4 w-4" /> Find a Responsible Breeder
+                  </Button>
+                </Link>
+                <Link href="/rescue">
+                  <Button className="w-full" variant="outline" data-testid="link-adopt-rescue">
+                    <Home className="mr-2 h-4 w-4" /> Adopt From a Rescue
+                  </Button>
+                </Link>
+              </div>
             </CardContent>
           </Card>
         </div>

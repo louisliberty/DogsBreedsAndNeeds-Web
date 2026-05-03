@@ -18,6 +18,29 @@ const staticPages: Record<string, Omit<PageData, "bodyHtml"> & { bodyHtml: strin
     description: "Explore all 205 AKC-recognized dog breeds with detailed profiles, temperament ratings, and care guides. Take our breed quiz to find your perfect match today!",
     canonical: `${DOMAIN}`,
     ogType: "website",
+    jsonLd: [
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        name: "Dog Breeds & Needs",
+        url: `${DOMAIN}/`,
+        potentialAction: {
+          "@type": "SearchAction",
+          target: {
+            "@type": "EntryPoint",
+            urlTemplate: `${DOMAIN}/breeds?search={search_term_string}`,
+          },
+          "query-input": "required name=search_term_string",
+        },
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        name: "Dog Breeds & Needs",
+        url: `${DOMAIN}/`,
+        logo: `${DOMAIN}/favicon.svg`,
+      },
+    ],
     bodyHtml: `
       <h1>Dog Breeds &amp; Needs: Your Complete Guide to All 205 AKC Dog Breeds</h1>
       <p>Welcome to DogBreedsAndNeeds.com — the most comprehensive guide to all 205 AKC-recognized dog breeds. Whether you're looking for a family companion, an active sporting dog, or a loyal working breed, our in-depth profiles cover temperament, size, exercise needs, grooming, health, and care for every breed recognized by the American Kennel Club.</p>
@@ -241,9 +264,12 @@ function buildBreedBodyHtml(breed: Breed): string {
     ? `<p><em>Reviewed by ${e(breed.reviewedBy)} · Last updated ${new Date(breed.lastUpdated).toISOString().split("T")[0]}</em></p>`
     : `<p><em>Last updated ${new Date(breed.lastUpdated).toISOString().split("T")[0]}</em></p>`;
 
+  const imgTag = `<img src="${DOMAIN}/breeds/${e(breed.slug)}.png" alt="${e(breed.name)} — ${e(breed.sizeCategory)} ${e(breed.breedGroup)} dog breed portrait" width="1280" height="896" loading="lazy" />`;
+
   return `
     ${breadcrumb}
     <h1>${e(breed.name)}: Breed Info, Temperament &amp; Care Guide</h1>
+    ${imgTag}
     ${reviewLine}
     <p><strong>Breed Group:</strong> ${e(breed.breedGroup)} | <strong>Size:</strong> ${e(breed.sizeCategory)} | <strong>Weight:</strong> ${e(breed.weightRange)} | <strong>Height:</strong> ${e(breed.heightRange)} | <strong>Lifespan:</strong> ${e(breed.lifespan)}</p>
     <p><strong>Origin:</strong> ${e(breed.originCountry)}${breed.yearRecognized ? ` | <strong>AKC Recognized:</strong> ${breed.yearRecognized}` : ""}</p>
@@ -327,6 +353,37 @@ function buildBreedJsonLd(breed: Breed): object[] {
 export async function getPageData(url: string): Promise<PageData | null> {
   const cleanUrl = url.split("?")[0].split("#")[0];
 
+  if (cleanUrl === "/breeds" || cleanUrl === "/breeds/") {
+    try {
+      const breeds = await storage.getAllBreeds();
+      const top = breeds.slice().sort((a, b) => a.popularity - b.popularity).slice(0, 50);
+      const itemList = {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        name: "AKC-Recognized Dog Breeds",
+        numberOfItems: breeds.length,
+        itemListElement: top.map((b, i) => ({
+          "@type": "ListItem",
+          position: i + 1,
+          url: `${DOMAIN}/breeds/${b.slug}`,
+          name: b.name,
+        })),
+      };
+      const breadcrumb = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: `${DOMAIN}/` },
+          { "@type": "ListItem", position: 2, name: "Breeds", item: `${DOMAIN}/breeds` },
+        ],
+      };
+      const base = staticPages["/breeds"];
+      return { ...base, jsonLd: [breadcrumb, itemList] };
+    } catch {
+      // fall through
+    }
+  }
+
   if (staticPages[cleanUrl]) {
     return staticPages[cleanUrl];
   }
@@ -349,6 +406,28 @@ export async function getPageData(url: string): Promise<PageData | null> {
       const list = items
         .map((b) => `<li><a href="${DOMAIN}/rescue/${e(b.slug)}">${e(b.name)} Rescues</a> — ${e(b.breedGroup)} Group</li>`)
         .join("");
+      const jsonLd: object[] = [
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: `${DOMAIN}/` },
+            { "@type": "ListItem", position: 2, name: "Rescue Directory", item: `${DOMAIN}/rescue` },
+          ],
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "ItemList",
+          name: "Breed-Specific Rescue Directories",
+          numberOfItems: items.length,
+          itemListElement: items.map((b, i) => ({
+            "@type": "ListItem",
+            position: i + 1,
+            url: `${DOMAIN}/rescue/${b.slug}`,
+            name: `${b.name} Rescues`,
+          })),
+        },
+      ];
       return {
         title: "Dog Breed Rescue Directory: Find Breed-Specific Rescues by Breed | Dog Breeds & Needs",
         description: `Browse rescue organizations for ${items.length}+ popular dog breeds. Adopt a Golden Retriever, Labrador, German Shepherd, Bulldog, Beagle, and more from breed-specific rescues nationwide.`,
@@ -361,6 +440,7 @@ export async function getPageData(url: string): Promise<PageData | null> {
           <h2>Why Adopt from a Breed-Specific Rescue?</h2>
           <p>Breed-specific rescues understand the temperament, exercise needs, health concerns, and grooming requirements of their breed. They evaluate dogs in foster homes, match adopters carefully, and remain a lifelong resource. Most adoptable dogs are spayed or neutered, vaccinated, microchipped, and screened for breed-specific health conditions before placement.</p>
         `,
+        jsonLd,
       };
     } catch {
       // fall through to static body
@@ -384,11 +464,36 @@ export async function getPageData(url: string): Promise<PageData | null> {
             return `<li>${link} (${e(r.region)})${r.description ? ` — ${e(r.description)}` : ""}${contact ? ` <em>${contact}</em>` : ""}</li>`;
           })
           .join("");
+        const rescueJsonLd: object[] = [
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: `${DOMAIN}/` },
+              { "@type": "ListItem", position: 2, name: "Rescue Directory", item: `${DOMAIN}/rescue` },
+              { "@type": "ListItem", position: 3, name: `${breed.name} Rescue`, item: `${DOMAIN}/rescue/${slug}` },
+            ],
+          },
+          ...rescues
+            .filter((r) => Boolean(r.url))
+            .map((r) => ({
+              "@context": "https://schema.org",
+              "@type": "LocalBusiness",
+              "@id": r.url,
+              name: r.name,
+              url: r.url,
+              areaServed: r.region,
+              ...(r.email ? { email: r.email } : {}),
+              ...(r.phone ? { telephone: r.phone } : {}),
+              ...(r.description ? { description: r.description } : {}),
+            })),
+        ];
         return {
           title: `${breed.name} Rescue Organizations: Adopt a ${breed.name} Near You | Dog Breeds & Needs`,
           description: `Directory of ${rescues.length} ${breed.name} rescue organizations across the United States. Find a ${breed.name} to adopt — contact info, regions served, and websites for each rescue.`,
           canonical: `${DOMAIN}/rescue/${slug}`,
           ogType: "article",
+          jsonLd: rescueJsonLd,
           bodyHtml: `
             <nav aria-label="Breadcrumb">
               <ol>

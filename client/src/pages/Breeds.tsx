@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { Link, useSearch, useLocation } from "wouter";
-import { Search, Dog, SlidersHorizontal, Scale, X as XIcon } from "lucide-react";
+import { Search, Dog, SlidersHorizontal, Scale, X as XIcon, Heart } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
 import { Checkbox } from "@/components/ui/checkbox";
@@ -10,7 +10,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { Button } from "@/components/ui/button";
 import { useState, useMemo, useEffect } from "react";
 import { breedGroups, sizeCategories, energyLevels } from "@shared/schema";
-import type { Breed } from "@shared/schema";
+import type { Breed, RescueOrganization } from "@shared/schema";
 import { getBreedImage } from "@/lib/breedImages";
 import { useCanonical } from "@/hooks/useCanonical";
 import { usePageMeta } from "@/hooks/usePageMeta";
@@ -30,6 +30,7 @@ export default function Breeds() {
   const [selectedGroup, setSelectedGroup] = useState(urlGroup);
   const [selectedSize, setSelectedSize] = useState("");
   const [selectedEnergy, setSelectedEnergy] = useState("");
+  const [hasRescueOnly, setHasRescueOnly] = useState(false);
   const [showFilters, setShowFilters] = useState(!!urlGroup);
 
   useEffect(() => {
@@ -58,6 +59,16 @@ export default function Breeds() {
     queryKey: ["/api/breeds"],
   });
 
+  const { data: rescues } = useQuery<RescueOrganization[]>({
+    queryKey: ["/api/rescues"],
+  });
+
+  const rescueSlugSet = useMemo(() => {
+    const s = new Set<string>();
+    if (rescues) for (const r of rescues) s.add(r.breedSlug);
+    return s;
+  }, [rescues]);
+
   const filtered = useMemo(() => {
     if (!breeds) return [];
     return breeds.filter((b) => {
@@ -65,9 +76,10 @@ export default function Breeds() {
       if (selectedGroup && b.breedGroup !== selectedGroup) return false;
       if (selectedSize && b.sizeCategory !== selectedSize) return false;
       if (selectedEnergy && b.energyLevel !== selectedEnergy) return false;
+      if (hasRescueOnly && !rescueSlugSet.has(b.slug)) return false;
       return true;
     });
-  }, [breeds, searchQuery, selectedGroup, selectedSize, selectedEnergy]);
+  }, [breeds, searchQuery, selectedGroup, selectedSize, selectedEnergy, hasRescueOnly, rescueSlugSet]);
 
   return (
     <div className="py-8 px-4 sm:px-6 lg:px-8">
@@ -166,6 +178,17 @@ export default function Breeds() {
                 </Badge>
               ))}
             </div>
+            <div className="w-full text-sm font-medium mb-1 mt-3">Adoption</div>
+            <div className="flex flex-wrap gap-1.5 w-full">
+              <Badge
+                variant={hasRescueOnly ? "default" : "outline"}
+                className="cursor-pointer flex items-center gap-1"
+                onClick={() => setHasRescueOnly((v) => !v)}
+                data-testid="filter-has-rescue"
+              >
+                <Heart className="h-3 w-3" /> Has Rescue Directory
+              </Badge>
+            </div>
           </div>
         )}
 
@@ -209,9 +232,12 @@ export default function Breeds() {
                         <div className="aspect-[4/3] overflow-hidden bg-muted">
                           <img
                             src={getBreedImage(breed.slug)}
-                            alt={`${breed.name} - ${breed.sizeCategory} ${breed.breedGroup} dog breed`}
+                            alt={`${breed.name} — ${breed.sizeCategory.toLowerCase()} ${breed.breedGroup.toLowerCase()} dog breed portrait`}
                             className="w-full h-full object-cover"
                             loading="lazy"
+                            decoding="async"
+                            width="640"
+                            height="480"
                             data-testid={`img-breed-${breed.slug}`}
                           />
                         </div>

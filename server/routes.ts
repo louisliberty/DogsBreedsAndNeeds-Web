@@ -1,5 +1,6 @@
-import type { Express } from "express";
+import express, { type Express } from "express";
 import { createServer, type Server } from "http";
+import path from "path";
 import { storage } from "./storage";
 import { seedDatabase } from "./seed";
 import { insertBreedSchema, insertProductSchema, updateBreedSchema, insertQuizResultSchema, insertArticleSchema, updateArticleSchema } from "@shared/schema";
@@ -12,6 +13,16 @@ export async function registerRoutes(
   await seedDatabase();
 
   const DOMAIN = "https://dogbreedsandneeds.com";
+
+  const breedImagesDir = path.resolve(process.cwd(), "attached_assets", "breeds");
+  app.get(/^\/breeds\/([a-z0-9-]+)\.png$/, (req, res, next) => {
+    const slug = req.params[0];
+    const filePath = path.join(breedImagesDir, `${slug}.png`);
+    res.setHeader("Cache-Control", "public, max-age=2592000, immutable");
+    res.sendFile(filePath, (err) => {
+      if (err) next();
+    });
+  });
 
   app.get("/robots.txt", (_req, res) => {
     res.type("text/plain").send(
@@ -40,12 +51,14 @@ export async function registerRoutes(
         { loc: "/sitemap", priority: "0.3", changefreq: "monthly" },
       ];
       const today = new Date().toISOString().split("T")[0];
-      let xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n`;
+      let xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemaps-image/1.1">\n`;
       for (const page of staticPages) {
         xml += `  <url>\n    <loc>${DOMAIN}${page.loc}</loc>\n    <lastmod>${today}</lastmod>\n    <changefreq>${page.changefreq}</changefreq>\n    <priority>${page.priority}</priority>\n  </url>\n`;
       }
       for (const breed of breeds) {
-        xml += `  <url>\n    <loc>${DOMAIN}/breeds/${breed.slug}</loc>\n    <lastmod>${today}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.6</priority>\n  </url>\n`;
+        const lastmod = new Date(breed.lastUpdated).toISOString().split("T")[0];
+        const imageEntry = `    <image:image>\n      <image:loc>${DOMAIN}/breeds/${breed.slug}.png</image:loc>\n      <image:title>${escapeXml(breed.name)} — ${escapeXml(breed.sizeCategory)} ${escapeXml(breed.breedGroup)} dog breed portrait</image:title>\n    </image:image>\n`;
+        xml += `  <url>\n    <loc>${DOMAIN}/breeds/${breed.slug}</loc>\n    <lastmod>${lastmod}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.6</priority>\n${imageEntry}  </url>\n`;
       }
       for (const slug of rescueSlugs) {
         xml += `  <url>\n    <loc>${DOMAIN}/rescue/${slug}</loc>\n    <lastmod>${today}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.6</priority>\n  </url>\n`;
@@ -55,11 +68,16 @@ export async function registerRoutes(
         xml += `  <url>\n    <loc>${DOMAIN}/blog/${article.slug}</loc>\n    <lastmod>${lastmod}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.7</priority>\n  </url>\n`;
       }
       xml += `</urlset>`;
+      res.setHeader("Cache-Control", "public, max-age=3600, s-maxage=3600");
       res.type("application/xml").send(xml);
     } catch (error) {
       res.status(500).send("Failed to generate sitemap");
     }
   });
+
+  function escapeXml(s: string): string {
+    return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&apos;");
+  }
 
   app.get("/api/breeds", async (_req, res) => {
     try {
