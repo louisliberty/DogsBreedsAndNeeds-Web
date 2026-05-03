@@ -19,8 +19,8 @@ export async function registerRoutes(
   const DOMAIN = "https://dogbreedsandneeds.com";
 
   app.use(
-    "/attached_assets",
-    express.static(path.resolve(process.cwd(), "attached_assets"), {
+    "/attached_assets/stock_images",
+    express.static(path.resolve(process.cwd(), "attached_assets", "stock_images"), {
       maxAge: "30d",
       setHeaders: (res) => {
         res.setHeader("Cache-Control", "public, max-age=2592000, immutable");

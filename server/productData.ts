@@ -1,6 +1,6 @@
 import type { InsertProduct } from "@shared/schema";
 
-export const PRODUCT_SEED_VERSION = "v3-eco-affiliate-phase1-images";
+export const PRODUCT_SEED_VERSION = "v4-eco-affiliate-phase1-product-urls";
 
 const CATEGORY_IMAGES: Record<string, string> = {
   "Food & Treats": "/attached_assets/stock_images/product_food.jpg",
@@ -12,6 +12,11 @@ const CATEGORY_IMAGES: Record<string, string> = {
   Cleanup: "/attached_assets/stock_images/product_cleanup.jpg",
 };
 
+const amazonSearch = (q: string) =>
+  `https://www.amazon.com/s?k=${encodeURIComponent(q)}&tag=PLACEHOLDER-AFFILIATE-ID`;
+const chewySearch = (q: string) =>
+  `https://www.chewy.com/s?query=${encodeURIComponent(q)}`;
+
 const rawProductSeedData: InsertProduct[] = [
   {
     name: "Open Farm Grass-Fed Beef Recipe",
@@ -19,7 +24,7 @@ const rawProductSeedData: InsertProduct[] = [
     category: "Food & Treats",
     description:
       "Pasture-raised beef recipe with humanely-sourced meat, non-GMO produce, and traceable ingredients you can look up by lot number.",
-    imageUrl: null, // overridden by CATEGORY_IMAGES below
+    imageUrl: null,
     suitableSizes: "Small,Medium,Large,Giant",
     whyRecommended:
       "One of the few dog food brands publishing full ingredient traceability. Every protein is third-party certified humane.",
@@ -30,8 +35,11 @@ const rawProductSeedData: InsertProduct[] = [
     bestFor: ["Adult dogs", "Sensitive stomachs", "Owners who care about sourcing"],
     tags: ["Non-GMO", "Single-protein", "Human-grade", "Recyclable packaging"],
     retailers: [
-      { retailer: "Open Farm", url: "https://openfarmpet.com/" },
-      { retailer: "Chewy", url: "https://www.chewy.com/" },
+      {
+        retailer: "Open Farm",
+        url: "https://openfarmpet.com/products/grass-fed-beef-dry-dog-food",
+      },
+      { retailer: "Chewy", url: chewySearch("Open Farm Grass-Fed Beef Dry Dog Food") },
     ],
     linkPlaceholder: null,
     sponsored: false,
@@ -42,7 +50,7 @@ const rawProductSeedData: InsertProduct[] = [
     category: "Food & Treats",
     description:
       "Human-grade dehydrated kibble made in a human food facility with cage-free chicken and whole grains. Just add water.",
-    imageUrl: null, // overridden by CATEGORY_IMAGES below
+    imageUrl: null,
     suitableSizes: "Small,Medium,Large",
     whyRecommended:
       "Human-grade certification means the entire facility meets standards for human food — a much higher bar than typical pet food.",
@@ -53,8 +61,11 @@ const rawProductSeedData: InsertProduct[] = [
     bestFor: ["Picky eaters", "Adult dogs", "Travel"],
     tags: ["Human-grade", "Non-GMO", "Recyclable packaging"],
     retailers: [
-      { retailer: "The Honest Kitchen", url: "https://www.thehonestkitchen.com/" },
-      { retailer: "Chewy", url: "https://www.chewy.com/" },
+      {
+        retailer: "The Honest Kitchen",
+        url: "https://www.thehonestkitchen.com/products/whole-grain-chicken-clusters",
+      },
+      { retailer: "Chewy", url: chewySearch("Honest Kitchen Whole Grain Chicken Clusters") },
     ],
     linkPlaceholder: null,
     sponsored: false,
@@ -65,7 +76,7 @@ const rawProductSeedData: InsertProduct[] = [
     category: "Food & Treats",
     description:
       "95% raw cage-free poultry, grass-fed beef, or wild-caught fish. Freeze-dried to lock in nutrients with no synthetic preservatives.",
-    imageUrl: null, // overridden by CATEGORY_IMAGES below
+    imageUrl: null,
     suitableSizes: "Small,Medium,Large",
     whyRecommended:
       "Closest you can get to a true raw diet without the food-safety risk or freezer space. Excellent for transitioning off ultra-processed kibble.",
@@ -74,7 +85,9 @@ const rawProductSeedData: InsertProduct[] = [
     priceTier: "$$$",
     bestFor: ["Adult dogs", "Topper for picky eaters"],
     tags: ["Single-protein", "Grain-free", "Limited ingredient"],
-    retailers: [{ retailer: "Chewy", url: "https://www.chewy.com/" }],
+    retailers: [
+      { retailer: "Chewy", url: chewySearch("Stella Chewys Freeze-Dried Dinner Patties") },
+    ],
     linkPlaceholder: null,
     sponsored: false,
   },
@@ -84,7 +97,7 @@ const rawProductSeedData: InsertProduct[] = [
     category: "Toys & Enrichment",
     description:
       "Recyclable, BPA-free, latex-free chew toy made in Montana from West Paw's proprietary Zogoflex material. Floats and is dishwasher-safe.",
-    imageUrl: null, // overridden by CATEGORY_IMAGES below
+    imageUrl: null,
     suitableSizes: "Small,Medium,Large,Giant",
     whyRecommended:
       "B-Corp certified, made in the USA, and one of the only toy manufacturers that takes back worn-out toys to recycle into new ones.",
@@ -95,8 +108,8 @@ const rawProductSeedData: InsertProduct[] = [
     bestFor: ["Power chewers", "Fetch", "Outdoor play"],
     tags: ["Made in USA", "B-Corp", "BPA-free", "Recyclable packaging", "Recycled materials"],
     retailers: [
-      { retailer: "West Paw", url: "https://www.westpaw.com/" },
-      { retailer: "Amazon", url: "https://www.amazon.com/" },
+      { retailer: "West Paw", url: "https://www.westpaw.com/products/hurley" },
+      { retailer: "Amazon", url: amazonSearch("West Paw Hurley dog chew toy") },
     ],
     linkPlaceholder: null,
     sponsored: false,
@@ -107,7 +120,7 @@ const rawProductSeedData: InsertProduct[] = [
     category: "Toys & Enrichment",
     description:
       "Flexible, treat-dispensing puzzle toy made from non-toxic, BPA-free Orbee-Tuff material. A portion of each sale funds service-dog programs.",
-    imageUrl: null, // overridden by CATEGORY_IMAGES below
+    imageUrl: null,
     suitableSizes: "Small,Medium,Large",
     whyRecommended:
       "Mental enrichment that's safer than hard plastic puzzles. The flexible material means it can be tossed, chewed, and slow-fed without breaking.",
@@ -116,7 +129,9 @@ const rawProductSeedData: InsertProduct[] = [
     priceTier: "$$",
     bestFor: ["Bored dogs", "Slow feeding", "Anxious dogs"],
     tags: ["BPA-free", "Phthalate-free"],
-    retailers: [{ retailer: "Amazon", url: "https://www.amazon.com/" }],
+    retailers: [
+      { retailer: "Amazon", url: amazonSearch("Planet Dog Orbee-Tuff Snoop treat dispenser") },
+    ],
     linkPlaceholder: null,
     sponsored: false,
   },
@@ -126,7 +141,7 @@ const rawProductSeedData: InsertProduct[] = [
     category: "Leashes & Harnesses",
     description:
       "Lightweight, padded step-in harness made from recycled, water-resistant materials with a no-pull front clip and reflective trim.",
-    imageUrl: null, // overridden by CATEGORY_IMAGES below
+    imageUrl: null,
     suitableSizes: "Small,Medium,Large",
     whyRecommended:
       "Designed by a vet-led team, with recycled materials throughout and packaging that's plastic-free. Comfortable enough for all-day wear.",
@@ -137,8 +152,8 @@ const rawProductSeedData: InsertProduct[] = [
     bestFor: ["Daily walks", "Pullers in training", "Sensitive skin"],
     tags: ["Recycled materials", "Plastic-free", "Phthalate-free"],
     retailers: [
-      { retailer: "Wild One", url: "https://www.wildone.com/" },
-      { retailer: "Amazon", url: "https://www.amazon.com/" },
+      { retailer: "Wild One", url: "https://www.wildone.com/products/harness" },
+      { retailer: "Amazon", url: amazonSearch("Wild One dog harness") },
     ],
     linkPlaceholder: null,
     sponsored: false,
@@ -149,7 +164,7 @@ const rawProductSeedData: InsertProduct[] = [
     category: "Leashes & Harnesses",
     description:
       "Hand-spliced cotton rope leash made in Brooklyn, NY. A portion of every sale funds shelter and rescue partners.",
-    imageUrl: null, // overridden by CATEGORY_IMAGES below
+    imageUrl: null,
     suitableSizes: "Small,Medium,Large,Giant",
     whyRecommended:
       "Built to last decades, not seasons. Plant-based materials and a clear charitable model that's been running for over a decade.",
@@ -158,7 +173,12 @@ const rawProductSeedData: InsertProduct[] = [
     priceTier: "$$$",
     bestFor: ["Strong pullers", "Long walks", "Owners who want one leash for life"],
     tags: ["Made in USA", "Plant-based", "Cruelty-free"],
-    retailers: [{ retailer: "Found My Animal", url: "https://www.foundmyanimal.com/" }],
+    retailers: [
+      {
+        retailer: "Found My Animal",
+        url: "https://www.foundmyanimal.com/collections/leashes/products/rope-leash",
+      },
+    ],
     linkPlaceholder: null,
     sponsored: false,
   },
@@ -168,7 +188,7 @@ const rawProductSeedData: InsertProduct[] = [
     category: "Cleanup",
     description:
       "USDA-certified plant-based, home-compostable poop bags. Leak-proof, lavender-scented or unscented options.",
-    imageUrl: null, // overridden by CATEGORY_IMAGES below
+    imageUrl: null,
     suitableSizes: "Small,Medium,Large,Giant",
     whyRecommended:
       "One of the only certified-compostable poop bag brands that actually breaks down at home (most 'biodegradable' bags don't).",
@@ -179,8 +199,8 @@ const rawProductSeedData: InsertProduct[] = [
     bestFor: ["Daily walks", "Eco-conscious owners"],
     tags: ["Plant-based", "Compostable", "Plastic-free", "B-Corp"],
     retailers: [
-      { retailer: "Amazon", url: "https://www.amazon.com/" },
-      { retailer: "Chewy", url: "https://www.chewy.com/" },
+      { retailer: "Amazon", url: amazonSearch("Earth Rated compostable poop bags") },
+      { retailer: "Chewy", url: chewySearch("Earth Rated compostable poop bags") },
     ],
     linkPlaceholder: null,
     sponsored: false,
@@ -191,7 +211,7 @@ const rawProductSeedData: InsertProduct[] = [
     category: "Food & Treats",
     description:
       "Limited-ingredient, soft training treats baked in Brooklyn with whole foods like peanut butter, banana, and oatmeal — no preservatives.",
-    imageUrl: null, // overridden by CATEGORY_IMAGES below
+    imageUrl: null,
     suitableSizes: "Small,Medium,Large",
     whyRecommended:
       "Most training treats are loaded with mystery ingredients. Bocce's keeps the ingredient list to under 10 recognizable items.",
@@ -200,7 +220,7 @@ const rawProductSeedData: InsertProduct[] = [
     priceTier: "$",
     bestFor: ["Puppies", "Training sessions", "Sensitive stomachs"],
     tags: ["Limited ingredient", "Made in USA", "Non-GMO"],
-    retailers: [{ retailer: "Amazon", url: "https://www.amazon.com/" }],
+    retailers: [{ retailer: "Amazon", url: amazonSearch("Bocces Bakery training treats") }],
     linkPlaceholder: null,
     sponsored: false,
   },
@@ -210,7 +230,7 @@ const rawProductSeedData: InsertProduct[] = [
     category: "Grooming & Coat Care",
     description:
       "USDA-certified organic dog shampoo with aloe and lemongrass. Free of synthetic detergents, parabens, and artificial fragrance.",
-    imageUrl: null, // overridden by CATEGORY_IMAGES below
+    imageUrl: null,
     suitableSizes: "Small,Medium,Large,Giant",
     whyRecommended:
       "Genuinely USDA-certified organic — most 'natural' dog shampoos still contain synthetic surfactants. Safe for sensitive skin.",
@@ -221,8 +241,11 @@ const rawProductSeedData: InsertProduct[] = [
     bestFor: ["Sensitive skin", "Allergy-prone breeds", "Puppies"],
     tags: ["Organic", "Cruelty-free", "Made in USA", "Plant-based"],
     retailers: [
-      { retailer: "Amazon", url: "https://www.amazon.com/" },
-      { retailer: "4-Legger", url: "https://4-legger.com/" },
+      { retailer: "Amazon", url: amazonSearch("4-Legger organic hypoallergenic dog shampoo") },
+      {
+        retailer: "4-Legger",
+        url: "https://4-legger.com/products/usda-certified-organic-hypoallergenic-shampoo",
+      },
     ],
     linkPlaceholder: null,
     sponsored: false,
@@ -233,7 +256,7 @@ const rawProductSeedData: InsertProduct[] = [
     category: "Beds & Crates",
     description:
       "10-year warranty orthopedic bed engineered for large and giant breeds. Made in the USA from CertiPUR-US-certified foam that won't flatten.",
-    imageUrl: null, // overridden by CATEGORY_IMAGES below
+    imageUrl: null,
     suitableSizes: "Large,Giant",
     whyRecommended:
       "Independently studied by the University of Pennsylvania School of Veterinary Medicine and shown to improve joint comfort in large dogs.",
@@ -243,7 +266,9 @@ const rawProductSeedData: InsertProduct[] = [
     priceTier: "$$$",
     bestFor: ["Senior dogs", "Large breeds", "Joint issues"],
     tags: ["Made in USA"],
-    retailers: [{ retailer: "Big Barker", url: "https://bigbarker.com/" }],
+    retailers: [
+      { retailer: "Big Barker", url: "https://bigbarker.com/products/the-big-barker-headrest-edition" },
+    ],
     linkPlaceholder: null,
     sponsored: false,
   },
@@ -253,7 +278,7 @@ const rawProductSeedData: InsertProduct[] = [
     category: "Health & Supplements",
     description:
       "10-in-1 daily multivitamin chew with glucosamine, omega-3s, probiotics, and antioxidants. NASC-certified facility.",
-    imageUrl: null, // overridden by CATEGORY_IMAGES below
+    imageUrl: null,
     suitableSizes: "Small,Medium,Large,Giant",
     whyRecommended:
       "Made in an NASC-quality-seal facility (the National Animal Supplement Council's gold standard) with no artificial preservatives.",
@@ -263,8 +288,11 @@ const rawProductSeedData: InsertProduct[] = [
     bestFor: ["Adult dogs", "Senior dogs", "Coat & joint support"],
     tags: ["Made in USA", "Vet-formulated"],
     retailers: [
-      { retailer: "Amazon", url: "https://www.amazon.com/" },
-      { retailer: "Pet Honesty", url: "https://pethonesty.com/" },
+      { retailer: "Amazon", url: amazonSearch("Pet Honesty 10-in-1 multivitamin soft chews") },
+      {
+        retailer: "Pet Honesty",
+        url: "https://pethonesty.com/products/10-for-1-multivitamin-chews",
+      },
     ],
     linkPlaceholder: null,
     sponsored: false,
