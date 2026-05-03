@@ -40,5 +40,5 @@ args = "npm run dev"
 waitForPort = 5000
 
 [postMerge]
-path = "scripts/post-merge.sh"
-timeoutMs = 120000
+path = ""
+timeoutMs = 0
