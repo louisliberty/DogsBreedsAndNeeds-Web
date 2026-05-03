@@ -60,8 +60,11 @@ export async function registerRoutes(
         const imageEntry = `    <image:image>\n      <image:loc>${DOMAIN}/breeds/${breed.slug}.png</image:loc>\n      <image:title>${escapeXml(breed.name)} — ${escapeXml(breed.sizeCategory)} ${escapeXml(breed.breedGroup)} dog breed portrait</image:title>\n    </image:image>\n`;
         xml += `  <url>\n    <loc>${DOMAIN}/breeds/${breed.slug}</loc>\n    <lastmod>${lastmod}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.6</priority>\n${imageEntry}  </url>\n`;
       }
+      const breedBySlug = new Map(breeds.map((b) => [b.slug, b]));
       for (const slug of rescueSlugs) {
-        xml += `  <url>\n    <loc>${DOMAIN}/rescue/${slug}</loc>\n    <lastmod>${today}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.6</priority>\n  </url>\n`;
+        const rb = breedBySlug.get(slug);
+        const lastmod = rb ? new Date(rb.lastUpdated).toISOString().split("T")[0] : today;
+        xml += `  <url>\n    <loc>${DOMAIN}/rescue/${slug}</loc>\n    <lastmod>${lastmod}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.6</priority>\n  </url>\n`;
       }
       for (const article of articles) {
         const lastmod = new Date(article.updatedAt).toISOString().split("T")[0];

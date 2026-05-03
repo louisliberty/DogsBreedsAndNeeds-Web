@@ -115,8 +115,12 @@ function BreedSelector({
                 {getBreedImage(selected.slug) ? (
                   <img
                     src={getBreedImage(selected.slug)}
-                    alt={selected.name}
+                    alt={`${selected.name} — ${selected.sizeCategory} ${selected.breedGroup} dog breed portrait`}
                     className="w-full h-full object-cover"
+                    loading="lazy"
+                    decoding="async"
+                    width={128}
+                    height={128}
                   />
                 ) : (
                   <div className="w-full h-full flex items-center justify-center text-muted-foreground text-xs">
@@ -567,8 +571,12 @@ function ComparisonTable({ breeds }: { breeds: Breed[] }) {
                       {getBreedImage(b.slug) && (
                         <img
                           src={getBreedImage(b.slug)}
-                          alt={b.name}
+                          alt={`${b.name} — ${b.sizeCategory} ${b.breedGroup} dog breed portrait`}
                           className="h-10 w-10 rounded object-cover"
+                          loading="lazy"
+                          decoding="async"
+                          width={40}
+                          height={40}
                         />
                       )}
                       <div>
