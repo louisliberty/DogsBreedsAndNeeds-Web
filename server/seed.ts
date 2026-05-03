@@ -65,8 +65,9 @@ export async function seedDatabase() {
 
 // One-time FAQ backfill: ensures every breed has at least 5 FAQs, including
 // admin-preserved (reviewed/verified) records that the main seed loop skips.
-// This NEVER overwrites a non-empty FAQ array — only fills empty/short ones
-// using the deterministic templated generator.
+// Replaces FAQ arrays that are missing or shorter than 5 entries with the
+// deterministic templated set (7 Qs). FAQ arrays already at >=5 entries are
+// left untouched, so manually authored FAQs are preserved.
 async function runFaqBackfill() {
   const done = await storage.getMeta("faqBackfillVersion");
   if (done === FAQ_BACKFILL_VERSION) return;
