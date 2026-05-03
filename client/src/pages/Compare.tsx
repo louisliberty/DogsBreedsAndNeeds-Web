@@ -444,15 +444,6 @@ export default function Compare() {
           </Card>
         )}
 
-        {selectedBreeds.length < MIN_BREEDS && !isLoading && (
-          <div className="text-center py-12 border-2 border-dashed border-border rounded-lg" data-testid="empty-state-compare">
-            <AlertCircle className="h-12 w-12 mx-auto text-muted-foreground mb-3" />
-            <h3 className="font-semibold mb-1">Pick at least {MIN_BREEDS} breeds to compare</h3>
-            <p className="text-sm text-muted-foreground">
-              Use the selectors above to choose breeds and see them side by side.
-            </p>
-          </div>
-        )}
       </div>
     </div>
   );
