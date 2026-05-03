@@ -72,7 +72,17 @@ export const products = pgTable("products", {
   sponsored: boolean("sponsored").notNull().default(false),
 });
 
-export const insertBreedSchema = createInsertSchema(breeds).omit({ id: true });
+export const sizeCategories = ["Toy", "Small", "Medium", "Large", "Giant"] as const;
+export const energyLevels = ["Low", "Moderate", "High", "Very High"] as const;
+export const sheddingLevels = ["Low", "Moderate", "High", "Very High"] as const;
+export const trainabilityLevels = ["Easy", "Moderate", "Challenging", "Independent"] as const;
+export const barkingTendencies = ["Rare", "Occasional", "Frequent", "Vocal"] as const;
+export const productCategories = ["Food", "Toys", "Training", "Grooming", "Health"] as const;
+export const contentQualityLevels = ["templated", "draft", "reviewed", "verified"] as const;
+
+export const insertBreedSchema = createInsertSchema(breeds, {
+  contentQuality: z.enum(contentQualityLevels),
+}).omit({ id: true });
 export const insertProductSchema = createInsertSchema(products).omit({ id: true });
 export const updateBreedSchema = insertBreedSchema.partial();
 
@@ -82,14 +92,7 @@ export type InsertProduct = z.infer<typeof insertProductSchema>;
 export type Product = typeof products.$inferSelect;
 
 export const breedGroups = ["Sporting", "Hound", "Working", "Terrier", "Toy", "Non-Sporting", "Herding"] as const;
-export const sizeCategories = ["Small", "Medium", "Large", "Giant"] as const;
-export const energyLevels = ["Low", "Moderate", "High", "Very High"] as const;
-export const trainabilityLevels = ["Easy", "Moderate", "Challenging", "Independent"] as const;
-export const sheddingLevels = ["Low", "Moderate", "High", "Very High"] as const;
 export const coatTypes = ["Short", "Medium", "Long", "Wiry", "Curly", "Double", "Hairless"] as const;
-export const barkingTendencies = ["Rare", "Occasional", "Frequent", "Vocal"] as const;
-export const productCategories = ["Food", "Toys", "Training", "Grooming", "Health"] as const;
-export const contentQualityLevels = ["templated", "draft", "reviewed", "verified"] as const;
 
 type LongFormField =
   | "personalityDeepDive"

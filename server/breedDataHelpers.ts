@@ -24,7 +24,7 @@ export function b(d: {
     commonHealthIssues: d.hi, dietNotes: d.dn, trainingNotes: d.tn,
     history: d.hist, personalityDeepDive: d.pd, livingWith: d.lw,
     healthCareGuide: d.hcg, funFact: d.ff, famousQuote: d.fq, popularity: d.pop,
-    contentQuality: d.cq ?? "draft",
+    contentQuality: (d.cq ?? "draft") as "templated" | "draft" | "reviewed" | "verified",
     lastUpdated: new Date(),
     reviewedBy: d.rb ?? null,
     funFacts: d.ffacts ?? [d.ff],
