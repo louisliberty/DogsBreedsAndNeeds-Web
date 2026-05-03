@@ -226,21 +226,21 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <main className="flex-1">{children}</main>
 
       <footer className="border-t bg-card mt-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div>
-              <div className="flex items-center gap-2 mb-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+          <div className="grid grid-cols-2 md:grid-cols-12 gap-8">
+            <div className="col-span-2 md:col-span-5">
+              <div className="flex items-center gap-2 mb-3">
                 <Dog className="h-6 w-6 text-primary shrink-0" />
                 <span className="text-lg font-bold text-primary leading-tight whitespace-nowrap">Dog Breeds &amp; Needs</span>
               </div>
-              <p className="text-sm text-muted-foreground">
+              <p className="text-sm text-muted-foreground max-w-md">
                 Your complete guide to all 205 AKC-recognized dog breeds. Find the perfect companion for your lifestyle.
               </p>
             </div>
-            <div>
-              <h3 className="font-semibold mb-3">Quick Links</h3>
+            <div className="md:col-span-3">
+              <h3 className="font-semibold mb-3 text-sm">Explore</h3>
               <ul className="space-y-2 text-sm text-muted-foreground">
-                {navLinks.map((link) => (
+                {[...primaryLinks, ...trailingLinks].map((link) => (
                   <li key={link.href}>
                     <Link href={link.href}>
                       <span className="hover:text-primary cursor-pointer" data-testid={`link-footer-${link.label.toLowerCase().replace(/\s+/g, "-")}`}>{link.label}</span>
@@ -249,8 +249,20 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 ))}
               </ul>
             </div>
-            <div>
-              <h3 className="font-semibold mb-3">Legal</h3>
+            <div className="md:col-span-2">
+              <h3 className="font-semibold mb-3 text-sm">Get a Dog</h3>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                {getADogLinks.map((link) => (
+                  <li key={link.href}>
+                    <Link href={link.href}>
+                      <span className="hover:text-primary cursor-pointer" data-testid={`link-footer-${link.label.toLowerCase().replace(/\s+/g, "-")}`}>{link.label}</span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="md:col-span-2">
+              <h3 className="font-semibold mb-3 text-sm">Legal</h3>
               <ul className="space-y-2 text-sm text-muted-foreground">
                 {footerLegalLinks.map((link) => (
                   <li key={link.href}>
@@ -262,7 +274,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               </ul>
             </div>
           </div>
-          <div className="mt-8 pt-8 border-t text-center text-sm text-muted-foreground">
+          <div className="mt-8 pt-6 border-t text-center text-sm text-muted-foreground">
             DogBreedsAndNeeds.com - All 205 AKC-Recognized Dog Breeds
           </div>
         </div>
