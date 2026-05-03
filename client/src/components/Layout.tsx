@@ -70,15 +70,15 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               </div>
             </Link>
 
-            <div className="hidden md:flex flex-1 justify-center max-w-md mx-2">
+            <div className="hidden lg:flex flex-1 justify-center max-w-xs xl:max-w-md mx-2">
               <SearchAutocomplete variant="desktop" />
             </div>
 
-            <nav className="hidden md:flex items-center gap-1" data-testid="nav-desktop">
+            <nav className="hidden lg:flex items-center gap-0.5 xl:gap-1" data-testid="nav-desktop">
               {navLinks.map((link) => (
                 <Link key={link.href} href={link.href}>
                   <span
-                    className={`px-2.5 py-2 rounded-md text-sm font-medium cursor-pointer transition-colors ${
+                    className={`px-2 xl:px-2.5 py-2 rounded-md text-sm font-medium cursor-pointer transition-colors whitespace-nowrap ${
                       location === link.href
                         ? "bg-primary text-primary-foreground"
                         : "hover:bg-accent"
@@ -92,7 +92,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <ThemeToggle />
             </nav>
 
-            <div className="md:hidden flex items-center gap-2">
+            <div className="lg:hidden flex items-center gap-2">
               <ThemeToggle />
               <Button
                 variant="ghost"
@@ -105,13 +105,13 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             </div>
           </div>
 
-          <div className="md:hidden pb-3" data-testid="header-search-mobile-row">
+          <div className="lg:hidden pb-3" data-testid="header-search-mobile-row">
             <SearchAutocomplete variant="mobile" />
           </div>
         </div>
 
         {mobileMenuOpen && (
-          <div className="md:hidden border-t" data-testid="nav-mobile">
+          <div className="lg:hidden border-t" data-testid="nav-mobile">
             <div className="px-4 py-3 space-y-1">
               {navLinks.map((link) => (
                 <Link key={link.href} href={link.href}>
