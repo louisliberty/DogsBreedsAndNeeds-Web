@@ -105,7 +105,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             </div>
           </div>
 
-          <div className="xl:hidden pb-3" data-testid="header-search-mobile-row">
+          <div className={`xl:hidden pb-3 ${location === "/" ? "hidden" : ""}`} data-testid="header-search-mobile-row">
             <SearchAutocomplete variant="mobile" />
           </div>
         </div>
