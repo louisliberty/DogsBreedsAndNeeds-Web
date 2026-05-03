@@ -292,8 +292,12 @@ export default function BreedDetail() {
                   <div className="aspect-[4/3] overflow-hidden rounded-xl bg-muted">
                     <img
                       src={getBreedImage(breed.slug)}
-                      alt={`${breed.name} dog breed portrait - ${breed.sizeCategory} ${breed.breedGroup} breed from ${breed.originCountry}`}
+                      alt={`${breed.name} — ${breed.sizeCategory} ${breed.breedGroup} dog breed portrait`}
                       className="w-full h-full object-cover"
+                      width={640}
+                      height={480}
+                      decoding="async"
+                      fetchPriority="high"
                       data-testid={`img-breed-${breed.slug}`}
                     />
                   </div>
@@ -529,7 +533,7 @@ export default function BreedDetail() {
                       <Card className="hover-elevate active-elevate-2 cursor-pointer h-full overflow-hidden" data-testid={`card-related-${rb.slug}`}>
                         {img && (
                           <div className="aspect-[4/3] overflow-hidden bg-muted">
-                            <img src={img} alt={`${rb.name} dog breed`} className="w-full h-full object-cover" loading="lazy" />
+                            <img src={img} alt={`${rb.name} — ${rb.sizeCategory} ${rb.breedGroup} dog breed portrait`} className="w-full h-full object-cover" loading="lazy" decoding="async" width={320} height={240} />
                           </div>
                         )}
                         <CardContent className="p-3">

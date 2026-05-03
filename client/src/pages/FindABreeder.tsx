@@ -157,8 +157,12 @@ export default function FindABreeder() {
                     {getBreedImage(breed.slug) && (
                       <img
                         src={getBreedImage(breed.slug)}
-                        alt={`${breed.name} dog breed`}
+                        alt={`${breed.name} — ${breed.sizeCategory} ${breed.breedGroup} dog breed portrait`}
                         className="w-12 h-12 rounded-lg object-cover"
+                        loading="lazy"
+                        decoding="async"
+                        width={48}
+                        height={48}
                       />
                     )}
                     <div>
@@ -176,8 +180,11 @@ export default function FindABreeder() {
                   {getBreedImage(selectedBreed.slug) && (
                     <img
                       src={getBreedImage(selectedBreed.slug)}
-                      alt={`${selectedBreed.name} dog breed for breeder search`}
+                      alt={`${selectedBreed.name} — ${selectedBreed.sizeCategory} ${selectedBreed.breedGroup} dog breed portrait`}
                       className="w-24 h-24 rounded-xl object-cover"
+                      decoding="async"
+                      width={96}
+                      height={96}
                     />
                   )}
                   <div className="flex-1">

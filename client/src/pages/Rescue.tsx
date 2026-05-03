@@ -92,8 +92,12 @@ function RescueHub() {
                       {getBreedImage(breed.slug) && (
                         <img
                           src={getBreedImage(breed.slug)}
-                          alt={`${breed.name} dog breed`}
+                          alt={`${breed.name} — ${breed.sizeCategory} ${breed.breedGroup} dog breed portrait`}
                           className="w-14 h-14 rounded-lg object-cover shrink-0"
+                          loading="lazy"
+                          decoding="async"
+                          width={56}
+                          height={56}
                         />
                       )}
                       <div className="flex-1 min-w-0">
@@ -222,8 +226,12 @@ function RescueBreed({ breedSlug }: { breedSlug: string }) {
           <div className="flex justify-center mb-8">
             <img
               src={breedImage}
-              alt={`${breed.name} dog breed portrait`}
+              alt={`${breed.name} — ${breed.sizeCategory} ${breed.breedGroup} dog breed portrait`}
               className="w-48 h-36 rounded-xl object-cover"
+              width={192}
+              height={144}
+              decoding="async"
+              fetchPriority="high"
             />
           </div>
         )}

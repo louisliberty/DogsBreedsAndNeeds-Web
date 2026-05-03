@@ -527,10 +527,35 @@ export async function getPageData(url: string): Promise<PageData | null> {
             `<li><a href="${DOMAIN}/blog/${e(a.slug)}">${e(a.title)}</a> — ${e(a.category)}<br><span>${e(a.metaDescription)}</span></li>`,
         )
         .join("");
+      const blogJsonLd: object[] = [
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: `${DOMAIN}/` },
+            { "@type": "ListItem", position: 2, name: "Blog", item: `${DOMAIN}/blog` },
+          ],
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "Blog",
+          name: "Dog Breeds & Needs Blog",
+          url: `${DOMAIN}/blog`,
+          blogPost: articles.slice(0, 25).map((a) => ({
+            "@type": "BlogPosting",
+            headline: a.title,
+            url: `${DOMAIN}/blog/${a.slug}`,
+            description: a.metaDescription,
+            datePublished: a.publishedAt ? new Date(a.publishedAt).toISOString() : undefined,
+            dateModified: a.updatedAt ? new Date(a.updatedAt).toISOString() : undefined,
+          })),
+        },
+      ];
       return {
         title: "Dog Care Blog: Breed Guides, Adoption & Lifestyle Articles | Dog Breeds & Needs",
         description: "In-depth dog care articles: best apartment dogs, hypoallergenic breeds, first-time owner guides, ethical adoption, and more — written for real dog owners.",
         canonical: `${DOMAIN}/blog`,
+        jsonLd: blogJsonLd,
         bodyHtml: `
           <h1>Dog Care Blog</h1>
           <p>Breed guides, lifestyle tips, adoption advice, and honest answers to the questions every dog owner asks. Browse our latest articles below.</p>
