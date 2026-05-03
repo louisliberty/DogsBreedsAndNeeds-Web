@@ -163,8 +163,6 @@ function BreedSelector({
 }
 
 function BreedSearchCommand({ breeds, onPick }: { breeds: Breed[]; onPick: (slug: string) => void }) {
-  // CommandList already virtualizes via cmdk's filter — render all breeds so
-  // every AKC breed is selectable.
   return (
     <Command>
       <CommandInput placeholder="Search breeds…" data-testid="input-compare-breed-search" />
@@ -218,7 +216,6 @@ export default function Compare() {
     return raw.split(",").map((s) => s.trim()).filter(Boolean).slice(0, MAX_BREEDS);
   }, []);
 
-  // Always render exactly MAX_BREEDS slots; null = empty slot
   const [slots, setSlots] = useState<(string | null)[]>(() => {
     const arr: (string | null)[] = [...initialSlugs];
     while (arr.length < MAX_BREEDS) arr.push(null);
@@ -235,7 +232,6 @@ export default function Compare() {
       .filter((b): b is Breed => Boolean(b));
   }, [allBreeds, slots]);
 
-  // Sync URL whenever selection changes
   useEffect(() => {
     const filled = slots.filter(Boolean) as string[];
     const params = new URLSearchParams();
@@ -246,6 +242,20 @@ export default function Compare() {
       setLocation(nextUrl, { replace: true });
     }
   }, [slots]);
+
+  useEffect(() => {
+    const params = new URLSearchParams(searchString);
+    const fromUrl = (params.get("breeds") || "")
+      .split(",")
+      .map((s) => s.trim())
+      .filter(Boolean)
+      .slice(0, MAX_BREEDS);
+    const filled = slots.filter(Boolean) as string[];
+    if (fromUrl.join(",") === filled.join(",")) return;
+    const arr: (string | null)[] = [...fromUrl];
+    while (arr.length < MAX_BREEDS) arr.push(null);
+    setSlots(arr);
+  }, [searchString]);
 
   usePageMeta(
     selectedBreeds.length >= 2
@@ -293,36 +303,28 @@ export default function Compare() {
     }
   };
 
-  // Winner-for-you summary
   const winnerCategories = useMemo(() => {
     if (selectedBreeds.length < 2) return [];
     const cats: { label: string; winner: Breed; reason: string }[] = [];
 
-    // Most family-friendly: highest goodWithKids
     const family = [...selectedBreeds].sort((a, b) => b.goodWithKids - a.goodWithKids)[0];
     cats.push({ label: "Best with kids", winner: family, reason: `${family.goodWithKids}/5 rating with children` });
 
-    // Easiest to train
     const train = [...selectedBreeds].sort((a, b) => trainScore(b.trainability) - trainScore(a.trainability))[0];
     cats.push({ label: "Easiest to train", winner: train, reason: train.trainability });
 
-    // Lowest exercise needs
     const lowEx = [...selectedBreeds].sort((a, b) => exerciseMinutes(a.energyLevel) - exerciseMinutes(b.energyLevel))[0];
     cats.push({ label: "Lowest exercise needs", winner: lowEx, reason: `~${exerciseMinutes(lowEx.energyLevel)} min/day` });
 
-    // Quietest
     const quiet = [...selectedBreeds].sort((a, b) => barkScore(a.barkingTendency) - barkScore(b.barkingTendency))[0];
     cats.push({ label: "Quietest", winner: quiet, reason: `${quiet.barkingTendency} barker` });
 
-    // Lowest grooming / shedding
     const lowShed = [...selectedBreeds].sort((a, b) => shedScore(a.sheddingLevel) - shedScore(b.sheddingLevel))[0];
     cats.push({ label: "Lowest shedding", winner: lowShed, reason: `${lowShed.sheddingLevel} shedding` });
 
-    // Apartment friendly
     const apt = selectedBreeds.find((b) => b.apartmentSuitable);
     if (apt) cats.push({ label: "Best for apartments", winner: apt, reason: "Apartment suitable" });
 
-    // Longest lifespan
     const longest = [...selectedBreeds].sort((a, b) => lifespanMid(b.lifespan) - lifespanMid(a.lifespan))[0];
     cats.push({ label: "Longest lifespan", winner: longest, reason: longest.lifespan });
 
@@ -445,7 +447,6 @@ type RowSpec = {
 };
 
 function ComparisonTable({ breeds }: { breeds: Breed[] }) {
-  // Tone helpers compare across the SELECTED set only.
   const lowestIs = (vals: number[]) => Math.min(...vals);
   const highestIs = (vals: number[]) => Math.max(...vals);
 
@@ -495,7 +496,7 @@ function ComparisonTable({ breeds }: { breeds: Breed[] }) {
       tone: (b, all) => toneByPosition(barkScore(b.barkingTendency), all.map((x) => barkScore(x.barkingTendency)), false),
     },
     {
-      label: "Friendliness",
+      label: "Good with strangers",
       render: (b) => `${b.strangerFriendliness}/5`,
       tone: (b, all) => toneByPosition(b.strangerFriendliness, all.map((x) => x.strangerFriendliness), true),
     },
