@@ -189,14 +189,27 @@ const staticPages: Record<string, Omit<PageData, "bodyHtml"> & { bodyHtml: strin
     `,
   },
   "/products": {
-    title: "Best Dog Products: Food, Toys, Grooming & Health Picks | Dog Breeds & Needs",
-    description: "Discover top-rated dog products handpicked for quality and value. Browse food, toys, grooming tools, training aids, and health essentials for every breed.",
+    title: "Eco-Friendly Dog Products: Vet-Reviewed Picks | Dog Breeds & Needs",
+    description: "Clean, vet-reviewed dog product picks for food, toys, leashes, grooming, beds, and supplements. Transparent ingredients, traceable materials, and an honest affiliate disclosure.",
     canonical: `${DOMAIN}/products`,
     bodyHtml: `
-      <h1>Best Dog Products: Food, Toys, Grooming &amp; Health Picks</h1>
-      <p>Discover top-rated dog products handpicked for quality, safety, and value. Our product recommendations cover every category a dog owner needs, from nutritious food and interactive toys to grooming tools, training aids, and health essentials, with options suitable for every breed size.</p>
-      <h2>Dog Product Categories</h2>
-      <p>Browse dog food recommendations for every size and life stage, interactive toys for mental stimulation, grooming tools matched to coat type, training aids for puppies and adult dogs, and health supplements and essentials for long-term wellbeing.</p>
+      <h1>Vet-reviewed picks. No mystery ingredients. No mystery materials.</h1>
+      <p>A small, opinionated list of dog products we'd actually buy &mdash; chosen for ingredient transparency, durable materials, and brands that stand behind what they sell. Some links are affiliate links; editorial picks come first and affiliate status never decides what's listed. <a href="${DOMAIN}/products/how-we-choose">Read how we choose products</a>.</p>
+      <h2>Eco-conscious product categories</h2>
+      <p>Browse curated picks across food &amp; treats, toys &amp; enrichment, leashes &amp; harnesses, grooming &amp; coat care, beds &amp; crates, health &amp; supplements, and cleanup. Featured brands include Open Farm, The Honest Kitchen, West Paw, Wild One, Earth Rated, Big Barker, and other vetted, transparency-first makers.</p>
+    `,
+  },
+  "/products/how-we-choose": {
+    title: "How We Choose Dog Products | Dog Breeds & Needs",
+    description: "Our criteria for recommending dog products: ingredient transparency, materials, manufacturing standards, and how we handle affiliate links and editorial independence.",
+    canonical: `${DOMAIN}/products/how-we-choose`,
+    bodyHtml: `
+      <h1>How We Choose Products</h1>
+      <p>We only recommend products we'd put in our own dogs' bowls, mouths, and beds. Picks must meet criteria for ingredient or material transparency, manufacturing oversight, third-party certifications where they exist, durability, and brand track record. Products with active recalls, mystery ingredients, undisclosed manufacturing, or unresolved safety complaints are excluded.</p>
+      <h2>Affiliate disclosure</h2>
+      <p>Some links on our product pages are affiliate links and we may earn a commission if you buy &mdash; at no extra cost to you. Editorial decisions are made first; affiliate links are added after. Affiliate status never determines what gets listed.</p>
+      <h2>Editor's Picks</h2>
+      <p>An Editor's Pick is a product our team has personally used or rigorously vetted and would recommend without hesitation. Picks are reviewed at least annually and removed if a brand changes formulas, materials, or manufacturing.</p>
     `,
   },
   "/about": {

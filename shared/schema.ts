@@ -201,7 +201,16 @@ export const insertBreedSchema = createInsertSchema(breeds, {
   contentQuality: z.enum(contentQualityLevels),
   faqs: z.array(breedFaqSchema),
 }).omit({ id: true });
-export const insertProductSchema = createInsertSchema(products).omit({ id: true });
+export const productRetailerSchema = z.object({
+  retailer: z.string().min(1),
+  url: z.string().url(),
+});
+export type ProductRetailer = z.infer<typeof productRetailerSchema>;
+export const insertProductSchema = createInsertSchema(products, {
+  retailers: z.array(productRetailerSchema),
+  bestFor: z.array(z.string()),
+  tags: z.array(z.string()),
+}).omit({ id: true });
 export const updateBreedSchema = insertBreedSchema.partial();
 
 export type InsertBreed = z.infer<typeof insertBreedSchema>;
