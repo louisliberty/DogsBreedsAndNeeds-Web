@@ -2,7 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { Link } from "wouter";
 import { Map } from "lucide-react";
 import { Skeleton } from "@/components/ui/skeleton";
-import type { Breed } from "@shared/schema";
+import type { Breed, Article } from "@shared/schema";
 import { breedGroups } from "@shared/schema";
 import { useCanonical } from "@/hooks/useCanonical";
 import { usePageMeta } from "@/hooks/usePageMeta";
@@ -16,6 +16,7 @@ export default function Sitemap() {
   const { data: breeds, isLoading } = useQuery<Breed[]>({
     queryKey: ["/api/breeds"],
   });
+  const { data: articles } = useQuery<Article[]>({ queryKey: ["/api/articles"] });
 
   const breedsByGroup = breedGroups.reduce((acc, group) => {
     acc[group] = breeds?.filter((b) => b.breedGroup === group) || [];
@@ -42,6 +43,7 @@ export default function Sitemap() {
                 { href: "/ethical-sourcing", label: "Ethical Sourcing Guide" },
                 { href: "/find-a-breeder", label: "Find an Ethical Breeder" },
                 { href: "/poodle-rescue", label: "Poodle Rescue Organizations" },
+                { href: "/blog", label: "Blog" },
                 { href: "/products", label: "Products" },
                 { href: "/sitemap", label: "Sitemap" },
               ].map((link) => (
@@ -89,6 +91,25 @@ export default function Sitemap() {
               </div>
             )}
           </section>
+
+          {articles && articles.length > 0 && (
+            <section>
+              <h2 className="text-xl font-bold mb-3 border-b pb-2" data-testid="text-sitemap-articles">
+                Blog Articles ({articles.length})
+              </h2>
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                {articles.map((a) => (
+                  <li key={a.id}>
+                    <Link href={`/blog/${a.slug}`}>
+                      <span className="text-sm text-primary hover:underline cursor-pointer" data-testid={`link-sitemap-article-${a.slug}`}>
+                        {a.title}
+                      </span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )}
         </div>
       </div>
     </div>

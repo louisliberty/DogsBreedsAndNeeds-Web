@@ -363,6 +363,100 @@ export async function getPageData(url: string): Promise<PageData | null> {
     }
   }
 
+  if (cleanUrl === "/blog" || cleanUrl === "/blog/") {
+    try {
+      const articles = await storage.getPublishedArticles();
+      const e = escapeHtml;
+      const list = articles
+        .map(
+          (a) =>
+            `<li><a href="${DOMAIN}/blog/${e(a.slug)}">${e(a.title)}</a> — ${e(a.category)}<br><span>${e(a.metaDescription)}</span></li>`,
+        )
+        .join("");
+      return {
+        title: "Dog Care Blog: Breed Guides, Adoption & Lifestyle Articles | Dog Breeds & Needs",
+        description: "In-depth dog care articles: best apartment dogs, hypoallergenic breeds, first-time owner guides, ethical adoption, and more — written for real dog owners.",
+        canonical: `${DOMAIN}/blog`,
+        bodyHtml: `
+          <h1>Dog Care Blog</h1>
+          <p>Breed guides, lifestyle tips, adoption advice, and honest answers to the questions every dog owner asks. Browse our latest articles below.</p>
+          <h2>Latest Articles</h2>
+          <ul>${list}</ul>
+        `,
+      };
+    } catch {
+      // fall through
+    }
+  }
+
+  const blogMatch = cleanUrl.match(/^\/blog\/([a-z0-9-]+)$/);
+  if (blogMatch) {
+    const slug = blogMatch[1];
+    try {
+      const article = await storage.getArticleBySlug(slug);
+      if (article && article.publishedAt) {
+        const e = escapeHtml;
+        const articleUrl = `${DOMAIN}/blog/${slug}`;
+        const published = new Date(article.publishedAt).toISOString();
+        const updated = new Date(article.updatedAt).toISOString();
+        const body = `
+          <nav aria-label="Breadcrumb">
+            <ol>
+              <li><a href="${DOMAIN}/">Home</a></li>
+              <li><a href="${DOMAIN}/blog">Blog</a></li>
+              <li>${e(article.title)}</li>
+            </ol>
+          </nav>
+          <h1>${e(article.title)}</h1>
+          <p><em>By ${e(article.author)} · ${published.split("T")[0]} · ${e(article.category)}</em></p>
+          <p>${e(article.metaDescription)}</p>
+          ${renderMarkdownToHtml(article.content)}
+          <p><a href="${DOMAIN}/blog">Back to all articles</a></p>
+        `;
+        const jsonLd: object[] = [
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: `${DOMAIN}/` },
+              { "@type": "ListItem", position: 2, name: "Blog", item: `${DOMAIN}/blog` },
+              { "@type": "ListItem", position: 3, name: article.title, item: articleUrl },
+            ],
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline: article.title,
+            description: article.metaDescription,
+            url: articleUrl,
+            mainEntityOfPage: articleUrl,
+            datePublished: published,
+            dateModified: updated,
+            author: { "@type": "Person", name: article.author },
+            publisher: {
+              "@type": "Organization",
+              name: "Dog Breeds & Needs",
+              url: DOMAIN,
+            },
+            articleSection: article.category,
+            keywords: article.tags.join(", "),
+            ...(article.featuredImage ? { image: article.featuredImage } : {}),
+          },
+        ];
+        return {
+          title: `${article.title} | Dog Breeds & Needs`,
+          description: article.metaDescription,
+          canonical: articleUrl,
+          ogType: "article",
+          bodyHtml: body,
+          jsonLd,
+        };
+      }
+    } catch {
+      // fall through
+    }
+  }
+
   const breedMatch = cleanUrl.match(/^\/breeds\/([a-z0-9-]+)$/);
   if (breedMatch) {
     const slug = breedMatch[1];
@@ -426,6 +520,42 @@ export function injectPageData(html: string, data: PageData): string {
   );
 
   return html;
+}
+
+function renderMarkdownToHtml(md: string): string {
+  if (!md) return "";
+  const lines = md.split("\n");
+  const out: string[] = [];
+  let inList = false;
+  let para: string[] = [];
+  const inline = (s: string): string => {
+    let v = escapeHtml(s);
+    v = v.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_m, label, url) => {
+      const safe = /^(https?:|mailto:|\/|#)/i.test(url.trim()) ? url.trim() : "#";
+      return `<a href="${escapeHtml(safe)}">${label}</a>`;
+    });
+    v = v.replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
+    v = v.replace(/\*([^*]+)\*/g, "<em>$1</em>");
+    return v;
+  };
+  const flushPara = () => {
+    if (para.length) { out.push(`<p>${inline(para.join(" "))}</p>`); para = []; }
+  };
+  const closeList = () => { if (inList) { out.push("</ul>"); inList = false; } };
+  for (const raw of lines) {
+    const line = raw.trimEnd();
+    if (!line.trim()) { flushPara(); closeList(); continue; }
+    if (line.startsWith("### ")) { flushPara(); closeList(); out.push(`<h3>${inline(line.slice(4))}</h3>`); }
+    else if (line.startsWith("## ")) { flushPara(); closeList(); out.push(`<h2>${inline(line.slice(3))}</h2>`); }
+    else if (/^- /.test(line)) {
+      flushPara();
+      if (!inList) { out.push("<ul>"); inList = true; }
+      out.push(`<li>${inline(line.slice(2))}</li>`);
+    } else { closeList(); para.push(line); }
+  }
+  flushPara();
+  closeList();
+  return out.join("\n");
 }
 
 function escapeHtml(str: string): string {

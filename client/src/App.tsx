@@ -14,6 +14,8 @@ import EthicalSourcing from "@/pages/EthicalSourcing";
 import FindABreeder from "@/pages/FindABreeder";
 import PoodleRescue from "@/pages/PoodleRescue";
 import Rescue from "@/pages/Rescue";
+import Blog from "@/pages/Blog";
+import BlogPost from "@/pages/BlogPost";
 import Products from "@/pages/Products";
 import Sitemap from "@/pages/Sitemap";
 import Admin from "@/pages/Admin";
@@ -77,6 +79,8 @@ function Router() {
         <Route path="/poodle-rescue" component={PoodleRescue} />
         <Route path="/rescue" component={Rescue} />
         <Route path="/rescue/:breedSlug" component={Rescue} />
+        <Route path="/blog" component={Blog} />
+        <Route path="/blog/:slug" component={BlogPost} />
         <Route path="/products" component={Products} />
         <Route path="/sitemap" component={Sitemap} />
         <Route path="/admin" component={Admin} />

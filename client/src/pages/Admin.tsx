@@ -15,6 +15,7 @@ import { computeCompletenessScore, CONTENT_FIELD_MINIMUMS, contentQualityLevels 
 import { useCanonical } from "@/hooks/useCanonical";
 import { usePageMeta } from "@/hooks/usePageMeta";
 import { MarkdownEditor } from "@/components/MarkdownEditor";
+import AdminArticles from "@/components/AdminArticles";
 
 function qualityVariant(q: string): { variant: "default" | "secondary" | "outline" | "destructive"; label: string; className: string } {
   switch (q) {
@@ -38,6 +39,7 @@ export default function Admin() {
   const [qualityFilter, setQualityFilter] = useState<string>("all");
   const [editingBreed, setEditingBreed] = useState<Breed | null>(null);
   const [editData, setEditData] = useState<Partial<Breed>>({});
+  const [section, setSection] = useState<"breeds" | "articles">("breeds");
   const { toast } = useToast();
 
   const { data: breeds, isLoading } = useQuery<Breed[]>({
@@ -179,6 +181,27 @@ export default function Admin() {
             <LogOut className="mr-2 h-4 w-4" /> Logout
           </Button>
         </div>
+
+        <div className="flex gap-2 mb-6 border-b">
+          <button
+            onClick={() => setSection("breeds")}
+            className={`px-4 py-2 text-sm font-medium border-b-2 -mb-px ${section === "breeds" ? "border-primary text-primary" : "border-transparent text-muted-foreground"}`}
+            data-testid="tab-section-breeds"
+          >
+            Breeds
+          </button>
+          <button
+            onClick={() => setSection("articles")}
+            className={`px-4 py-2 text-sm font-medium border-b-2 -mb-px ${section === "articles" ? "border-primary text-primary" : "border-transparent text-muted-foreground"}`}
+            data-testid="tab-section-articles"
+          >
+            Articles
+          </button>
+        </div>
+
+        {section === "articles" && <AdminArticles authToken={authToken} />}
+
+        {section === "breeds" && (<>
 
         {stats && (
           <div className="flex flex-wrap gap-2 mb-4" data-testid="stats-content-quality">
@@ -568,6 +591,7 @@ export default function Admin() {
             )}
           </div>
         )}
+        </>)}
       </div>
     </div>
   );

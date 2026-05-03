@@ -1,6 +1,6 @@
 import { db } from "./db";
-import { breeds, products, meta, quizResults, rescueOrganizations, type Breed, type InsertBreed, type Product, type InsertProduct, type QuizResult, type InsertQuizResult, type RescueOrganization, type InsertRescueOrganization } from "@shared/schema";
-import { eq, ilike, and, sql } from "drizzle-orm";
+import { breeds, products, meta, quizResults, rescueOrganizations, articles, type Breed, type InsertBreed, type Product, type InsertProduct, type QuizResult, type InsertQuizResult, type RescueOrganization, type InsertRescueOrganization, type Article, type InsertArticle } from "@shared/schema";
+import { eq, ilike, and, sql, isNotNull, desc } from "drizzle-orm";
 
 export interface IStorage {
   getAllBreeds(): Promise<Breed[]>;
@@ -31,6 +31,14 @@ export interface IStorage {
   getRescueBreedSlugs(): Promise<string[]>;
   insertRescue(data: InsertRescueOrganization): Promise<RescueOrganization>;
   deleteAllRescues(): Promise<void>;
+
+  getAllArticles(): Promise<Article[]>;
+  getPublishedArticles(): Promise<Article[]>;
+  getArticleBySlug(slug: string): Promise<Article | undefined>;
+  getArticleById(id: number): Promise<Article | undefined>;
+  upsertArticle(data: InsertArticle): Promise<Article>;
+  updateArticle(id: number, data: Partial<InsertArticle>): Promise<Article | undefined>;
+  deleteArticle(id: number): Promise<void>;
 }
 
 export class DatabaseStorage implements IStorage {
@@ -154,6 +162,53 @@ export class DatabaseStorage implements IStorage {
 
   async deleteAllRescues(): Promise<void> {
     await db.delete(rescueOrganizations);
+  }
+
+  async getAllArticles(): Promise<Article[]> {
+    return await db.select().from(articles).orderBy(desc(articles.updatedAt));
+  }
+
+  async getPublishedArticles(): Promise<Article[]> {
+    return await db
+      .select()
+      .from(articles)
+      .where(isNotNull(articles.publishedAt))
+      .orderBy(desc(articles.publishedAt));
+  }
+
+  async getArticleBySlug(slug: string): Promise<Article | undefined> {
+    const [row] = await db.select().from(articles).where(eq(articles.slug, slug));
+    return row;
+  }
+
+  async getArticleById(id: number): Promise<Article | undefined> {
+    const [row] = await db.select().from(articles).where(eq(articles.id, id));
+    return row;
+  }
+
+  async upsertArticle(data: InsertArticle): Promise<Article> {
+    const [row] = await db
+      .insert(articles)
+      .values({ ...data, updatedAt: new Date() })
+      .onConflictDoUpdate({
+        target: articles.slug,
+        set: { ...data, updatedAt: new Date() },
+      })
+      .returning();
+    return row;
+  }
+
+  async updateArticle(id: number, data: Partial<InsertArticle>): Promise<Article | undefined> {
+    const [row] = await db
+      .update(articles)
+      .set({ ...data, updatedAt: new Date() })
+      .where(eq(articles.id, id))
+      .returning();
+    return row;
+  }
+
+  async deleteArticle(id: number): Promise<void> {
+    await db.delete(articles).where(eq(articles.id, id));
   }
 }
 

@@ -2,7 +2,7 @@ import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { seedDatabase } from "./seed";
-import { insertBreedSchema, insertProductSchema, updateBreedSchema, insertQuizResultSchema } from "@shared/schema";
+import { insertBreedSchema, insertProductSchema, updateBreedSchema, insertQuizResultSchema, insertArticleSchema, updateArticleSchema } from "@shared/schema";
 import { ZodError } from "zod";
 
 export async function registerRoutes(
@@ -23,6 +23,7 @@ export async function registerRoutes(
     try {
       const breeds = await storage.getAllBreeds();
       const rescueSlugs = await storage.getRescueBreedSlugs();
+      const articles = await storage.getPublishedArticles();
       const staticPages = [
         { loc: "", priority: "1.0", changefreq: "weekly" },
         { loc: "/breeds", priority: "0.9", changefreq: "weekly" },
@@ -31,6 +32,7 @@ export async function registerRoutes(
         { loc: "/ethical-sourcing", priority: "0.7", changefreq: "monthly" },
         { loc: "/find-a-breeder", priority: "0.8", changefreq: "monthly" },
         { loc: "/rescue", priority: "0.8", changefreq: "monthly" },
+        { loc: "/blog", priority: "0.8", changefreq: "weekly" },
         { loc: "/products", priority: "0.7", changefreq: "weekly" },
         { loc: "/sitemap", priority: "0.3", changefreq: "monthly" },
       ];
@@ -44,6 +46,10 @@ export async function registerRoutes(
       }
       for (const slug of rescueSlugs) {
         xml += `  <url>\n    <loc>${DOMAIN}/rescue/${slug}</loc>\n    <lastmod>${today}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.6</priority>\n  </url>\n`;
+      }
+      for (const article of articles) {
+        const lastmod = new Date(article.updatedAt).toISOString().split("T")[0];
+        xml += `  <url>\n    <loc>${DOMAIN}/blog/${article.slug}</loc>\n    <lastmod>${lastmod}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.7</priority>\n  </url>\n`;
       }
       xml += `</urlset>`;
       res.type("application/xml").send(xml);
@@ -165,6 +171,86 @@ export async function registerRoutes(
       res.json(rescues);
     } catch (error) {
       res.status(500).json({ message: "Failed to fetch rescues for breed" });
+    }
+  });
+
+  app.get("/api/articles", async (req, res) => {
+    try {
+      const includeDrafts = req.query.all === "1";
+      if (includeDrafts) {
+        const authHeader = req.headers.authorization;
+        if (!authHeader || authHeader !== `Bearer ${process.env.ADMIN_PASSWORD}`) {
+          return res.status(401).json({ message: "Unauthorized" });
+        }
+        return res.json(await storage.getAllArticles());
+      }
+      res.json(await storage.getPublishedArticles());
+    } catch (error) {
+      res.status(500).json({ message: "Failed to fetch articles" });
+    }
+  });
+
+  app.get("/api/articles/:slug", async (req, res) => {
+    try {
+      const article = await storage.getArticleBySlug(req.params.slug);
+      if (!article) {
+        return res.status(404).json({ message: "Article not found" });
+      }
+      const isAdmin = req.headers.authorization === `Bearer ${process.env.ADMIN_PASSWORD}`;
+      if (!article.publishedAt && !isAdmin) {
+        return res.status(404).json({ message: "Article not found" });
+      }
+      res.json(article);
+    } catch (error) {
+      res.status(500).json({ message: "Failed to fetch article" });
+    }
+  });
+
+  app.post("/api/admin/articles", async (req, res) => {
+    try {
+      const authHeader = req.headers.authorization;
+      if (!authHeader || authHeader !== `Bearer ${process.env.ADMIN_PASSWORD}`) {
+        return res.status(401).json({ message: "Unauthorized" });
+      }
+      const parsed = insertArticleSchema.parse(req.body);
+      const article = await storage.upsertArticle(parsed);
+      res.json(article);
+    } catch (error) {
+      if (error instanceof ZodError) {
+        return res.status(400).json({ message: "Validation failed", errors: error.errors });
+      }
+      res.status(500).json({ message: "Failed to create article" });
+    }
+  });
+
+  app.put("/api/admin/articles/:id", async (req, res) => {
+    try {
+      const authHeader = req.headers.authorization;
+      if (!authHeader || authHeader !== `Bearer ${process.env.ADMIN_PASSWORD}`) {
+        return res.status(401).json({ message: "Unauthorized" });
+      }
+      const parsed = updateArticleSchema.parse(req.body);
+      const updated = await storage.updateArticle(parseInt(req.params.id), parsed);
+      if (!updated) return res.status(404).json({ message: "Article not found" });
+      res.json(updated);
+    } catch (error) {
+      if (error instanceof ZodError) {
+        return res.status(400).json({ message: "Validation failed", errors: error.errors });
+      }
+      res.status(500).json({ message: "Failed to update article" });
+    }
+  });
+
+  app.delete("/api/admin/articles/:id", async (req, res) => {
+    try {
+      const authHeader = req.headers.authorization;
+      if (!authHeader || authHeader !== `Bearer ${process.env.ADMIN_PASSWORD}`) {
+        return res.status(401).json({ message: "Unauthorized" });
+      }
+      await storage.deleteArticle(parseInt(req.params.id));
+      res.json({ success: true });
+    } catch (error) {
+      res.status(500).json({ message: "Failed to delete article" });
     }
   });
 

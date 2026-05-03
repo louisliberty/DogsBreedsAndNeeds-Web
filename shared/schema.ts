@@ -124,6 +124,43 @@ export const insertRescueOrganizationSchema = createInsertSchema(rescueOrganizat
 export type InsertRescueOrganization = z.infer<typeof insertRescueOrganizationSchema>;
 export type RescueOrganization = typeof rescueOrganizations.$inferSelect;
 
+export const articleCategories = [
+  "Lifestyle",
+  "Breed Guides",
+  "Adoption",
+  "Training",
+  "Health",
+] as const;
+export type ArticleCategory = typeof articleCategories[number];
+
+export const articles = pgTable("articles", {
+  id: serial("id").primaryKey(),
+  slug: text("slug").notNull().unique(),
+  title: text("title").notNull(),
+  metaDescription: text("meta_description").notNull(),
+  content: text("content").notNull(),
+  publishedAt: timestamp("published_at"),
+  updatedAt: timestamp("updated_at").notNull().defaultNow(),
+  author: text("author").notNull().default("Dog Breeds & Needs Editorial"),
+  category: text("category").notNull(),
+  tags: text("tags").array().notNull().default(sql`ARRAY[]::text[]`),
+  featuredImage: text("featured_image"),
+});
+
+export const insertArticleSchema = createInsertSchema(articles, {
+  slug: z.string().min(1).regex(/^[a-z0-9-]+$/, "Slug must be lowercase letters, numbers, and hyphens"),
+  title: z.string().min(1),
+  metaDescription: z.string().min(1).max(300),
+  content: z.string().min(1),
+  category: z.enum(articleCategories),
+  tags: z.array(z.string()),
+  publishedAt: z.coerce.date().nullish(),
+  featuredImage: z.string().url().nullish().or(z.literal("")),
+}).omit({ id: true, updatedAt: true });
+export const updateArticleSchema = insertArticleSchema.partial();
+export type InsertArticle = z.infer<typeof insertArticleSchema>;
+export type Article = typeof articles.$inferSelect;
+
 export const insertBreedSchema = createInsertSchema(breeds, {
   contentQuality: z.enum(contentQualityLevels),
   faqs: z.array(breedFaqSchema),

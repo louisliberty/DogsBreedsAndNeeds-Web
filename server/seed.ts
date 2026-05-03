@@ -4,6 +4,7 @@ import { productSeedData } from "./productData";
 import { computeCompletenessScore } from "@shared/schema";
 import { generateFaqs } from "./contentGenerator";
 import { rescueSeedData, RESCUE_SEED_VERSION } from "./rescueData";
+import { articleSeedData, ARTICLE_SEED_VERSION } from "./articleData";
 
 const SEED_VERSION = "v10-task2-faqs";
 const QUALITY_BACKFILL_VERSION = "v2-legacy-only";
@@ -21,6 +22,7 @@ export async function seedDatabase() {
     }
     await runFaqBackfill();
     await seedRescues();
+    await seedArticles();
     return;
   }
 
@@ -64,6 +66,18 @@ export async function seedDatabase() {
   await runQualityBackfill();
   await runFaqBackfill();
   await seedRescues();
+  await seedArticles();
+}
+
+async function seedArticles() {
+  const done = await storage.getMeta("articleSeedVersion");
+  if (done === ARTICLE_SEED_VERSION) return;
+  console.log(`Seeding articles (${ARTICLE_SEED_VERSION})...`);
+  for (const a of articleSeedData) {
+    await storage.upsertArticle(a);
+  }
+  console.log(`Seeded ${articleSeedData.length} articles`);
+  await storage.setMeta("articleSeedVersion", ARTICLE_SEED_VERSION);
 }
 
 async function seedRescues() {
