@@ -1,6 +1,6 @@
 import type { InsertArticle } from "@shared/schema";
 
-export const ARTICLE_SEED_VERSION = "v4-task6-blog-breed-links-fix";
+export const ARTICLE_SEED_VERSION = "v5-task6-rescue-links-fix";
 
 const PUB = (daysAgo: number) => {
   const d = new Date();
@@ -59,7 +59,7 @@ The truth about apartment dogs is encouraging: with the right match, dogs and ap
 The allergen people react to is not dog hair itself. It is a protein called Can f 1, found in dog saliva, urine, and dander (skin flakes). When a dog sheds, those proteins ride out into the environment on the hair. Breeds that shed less, produce less dander, or have hair (rather than fur) release fewer allergens into your home — but never zero. Reactions vary by individual dog, not just by breed.
 
 ## Best Hypoallergenic Breeds
-The [Poodle](/breeds/poodle) — Standard, Miniature, or Toy — is the gold standard. Poodles have a single curly coat that traps shed hair instead of dropping it. They are also intelligent, easy to train, and come in three sizes for different homes. If you would rather adopt, the [rescue directory](/rescue/poodle) lists Poodle rescue groups across the country.
+The [Poodle](/breeds/poodle) — Standard, Miniature, or Toy — is the gold standard. Poodles have a single curly coat that traps shed hair instead of dropping it. They are also intelligent, easy to train, and come in three sizes for different homes. If you would rather adopt, the [rescue directory](/rescue) lists Poodle rescue groups across the country.
 
 The [Bichon Frise](/breeds/bichon-frise) is another excellent pick — small, cheerful, and almost non-shedding when groomed regularly. The [Maltese](/breeds/maltese) shares similar low-shedding traits and is well-suited to apartment life. The [Portuguese Water Dog](/breeds/portuguese-water-dog) has a curly, low-shedding coat and is large enough to be an active family dog. The [Soft Coated Wheaten Terrier](/breeds/soft-coated-wheaten-terrier) and [Kerry Blue Terrier](/breeds/kerry-blue-terrier) both have hair-like coats that drop very little.
 
@@ -217,7 +217,7 @@ Your dog will be part of your kids' childhood — in photos, memories, milestone
 Four areas drive maintenance. Coat care is the biggest variable — some dogs need professional grooming every six weeks, others just need a weekly brush. Exercise need is second; a Border Collie's two-hour daily requirement is in a different universe from a Bulldog's. Trainability and biddability matter for first-time owners — easier-to-train dogs need less professional help. Independence is the underrated fourth: dogs that settle calmly when alone are massively easier for a working schedule.
 
 ## Smart Picks for Busy Professionals
-The [Greyhound](/breeds/greyhound) is one of the best-kept secrets in low-maintenance ownership. They have short coats requiring little grooming, sprint-and-sleep exercise needs, calm indoor demeanors, and a famous tolerance for long naps. Retired racing Greyhounds are widely available through [breed-specific rescues](/rescue/greyhound) and adapt remarkably quickly to home life.
+The [Greyhound](/breeds/greyhound) is one of the best-kept secrets in low-maintenance ownership. They have short coats requiring little grooming, sprint-and-sleep exercise needs, calm indoor demeanors, and a famous tolerance for long naps. Retired racing Greyhounds are widely available through [breed-specific rescues](/rescue) and adapt remarkably quickly to home life.
 
 The [Whippet](/breeds/whippet) is the smaller version of the same temperament — quiet, calm, low-grooming, and content with a couple of brisk walks. The [Italian Greyhound](/breeds/italian-greyhound) is even smaller and apartment-friendly.
 
@@ -261,7 +261,7 @@ Manageability is the most important trait. A dog you can physically handle in an
 ## Top Picks for Solo Living
 The [Cavalier King Charles Spaniel](/breeds/cavalier-king-charles-spaniel) is widely considered one of the best one-person dogs — affectionate, quiet, easy to handle, and content in apartments or houses. The [Italian Greyhound](/breeds/italian-greyhound) is similar in size with a sleek, low-grooming coat.
 
-For people who want a slightly bigger companion, the [Whippet](/breeds/whippet) and [Greyhound](/breeds/greyhound) are calm, quiet, and surprisingly low-maintenance. Retired racing Greyhounds available through [breed-specific rescues](/rescue/greyhound) are particularly well-suited to solo adopters.
+For people who want a slightly bigger companion, the [Whippet](/breeds/whippet) and [Greyhound](/breeds/greyhound) are calm, quiet, and surprisingly low-maintenance. Retired racing Greyhounds available through [breed-specific rescues](/rescue) are particularly well-suited to solo adopters.
 
 The [French Bulldog](/breeds/french-bulldog), [Boston Terrier](/breeds/boston-terrier), and [Pug](/breeds/pug) are popular solo choices in cities — small, friendly, and easy to walk. The [Bichon Frise](/breeds/bichon-frise), [Havanese](/breeds/havanese), and [Maltese](/breeds/maltese) offer low-shedding coats and apartment-friendly sizes.
 
@@ -308,7 +308,7 @@ The [Newfoundland](/breeds/newfoundland) is the original "nanny dog" — patient
 
 The [Great Dane](/breeds/great-dane) is the world's tallest breed but one of the most relaxed — content with a couple of moderate walks and many hours of napping. The [Saint Bernard](/breeds/saint-bernard) is heavy, slow-moving, and remarkably patient. The [Mastiff](/breeds/mastiff) and [Bullmastiff](/breeds/bullmastiff) are massive guardian breeds that are typically calm, quiet, and devoted indoors.
 
-The [Irish Wolfhound](/breeds/irish-wolfhound) is the tallest sighthound — gentle, patient, and dignified. The [Scottish Deerhound](/breeds/scottish-deerhound) shares those traits in a slightly smaller package. The [Greyhound](/breeds/greyhound), while not technically giant, is famously calm and a top adoption candidate from [breed-specific rescues](/rescue/greyhound).
+The [Irish Wolfhound](/breeds/irish-wolfhound) is the tallest sighthound — gentle, patient, and dignified. The [Scottish Deerhound](/breeds/scottish-deerhound) shares those traits in a slightly smaller package. The [Greyhound](/breeds/greyhound), while not technically giant, is famously calm and a top adoption candidate from [breed-specific rescues](/rescue).
 
 ## Working Breeds That Are Gentler Than Their Reputation
 Some large working breeds carry tough reputations but are surprisingly soft at home. The [Boxer](/breeds/boxer) is muscular and strong but extremely playful and patient with kids. The [Standard Poodle](/breeds/poodle) is large, intelligent, and gentle — often overlooked in the "big dog" category because of grooming reputation. Doodle crosses (Goldendoodles, Labradoodles), if responsibly bred from health-tested parents, can share those traits — but coat and temperament are less predictable than purebreds, so research the specific breeder carefully.
@@ -427,7 +427,7 @@ Some breeds are easy to find in rescue and harder to find from responsible breed
 ## The Hybrid Path
 Many people end up doing both over the course of dog-owning life. A first dog from a responsible breeder gives you a known starting point and a strong support system. Later dogs are often adopted as you become more confident in evaluating temperament and managing the unknowns of adult adoption.
 
-Some breeds also bridge the gap. Greyhound adoption is dominated by retired racing dogs through [breed-specific rescues](/rescue/greyhound) — known temperament, known history, often less than a year out of professional kennel life. Many [Poodle](/rescue/poodle) and [Golden Retriever](/rescue/golden-retriever) rescues focus on owner-surrendered dogs whose history is fully documented.
+Some breeds also bridge the gap. Greyhound adoption is dominated by retired racing dogs through breed-specific rescues — known temperament, known history, often less than a year out of professional kennel life. Many Poodle and Golden Retriever rescues focus on owner-surrendered dogs whose history is fully documented. Browse the [rescue directory](/rescue) to find groups in your area.
 
 ## Choosing What's Right for You
 Ask three questions:

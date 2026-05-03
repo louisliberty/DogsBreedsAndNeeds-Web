@@ -234,7 +234,14 @@ export async function registerRoutes(
         return res.status(401).json({ message: "Unauthorized" });
       }
       const parsed = updateArticleSchema.parse(req.body);
-      const updated = await storage.updateArticle(parseInt(req.params.id), parsed);
+      const id = parseInt(req.params.id);
+      if (parsed.slug) {
+        const existing = await storage.getArticleBySlug(parsed.slug);
+        if (existing && existing.id !== id) {
+          return res.status(409).json({ message: "An article with this slug already exists" });
+        }
+      }
+      const updated = await storage.updateArticle(id, parsed);
       if (!updated) return res.status(404).json({ message: "Article not found" });
       res.json(updated);
     } catch (error) {
