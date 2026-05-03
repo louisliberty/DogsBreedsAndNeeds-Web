@@ -1,15 +1,25 @@
 import type { InsertProduct } from "@shared/schema";
 
-export const PRODUCT_SEED_VERSION = "v2-eco-affiliate-phase1";
+export const PRODUCT_SEED_VERSION = "v3-eco-affiliate-phase1-images";
 
-export const productSeedData: InsertProduct[] = [
+const CATEGORY_IMAGES: Record<string, string> = {
+  "Food & Treats": "/attached_assets/stock_images/product_food.jpg",
+  "Toys & Enrichment": "/attached_assets/stock_images/product_toys.jpg",
+  "Leashes & Harnesses": "/attached_assets/stock_images/product_leashes.jpg",
+  "Grooming & Coat Care": "/attached_assets/stock_images/product_grooming.jpg",
+  "Beds & Crates": "/attached_assets/stock_images/product_beds.jpg",
+  "Health & Supplements": "/attached_assets/stock_images/product_health.jpg",
+  Cleanup: "/attached_assets/stock_images/product_cleanup.jpg",
+};
+
+const rawProductSeedData: InsertProduct[] = [
   {
     name: "Open Farm Grass-Fed Beef Recipe",
     brand: "Open Farm",
     category: "Food & Treats",
     description:
       "Pasture-raised beef recipe with humanely-sourced meat, non-GMO produce, and traceable ingredients you can look up by lot number.",
-    imageUrl: null,
+    imageUrl: null, // overridden by CATEGORY_IMAGES below
     suitableSizes: "Small,Medium,Large,Giant",
     whyRecommended:
       "One of the few dog food brands publishing full ingredient traceability. Every protein is third-party certified humane.",
@@ -32,7 +42,7 @@ export const productSeedData: InsertProduct[] = [
     category: "Food & Treats",
     description:
       "Human-grade dehydrated kibble made in a human food facility with cage-free chicken and whole grains. Just add water.",
-    imageUrl: null,
+    imageUrl: null, // overridden by CATEGORY_IMAGES below
     suitableSizes: "Small,Medium,Large",
     whyRecommended:
       "Human-grade certification means the entire facility meets standards for human food — a much higher bar than typical pet food.",
@@ -55,7 +65,7 @@ export const productSeedData: InsertProduct[] = [
     category: "Food & Treats",
     description:
       "95% raw cage-free poultry, grass-fed beef, or wild-caught fish. Freeze-dried to lock in nutrients with no synthetic preservatives.",
-    imageUrl: null,
+    imageUrl: null, // overridden by CATEGORY_IMAGES below
     suitableSizes: "Small,Medium,Large",
     whyRecommended:
       "Closest you can get to a true raw diet without the food-safety risk or freezer space. Excellent for transitioning off ultra-processed kibble.",
@@ -74,7 +84,7 @@ export const productSeedData: InsertProduct[] = [
     category: "Toys & Enrichment",
     description:
       "Recyclable, BPA-free, latex-free chew toy made in Montana from West Paw's proprietary Zogoflex material. Floats and is dishwasher-safe.",
-    imageUrl: null,
+    imageUrl: null, // overridden by CATEGORY_IMAGES below
     suitableSizes: "Small,Medium,Large,Giant",
     whyRecommended:
       "B-Corp certified, made in the USA, and one of the only toy manufacturers that takes back worn-out toys to recycle into new ones.",
@@ -97,7 +107,7 @@ export const productSeedData: InsertProduct[] = [
     category: "Toys & Enrichment",
     description:
       "Flexible, treat-dispensing puzzle toy made from non-toxic, BPA-free Orbee-Tuff material. A portion of each sale funds service-dog programs.",
-    imageUrl: null,
+    imageUrl: null, // overridden by CATEGORY_IMAGES below
     suitableSizes: "Small,Medium,Large",
     whyRecommended:
       "Mental enrichment that's safer than hard plastic puzzles. The flexible material means it can be tossed, chewed, and slow-fed without breaking.",
@@ -116,7 +126,7 @@ export const productSeedData: InsertProduct[] = [
     category: "Leashes & Harnesses",
     description:
       "Lightweight, padded step-in harness made from recycled, water-resistant materials with a no-pull front clip and reflective trim.",
-    imageUrl: null,
+    imageUrl: null, // overridden by CATEGORY_IMAGES below
     suitableSizes: "Small,Medium,Large",
     whyRecommended:
       "Designed by a vet-led team, with recycled materials throughout and packaging that's plastic-free. Comfortable enough for all-day wear.",
@@ -139,7 +149,7 @@ export const productSeedData: InsertProduct[] = [
     category: "Leashes & Harnesses",
     description:
       "Hand-spliced cotton rope leash made in Brooklyn, NY. A portion of every sale funds shelter and rescue partners.",
-    imageUrl: null,
+    imageUrl: null, // overridden by CATEGORY_IMAGES below
     suitableSizes: "Small,Medium,Large,Giant",
     whyRecommended:
       "Built to last decades, not seasons. Plant-based materials and a clear charitable model that's been running for over a decade.",
@@ -158,7 +168,7 @@ export const productSeedData: InsertProduct[] = [
     category: "Cleanup",
     description:
       "USDA-certified plant-based, home-compostable poop bags. Leak-proof, lavender-scented or unscented options.",
-    imageUrl: null,
+    imageUrl: null, // overridden by CATEGORY_IMAGES below
     suitableSizes: "Small,Medium,Large,Giant",
     whyRecommended:
       "One of the only certified-compostable poop bag brands that actually breaks down at home (most 'biodegradable' bags don't).",
@@ -181,7 +191,7 @@ export const productSeedData: InsertProduct[] = [
     category: "Food & Treats",
     description:
       "Limited-ingredient, soft training treats baked in Brooklyn with whole foods like peanut butter, banana, and oatmeal — no preservatives.",
-    imageUrl: null,
+    imageUrl: null, // overridden by CATEGORY_IMAGES below
     suitableSizes: "Small,Medium,Large",
     whyRecommended:
       "Most training treats are loaded with mystery ingredients. Bocce's keeps the ingredient list to under 10 recognizable items.",
@@ -200,7 +210,7 @@ export const productSeedData: InsertProduct[] = [
     category: "Grooming & Coat Care",
     description:
       "USDA-certified organic dog shampoo with aloe and lemongrass. Free of synthetic detergents, parabens, and artificial fragrance.",
-    imageUrl: null,
+    imageUrl: null, // overridden by CATEGORY_IMAGES below
     suitableSizes: "Small,Medium,Large,Giant",
     whyRecommended:
       "Genuinely USDA-certified organic — most 'natural' dog shampoos still contain synthetic surfactants. Safe for sensitive skin.",
@@ -223,7 +233,7 @@ export const productSeedData: InsertProduct[] = [
     category: "Beds & Crates",
     description:
       "10-year warranty orthopedic bed engineered for large and giant breeds. Made in the USA from CertiPUR-US-certified foam that won't flatten.",
-    imageUrl: null,
+    imageUrl: null, // overridden by CATEGORY_IMAGES below
     suitableSizes: "Large,Giant",
     whyRecommended:
       "Independently studied by the University of Pennsylvania School of Veterinary Medicine and shown to improve joint comfort in large dogs.",
@@ -243,7 +253,7 @@ export const productSeedData: InsertProduct[] = [
     category: "Health & Supplements",
     description:
       "10-in-1 daily multivitamin chew with glucosamine, omega-3s, probiotics, and antioxidants. NASC-certified facility.",
-    imageUrl: null,
+    imageUrl: null, // overridden by CATEGORY_IMAGES below
     suitableSizes: "Small,Medium,Large,Giant",
     whyRecommended:
       "Made in an NASC-quality-seal facility (the National Animal Supplement Council's gold standard) with no artificial preservatives.",
@@ -260,3 +270,8 @@ export const productSeedData: InsertProduct[] = [
     sponsored: false,
   },
 ];
+
+export const productSeedData: InsertProduct[] = rawProductSeedData.map((p) => ({
+  ...p,
+  imageUrl: p.imageUrl ?? CATEGORY_IMAGES[p.category] ?? null,
+}));

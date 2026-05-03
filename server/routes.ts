@@ -18,6 +18,16 @@ export async function registerRoutes(
 
   const DOMAIN = "https://dogbreedsandneeds.com";
 
+  app.use(
+    "/attached_assets",
+    express.static(path.resolve(process.cwd(), "attached_assets"), {
+      maxAge: "30d",
+      setHeaders: (res) => {
+        res.setHeader("Cache-Control", "public, max-age=2592000, immutable");
+      },
+    }),
+  );
+
   const breedImagesDir = path.resolve(process.cwd(), "attached_assets", "breeds");
   app.get(/^\/breeds\/([a-z0-9-]+)\.(png|webp)$/, (req, res, next) => {
     const slug = req.params[0];

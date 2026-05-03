@@ -53,7 +53,6 @@ function ProductCard({ product }: { product: Product }) {
     >
       <div className="aspect-[4/3] bg-muted/40 border-b flex items-center justify-center text-muted-foreground/40">
         {product.imageUrl ? (
-          // eslint-disable-next-line jsx-a11y/alt-text
           <img
             src={product.imageUrl}
             alt={product.name}
