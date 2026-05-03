@@ -8,7 +8,7 @@ function slugify(name: string): string {
 
 function expand(b: CompactBreed): InsertBreed {
   const rich = expandFully(b);
-  const draft: InsertBreed = {
+  const seeded: InsertBreed = {
     name: b.name,
     slug: slugify(b.name),
     breedGroup: b.group,
@@ -33,7 +33,8 @@ function expand(b: CompactBreed): InsertBreed {
     strangerFriendliness: b.strangers,
     apartmentSuitable: b.apartment,
     exerciseNeeds: b.exercise,
-    groomingFrequency: rich.groomingFrequency,
+    groomingFrequency: b.grooming,
+    groomingGuide: rich.groomingGuide,
     commonHealthIssues: b.health,
     dietNotes: rich.dietNotes,
     trainingNotes: rich.trainingNotes,
@@ -52,8 +53,10 @@ function expand(b: CompactBreed): InsertBreed {
     idealOwnerProfile: rich.idealOwnerProfile,
     notGoodFor: rich.notGoodFor,
   };
-  draft.contentQuality = inferContentQuality(draft);
-  return draft;
+  // Generated seed content is templated by definition. Editors promote to
+  // "draft" / "reviewed" / "verified" through the admin panel.
+  seeded.contentQuality = inferContentQuality(seeded);
+  return seeded;
 }
 
 const compactBreeds: CompactBreed[] = [

@@ -52,6 +52,7 @@ export const breeds = pgTable("breeds", {
   commonMisconceptions: text("common_misconceptions").notNull().default(""),
   idealOwnerProfile: text("ideal_owner_profile").notNull().default(""),
   notGoodFor: text("not_good_for").notNull().default(""),
+  groomingGuide: text("grooming_guide").notNull().default(""),
 });
 
 export const meta = pgTable("meta", {
@@ -97,7 +98,7 @@ type LongFormField =
   | "healthCareGuide"
   | "trainingNotes"
   | "dietNotes"
-  | "groomingFrequency"
+  | "groomingGuide"
   | "idealOwnerProfile"
   | "notGoodFor"
   | "commonMisconceptions";
@@ -109,7 +110,7 @@ export const CONTENT_FIELD_MINIMUMS: Record<LongFormField, number> = {
   healthCareGuide: 80,
   trainingNotes: 60,
   dietNotes: 50,
-  groomingFrequency: 30,
+  groomingGuide: 30,
   idealOwnerProfile: 40,
   notGoodFor: 30,
   commonMisconceptions: 40,
@@ -143,11 +144,13 @@ export function computeCompletenessScore(breed: Partial<Breed>): {
   return { score: Math.round((passed / total) * 100), missing };
 }
 
+// Heuristic for backfilling content quality on EXISTING records that have no
+// explicit quality marker yet. Note: freshly-generated/templated seed data should
+// always be tagged "templated" — only human-edited or human-reviewed content should
+// be promoted above that tier.
 export function inferContentQuality(breed: Partial<Breed>): "templated" | "draft" | "reviewed" | "verified" {
-  if (breed.reviewedBy && breed.reviewedBy.trim().length > 0) {
-    return breed.contentQuality === "verified" ? "verified" : "reviewed";
-  }
-  const { score } = computeCompletenessScore(breed);
-  if (score >= 100) return "draft";
+  if (breed.contentQuality === "verified") return "verified";
+  if (breed.reviewedBy && breed.reviewedBy.trim().length > 0) return "reviewed";
+  if (breed.contentQuality === "draft") return "draft";
   return "templated";
 }

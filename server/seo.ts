@@ -136,6 +136,7 @@ function buildBreedBodyHtml(breed: Breed): string {
     <h2>Exercise &amp; Grooming</h2>
     <p><strong>Exercise needs:</strong> ${e(breed.exerciseNeeds)}</p>
     <p><strong>Grooming:</strong> ${e(breed.groomingFrequency)}</p>
+    ${breed.groomingGuide ? `<p>${e(breed.groomingGuide)}</p>` : ""}
     <h2>${e(breed.name)} Health</h2>
     <p>${e(breed.healthCareGuide)}</p>
     <p><strong>Common health issues:</strong> ${e(breed.commonHealthIssues)}</p>

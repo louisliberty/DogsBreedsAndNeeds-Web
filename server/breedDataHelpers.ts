@@ -10,7 +10,7 @@ export function b(d: {
   hist: string; pd: string; lw: string; hcg: string;
   ff: string; fq: string; pop: number;
   cq?: string; rb?: string | null;
-  ffacts?: string[]; cm?: string; iop?: string; ngf?: string;
+  ffacts?: string[]; cm?: string; iop?: string; ngf?: string; gg?: string;
 }): InsertBreed {
   const slug = d.n.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
   return {
@@ -31,5 +31,6 @@ export function b(d: {
     commonMisconceptions: d.cm ?? "",
     idealOwnerProfile: d.iop ?? "",
     notGoodFor: d.ngf ?? "",
+    groomingGuide: d.gg ?? "",
   };
 }

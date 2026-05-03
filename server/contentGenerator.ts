@@ -252,7 +252,7 @@ export function generateDietNotes(b: CompactBreed): string {
   return [base, energy, sizing].join(" ");
 }
 
-export function generateGrooming(b: CompactBreed): string {
+export function generateGroomingGuide(b: CompactBreed): string {
   const base = b.grooming;
   const detailed = groomingContext(b.coat, b.grooming);
   const shedding = sheddingContext(b.shedding, b.coat);
@@ -346,7 +346,7 @@ export function expandFully(b: CompactBreed) {
     healthCareGuide: generateHealthCare(b),
     trainingNotes: generateTrainingNotes(b),
     dietNotes: generateDietNotes(b),
-    groomingFrequency: generateGrooming(b),
+    groomingGuide: generateGroomingGuide(b),
     funFacts: generateFunFacts(b),
     commonMisconceptions: generateMisconceptions(b),
     idealOwnerProfile: generateIdealOwner(b),

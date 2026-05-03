@@ -371,13 +371,23 @@ export default function Admin() {
               </div>
 
               <div>
-                <label className="text-sm font-medium">Grooming Guide</label>
-                <MarkdownEditor
+                <label className="text-sm font-medium">Grooming Frequency (short factual)</label>
+                <Input
                   value={String(get("groomingFrequency") ?? "")}
-                  onChange={(v) => set({ groomingFrequency: v })}
-                  minWords={CONTENT_FIELD_MINIMUMS.groomingFrequency}
+                  onChange={(e) => set({ groomingFrequency: e.target.value })}
+                  placeholder="e.g. Weekly brushing, more during shedding season"
+                  data-testid="input-edit-grooming-frequency"
+                />
+              </div>
+
+              <div>
+                <label className="text-sm font-medium">Grooming Guide (long-form)</label>
+                <MarkdownEditor
+                  value={String(get("groomingGuide") ?? "")}
+                  onChange={(v) => set({ groomingGuide: v })}
+                  minWords={CONTENT_FIELD_MINIMUMS.groomingGuide}
                   rows={5}
-                  testId="input-edit-grooming"
+                  testId="input-edit-grooming-guide"
                 />
               </div>
 

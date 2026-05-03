@@ -2,7 +2,7 @@ import { storage } from "./storage";
 import { breedSeedData } from "./breedData";
 import { productSeedData } from "./productData";
 
-const SEED_VERSION = "v5-content-foundation-ideal-owner-fix";
+const SEED_VERSION = "v6-content-foundation-grooming-guide-split";
 
 export async function seedDatabase() {
   const count = await storage.getBreedCount();
