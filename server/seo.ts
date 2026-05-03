@@ -9,6 +9,7 @@ interface PageData {
   canonical: string;
   ogType?: string;
   bodyHtml: string;
+  jsonLd?: object[];
 }
 
 const staticPages: Record<string, Omit<PageData, "bodyHtml"> & { bodyHtml: string }> = {
@@ -119,14 +120,59 @@ const staticPages: Record<string, Omit<PageData, "bodyHtml"> & { bodyHtml: strin
 
 function buildBreedBodyHtml(breed: Breed): string {
   const e = escapeHtml;
+  const breedUrl = `${DOMAIN}/breeds/${breed.slug}`;
+
+  const breadcrumb = `
+    <nav aria-label="Breadcrumb">
+      <ol>
+        <li><a href="${DOMAIN}/">Home</a></li>
+        <li><a href="${DOMAIN}/breeds">Breeds</a></li>
+        <li><a href="${DOMAIN}/breeds?group=${encodeURIComponent(breed.breedGroup)}">${e(breed.breedGroup)} Group</a></li>
+        <li>${e(breed.name)}</li>
+      </ol>
+    </nav>
+  `;
+
+  const summary = (breed.idealOwnerProfile || breed.notGoodFor)
+    ? `
+    <h2>Is the ${e(breed.name)} Right for You?</h2>
+    ${breed.idealOwnerProfile ? `<h3>Yes, if you are…</h3><p>${e(breed.idealOwnerProfile)}</p>` : ""}
+    ${breed.notGoodFor ? `<h3>No, if you are…</h3><p>${e(breed.notGoodFor)}</p>` : ""}
+    `
+    : "";
+
+  const faqHtml = (breed.faqs && breed.faqs.length > 0)
+    ? `
+    <h2>${e(breed.name)} Frequently Asked Questions</h2>
+    <dl>
+      ${breed.faqs.map((f) => `<dt>${e(f.question)}</dt><dd>${e(f.answer)}</dd>`).join("\n      ")}
+    </dl>
+    `
+    : "";
+
+  const facts = (breed.funFacts && breed.funFacts.length > 0)
+    ? `<h2>Fun Facts about the ${e(breed.name)}</h2><ul>${breed.funFacts.map((f) => `<li>${e(f)}</li>`).join("")}</ul>`
+    : "";
+
+  const misc = breed.commonMisconceptions
+    ? `<h2>Common Misconceptions about the ${e(breed.name)}</h2><p>${e(breed.commonMisconceptions)}</p>`
+    : "";
+
+  const reviewLine = breed.reviewedBy
+    ? `<p><em>Reviewed by ${e(breed.reviewedBy)} · Last updated ${new Date(breed.lastUpdated).toISOString().split("T")[0]}</em></p>`
+    : `<p><em>Last updated ${new Date(breed.lastUpdated).toISOString().split("T")[0]}</em></p>`;
+
   return `
+    ${breadcrumb}
     <h1>${e(breed.name)}: Breed Info, Temperament &amp; Care Guide</h1>
+    ${reviewLine}
     <p><strong>Breed Group:</strong> ${e(breed.breedGroup)} | <strong>Size:</strong> ${e(breed.sizeCategory)} | <strong>Weight:</strong> ${e(breed.weightRange)} | <strong>Height:</strong> ${e(breed.heightRange)} | <strong>Lifespan:</strong> ${e(breed.lifespan)}</p>
     <p><strong>Origin:</strong> ${e(breed.originCountry)}${breed.yearRecognized ? ` | <strong>AKC Recognized:</strong> ${breed.yearRecognized}` : ""}</p>
     <p><strong>Coat:</strong> ${e(breed.coatType)} | <strong>Colors:</strong> ${e(breed.coatColors)} | <strong>Shedding:</strong> ${e(breed.sheddingLevel)}${breed.hypoallergenic ? " | Hypoallergenic" : ""}</p>
     <p><strong>Energy Level:</strong> ${e(breed.energyLevel)} | <strong>Trainability:</strong> ${e(breed.trainability)} | <strong>Barking:</strong> ${e(breed.barkingTendency)}</p>
     <h2>${e(breed.name)} Temperament</h2>
     <p>${e(breed.temperamentSummary)}</p>
+    ${summary}
     <h2>${e(breed.name)} Personality</h2>
     <p>${e(breed.personalityDeepDive)}</p>
     <h2>History of the ${e(breed.name)}</h2>
@@ -144,8 +190,59 @@ function buildBreedBodyHtml(breed: Breed): string {
     <p>${e(breed.trainingNotes)}</p>
     <h2>Diet &amp; Nutrition</h2>
     <p>${e(breed.dietNotes)}</p>
-    ${breed.funFact ? `<p><strong>Fun fact:</strong> ${e(breed.funFact)}</p>` : ""}
+    ${facts}
+    ${misc}
+    ${faqHtml}
+    <p><a href="${breedUrl}">${e(breed.name)} full breed profile</a></p>
   `;
+}
+
+function buildBreedJsonLd(breed: Breed): object[] {
+  const breedUrl = `${DOMAIN}/breeds/${breed.slug}`;
+  const blocks: object[] = [];
+
+  blocks.push({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: `${DOMAIN}/` },
+      { "@type": "ListItem", position: 2, name: "Breeds", item: `${DOMAIN}/breeds` },
+      { "@type": "ListItem", position: 3, name: `${breed.breedGroup} Group`, item: `${DOMAIN}/breeds?group=${encodeURIComponent(breed.breedGroup)}` },
+      { "@type": "ListItem", position: 4, name: breed.name, item: breedUrl },
+    ],
+  });
+
+  if (breed.faqs && breed.faqs.length > 0) {
+    blocks.push({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: breed.faqs.map((f) => ({
+        "@type": "Question",
+        name: f.question,
+        acceptedAnswer: { "@type": "Answer", text: f.answer },
+      })),
+    });
+  }
+
+  blocks.push({
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: `${breed.name}: Breed Info, Temperament & Care Guide`,
+    description: `Complete guide to the ${breed.name}: temperament, size, exercise needs, health, training, and care for this ${breed.breedGroup} Group breed.`,
+    url: breedUrl,
+    mainEntityOfPage: breedUrl,
+    datePublished: new Date(breed.lastUpdated).toISOString(),
+    dateModified: new Date(breed.lastUpdated).toISOString(),
+    author: { "@type": "Organization", name: "Dog Breeds & Needs" },
+    publisher: {
+      "@type": "Organization",
+      name: "Dog Breeds & Needs",
+      url: DOMAIN,
+    },
+    about: { "@type": "Thing", name: `${breed.name} dog breed` },
+  });
+
+  return blocks;
 }
 
 export async function getPageData(url: string): Promise<PageData | null> {
@@ -167,6 +264,7 @@ export async function getPageData(url: string): Promise<PageData | null> {
           canonical: `${DOMAIN}/breeds/${slug}`,
           ogType: "article",
           bodyHtml: buildBreedBodyHtml(breed),
+          jsonLd: buildBreedJsonLd(breed),
         };
       }
     } catch {
@@ -191,16 +289,23 @@ export function injectPageData(html: string, data: PageData): string {
     `<meta name="description" content="${escapeHtml(data.description)}" />`
   );
 
-  const headTags = [
+  const headTagParts = [
     `<link rel="canonical" href="${escapeHtml(data.canonical)}" />`,
     `<meta property="og:title" content="${escapeHtml(data.title)}" />`,
     `<meta property="og:description" content="${escapeHtml(data.description)}" />`,
     `<meta property="og:url" content="${escapeHtml(data.canonical)}" />`,
     `<meta property="og:type" content="${data.ogType || "website"}" />`,
     `<meta property="og:site_name" content="Dog Breeds &amp; Needs" />`,
-  ].join("\n    ");
+  ];
 
-  html = html.replace("</head>", `    ${headTags}\n  </head>`);
+  if (data.jsonLd && data.jsonLd.length > 0) {
+    for (const block of data.jsonLd) {
+      const json = JSON.stringify(block).replace(/</g, "\\u003c");
+      headTagParts.push(`<script type="application/ld+json">${json}</script>`);
+    }
+  }
+
+  html = html.replace("</head>", `    ${headTagParts.join("\n    ")}\n  </head>`);
 
   // Inject content in a noscript tag so crawlers (which don't run JS) see real content.
   // Browsers with JS enabled never render noscript content, so users are unaffected.

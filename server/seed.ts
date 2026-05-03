@@ -2,9 +2,11 @@ import { storage } from "./storage";
 import { breedSeedData } from "./breedData";
 import { productSeedData } from "./productData";
 import { computeCompletenessScore } from "@shared/schema";
+import { generateFaqs } from "./contentGenerator";
 
-const SEED_VERSION = "v9-content-foundation-preserve-reviewed-only";
+const SEED_VERSION = "v10-task2-faqs";
 const QUALITY_BACKFILL_VERSION = "v2-legacy-only";
+const FAQ_BACKFILL_VERSION = "v1-task2-faqs";
 
 export async function seedDatabase() {
   const count = await storage.getBreedCount();
@@ -16,6 +18,7 @@ export async function seedDatabase() {
     if (backfillRow !== QUALITY_BACKFILL_VERSION) {
       await runQualityBackfill();
     }
+    await runFaqBackfill();
     return;
   }
 
@@ -57,6 +60,38 @@ export async function seedDatabase() {
 
   await storage.setMeta("seedVersion", SEED_VERSION);
   await runQualityBackfill();
+  await runFaqBackfill();
+}
+
+// One-time FAQ backfill: ensures every breed has at least 5 FAQs, including
+// admin-preserved (reviewed/verified) records that the main seed loop skips.
+// This NEVER overwrites a non-empty FAQ array — only fills empty/short ones
+// using the deterministic templated generator.
+async function runFaqBackfill() {
+  const done = await storage.getMeta("faqBackfillVersion");
+  if (done === FAQ_BACKFILL_VERSION) return;
+  console.log("Running FAQ backfill (fills empty FAQ arrays only)...");
+  const all = await storage.getAllBreeds();
+  let filled = 0;
+  for (const b of all) {
+    if (b.faqs && b.faqs.length >= 5) continue;
+    const generated = generateFaqs({
+      name: b.name, group: b.breedGroup, origin: b.originCountry,
+      size: b.sizeCategory, weight: b.weightRange, height: b.heightRange,
+      life: b.lifespan, coat: b.coatType, colors: b.coatColors,
+      shedding: b.sheddingLevel, hypo: b.hypoallergenic,
+      temperament: b.temperamentSummary, energy: b.energyLevel,
+      trainability: b.trainability, barking: b.barkingTendency,
+      kids: b.goodWithKids, dogs: b.goodWithDogs, cats: b.goodWithCats,
+      strangers: b.strangerFriendliness, apartment: b.apartmentSuitable,
+      exercise: b.exerciseNeeds, grooming: b.groomingFrequency,
+      health: b.commonHealthIssues, funFact: b.funFact, popularity: b.popularity,
+    });
+    await storage.updateBreed(b.id, { faqs: generated });
+    filled++;
+  }
+  console.log(`FAQ backfill complete: filled=${filled} breed(s)`);
+  await storage.setMeta("faqBackfillVersion", FAQ_BACKFILL_VERSION);
 }
 
 // One-time backfill: classify legacy/imported records that lack an explicit

@@ -338,6 +338,49 @@ export function generateNotGoodFor(b: CompactBreed): string {
   return parts.join(" ");
 }
 
+export function generateFaqs(b: CompactBreed): { question: string; answer: string }[] {
+  const faqs: { question: string; answer: string }[] = [];
+
+  faqs.push({
+    question: `Is the ${b.name} a good family dog?`,
+    answer: `${b.kids >= 4
+      ? `Yes — the ${b.name} is generally an excellent family dog. With children they are ${ratingWord(b.kids, "children")}, and ${barkingDescriptor(b.barking)}.`
+      : `The ${b.name} can work in the right family, but they are ${ratingWord(b.kids, "children")}. Households with very young or unsupervised children should look at a more universally child-tolerant breed.`} As with any breed, success depends on early socialization, supervised interactions, and teaching children how to respect the dog's space.`,
+  });
+
+  faqs.push({
+    question: `How much exercise does a ${b.name} need?`,
+    answer: `${exerciseContext(b.energy)} Plan for daily, structured activity rather than relying on backyard time alone — under-exercised ${b.name}s commonly develop boredom-driven habits like chewing, digging, or excessive vocalization.`,
+  });
+
+  faqs.push({
+    question: `Are ${b.name}s easy to train?`,
+    answer: `${b.name}s are ${trainabilityDescriptor(b.trainability)}. Positive-reinforcement methods — food, play, and genuine praise — work far better than corrections. Start training in puppyhood and keep sessions short and frequent.`,
+  });
+
+  faqs.push({
+    question: `How much do ${b.name}s shed?`,
+    answer: `${sheddingContext(b.shedding, b.coat)}${b.hypo ? ` The ${b.name} is considered a lower-shedding breed, which can make them a more workable choice for some allergy sufferers — though no dog is truly hypoallergenic.` : ""}`,
+  });
+
+  faqs.push({
+    question: `What is the lifespan of a ${b.name}?`,
+    answer: `The typical ${b.name} lifespan is ${b.life}. ${lifespanContext(b.life)} Common breed-specific health concerns to discuss with your vet include: ${b.health.toLowerCase()}.`,
+  });
+
+  faqs.push({
+    question: `Can ${b.name}s live in an apartment?`,
+    answer: apartmentContext(b.apartment, b.energy),
+  });
+
+  faqs.push({
+    question: `Is the ${b.name} good with other dogs?`,
+    answer: `The ${b.name} is ${ratingWord(b.dogs, "other dogs")}. Early, ongoing socialization between 8 and 16 weeks is critical, and adult introductions should always be on neutral ground with both dogs on loose leashes.`,
+  });
+
+  return faqs;
+}
+
 export function expandFully(b: CompactBreed) {
   return {
     personalityDeepDive: generatePersonality(b),
@@ -351,6 +394,7 @@ export function expandFully(b: CompactBreed) {
     commonMisconceptions: generateMisconceptions(b),
     idealOwnerProfile: generateIdealOwner(b),
     notGoodFor: generateNotGoodFor(b),
+    faqs: generateFaqs(b),
   };
 }
 

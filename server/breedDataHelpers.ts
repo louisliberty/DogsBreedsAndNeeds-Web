@@ -11,6 +11,7 @@ export function b(d: {
   ff: string; fq: string; pop: number;
   cq?: string; rb?: string | null;
   ffacts?: string[]; cm?: string; iop?: string; ngf?: string; gg?: string;
+  faqs?: { question: string; answer: string }[];
 }): InsertBreed {
   const slug = d.n.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
   return {
@@ -32,5 +33,6 @@ export function b(d: {
     idealOwnerProfile: d.iop ?? "",
     notGoodFor: d.ngf ?? "",
     groomingGuide: d.gg ?? "",
+    faqs: d.faqs ?? [],
   };
 }

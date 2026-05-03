@@ -88,6 +88,30 @@ export async function registerRoutes(
     }
   });
 
+  app.get("/api/breeds/:slug/related", async (req, res) => {
+    try {
+      const breed = await storage.getBreedBySlug(req.params.slug);
+      if (!breed) {
+        return res.status(404).json({ message: "Breed not found" });
+      }
+      const groupBreeds = await storage.getBreedsByGroup(breed.breedGroup);
+      const scored = groupBreeds
+        .filter((b) => b.slug !== breed.slug)
+        .map((b) => {
+          let score = 0;
+          if (b.sizeCategory === breed.sizeCategory) score += 2;
+          if (b.energyLevel === breed.energyLevel) score += 1;
+          return { breed: b, score };
+        })
+        .sort((a, b) => b.score - a.score || a.breed.popularity - b.breed.popularity)
+        .slice(0, 4)
+        .map((x) => x.breed);
+      res.json(scored);
+    } catch (error) {
+      res.status(500).json({ message: "Failed to fetch related breeds" });
+    }
+  });
+
   app.get("/api/products", async (_req, res) => {
     try {
       const { category, sizes } = _req.query;

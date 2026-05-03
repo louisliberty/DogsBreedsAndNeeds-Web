@@ -56,6 +56,7 @@ function expand(b: CompactBreed): InsertBreed {
     commonMisconceptions: merged.commonMisconceptions,
     idealOwnerProfile: merged.idealOwnerProfile,
     notGoodFor: merged.notGoodFor,
+    faqs: merged.faqs,
   };
   // For curated entries, keep the explicit "draft" tag; for generated entries,
   // confirm "templated" via the conservative heuristic.

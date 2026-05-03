@@ -17,6 +17,7 @@ export interface CuratedContent {
   notGoodFor?: string;
   commonMisconceptions?: string;
   funFacts?: string[];
+  faqs?: { question: string; answer: string }[];
 }
 
 export const curatedContent: Record<string, CuratedContent> = {

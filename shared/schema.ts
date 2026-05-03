@@ -1,4 +1,4 @@
-import { pgTable, text, varchar, integer, boolean, serial, timestamp } from "drizzle-orm/pg-core";
+import { pgTable, text, varchar, integer, boolean, serial, timestamp, jsonb } from "drizzle-orm/pg-core";
 import { sql } from "drizzle-orm";
 import { createInsertSchema } from "drizzle-zod";
 import { z } from "zod";
@@ -53,6 +53,7 @@ export const breeds = pgTable("breeds", {
   idealOwnerProfile: text("ideal_owner_profile").notNull().default(""),
   notGoodFor: text("not_good_for").notNull().default(""),
   groomingGuide: text("grooming_guide").notNull().default(""),
+  faqs: jsonb("faqs").$type<{ question: string; answer: string }[]>().notNull().default(sql`'[]'::jsonb`),
 });
 
 export const meta = pgTable("meta", {
@@ -80,8 +81,15 @@ export const barkingTendencies = ["Rare", "Occasional", "Frequent", "Vocal"] as 
 export const productCategories = ["Food", "Toys", "Training", "Grooming", "Health"] as const;
 export const contentQualityLevels = ["templated", "draft", "reviewed", "verified"] as const;
 
+export const breedFaqSchema = z.object({
+  question: z.string().min(1),
+  answer: z.string().min(1),
+});
+export type BreedFaq = z.infer<typeof breedFaqSchema>;
+
 export const insertBreedSchema = createInsertSchema(breeds, {
   contentQuality: z.enum(contentQualityLevels),
+  faqs: z.array(breedFaqSchema),
 }).omit({ id: true });
 export const insertProductSchema = createInsertSchema(products).omit({ id: true });
 export const updateBreedSchema = insertBreedSchema.partial();
