@@ -1,8 +1,14 @@
 import { Link, useLocation } from "wouter";
-import { Dog, Menu, X, Sun, Moon } from "lucide-react";
+import { Dog, Menu, X, Sun, Moon, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 import { SearchAutocomplete } from "@/components/SearchAutocomplete";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 function ThemeToggle() {
   const [dark, setDark] = useState(false);
@@ -37,17 +43,27 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   const [location] = useLocation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const navLinks = [
+  const getADogLinks = [
+    { href: "/find-a-breeder", label: "Find a Breeder" },
+    { href: "/rescue", label: "Rescue" },
+    { href: "/ethical-sourcing", label: "Ethical Sourcing" },
+  ];
+
+  const primaryLinks = [
     { href: "/", label: "Home" },
     { href: "/breeds", label: "Breeds" },
     { href: "/compare", label: "Compare" },
     { href: "/dog-breed-selector", label: "Quiz" },
-    { href: "/rescue", label: "Rescue" },
+  ];
+
+  const trailingLinks = [
     { href: "/blog", label: "Blog" },
-    { href: "/ethical-sourcing", label: "Ethical Sourcing" },
-    { href: "/find-a-breeder", label: "Find a Breeder" },
     { href: "/products", label: "Products" },
   ];
+
+  const navLinks = [...primaryLinks, ...getADogLinks, ...trailingLinks];
+
+  const isGetADogActive = getADogLinks.some((l) => location === l.href);
 
   const footerLegalLinks = [
     { href: "/about", label: "About" },
@@ -70,12 +86,55 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               </div>
             </Link>
 
-            <div className="hidden xl:flex flex-1 justify-center max-w-md mx-2">
+            <div className="hidden lg:flex flex-1 justify-center max-w-xs xl:max-w-md mx-2">
               <SearchAutocomplete variant="desktop" />
             </div>
 
             <nav className="hidden lg:flex items-center gap-0.5 xl:gap-1" data-testid="nav-desktop">
-              {navLinks.map((link) => (
+              {primaryLinks.map((link) => (
+                <Link key={link.href} href={link.href}>
+                  <span
+                    className={`px-2 xl:px-2.5 py-2 rounded-md text-sm font-medium cursor-pointer transition-colors whitespace-nowrap ${
+                      location === link.href
+                        ? "bg-primary text-primary-foreground"
+                        : "hover:bg-accent"
+                    }`}
+                    data-testid={`link-nav-${link.label.toLowerCase().replace(/\s+/g, "-")}`}
+                  >
+                    {link.label}
+                  </span>
+                </Link>
+              ))}
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <button
+                    className={`inline-flex items-center gap-1 px-2 xl:px-2.5 py-2 rounded-md text-sm font-medium cursor-pointer transition-colors whitespace-nowrap focus:outline-none ${
+                      isGetADogActive
+                        ? "bg-primary text-primary-foreground"
+                        : "hover:bg-accent"
+                    }`}
+                    data-testid="link-nav-get-a-dog"
+                  >
+                    Get a Dog
+                    <ChevronDown className="h-3.5 w-3.5" />
+                  </button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="end" className="w-48">
+                  {getADogLinks.map((link) => (
+                    <DropdownMenuItem key={link.href} asChild>
+                      <Link href={link.href}>
+                        <span
+                          className="w-full cursor-pointer"
+                          data-testid={`link-nav-${link.label.toLowerCase().replace(/\s+/g, "-")}`}
+                        >
+                          {link.label}
+                        </span>
+                      </Link>
+                    </DropdownMenuItem>
+                  ))}
+                </DropdownMenuContent>
+              </DropdownMenu>
+              {trailingLinks.map((link) => (
                 <Link key={link.href} href={link.href}>
                   <span
                     className={`px-2 xl:px-2.5 py-2 rounded-md text-sm font-medium cursor-pointer transition-colors whitespace-nowrap ${
@@ -110,7 +169,41 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         {mobileMenuOpen && (
           <div className="lg:hidden border-t" data-testid="nav-mobile">
             <div className="px-4 py-3 space-y-1">
-              {navLinks.map((link) => (
+              {primaryLinks.map((link) => (
+                <Link key={link.href} href={link.href}>
+                  <div
+                    className={`block px-3 py-2 rounded-md text-base font-medium cursor-pointer ${
+                      location === link.href
+                        ? "bg-primary text-primary-foreground"
+                        : "hover:bg-accent"
+                    }`}
+                    onClick={() => setMobileMenuOpen(false)}
+                    data-testid={`link-mobile-${link.label.toLowerCase().replace(/\s+/g, "-")}`}
+                  >
+                    {link.label}
+                  </div>
+                </Link>
+              ))}
+              <div className="pt-2 pb-1 px-3 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                Get a Dog
+              </div>
+              {getADogLinks.map((link) => (
+                <Link key={link.href} href={link.href}>
+                  <div
+                    className={`block px-3 py-2 rounded-md text-base font-medium cursor-pointer ${
+                      location === link.href
+                        ? "bg-primary text-primary-foreground"
+                        : "hover:bg-accent"
+                    }`}
+                    onClick={() => setMobileMenuOpen(false)}
+                    data-testid={`link-mobile-${link.label.toLowerCase().replace(/\s+/g, "-")}`}
+                  >
+                    {link.label}
+                  </div>
+                </Link>
+              ))}
+              <div className="pt-2" />
+              {trailingLinks.map((link) => (
                 <Link key={link.href} href={link.href}>
                   <div
                     className={`block px-3 py-2 rounded-md text-base font-medium cursor-pointer ${
