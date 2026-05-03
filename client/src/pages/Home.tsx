@@ -81,9 +81,9 @@ export default function Home() {
             {breedGroups.map((group) => (
               <Link key={group} href={`/breeds?group=${group}`}>
                 <Card className="cursor-pointer hover:border-primary transition-colors h-full">
-                  <CardContent className="p-4 text-center">
-                    <Dog className="h-8 w-8 mx-auto mb-2 text-primary" />
-                    <p className="text-sm font-medium" data-testid={`text-group-${group.toLowerCase()}`}>{group}</p>
+                  <CardContent className="p-6 text-center">
+                    <Dog className="h-12 w-12 mx-auto mb-3 text-primary" />
+                    <p className="text-base font-semibold" data-testid={`text-group-${group.toLowerCase()}`}>{group}</p>
                   </CardContent>
                 </Card>
               </Link>
