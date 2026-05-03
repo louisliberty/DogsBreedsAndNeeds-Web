@@ -59,7 +59,7 @@ const barkScore = (v: string) =>
 const shedScore = (v: string) =>
   ({ Low: 1, Moderate: 2, High: 4, "Very High": 5 } as Record<string, number>)[v] ?? 3;
 const sizeScore = (v: string) =>
-  ({ Toy: 1, Small: 2, Medium: 3, Large: 4, "Extra Large": 5 } as Record<string, number>)[v] ?? 3;
+  ({ Toy: 1, Small: 2, Medium: 3, Large: 4, "Extra Large": 5, Giant: 5 } as Record<string, number>)[v] ?? 3;
 
 function exerciseMinutes(level: string): number {
   switch (level) {
@@ -213,7 +213,7 @@ export default function Compare() {
   const initialSlugs = useMemo(() => {
     const params = new URLSearchParams(searchString);
     const raw = params.get("breeds") || "";
-    return raw.split(",").map((s) => s.trim()).filter(Boolean).slice(0, MAX_BREEDS);
+    return Array.from(new Set(raw.split(",").map((s) => s.trim()).filter(Boolean))).slice(0, MAX_BREEDS);
   }, []);
 
   const [slots, setSlots] = useState<(string | null)[]>(() => {
@@ -245,11 +245,14 @@ export default function Compare() {
 
   useEffect(() => {
     const params = new URLSearchParams(searchString);
-    const fromUrl = (params.get("breeds") || "")
-      .split(",")
-      .map((s) => s.trim())
-      .filter(Boolean)
-      .slice(0, MAX_BREEDS);
+    const fromUrl = Array.from(
+      new Set(
+        (params.get("breeds") || "")
+          .split(",")
+          .map((s) => s.trim())
+          .filter(Boolean),
+      ),
+    ).slice(0, MAX_BREEDS);
     const filled = slots.filter(Boolean) as string[];
     if (fromUrl.join(",") === filled.join(",")) return;
     const arr: (string | null)[] = [...fromUrl];
