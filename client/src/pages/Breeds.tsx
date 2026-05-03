@@ -1,8 +1,9 @@
 import { useQuery } from "@tanstack/react-query";
-import { Link, useSearch } from "wouter";
-import { Search, Dog, SlidersHorizontal } from "lucide-react";
+import { Link, useSearch, useLocation } from "wouter";
+import { Search, Dog, SlidersHorizontal, Scale, X as XIcon } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
+import { Checkbox } from "@/components/ui/checkbox";
 import { saveBreedsScroll } from "@/App";
 import { Badge } from "@/components/ui/badge";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -30,6 +31,20 @@ export default function Breeds() {
   const [selectedSize, setSelectedSize] = useState("");
   const [selectedEnergy, setSelectedEnergy] = useState("");
   const [showFilters, setShowFilters] = useState(!!initialGroup);
+  const [compareSlugs, setCompareSlugs] = useState<string[]>([]);
+  const [, navigate] = useLocation();
+
+  const toggleCompare = (slug: string) => {
+    setCompareSlugs((prev) => {
+      if (prev.includes(slug)) return prev.filter((s) => s !== slug);
+      if (prev.length >= 3) return prev;
+      return [...prev, slug];
+    });
+  };
+  const clearCompare = () => setCompareSlugs([]);
+  const launchCompare = () => {
+    navigate(`/compare?breeds=${compareSlugs.map(encodeURIComponent).join(",")}`);
+  };
 
   const { data: breeds, isLoading } = useQuery<Breed[]>({
     queryKey: ["/api/breeds"],
@@ -158,37 +173,60 @@ export default function Breeds() {
           </div>
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            {filtered.map((breed) => (
-              <Link key={breed.id} href={`/breeds/${breed.slug}`} onClick={saveBreedsScroll}>
-                <Card className="cursor-pointer hover:border-primary transition-colors h-full overflow-hidden" data-testid={`card-breed-${breed.slug}`}>
-                  {getBreedImage(breed.slug) && (
-                    <div className="aspect-[4/3] overflow-hidden bg-muted">
-                      <img
-                        src={getBreedImage(breed.slug)}
-                        alt={`${breed.name} - ${breed.sizeCategory} ${breed.breedGroup} dog breed`}
-                        className="w-full h-full object-cover"
-                        loading="lazy"
-                        data-testid={`img-breed-${breed.slug}`}
-                      />
+            {filtered.map((breed) => {
+              const checked = compareSlugs.includes(breed.slug);
+              const disabled = !checked && compareSlugs.length >= 3;
+              return (
+                <Card
+                  key={breed.id}
+                  className={`relative h-full overflow-hidden transition-colors ${checked ? "border-primary ring-1 ring-primary" : "hover:border-primary"}`}
+                  data-testid={`card-breed-${breed.slug}`}
+                >
+                  <label
+                    className={`absolute top-2 right-2 z-10 flex items-center gap-1 bg-background/95 backdrop-blur rounded-md border px-2 py-1 text-xs font-medium ${disabled ? "opacity-50 cursor-not-allowed" : "cursor-pointer hover-elevate"}`}
+                    onClick={(e) => e.stopPropagation()}
+                    data-testid={`compare-toggle-${breed.slug}`}
+                  >
+                    <Checkbox
+                      checked={checked}
+                      disabled={disabled}
+                      onCheckedChange={() => toggleCompare(breed.slug)}
+                      data-testid={`checkbox-compare-${breed.slug}`}
+                    />
+                    <span>Compare</span>
+                  </label>
+                  <Link href={`/breeds/${breed.slug}`} onClick={saveBreedsScroll}>
+                    <div className="cursor-pointer">
+                      {getBreedImage(breed.slug) && (
+                        <div className="aspect-[4/3] overflow-hidden bg-muted">
+                          <img
+                            src={getBreedImage(breed.slug)}
+                            alt={`${breed.name} - ${breed.sizeCategory} ${breed.breedGroup} dog breed`}
+                            className="w-full h-full object-cover"
+                            loading="lazy"
+                            data-testid={`img-breed-${breed.slug}`}
+                          />
+                        </div>
+                      )}
+                      <CardContent className="p-4">
+                        <div className="flex items-start justify-between mb-2">
+                          <h3 className="font-semibold text-sm">{breed.name}</h3>
+                          <span className="text-xs text-muted-foreground">#{breed.popularity}</span>
+                        </div>
+                        <div className="flex flex-wrap gap-1 mb-2">
+                          <Badge variant="outline" className="text-xs">{breed.breedGroup}</Badge>
+                          <Badge variant="outline" className="text-xs">{breed.sizeCategory}</Badge>
+                          <Badge variant="outline" className="text-xs">{breed.energyLevel}</Badge>
+                        </div>
+                        <p className="text-xs text-muted-foreground line-clamp-2">
+                          {breed.temperamentSummary}
+                        </p>
+                      </CardContent>
                     </div>
-                  )}
-                  <CardContent className="p-4">
-                    <div className="flex items-start justify-between mb-2">
-                      <h3 className="font-semibold text-sm">{breed.name}</h3>
-                      <span className="text-xs text-muted-foreground">#{breed.popularity}</span>
-                    </div>
-                    <div className="flex flex-wrap gap-1 mb-2">
-                      <Badge variant="outline" className="text-xs">{breed.breedGroup}</Badge>
-                      <Badge variant="outline" className="text-xs">{breed.sizeCategory}</Badge>
-                      <Badge variant="outline" className="text-xs">{breed.energyLevel}</Badge>
-                    </div>
-                    <p className="text-xs text-muted-foreground line-clamp-2">
-                      {breed.temperamentSummary}
-                    </p>
-                  </CardContent>
+                  </Link>
                 </Card>
-              </Link>
-            ))}
+              );
+            })}
           </div>
         )}
 
@@ -200,6 +238,36 @@ export default function Breeds() {
           </div>
         )}
       </div>
+
+      {compareSlugs.length > 0 && (
+        <div
+          className="fixed bottom-4 left-1/2 -translate-x-1/2 z-40 max-w-[calc(100%-1rem)] flex items-center gap-3 rounded-full border bg-background/95 backdrop-blur px-4 py-2 shadow-lg"
+          data-testid="compare-action-bar"
+        >
+          <Scale className="h-4 w-4 text-primary shrink-0" />
+          <span className="text-sm font-medium" data-testid="text-compare-count">
+            {compareSlugs.length}/3 selected
+          </span>
+          <Button
+            size="sm"
+            onClick={launchCompare}
+            disabled={compareSlugs.length < 2}
+            data-testid="button-compare-selected"
+          >
+            Compare Selected
+          </Button>
+          <Button
+            variant="ghost"
+            size="icon"
+            className="h-7 w-7"
+            onClick={clearCompare}
+            data-testid="button-clear-compare"
+            aria-label="Clear selection"
+          >
+            <XIcon className="h-4 w-4" />
+          </Button>
+        </div>
+      )}
     </div>
   );
 }

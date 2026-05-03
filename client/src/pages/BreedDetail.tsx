@@ -322,6 +322,13 @@ export default function BreedDetail() {
                   {breed.famousQuote}
                 </p>
                 <ShareButtons breed={breed} variant="compact" />
+                <div className="mt-3">
+                  <Link href={`/compare?breeds=${encodeURIComponent(breed.slug)}`}>
+                    <Button variant="outline" size="sm" data-testid="button-compare-with-another">
+                      <Scale className="h-4 w-4 mr-2" /> Compare with another breed
+                    </Button>
+                  </Link>
+                </div>
               </div>
             </div>
           </div>

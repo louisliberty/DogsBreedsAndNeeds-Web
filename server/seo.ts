@@ -40,6 +40,21 @@ const staticPages: Record<string, Omit<PageData, "bodyHtml"> & { bodyHtml: strin
       <p>AKC dog breeds are organized into seven groups: the Sporting Group (active dogs bred for hunting), the Hound Group (scent and sight hunters), the Working Group (large dogs bred for guarding and pulling), the Terrier Group (feisty, energetic diggers), the Toy Group (small companion breeds), the Non-Sporting Group (diverse breeds with varied roles), and the Herding Group (intelligent dogs bred to manage livestock).</p>
     `,
   },
+  "/compare": {
+    title: "Compare Dog Breeds Side by Side: Temperament, Size, Energy & Care | Dog Breeds & Needs",
+    description: "Compare any 2 or 3 AKC dog breeds side by side. See temperament, size, energy, training, grooming, health, and exercise needs — and find the best match for your lifestyle.",
+    canonical: `${DOMAIN}/compare`,
+    bodyHtml: `
+      <h1>Compare Dog Breeds Side by Side</h1>
+      <p>Compare any two or three AKC-recognized dog breeds side by side. The breed comparison tool puts temperament, size, weight, height, lifespan, energy level, trainability, barking tendency, friendliness, grooming needs, shedding, exercise minutes per day, common health issues, and ideal-owner profiles into a single table — color-coded so you can immediately see which breed is the best fit for your lifestyle.</p>
+      <h2>How to Use the Breed Comparison Tool</h2>
+      <p>Pick two or three breeds using the search selectors above the comparison table. Each breed loads its complete trait profile and the table highlights which breed wins on each metric. A "Winner For You" summary calls out the best pick for kids, training, exercise, quiet households, low shedding, apartment living, and longevity.</p>
+      <h2>Share Your Comparison</h2>
+      <p>Every comparison generates a bookmarkable URL like <code>/compare?breeds=golden-retriever,labrador-retriever</code>. Copy the link to share an exact side-by-side breed comparison with friends, family, or your next vet visit.</p>
+      <h2>Popular Breed Comparisons</h2>
+      <p>Common comparisons include Golden Retriever vs Labrador Retriever, German Shepherd vs Belgian Malinois, French Bulldog vs Boston Terrier, Poodle vs Goldendoodle, and Border Collie vs Australian Shepherd. Use the selectors above to build your own comparison from any of the 205 AKC-recognized breeds.</p>
+    `,
+  },
   "/dog-breed-selector": {
     title: "Dog Breed Selector Quiz: Find Your Perfect Breed | Dog Breeds & Needs",
     description: "Not sure which dog breed is right for you? Take our free 7-question breed selector quiz and get personalized matches based on your lifestyle. Start now!",

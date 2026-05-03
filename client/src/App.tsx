@@ -8,6 +8,7 @@ import Layout from "@/components/Layout";
 import Home from "@/pages/Home";
 import Breeds from "@/pages/Breeds";
 import BreedDetail from "@/pages/BreedDetail";
+import Compare from "@/pages/Compare";
 import Quiz from "@/pages/Quiz";
 import EthicalSourcing from "@/pages/EthicalSourcing";
 import FindABreeder from "@/pages/FindABreeder";
@@ -67,6 +68,7 @@ function Router() {
         <Route path="/" component={Home} />
         <Route path="/breeds" component={Breeds} />
         <Route path="/breeds/:slug" component={BreedDetail} />
+        <Route path="/compare" component={Compare} />
         <Route path="/dog-breed-selector" component={Quiz} />
         <Route path="/ethical-sourcing" component={EthicalSourcing} />
         <Route path="/find-a-breeder" component={FindABreeder} />
