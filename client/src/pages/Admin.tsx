@@ -66,7 +66,9 @@ export default function Admin() {
       return res.json();
     },
     onSuccess: (updated) => {
-      queryClient.invalidateQueries({ queryKey: ["/api/breeds"] });
+      queryClient.invalidateQueries({
+        predicate: (q) => typeof q.queryKey[0] === "string" && (q.queryKey[0] as string).startsWith("/api/breeds"),
+      });
       setEditingBreed(updated);
       setEditData({});
       toast({ title: "Breed updated successfully" });
@@ -85,7 +87,9 @@ export default function Admin() {
       if (!res.ok) throw new Error("Failed to delete");
     },
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["/api/breeds"] });
+      queryClient.invalidateQueries({
+        predicate: (q) => typeof q.queryKey[0] === "string" && (q.queryKey[0] as string).startsWith("/api/breeds"),
+      });
       toast({ title: "Breed deleted" });
     },
     onError: () => {

@@ -5,6 +5,10 @@ import { storage } from "./storage";
 import { seedDatabase } from "./seed";
 import { insertBreedSchema, insertProductSchema, updateBreedSchema, insertQuizResultSchema, insertArticleSchema, updateArticleSchema } from "@shared/schema";
 import { ZodError } from "zod";
+import { clearSeoCache } from "./seo";
+
+let sitemapCache: { xml: string; expires: number } | null = null;
+const SITEMAP_TTL_MS = 60 * 60 * 1000;
 
 export async function registerRoutes(
   httpServer: Server,
@@ -48,6 +52,11 @@ export async function registerRoutes(
 
   app.get("/sitemap.xml", async (_req, res) => {
     try {
+      const now = Date.now();
+      if (sitemapCache && sitemapCache.expires > now) {
+        res.setHeader("Cache-Control", "public, max-age=3600, s-maxage=3600");
+        return res.type("application/xml").send(sitemapCache.xml);
+      }
       const breeds = await storage.getAllBreeds();
       const rescueSlugs = await storage.getRescueBreedSlugs();
       const articles = await storage.getPublishedArticles();
@@ -87,6 +96,7 @@ export async function registerRoutes(
         xml += `  <url>\n    <loc>${DOMAIN}/blog/${article.slug}</loc>\n    <lastmod>${lastmod}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.7</priority>\n  </url>\n`;
       }
       xml += `</urlset>`;
+      sitemapCache = { xml, expires: now + SITEMAP_TTL_MS };
       res.setHeader("Cache-Control", "public, max-age=3600, s-maxage=3600");
       res.type("application/xml").send(xml);
     } catch (error) {
@@ -100,18 +110,22 @@ export async function registerRoutes(
 
   app.get("/api/breeds", async (_req, res) => {
     try {
-      const { group, search, limit } = _req.query;
-      let breeds;
+      const { group, search, limit, fields } = _req.query;
+      const lite = fields === "light";
+      let breeds: any[];
       if (search && typeof search === "string") {
         breeds = await storage.searchBreeds(search);
       } else if (group && typeof group === "string") {
         breeds = await storage.getBreedsByGroup(group);
+      } else if (lite) {
+        breeds = await storage.getAllBreedsLite();
       } else {
         breeds = await storage.getAllBreeds();
       }
       if (limit && typeof limit === "string") {
         breeds = breeds.slice(0, parseInt(limit));
       }
+      res.setHeader("Cache-Control", "public, max-age=60");
       res.json(breeds);
     } catch (error) {
       res.status(500).json({ message: "Failed to fetch breeds" });
@@ -258,6 +272,8 @@ export async function registerRoutes(
         return res.status(409).json({ message: "An article with this slug already exists" });
       }
       const article = await storage.createArticle(parsed);
+      clearSeoCache();
+      sitemapCache = null;
       res.json(article);
     } catch (error) {
       if (error instanceof ZodError) {
@@ -283,6 +299,8 @@ export async function registerRoutes(
       }
       const updated = await storage.updateArticle(id, parsed);
       if (!updated) return res.status(404).json({ message: "Article not found" });
+      clearSeoCache();
+      sitemapCache = null;
       res.json(updated);
     } catch (error) {
       if (error instanceof ZodError) {
@@ -299,6 +317,8 @@ export async function registerRoutes(
         return res.status(401).json({ message: "Unauthorized" });
       }
       await storage.deleteArticle(parseInt(req.params.id));
+      clearSeoCache();
+      sitemapCache = null;
       res.json({ success: true });
     } catch (error) {
       res.status(500).json({ message: "Failed to delete article" });
@@ -346,6 +366,8 @@ export async function registerRoutes(
       if (!updated) {
         return res.status(404).json({ message: "Breed not found" });
       }
+      clearSeoCache();
+      sitemapCache = null;
       res.json(updated);
     } catch (error) {
       if (error instanceof ZodError) {
@@ -362,6 +384,8 @@ export async function registerRoutes(
         return res.status(401).json({ message: "Unauthorized" });
       }
       await storage.deleteBreed(parseInt(req.params.id));
+      clearSeoCache();
+      sitemapCache = null;
       res.json({ success: true });
     } catch (error) {
       res.status(500).json({ message: "Failed to delete breed" });
@@ -376,6 +400,8 @@ export async function registerRoutes(
       }
       const parsed = insertBreedSchema.parse(req.body);
       const breed = await storage.upsertBreed(parsed);
+      clearSeoCache();
+      sitemapCache = null;
       res.json(breed);
     } catch (error) {
       if (error instanceof ZodError) {

@@ -13,6 +13,32 @@ interface PageData {
   bodyHtml: string;
   jsonLd?: object[];
   noIndex?: boolean;
+  preloadImage?: string;
+}
+
+const SSR_CACHE_TTL_MS = 10 * 60 * 1000;
+const SSR_CACHE_MAX = 500;
+const ssrCache = new Map<string, { data: PageData | null; expires: number }>();
+
+export async function getCachedPageData(url: string): Promise<PageData | null> {
+  const now = Date.now();
+  const hit = ssrCache.get(url);
+  if (hit && hit.expires > now) {
+    ssrCache.delete(url);
+    ssrCache.set(url, hit);
+    return hit.data;
+  }
+  const data = await getPageData(url);
+  ssrCache.set(url, { data, expires: now + SSR_CACHE_TTL_MS });
+  if (ssrCache.size > SSR_CACHE_MAX) {
+    const oldestKey = ssrCache.keys().next().value;
+    if (oldestKey !== undefined) ssrCache.delete(oldestKey);
+  }
+  return data;
+}
+
+export function clearSeoCache(): void {
+  ssrCache.clear();
 }
 
 const DEFAULT_OG_IMAGE = `${DOMAIN}/og-default.png`;
@@ -678,6 +704,7 @@ export async function getPageData(url: string): Promise<PageData | null> {
           ogImageAlt: breed.imageUrl ? `${breed.name} dog breed` : undefined,
           bodyHtml: buildBreedBodyHtml(breed),
           jsonLd: buildBreedJsonLd(breed),
+          preloadImage: `${DOMAIN}/breeds/${slug}.webp`,
         };
       }
     } catch {
@@ -713,6 +740,9 @@ export function injectPageData(html: string, data: PageData): string {
 
   const headTagParts = [
     `<link rel="canonical" href="${escapeHtml(data.canonical)}" />`,
+    ...(data.preloadImage
+      ? [`<link rel="preload" as="image" href="${escapeHtml(data.preloadImage)}" type="image/webp" fetchpriority="high" />`]
+      : []),
     `<meta property="og:title" content="${escapeHtml(data.title)}" />`,
     `<meta property="og:description" content="${escapeHtml(data.description)}" />`,
     `<meta property="og:url" content="${escapeHtml(data.canonical)}" />`,

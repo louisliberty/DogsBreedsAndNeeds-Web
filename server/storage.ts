@@ -1,9 +1,10 @@
 import { db } from "./db";
-import { breeds, products, meta, quizResults, rescueOrganizations, articles, type Breed, type InsertBreed, type Product, type InsertProduct, type QuizResult, type InsertQuizResult, type RescueOrganization, type InsertRescueOrganization, type Article, type InsertArticle } from "@shared/schema";
+import { breeds, products, meta, quizResults, rescueOrganizations, articles, type Breed, type BreedLite, type InsertBreed, type Product, type InsertProduct, type QuizResult, type InsertQuizResult, type RescueOrganization, type InsertRescueOrganization, type Article, type InsertArticle } from "@shared/schema";
 import { eq, ilike, and, sql, isNotNull, desc } from "drizzle-orm";
 
 export interface IStorage {
   getAllBreeds(): Promise<Breed[]>;
+  getAllBreedsLite(): Promise<BreedLite[]>;
   getBreedBySlug(slug: string): Promise<Breed | undefined>;
   getBreedById(id: number): Promise<Breed | undefined>;
   getBreedsByGroup(group: string): Promise<Breed[]>;
@@ -45,6 +46,37 @@ export interface IStorage {
 export class DatabaseStorage implements IStorage {
   async getAllBreeds(): Promise<Breed[]> {
     return await db.select().from(breeds).orderBy(breeds.name);
+  }
+
+  async getAllBreedsLite(): Promise<BreedLite[]> {
+    return await db
+      .select({
+        id: breeds.id,
+        name: breeds.name,
+        slug: breeds.slug,
+        breedGroup: breeds.breedGroup,
+        sizeCategory: breeds.sizeCategory,
+        weightRange: breeds.weightRange,
+        heightRange: breeds.heightRange,
+        lifespan: breeds.lifespan,
+        energyLevel: breeds.energyLevel,
+        trainability: breeds.trainability,
+        sheddingLevel: breeds.sheddingLevel,
+        groomingFrequency: breeds.groomingFrequency,
+        barkingTendency: breeds.barkingTendency,
+        goodWithKids: breeds.goodWithKids,
+        goodWithDogs: breeds.goodWithDogs,
+        goodWithCats: breeds.goodWithCats,
+        strangerFriendliness: breeds.strangerFriendliness,
+        apartmentSuitable: breeds.apartmentSuitable,
+        popularity: breeds.popularity,
+        temperamentSummary: breeds.temperamentSummary,
+        hypoallergenic: breeds.hypoallergenic,
+        imageUrl: breeds.imageUrl,
+        lastUpdated: breeds.lastUpdated,
+      })
+      .from(breeds)
+      .orderBy(breeds.name);
   }
 
   async getBreedBySlug(slug: string): Promise<Breed | undefined> {

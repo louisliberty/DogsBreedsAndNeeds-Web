@@ -1,35 +1,25 @@
-const breedWebpModules = import.meta.glob<{ default: string }>(
-  "../../../attached_assets/breeds/*.webp",
-  { eager: true }
-);
+const breedWebpFiles = import.meta.glob("../../../attached_assets/breeds/*.webp");
+const breedPngFiles = import.meta.glob("../../../attached_assets/breeds/*.png");
 
-const breedPngModules = import.meta.glob<{ default: string }>(
-  "../../../attached_assets/breeds/*.png",
-  { eager: true }
-);
+const slugsWithWebp = new Set<string>();
+const slugsWithPng = new Set<string>();
 
-const breedImages: Record<string, string> = {};
-const breedImagesFallback: Record<string, string> = {};
-
-for (const [filePath, mod] of Object.entries(breedWebpModules)) {
+for (const filePath of Object.keys(breedWebpFiles)) {
   const filename = filePath.split("/").pop() || "";
-  const slug = filename.replace(/\.webp$/i, "");
-  breedImages[slug] = mod.default;
+  slugsWithWebp.add(filename.replace(/\.webp$/i, ""));
 }
-
-for (const [filePath, mod] of Object.entries(breedPngModules)) {
+for (const filePath of Object.keys(breedPngFiles)) {
   const filename = filePath.split("/").pop() || "";
-  const slug = filename.replace(/\.png$/i, "");
-  breedImagesFallback[slug] = mod.default;
-  if (!breedImages[slug]) {
-    breedImages[slug] = mod.default;
-  }
+  slugsWithPng.add(filename.replace(/\.png$/i, ""));
 }
 
 export function getBreedImage(slug: string): string | undefined {
-  return breedImages[slug];
+  if (slugsWithWebp.has(slug)) return `/breeds/${slug}.webp`;
+  if (slugsWithPng.has(slug)) return `/breeds/${slug}.png`;
+  return undefined;
 }
 
 export function getBreedImagePng(slug: string): string | undefined {
-  return breedImagesFallback[slug];
+  if (slugsWithPng.has(slug)) return `/breeds/${slug}.png`;
+  return undefined;
 }

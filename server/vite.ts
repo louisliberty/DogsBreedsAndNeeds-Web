@@ -5,7 +5,7 @@ import viteConfig from "../vite.config";
 import fs from "fs";
 import path from "path";
 import { nanoid } from "nanoid";
-import { getPageData, injectPageData } from "./seo";
+import { getCachedPageData, injectPageData } from "./seo";
 
 const viteLogger = createLogger();
 
@@ -50,7 +50,7 @@ export async function setupVite(server: Server, app: Express) {
         `src="/src/main.tsx?v=${nanoid()}"`,
       );
 
-      const pageData = await getPageData(url);
+      const pageData = await getCachedPageData(url);
       if (pageData) {
         template = injectPageData(template, pageData);
       }

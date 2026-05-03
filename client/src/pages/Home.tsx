@@ -33,7 +33,7 @@ export default function Home() {
   const [, navigate] = useLocation();
 
   const { data: popularBreeds, isLoading } = useQuery<Breed[]>({
-    queryKey: ["/api/breeds?limit=12"],
+    queryKey: ["/api/breeds?limit=12&fields=light"],
   });
 
   const { data: breedCount } = useQuery<{ count: number }>({

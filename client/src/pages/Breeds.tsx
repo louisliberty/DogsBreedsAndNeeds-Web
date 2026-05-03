@@ -56,7 +56,7 @@ export default function Breeds() {
   };
 
   const { data: breeds, isLoading } = useQuery<Breed[]>({
-    queryKey: ["/api/breeds"],
+    queryKey: ["/api/breeds?fields=light"],
   });
 
   const { data: rescues } = useQuery<RescueOrganization[]>({

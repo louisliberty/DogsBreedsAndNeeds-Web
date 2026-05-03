@@ -170,6 +170,33 @@ export const updateBreedSchema = insertBreedSchema.partial();
 
 export type InsertBreed = z.infer<typeof insertBreedSchema>;
 export type Breed = typeof breeds.$inferSelect;
+
+export const BREED_LITE_FIELDS = [
+  "id",
+  "name",
+  "slug",
+  "breedGroup",
+  "sizeCategory",
+  "weightRange",
+  "heightRange",
+  "lifespan",
+  "energyLevel",
+  "trainability",
+  "sheddingLevel",
+  "groomingFrequency",
+  "barkingTendency",
+  "goodWithKids",
+  "goodWithDogs",
+  "goodWithCats",
+  "strangerFriendliness",
+  "apartmentSuitable",
+  "popularity",
+  "temperamentSummary",
+  "hypoallergenic",
+  "imageUrl",
+  "lastUpdated",
+] as const;
+export type BreedLite = Pick<Breed, typeof BREED_LITE_FIELDS[number]>;
 export type InsertProduct = z.infer<typeof insertProductSchema>;
 export type Product = typeof products.$inferSelect;
 

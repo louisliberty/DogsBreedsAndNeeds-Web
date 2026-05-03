@@ -1,7 +1,7 @@
 import express, { type Express } from "express";
 import fs from "fs";
 import path from "path";
-import { getPageData, injectPageData } from "./seo";
+import { getCachedPageData, injectPageData } from "./seo";
 
 export function serveStatic(app: Express) {
   const distPath = path.resolve(__dirname, "public");
@@ -27,7 +27,7 @@ export function serveStatic(app: Express) {
   );
 
   app.use("/{*path}", async (req, res) => {
-    const pageData = await getPageData(req.path);
+    const pageData = await getCachedPageData(req.path);
     if (pageData) {
       res.setHeader("Cache-Control", "public, max-age=600, s-maxage=3600");
       res.send(injectPageData(indexHtml, pageData));
