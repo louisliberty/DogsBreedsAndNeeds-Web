@@ -463,6 +463,20 @@ export default function Admin() {
                 </div>
               )}
 
+              {String(get("contentQuality") ?? "") === "templated" && (
+                <div className="bg-orange-50 dark:bg-orange-950/30 border border-orange-200 dark:border-orange-900 rounded-md p-3 text-sm" data-testid="warning-templated-content">
+                  <div className="flex items-start gap-2">
+                    <AlertTriangle className="h-4 w-4 text-orange-600 mt-0.5 shrink-0" />
+                    <div>
+                      <p className="font-medium text-orange-900 dark:text-orange-200">Templated (auto-generated) content</p>
+                      <p className="text-orange-800 dark:text-orange-300 mt-1">
+                        This breed's long-form copy was produced by the seed generator and has not yet been edited by a human. Rewrite the prose with breed-specific detail, then change Quality to "Draft" or higher to remove this warning.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              )}
+
               <div className="flex items-center gap-3 pt-2 border-t">
                 <Button
                   onClick={() => updateMutation.mutate({ id: editingBreed.id, data: editData })}

@@ -3,8 +3,8 @@ import { breedSeedData } from "./breedData";
 import { productSeedData } from "./productData";
 import { computeCompletenessScore } from "@shared/schema";
 
-const SEED_VERSION = "v7-content-foundation-curated-and-backfill";
-const QUALITY_BACKFILL_VERSION = "v1";
+const SEED_VERSION = "v9-content-foundation-preserve-reviewed-only";
+const QUALITY_BACKFILL_VERSION = "v2-legacy-only";
 
 export async function seedDatabase() {
   const count = await storage.getBreedCount();
@@ -30,9 +30,15 @@ export async function seedDatabase() {
       inserted++;
       continue;
     }
-    // Preserve admin-edited / reviewed content. Only re-seed records that are
-    // still "templated" AND have no human reviewer attached.
-    if (existing.reviewedBy || existing.contentQuality !== "templated") {
+    // Preserve human-touched content: a named reviewer, or quality explicitly
+    // promoted to "reviewed"/"verified" via the admin panel. Records still at
+    // "templated" or auto-"draft" remain re-seedable so that content updates
+    // can roll out to all breeds that no human has signed off on yet.
+    if (
+      existing.reviewedBy ||
+      existing.contentQuality === "reviewed" ||
+      existing.contentQuality === "verified"
+    ) {
       skippedEdited++;
       continue;
     }
@@ -53,25 +59,27 @@ export async function seedDatabase() {
   await runQualityBackfill();
 }
 
-// One-time backfill: classify any record whose contentQuality is the default
-// "templated" using the field-length / completeness heuristic. Records with an
-// explicit reviewer or already-promoted quality are left alone.
+// One-time backfill: classify legacy/imported records that lack an explicit
+// content-quality tag. We preserve every explicit tier — including "templated"
+// for generator-produced seed content — so this only acts on records whose
+// quality is missing or set to an unexpected value (e.g. legacy imports).
+const KNOWN_QUALITIES = new Set(["templated", "draft", "reviewed", "verified"]);
 async function runQualityBackfill() {
-  console.log("Running content-quality backfill...");
+  console.log("Running content-quality backfill (legacy records only)...");
   const all = await storage.getAllBreeds();
-  let promoted = 0;
-  let demoted = 0;
+  let classified = 0;
   for (const b of all) {
-    if (b.reviewedBy) continue;
-    if (b.contentQuality === "verified" || b.contentQuality === "reviewed") continue;
-    const { score } = computeCompletenessScore(b);
-    const target = score >= 100 ? "draft" : "templated";
-    if (target !== b.contentQuality) {
-      await storage.updateBreed(b.id, { contentQuality: target });
-      if (target === "draft") promoted++;
-      else demoted++;
-    }
+    // Preserve any explicit, recognized tier. Generator output is intentionally
+    // tagged "templated" at seed time and must NOT be promoted by this script.
+    if (b.contentQuality && KNOWN_QUALITIES.has(b.contentQuality)) continue;
+    const target = b.reviewedBy
+      ? "reviewed"
+      : computeCompletenessScore(b).score >= 100
+      ? "draft"
+      : "templated";
+    await storage.updateBreed(b.id, { contentQuality: target });
+    classified++;
   }
-  console.log(`Quality backfill complete: promoted=${promoted}, demoted=${demoted}`);
+  console.log(`Quality backfill complete: classified=${classified} legacy record(s)`);
   await storage.setMeta("qualityBackfillVersion", QUALITY_BACKFILL_VERSION);
 }
