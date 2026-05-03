@@ -66,6 +66,21 @@ const staticPages: Record<string, Omit<PageData, "bodyHtml"> & { bodyHtml: strin
       <p>The quiz evaluates your answers across multiple dimensions and matches them to breed profiles from all 205 AKC-recognized breeds. You'll receive a ranked list of breeds best suited to your lifestyle, with links to full breed profiles and care guides.</p>
     `,
   },
+  "/dog-breed-selector/results": {
+    title: "Your Dog Breed Quiz Results: Top 5 Personalized Matches | Dog Breeds & Needs",
+    description: "See your top 5 personalized dog breed matches based on lifestyle, living situation, and preferences. Refine your answers, share results, or compare your matches.",
+    canonical: `${DOMAIN}/dog-breed-selector/results`,
+    bodyHtml: `
+      <h1>Your Dog Breed Quiz Results</h1>
+      <p>Your personalized top 5 dog breed matches are calculated from the lifestyle answers you provided in the breed selector quiz. Each match includes an explanation of which answers contributed to the recommendation, links to the full breed profile, and the option to compare your top picks side by side.</p>
+      <h2>Refine Your Matches</h2>
+      <p>Use the "Refine My Answers" button to revisit the quiz with your previous answers pre-filled, or click "Start Over" to reset. The "Share My Results" button copies a permanent link to this exact result set so you can revisit it later or share it with family.</p>
+      <h2>Compare Your Top Matches</h2>
+      <p>Click "Compare My Top Matches" to load your top three breeds into the side-by-side comparison tool, where you can see weight, height, lifespan, energy, trainability, grooming, shedding, and other traits in a single table.</p>
+      <h2>Get Breed-Specific Tips by Email</h2>
+      <p>Optionally enter your email to receive breed-specific tips for your top match. We never share your address and you can unsubscribe at any time.</p>
+    `,
+  },
   "/ethical-sourcing": {
     title: "Ethical Dog Sourcing Guide: Find Responsible Breeders & Rescues | Dog Breeds & Needs",
     description: "Learn how to find a reputable breeder, adopt from a rescue, and avoid puppy mills. Our ethical sourcing guide helps you bring home a healthy, happy dog.",
@@ -265,6 +280,11 @@ export async function getPageData(url: string): Promise<PageData | null> {
 
   if (staticPages[cleanUrl]) {
     return staticPages[cleanUrl];
+  }
+
+  const cleanWithoutTrailing = cleanUrl.replace(/\/$/, "");
+  if (cleanWithoutTrailing && staticPages[cleanWithoutTrailing]) {
+    return staticPages[cleanWithoutTrailing];
   }
 
   const breedMatch = cleanUrl.match(/^\/breeds\/([a-z0-9-]+)$/);

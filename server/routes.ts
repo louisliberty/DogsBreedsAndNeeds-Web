@@ -2,7 +2,7 @@ import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { seedDatabase } from "./seed";
-import { insertBreedSchema, insertProductSchema, updateBreedSchema } from "@shared/schema";
+import { insertBreedSchema, insertProductSchema, updateBreedSchema, insertQuizResultSchema } from "@shared/schema";
 import { ZodError } from "zod";
 
 export async function registerRoutes(
@@ -139,6 +139,19 @@ export async function registerRoutes(
       res.json(product);
     } catch (error) {
       res.status(500).json({ message: "Failed to fetch product" });
+    }
+  });
+
+  app.post("/api/quiz-results", async (req, res) => {
+    try {
+      const parsed = insertQuizResultSchema.parse(req.body);
+      const result = await storage.createQuizResult(parsed);
+      res.json({ success: true, id: result.id });
+    } catch (error) {
+      if (error instanceof ZodError) {
+        return res.status(400).json({ message: "Validation failed", errors: error.errors });
+      }
+      res.status(500).json({ message: "Failed to save quiz result" });
     }
   });
 

@@ -87,6 +87,22 @@ export const breedFaqSchema = z.object({
 });
 export type BreedFaq = z.infer<typeof breedFaqSchema>;
 
+export const quizResults = pgTable("quiz_results", {
+  id: serial("id").primaryKey(),
+  email: text("email").notNull(),
+  matchedBreeds: text("matched_breeds").array().notNull().default(sql`ARRAY[]::text[]`),
+  answers: jsonb("answers").$type<Record<string, string>>().notNull().default(sql`'{}'::jsonb`),
+  createdAt: timestamp("created_at").notNull().defaultNow(),
+});
+
+export const insertQuizResultSchema = createInsertSchema(quizResults, {
+  email: z.string().email(),
+  matchedBreeds: z.array(z.string()).min(1).max(10),
+  answers: z.record(z.string(), z.string()),
+}).omit({ id: true, createdAt: true });
+export type InsertQuizResult = z.infer<typeof insertQuizResultSchema>;
+export type QuizResult = typeof quizResults.$inferSelect;
+
 export const insertBreedSchema = createInsertSchema(breeds, {
   contentQuality: z.enum(contentQualityLevels),
   faqs: z.array(breedFaqSchema),

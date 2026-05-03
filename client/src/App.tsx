@@ -70,6 +70,7 @@ function Router() {
         <Route path="/breeds/:slug" component={BreedDetail} />
         <Route path="/compare" component={Compare} />
         <Route path="/dog-breed-selector" component={Quiz} />
+        <Route path="/dog-breed-selector/results" component={Quiz} />
         <Route path="/ethical-sourcing" component={EthicalSourcing} />
         <Route path="/find-a-breeder" component={FindABreeder} />
         <Route path="/poodle-rescue" component={PoodleRescue} />

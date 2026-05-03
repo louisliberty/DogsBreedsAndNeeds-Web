@@ -1,5 +1,5 @@
 import { db } from "./db";
-import { breeds, products, meta, type Breed, type InsertBreed, type Product, type InsertProduct } from "@shared/schema";
+import { breeds, products, meta, quizResults, type Breed, type InsertBreed, type Product, type InsertProduct, type QuizResult, type InsertQuizResult } from "@shared/schema";
 import { eq, ilike, and, sql } from "drizzle-orm";
 
 export interface IStorage {
@@ -23,6 +23,8 @@ export interface IStorage {
 
   getMeta(key: string): Promise<string | undefined>;
   setMeta(key: string, value: string): Promise<void>;
+
+  createQuizResult(data: InsertQuizResult): Promise<QuizResult>;
 }
 
 export class DatabaseStorage implements IStorage {
@@ -119,6 +121,11 @@ export class DatabaseStorage implements IStorage {
   async setMeta(key: string, value: string): Promise<void> {
     await db.insert(meta).values({ key, value })
       .onConflictDoUpdate({ target: meta.key, set: { value } });
+  }
+
+  async createQuizResult(data: InsertQuizResult): Promise<QuizResult> {
+    const [result] = await db.insert(quizResults).values(data).returning();
+    return result;
   }
 }
 
