@@ -70,7 +70,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               </div>
             </Link>
 
-            <div className="hidden lg:flex flex-1 justify-center max-w-xs xl:max-w-md mx-2">
+            <div className="hidden xl:flex flex-1 justify-center max-w-md mx-2">
               <SearchAutocomplete variant="desktop" />
             </div>
 
@@ -105,7 +105,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             </div>
           </div>
 
-          <div className="lg:hidden pb-3" data-testid="header-search-mobile-row">
+          <div className="xl:hidden pb-3" data-testid="header-search-mobile-row">
             <SearchAutocomplete variant="mobile" />
           </div>
         </div>
