@@ -1,0 +1,65 @@
+import { readdir, stat } from "fs/promises";
+import path from "path";
+import sharp from "sharp";
+
+const BREEDS_DIR = path.resolve(process.cwd(), "attached_assets", "breeds");
+const QUALITY = 82;
+const MAX_WIDTH = 1280;
+
+async function main() {
+  const entries = await readdir(BREEDS_DIR);
+  const pngs = entries.filter((f) => f.toLowerCase().endsWith(".png"));
+  console.log(`Found ${pngs.length} PNG files in ${BREEDS_DIR}`);
+
+  let converted = 0;
+  let skipped = 0;
+  let totalPngBytes = 0;
+  let totalWebpBytes = 0;
+
+  for (const file of pngs) {
+    const pngPath = path.join(BREEDS_DIR, file);
+    const webpPath = path.join(BREEDS_DIR, file.replace(/\.png$/i, ".webp"));
+
+    const pngStat = await stat(pngPath);
+    totalPngBytes += pngStat.size;
+
+    let needsConvert = true;
+    try {
+      const webpStat = await stat(webpPath);
+      if (webpStat.mtimeMs >= pngStat.mtimeMs) {
+        needsConvert = false;
+        totalWebpBytes += webpStat.size;
+        skipped++;
+      }
+    } catch {
+      // doesn't exist
+    }
+
+    if (needsConvert) {
+      const img = sharp(pngPath).rotate();
+      const meta = await img.metadata();
+      const pipeline = (meta.width && meta.width > MAX_WIDTH)
+        ? img.resize({ width: MAX_WIDTH, withoutEnlargement: true })
+        : img;
+      await pipeline.webp({ quality: QUALITY, effort: 5 }).toFile(webpPath);
+      const out = await stat(webpPath);
+      totalWebpBytes += out.size;
+      converted++;
+      if (converted % 25 === 0) {
+        console.log(`  ${converted} converted...`);
+      }
+    }
+  }
+
+  const pngMb = (totalPngBytes / 1024 / 1024).toFixed(2);
+  const webpMb = (totalWebpBytes / 1024 / 1024).toFixed(2);
+  const reduction = ((1 - totalWebpBytes / totalPngBytes) * 100).toFixed(1);
+  console.log(`\nDone. Converted ${converted}, skipped ${skipped}.`);
+  console.log(`PNG total:  ${pngMb} MB`);
+  console.log(`WebP total: ${webpMb} MB (${reduction}% smaller)`);
+}
+
+main().catch((err) => {
+  console.error(err);
+  process.exit(1);
+});

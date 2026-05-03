@@ -15,10 +15,12 @@ export async function registerRoutes(
   const DOMAIN = "https://dogbreedsandneeds.com";
 
   const breedImagesDir = path.resolve(process.cwd(), "attached_assets", "breeds");
-  app.get(/^\/breeds\/([a-z0-9-]+)\.png$/, (req, res, next) => {
+  app.get(/^\/breeds\/([a-z0-9-]+)\.(png|webp)$/, (req, res, next) => {
     const slug = req.params[0];
-    const filePath = path.join(breedImagesDir, `${slug}.png`);
+    const ext = req.params[1];
+    const filePath = path.join(breedImagesDir, `${slug}.${ext}`);
     res.setHeader("Cache-Control", "public, max-age=2592000, immutable");
+    if (ext === "webp") res.type("image/webp");
     res.sendFile(filePath, (err) => {
       if (err) next();
     });
@@ -57,7 +59,7 @@ export async function registerRoutes(
       }
       for (const breed of breeds) {
         const lastmod = new Date(breed.lastUpdated).toISOString().split("T")[0];
-        const imageEntry = `    <image:image>\n      <image:loc>${DOMAIN}/breeds/${breed.slug}.png</image:loc>\n      <image:title>${escapeXml(breed.name)} — ${escapeXml(breed.sizeCategory)} ${escapeXml(breed.breedGroup)} dog breed portrait</image:title>\n    </image:image>\n`;
+        const imageEntry = `    <image:image>\n      <image:loc>${DOMAIN}/breeds/${breed.slug}.webp</image:loc>\n      <image:title>${escapeXml(breed.name)} — ${escapeXml(breed.sizeCategory)} ${escapeXml(breed.breedGroup)} dog breed portrait</image:title>\n    </image:image>\n`;
         xml += `  <url>\n    <loc>${DOMAIN}/breeds/${breed.slug}</loc>\n    <lastmod>${lastmod}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.6</priority>\n${imageEntry}  </url>\n`;
       }
       const breedBySlug = new Map(breeds.map((b) => [b.slug, b]));

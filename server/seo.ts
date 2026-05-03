@@ -264,7 +264,7 @@ function buildBreedBodyHtml(breed: Breed): string {
     ? `<p><em>Reviewed by ${e(breed.reviewedBy)} · Last updated ${new Date(breed.lastUpdated).toISOString().split("T")[0]}</em></p>`
     : `<p><em>Last updated ${new Date(breed.lastUpdated).toISOString().split("T")[0]}</em></p>`;
 
-  const imgTag = `<img src="${DOMAIN}/breeds/${e(breed.slug)}.png" alt="${e(breed.name)} — ${e(breed.sizeCategory)} ${e(breed.breedGroup)} dog breed portrait" width="1280" height="896" loading="lazy" />`;
+  const imgTag = `<img src="${DOMAIN}/breeds/${e(breed.slug)}.webp" alt="${e(breed.name)} — ${e(breed.sizeCategory)} ${e(breed.breedGroup)} dog breed portrait" width="1280" height="896" loading="lazy" decoding="async" />`;
 
   return `
     ${breadcrumb}
@@ -380,7 +380,7 @@ export async function getPageData(url: string): Promise<PageData | null> {
       const base = staticPages["/breeds"];
       const e = escapeHtml;
       const listHtml = top.slice(0, 24).map((b) =>
-        `<li><a href="${DOMAIN}/breeds/${e(b.slug)}"><img src="${DOMAIN}/breeds/${e(b.slug)}.png" alt="${e(b.name)} — ${e(b.sizeCategory)} ${e(b.breedGroup)} dog breed portrait" width="160" height="120" loading="lazy" decoding="async" /> ${e(b.name)}</a> — ${e(b.breedGroup)} Group</li>`,
+        `<li><a href="${DOMAIN}/breeds/${e(b.slug)}"><img src="${DOMAIN}/breeds/${e(b.slug)}.webp" alt="${e(b.name)} — ${e(b.sizeCategory)} ${e(b.breedGroup)} dog breed portrait" width="160" height="120" loading="lazy" decoding="async" /> ${e(b.name)}</a> — ${e(b.breedGroup)} Group</li>`,
       ).join("");
       const bodyHtml = `${base.bodyHtml}<h2>Browse Popular Breeds</h2><ul>${listHtml}</ul>`;
       return { ...base, bodyHtml, jsonLd: [breadcrumb, itemList] };
@@ -409,7 +409,7 @@ export async function getPageData(url: string): Promise<PageData | null> {
         .filter((b): b is typeof breeds[number] => Boolean(b))
         .sort((a, b) => a.name.localeCompare(b.name));
       const list = items
-        .map((b) => `<li><a href="${DOMAIN}/rescue/${e(b.slug)}"><img src="${DOMAIN}/breeds/${e(b.slug)}.png" alt="${e(b.name)} — ${e(b.sizeCategory)} ${e(b.breedGroup)} dog breed portrait" width="120" height="90" loading="lazy" decoding="async" /> ${e(b.name)} Rescues</a> — ${e(b.breedGroup)} Group</li>`)
+        .map((b) => `<li><a href="${DOMAIN}/rescue/${e(b.slug)}"><img src="${DOMAIN}/breeds/${e(b.slug)}.webp" alt="${e(b.name)} — ${e(b.sizeCategory)} ${e(b.breedGroup)} dog breed portrait" width="120" height="90" loading="lazy" decoding="async" /> ${e(b.name)} Rescues</a> — ${e(b.breedGroup)} Group</li>`)
         .join("");
       const jsonLd: object[] = [
         {
