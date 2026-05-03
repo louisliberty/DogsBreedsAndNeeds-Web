@@ -113,12 +113,6 @@ const staticPages: Record<string, Omit<PageData, "bodyHtml"> & { bodyHtml: strin
       <p>Puppy mills prioritize volume over animal welfare, producing large numbers of puppies with little regard for health or socialization. Red flags include always having puppies available, multiple breeds for sale, no health documentation, refusal to allow facility visits, and listings on anonymous online marketplaces.</p>
     `,
   },
-  "/rescue": {
-    title: "Dog Breed Rescue Directory: Find Breed-Specific Rescues by Breed | Dog Breeds & Needs",
-    description: "Browse rescue organizations for 20+ popular dog breeds. Adopt a Golden Retriever, Labrador, German Shepherd, Bulldog, Beagle, and more from breed-specific rescues nationwide.",
-    canonical: `${DOMAIN}/rescue`,
-    bodyHtml: "",
-  },
   "/poodle-rescue": {
     title: "Poodle Rescue Organizations: Find a Poodle to Adopt Near You | Dog Breeds & Needs",
     description: "Directory of national Poodle rescue organizations across the United States. Find a Poodle rescue near you with contact information, email addresses, and websites.",
