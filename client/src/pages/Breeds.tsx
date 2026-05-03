@@ -214,7 +214,7 @@ export default function Breeds() {
                   data-testid={`card-breed-${breed.slug}`}
                 >
                   <label
-                    className={`absolute top-2 right-2 z-10 flex items-center gap-1 bg-background/95 backdrop-blur rounded-md border px-2 py-1 text-xs font-medium ${disabled ? "opacity-50 cursor-not-allowed" : "cursor-pointer hover-elevate"}`}
+                    className={`absolute top-2 right-2 z-10 flex items-center gap-2 bg-background/95 backdrop-blur rounded-md border pl-3 pr-2.5 py-1.5 text-xs font-medium ${disabled ? "opacity-50 cursor-not-allowed" : "cursor-pointer hover-elevate"}`}
                     onClick={(e) => e.stopPropagation()}
                     data-testid={`compare-toggle-${breed.slug}`}
                   >
