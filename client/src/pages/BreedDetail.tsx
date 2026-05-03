@@ -117,7 +117,7 @@ function ShareButtons({ breed, variant = "default" }: { breed: Breed; variant?: 
   );
 }
 
-function StickyActions({ breed, visible }: { breed: Breed; visible: boolean }) {
+function StickyActions({ breed, visible, hasRescues }: { breed: Breed; visible: boolean; hasRescues: boolean }) {
   const { toast } = useToast();
   const copy = async () => {
     try {
@@ -140,9 +140,11 @@ function StickyActions({ breed, visible }: { breed: Breed; visible: boolean }) {
           <Link href="/find-a-breeder">
             <Button variant="outline" size="sm" data-testid="sticky-button-breeder">Find a Breeder</Button>
           </Link>
-          <Link href={`/rescue/${breed.slug}`}>
-            <Button variant="outline" size="sm" data-testid="sticky-button-rescue">Find a Rescue</Button>
-          </Link>
+          {hasRescues && (
+            <Link href={`/rescue/${breed.slug}`}>
+              <Button variant="outline" size="sm" data-testid="sticky-button-rescue">Find a Rescue</Button>
+            </Link>
+          )}
           <Link href={`/compare?breeds=${encodeURIComponent(breed.slug)}`}>
             <Button variant="outline" size="sm" data-testid="sticky-button-compare">
               <Scale className="h-4 w-4 mr-1" /> Compare
@@ -220,6 +222,12 @@ export default function BreedDetail() {
     enabled: !!breed,
   });
 
+  const { data: breedRescues } = useQuery<{ id: number }[]>({
+    queryKey: ["/api/rescues", slug],
+    enabled: !!breed,
+  });
+  const hasRescues = (breedRescues?.length ?? 0) > 0;
+
   usePageMeta(
     breed ? `${breed.name}: Breed Info, Temperament & Care Guide | Dog Breeds & Needs` : "Dog Breed Details | Dog Breeds & Needs",
     breed ? `Learn everything about the ${breed.name}: temperament, size, exercise needs, health tips, and more. See if this ${breed.breedGroup} breed is right for you!` : "Loading breed details..."
@@ -256,7 +264,7 @@ export default function BreedDetail() {
 
   return (
     <>
-      <StickyActions breed={breed} visible={stickyVisible} />
+      <StickyActions breed={breed} visible={stickyVisible} hasRescues={hasRescues} />
 
       <div className="py-8 px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto">

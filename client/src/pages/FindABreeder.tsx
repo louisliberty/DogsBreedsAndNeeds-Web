@@ -95,6 +95,23 @@ export default function FindABreeder() {
           </p>
         </div>
 
+        <Card className="mb-6 border-primary/30 bg-primary/5" data-testid="card-rescue-cta">
+          <CardContent className="p-5 flex flex-col sm:flex-row items-center gap-4">
+            <Heart className="h-10 w-10 text-primary shrink-0" />
+            <div className="flex-1 text-center sm:text-left">
+              <h2 className="font-semibold text-base mb-1">Considering adoption first?</h2>
+              <p className="text-sm text-muted-foreground">
+                Browse breed-specific rescue organizations across the U.S. Adoption is one of the most ethical ways to bring a dog into your family.
+              </p>
+            </div>
+            <Link href="/rescue">
+              <Button data-testid="button-browse-rescues">
+                <Heart className="mr-2 h-4 w-4" /> Browse Rescue Directory
+              </Button>
+            </Link>
+          </CardContent>
+        </Card>
+
         <Card className="mb-8 border-primary/30 bg-primary/5">
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
