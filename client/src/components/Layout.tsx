@@ -67,6 +67,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
   const footerLegalLinks = [
     { href: "/about", label: "About" },
+    { href: "/products/how-we-choose", label: "How We Choose Products" },
     { href: "/privacy", label: "Privacy Policy" },
     { href: "/terms", label: "Terms of Service" },
     { href: "/sitemap", label: "Sitemap" },

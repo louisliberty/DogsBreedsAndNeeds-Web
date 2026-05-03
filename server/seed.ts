@@ -1,6 +1,6 @@
 import { storage } from "./storage";
 import { breedSeedData } from "./breedData";
-import { productSeedData } from "./productData";
+import { productSeedData, PRODUCT_SEED_VERSION } from "./productData";
 import { computeCompletenessScore } from "@shared/schema";
 import { generateFaqs } from "./contentGenerator";
 import { rescueSeedData, RESCUE_SEED_VERSION } from "./rescueData";
@@ -23,6 +23,7 @@ export async function seedDatabase() {
     await runFaqBackfill();
     await seedRescues();
     await seedArticles();
+    await seedProducts();
     return;
   }
 
@@ -56,17 +57,25 @@ export async function seedDatabase() {
     `Breeds: inserted=${inserted}, refreshed=${updated}, preserved (admin-edited)=${skippedEdited}`,
   );
 
-  console.log("Seeding products...");
-  for (const product of productSeedData) {
-    await storage.upsertProduct(product);
-  }
-  console.log(`Seeded ${productSeedData.length} products`);
+  await seedProducts();
 
   await storage.setMeta("seedVersion", SEED_VERSION);
   await runQualityBackfill();
   await runFaqBackfill();
   await seedRescues();
   await seedArticles();
+}
+
+async function seedProducts() {
+  const done = await storage.getMeta("productSeedVersion");
+  if (done === PRODUCT_SEED_VERSION) return;
+  console.log(`Seeding products (${PRODUCT_SEED_VERSION})...`);
+  await storage.deleteAllProducts();
+  for (const product of productSeedData) {
+    await storage.upsertProduct(product);
+  }
+  console.log(`Seeded ${productSeedData.length} eco-conscious products`);
+  await storage.setMeta("productSeedVersion", PRODUCT_SEED_VERSION);
 }
 
 async function seedArticles() {

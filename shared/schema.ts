@@ -64,11 +64,18 @@ export const meta = pgTable("meta", {
 export const products = pgTable("products", {
   id: serial("id").primaryKey(),
   name: text("name").notNull(),
+  brand: text("brand"),
   category: text("category").notNull(),
   description: text("description").notNull(),
   imageUrl: text("image_url"),
   suitableSizes: text("suitable_sizes").notNull(),
   whyRecommended: text("why_recommended").notNull(),
+  editorsNote: text("editors_note"),
+  editorsPick: boolean("editors_pick").notNull().default(false),
+  priceTier: text("price_tier"),
+  bestFor: text("best_for").array().notNull().default(sql`ARRAY[]::text[]`),
+  tags: text("tags").array().notNull().default(sql`ARRAY[]::text[]`),
+  retailers: jsonb("retailers").$type<{ retailer: string; url: string }[]>().notNull().default(sql`'[]'::jsonb`),
   linkPlaceholder: text("link_placeholder"),
   sponsored: boolean("sponsored").notNull().default(false),
 });
@@ -78,7 +85,36 @@ export const energyLevels = ["Low", "Moderate", "High", "Very High"] as const;
 export const sheddingLevels = ["Low", "Moderate", "High", "Very High"] as const;
 export const trainabilityLevels = ["Easy", "Moderate", "Challenging", "Independent"] as const;
 export const barkingTendencies = ["Rare", "Occasional", "Frequent", "Vocal"] as const;
-export const productCategories = ["Food", "Toys", "Training", "Grooming", "Health"] as const;
+export const productCategories = [
+  "Food & Treats",
+  "Toys & Enrichment",
+  "Leashes & Harnesses",
+  "Grooming & Coat Care",
+  "Beds & Crates",
+  "Health & Supplements",
+  "Cleanup",
+] as const;
+export const productPriceTiers = ["$", "$$", "$$$"] as const;
+export const productTrustTags = [
+  "Made in USA",
+  "Made in Canada",
+  "B-Corp",
+  "Vet-formulated",
+  "Single-protein",
+  "Grain-free",
+  "Limited ingredient",
+  "Human-grade",
+  "Non-GMO",
+  "Organic",
+  "BPA-free",
+  "Phthalate-free",
+  "Plant-based",
+  "Recycled materials",
+  "Recyclable packaging",
+  "Compostable",
+  "Plastic-free",
+  "Cruelty-free",
+] as const;
 export const contentQualityLevels = ["templated", "draft", "reviewed", "verified"] as const;
 
 export const breedFaqSchema = z.object({

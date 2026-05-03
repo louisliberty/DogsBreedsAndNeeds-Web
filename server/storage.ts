@@ -21,6 +21,7 @@ export interface IStorage {
   upsertProduct(product: InsertProduct): Promise<Product>;
   updateProduct(id: number, data: Partial<InsertProduct>): Promise<Product | undefined>;
   deleteProduct(id: number): Promise<void>;
+  deleteAllProducts(): Promise<void>;
 
   getMeta(key: string): Promise<string | undefined>;
   setMeta(key: string, value: string): Promise<void>;
@@ -154,6 +155,10 @@ export class DatabaseStorage implements IStorage {
   async updateProduct(id: number, data: Partial<InsertProduct>): Promise<Product | undefined> {
     const [result] = await db.update(products).set(data).where(eq(products.id, id)).returning();
     return result;
+  }
+
+  async deleteAllProducts(): Promise<void> {
+    await db.delete(products);
   }
 
   async deleteProduct(id: number): Promise<void> {

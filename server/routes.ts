@@ -70,6 +70,7 @@ export async function registerRoutes(
         { loc: "/rescue", priority: "0.8", changefreq: "monthly" },
         { loc: "/blog", priority: "0.8", changefreq: "weekly" },
         { loc: "/products", priority: "0.7", changefreq: "weekly" },
+        { loc: "/products/how-we-choose", priority: "0.5", changefreq: "yearly" },
         { loc: "/about", priority: "0.6", changefreq: "monthly" },
         { loc: "/privacy", priority: "0.3", changefreq: "yearly" },
         { loc: "/terms", priority: "0.3", changefreq: "yearly" },

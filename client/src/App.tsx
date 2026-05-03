@@ -19,6 +19,7 @@ const Rescue = lazy(() => import("@/pages/Rescue"));
 const Blog = lazy(() => import("@/pages/Blog"));
 const BlogPost = lazy(() => import("@/pages/BlogPost"));
 const Products = lazy(() => import("@/pages/Products"));
+const HowWeChooseProducts = lazy(() => import("@/pages/HowWeChooseProducts"));
 const Sitemap = lazy(() => import("@/pages/Sitemap"));
 const Admin = lazy(() => import("@/pages/Admin"));
 const About = lazy(() => import("@/pages/About"));
@@ -100,6 +101,7 @@ function Router() {
           <Route path="/blog" component={Blog} />
           <Route path="/blog/:slug" component={BlogPost} />
           <Route path="/products" component={Products} />
+          <Route path="/products/how-we-choose" component={HowWeChooseProducts} />
           <Route path="/sitemap" component={Sitemap} />
           <Route path="/about" component={About} />
           <Route path="/privacy" component={Privacy} />
