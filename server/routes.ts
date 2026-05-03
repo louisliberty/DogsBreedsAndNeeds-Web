@@ -213,7 +213,11 @@ export async function registerRoutes(
         return res.status(401).json({ message: "Unauthorized" });
       }
       const parsed = insertArticleSchema.parse(req.body);
-      const article = await storage.upsertArticle(parsed);
+      const existing = await storage.getArticleBySlug(parsed.slug);
+      if (existing) {
+        return res.status(409).json({ message: "An article with this slug already exists" });
+      }
+      const article = await storage.createArticle(parsed);
       res.json(article);
     } catch (error) {
       if (error instanceof ZodError) {

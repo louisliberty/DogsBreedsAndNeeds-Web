@@ -1,6 +1,6 @@
 import type { InsertArticle } from "@shared/schema";
 
-export const ARTICLE_SEED_VERSION = "v2-task6-blog-fix-links";
+export const ARTICLE_SEED_VERSION = "v4-task6-blog-breed-links-fix";
 
 const PUB = (daysAgo: number) => {
   const d = new Date();
@@ -380,7 +380,7 @@ Run from any breeder who:
 These are the calling cards of puppy mills and irresponsible commercial breeders.
 
 ## Cost and Waiting Lists
-Responsible breeders charge what it costs to breed responsibly. Expect to pay $1,500–$4,000 or more for a well-bred puppy, depending on breed. Waiting lists of six months to two years are normal. The breeder is not gouging you; they are recovering health testing, stud fees, prenatal care, neonatal veterinary costs, vaccinations, and the time investment of properly raising a litter.
+Responsible breeders charge what it costs to breed responsibly. Expect to pay $1,500–$4,000 or more for a well-bred puppy, depending on breed. Popular family breeds like the [Golden Retriever](/breeds/golden-retriever), [Labrador Retriever](/breeds/labrador-retriever), and [Bernese Mountain Dog](/breeds/bernese-mountain-dog) often sit at the higher end because of extensive health testing requirements. Working breeds like the [German Shepherd Dog](/breeds/german-shepherd-dog) and [Border Collie](/breeds/border-collie) vary widely depending on whether the line is bred for sport, work, or companionship. Waiting lists of six months to two years are normal. The breeder is not gouging you; they are recovering health testing, stud fees, prenatal care, neonatal veterinary costs, vaccinations, and the time investment of properly raising a litter.
 
 If a puppy is dramatically cheaper than the going rate for the breed, ask why. The answer is usually that something the responsible breeders are doing — health testing, socialization, lineage care — is not being done.
 
@@ -420,6 +420,9 @@ Adoption is also not the same as taking any dog from any source. Avoid "rescues"
 Buying from a responsible breeder is not the same as buying any puppy from any source. Pet stores almost always source from puppy mills or commercial breeders, regardless of marketing claims. Online classified sites, social media puppy posts from unknown sellers, and "designer breeders" with constant litter availability are usually irresponsible operations.
 
 A truly responsible breeder is not always available. Waiting lists of one to two years are normal. They will interview you, screen you, and sometimes turn you down. If the puppy is available immediately and the breeder asks no questions, you are not buying from a responsible breeder.
+
+## Breeds Where Each Path Tends to Make Sense
+Some breeds are easy to find in rescue and harder to find from responsible breeders, and vice versa. The [Labrador Retriever](/breeds/labrador-retriever), [Golden Retriever](/breeds/golden-retriever), and [German Shepherd Dog](/breeds/german-shepherd-dog) are among the most surrendered breeds in the U.S., so adoption is often realistic. The [Beagle](/breeds/beagle) and [Staffordshire Bull Terrier](/breeds/staffordshire-bull-terrier) are also heavily represented in shelters. By contrast, less common working and toy breeds like the [Bernese Mountain Dog](/breeds/bernese-mountain-dog) or [Cavalier King Charles Spaniel](/breeds/cavalier-king-charles-spaniel) rarely appear in general rescue, so a responsible breeder is often the practical route.
 
 ## The Hybrid Path
 Many people end up doing both over the course of dog-owning life. A first dog from a responsible breeder gives you a known starting point and a strong support system. Later dogs are often adopted as you become more confident in evaluating temperament and managing the unknowns of adult adoption.

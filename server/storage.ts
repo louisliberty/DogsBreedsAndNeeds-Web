@@ -37,6 +37,7 @@ export interface IStorage {
   getArticleBySlug(slug: string): Promise<Article | undefined>;
   getArticleById(id: number): Promise<Article | undefined>;
   upsertArticle(data: InsertArticle): Promise<Article>;
+  createArticle(data: InsertArticle): Promise<Article>;
   updateArticle(id: number, data: Partial<InsertArticle>): Promise<Article | undefined>;
   deleteArticle(id: number): Promise<void>;
 }
@@ -194,6 +195,14 @@ export class DatabaseStorage implements IStorage {
         target: articles.slug,
         set: { ...data, updatedAt: new Date() },
       })
+      .returning();
+    return row;
+  }
+
+  async createArticle(data: InsertArticle): Promise<Article> {
+    const [row] = await db
+      .insert(articles)
+      .values({ ...data, updatedAt: new Date() })
       .returning();
     return row;
   }
