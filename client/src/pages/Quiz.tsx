@@ -351,7 +351,7 @@ function EmailCaptureCard({
     },
     onSuccess: () => {
       setSubmitted(true);
-      toast({ title: "Saved", description: "We'll send tips for your top match shortly." });
+      toast({ title: "Saved", description: "Your results are saved — we'll notify you when breed tips are ready." });
     },
     onError: () => {
       toast({ title: "Couldn't save", description: "Please check your email and try again.", variant: "destructive" });
@@ -364,9 +364,9 @@ function EmailCaptureCard({
         <CardContent className="p-6 flex items-center gap-3">
           <CheckCircle2 className="h-6 w-6 text-emerald-600 shrink-0" />
           <div>
-            <p className="font-semibold">Thanks — you're on the list.</p>
+            <p className="font-semibold">Thanks — your results are saved.</p>
             <p className="text-sm text-muted-foreground">
-              We'll send breed-specific tips for the {topMatches[0]?.name} to {email}. No spam, unsubscribe anytime.
+              We saved your top matches with {email} and will notify you when breed-specific tips for the {topMatches[0]?.name} are available. No spam, unsubscribe anytime.
             </p>
           </div>
         </CardContent>
@@ -380,9 +380,9 @@ function EmailCaptureCard({
         <div className="flex items-start gap-3 mb-3">
           <Mail className="h-5 w-5 text-primary shrink-0 mt-0.5" />
           <div>
-            <h3 className="font-semibold">Want tips for your top match?</h3>
+            <h3 className="font-semibold">Save my results</h3>
             <p className="text-sm text-muted-foreground">
-              Optional — we'll email a few breed-specific tips for the {topMatches[0]?.name}. No spam, unsubscribe anytime.
+              Optional — save your top matches and we'll notify you when breed-specific tips for the {topMatches[0]?.name} are available. No spam, unsubscribe anytime.
             </p>
           </div>
         </div>
@@ -412,7 +412,7 @@ function EmailCaptureCard({
             disabled={mutation.isPending || !email.trim()}
             data-testid="button-quiz-email-submit"
           >
-            {mutation.isPending ? "Saving…" : "Send My Tips"}
+            {mutation.isPending ? "Saving…" : "Save My Results"}
           </Button>
         </form>
       </CardContent>
