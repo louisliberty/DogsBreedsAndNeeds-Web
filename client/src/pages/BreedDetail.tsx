@@ -140,10 +140,10 @@ function StickyActions({ breed, visible }: { breed: Breed; visible: boolean }) {
           <Link href="/find-a-breeder">
             <Button variant="outline" size="sm" data-testid="sticky-button-breeder">Find a Breeder</Button>
           </Link>
-          <Link href="/poodle-rescue">
+          <Link href={`/rescue/${breed.slug}`}>
             <Button variant="outline" size="sm" data-testid="sticky-button-rescue">Find a Rescue</Button>
           </Link>
-          <Link href="/breeds">
+          <Link href={`/compare?breeds=${encodeURIComponent(breed.slug)}`}>
             <Button variant="outline" size="sm" data-testid="sticky-button-compare">
               <Scale className="h-4 w-4 mr-1" /> Compare
             </Button>
