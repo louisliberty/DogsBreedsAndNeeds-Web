@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { Link, useLocation } from "wouter";
-import { Search, Dog, BookOpen, ShoppingBag, ArrowRight, Heart } from "lucide-react";
+import { Search, Dog, BookOpen, ShoppingBag, ArrowRight, Heart, Bird, Mountain, Shield, Shovel, Crown, Sparkles, Compass } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
@@ -9,6 +9,16 @@ import { Badge } from "@/components/ui/badge";
 import { useState } from "react";
 import type { Breed } from "@shared/schema";
 import { breedGroups } from "@shared/schema";
+
+const groupIcons: Record<typeof breedGroups[number], typeof Dog> = {
+  Sporting: Bird,
+  Hound: Mountain,
+  Working: Shield,
+  Terrier: Shovel,
+  Toy: Crown,
+  "Non-Sporting": Sparkles,
+  Herding: Compass,
+};
 import { getBreedImage } from "@/lib/breedImages";
 import { useCanonical } from "@/hooks/useCanonical";
 import { usePageMeta } from "@/hooks/usePageMeta";
@@ -78,16 +88,19 @@ export default function Home() {
           <h2 className="text-2xl sm:text-3xl font-bold mb-2 text-center" data-testid="text-groups-title">Browse by Group</h2>
           <p className="text-muted-foreground text-center mb-8">All AKC breed groups</p>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-3">
-            {breedGroups.map((group) => (
-              <Link key={group} href={`/breeds?group=${group}`}>
-                <Card className="cursor-pointer hover:border-primary transition-colors h-full">
-                  <CardContent className="p-6 text-center">
-                    <Dog className="h-12 w-12 mx-auto mb-3 text-primary" />
-                    <p className="text-base font-semibold" data-testid={`text-group-${group.toLowerCase()}`}>{group}</p>
-                  </CardContent>
-                </Card>
-              </Link>
-            ))}
+            {breedGroups.map((group) => {
+              const Icon = groupIcons[group];
+              return (
+                <Link key={group} href={`/breeds?group=${group}`}>
+                  <Card className="cursor-pointer hover:border-primary transition-colors h-full">
+                    <CardContent className="p-6 text-center">
+                      <Icon className="h-12 w-12 mx-auto mb-3 text-primary" />
+                      <p className="text-base font-semibold" data-testid={`text-group-${group.toLowerCase()}`}>{group}</p>
+                    </CardContent>
+                  </Card>
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>
