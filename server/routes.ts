@@ -31,7 +31,6 @@ export async function registerRoutes(
         { loc: "/ethical-sourcing", priority: "0.7", changefreq: "monthly" },
         { loc: "/find-a-breeder", priority: "0.8", changefreq: "monthly" },
         { loc: "/rescue", priority: "0.8", changefreq: "monthly" },
-        { loc: "/poodle-rescue", priority: "0.5", changefreq: "yearly" },
         { loc: "/products", priority: "0.7", changefreq: "weekly" },
         { loc: "/sitemap", priority: "0.3", changefreq: "monthly" },
       ];
@@ -145,6 +144,10 @@ export async function registerRoutes(
     } catch (error) {
       res.status(500).json({ message: "Failed to fetch product" });
     }
+  });
+
+  app.get("/poodle-rescue", (_req, res) => {
+    res.redirect(301, "/rescue/poodle");
   });
 
   app.get("/api/rescues", async (_req, res) => {
