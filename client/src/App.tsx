@@ -1,6 +1,6 @@
 import { useEffect, useRef, lazy, Suspense } from "react";
 import { Switch, Route, useLocation } from "wouter";
-import { queryClient } from "./lib/queryClient";
+import { queryClient, refreshBreedsVersion } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -114,11 +114,38 @@ function Router() {
   );
 }
 
+function BreedsVersionSync() {
+  useEffect(() => {
+    // Force an initial verification on mount, and re-verify whenever the tab
+    // regains focus or visibility. Per-fetch revalidation is also enforced
+    // inside withVerifiedBreedsVersion (10s TTL), so a long-open SPA cannot
+    // keep stamping a stale token onto immutable URLs after an admin edit.
+    void refreshBreedsVersion({ force: true });
+
+    const force = () => {
+      void refreshBreedsVersion({ force: true });
+    };
+    const onVisible = () => {
+      if (document.visibilityState === "visible") force();
+    };
+    document.addEventListener("visibilitychange", onVisible);
+    window.addEventListener("focus", force);
+
+    return () => {
+      document.removeEventListener("visibilitychange", onVisible);
+      window.removeEventListener("focus", force);
+    };
+  }, []);
+
+  return null;
+}
+
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <Toaster />
+        <BreedsVersionSync />
         <Router />
       </TooltipProvider>
     </QueryClientProvider>

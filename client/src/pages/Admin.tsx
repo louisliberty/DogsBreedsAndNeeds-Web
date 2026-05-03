@@ -9,7 +9,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { Textarea } from "@/components/ui/textarea";
 import { Progress } from "@/components/ui/progress";
 import { useToast } from "@/hooks/use-toast";
-import { apiRequest, queryClient } from "@/lib/queryClient";
+import { apiRequest, queryClient, setBreedsVersion, markBreedsVersionVerified } from "@/lib/queryClient";
 import type { Breed } from "@shared/schema";
 import { computeCompletenessScore, CONTENT_FIELD_MINIMUMS, contentQualityLevels } from "@shared/schema";
 import { useCanonical } from "@/hooks/useCanonical";
@@ -63,6 +63,11 @@ export default function Admin() {
         const body = await res.json().catch(() => ({}));
         throw new Error(body.message || "Failed to update");
       }
+      const v = res.headers.get("X-Breeds-Version");
+      if (v) {
+        setBreedsVersion(v);
+        markBreedsVersionVerified();
+      }
       return res.json();
     },
     onSuccess: (updated) => {
@@ -85,6 +90,11 @@ export default function Admin() {
         headers: { Authorization: `Bearer ${authToken}` },
       });
       if (!res.ok) throw new Error("Failed to delete");
+      const v = res.headers.get("X-Breeds-Version");
+      if (v) {
+        setBreedsVersion(v);
+        markBreedsVersionVerified();
+      }
     },
     onSuccess: () => {
       queryClient.invalidateQueries({

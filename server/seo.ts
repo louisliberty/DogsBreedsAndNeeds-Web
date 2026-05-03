@@ -1,7 +1,44 @@
+import crypto from "crypto";
 import { storage } from "./storage";
 import type { Breed } from "@shared/schema";
 
 const DOMAIN = "https://dogbreedsandneeds.com";
+
+const BREED_VERSION_META_KEY = "breedListVersion";
+const BREED_VERSION_TTL_MS = 5_000;
+let cachedBreedVersion: string | null = null;
+let cachedBreedVersionAt = 0;
+
+function newBreedVersionToken(): string {
+  return Date.now().toString(36) + crypto.randomBytes(3).toString("hex");
+}
+
+export async function getBreedListVersion(opts: { fresh?: boolean } = {}): Promise<string> {
+  const now = Date.now();
+  if (
+    !opts.fresh &&
+    cachedBreedVersion &&
+    now - cachedBreedVersionAt < BREED_VERSION_TTL_MS
+  ) {
+    return cachedBreedVersion;
+  }
+  let v = await storage.getMeta(BREED_VERSION_META_KEY);
+  if (!v) {
+    v = newBreedVersionToken();
+    await storage.setMeta(BREED_VERSION_META_KEY, v);
+  }
+  cachedBreedVersion = v;
+  cachedBreedVersionAt = now;
+  return v;
+}
+
+export async function bumpBreedListVersion(): Promise<string> {
+  const v = newBreedVersionToken();
+  await storage.setMeta(BREED_VERSION_META_KEY, v);
+  cachedBreedVersion = v;
+  cachedBreedVersionAt = Date.now();
+  return v;
+}
 
 interface PageData {
   title: string;
@@ -728,7 +765,7 @@ export async function getPageData(url: string): Promise<PageData | null> {
   return null;
 }
 
-export function injectPageData(html: string, data: PageData): string {
+export function injectPageData(html: string, data: PageData, breedVersion?: string): string {
   const defaultTitle = "Dog Breeds & Needs - Your Complete Guide to 205 AKC Dog Breeds";
   const defaultDesc = "Explore all 205 AKC-recognized dog breeds. Find your perfect companion with our breed quiz, ethical sourcing guide, and product recommendations.";
 
@@ -777,6 +814,11 @@ export function injectPageData(html: string, data: PageData): string {
       const json = JSON.stringify(block).replace(/</g, "\\u003c");
       headTagParts.push(`<script type="application/ld+json">${json}</script>`);
     }
+  }
+
+  if (breedVersion) {
+    const safe = breedVersion.replace(/[^A-Za-z0-9_-]/g, "");
+    headTagParts.push(`<script>window.__BREEDS_V__=${JSON.stringify(safe)};</script>`);
   }
 
   html = html.replace("</head>", `    ${headTagParts.join("\n    ")}\n  </head>`);

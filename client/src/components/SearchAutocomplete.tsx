@@ -5,6 +5,7 @@ import { Search } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import type { Breed } from "@shared/schema";
 import { getBreedImage } from "@/lib/breedImages";
+import { withVerifiedBreedsVersion } from "@/lib/queryClient";
 
 interface Props {
   variant?: "desktop" | "mobile";
@@ -32,7 +33,7 @@ export function SearchAutocomplete({ variant = "desktop", onNavigate }: Props) {
   const { data: results, isFetching } = useQuery<Breed[]>({
     queryKey: ["/api/breeds", { search: debounced, limit: "8" }],
     queryFn: async () => {
-      const res = await fetch(`/api/breeds?search=${encodeURIComponent(debounced)}&limit=8`);
+      const res = await fetch(await withVerifiedBreedsVersion(`/api/breeds?search=${encodeURIComponent(debounced)}&limit=8`));
       if (!res.ok) throw new Error("Search failed");
       return res.json();
     },

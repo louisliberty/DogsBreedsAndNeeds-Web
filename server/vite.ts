@@ -5,7 +5,7 @@ import viteConfig from "../vite.config";
 import fs from "fs";
 import path from "path";
 import { nanoid } from "nanoid";
-import { getCachedPageData, injectPageData } from "./seo";
+import { getCachedPageData, injectPageData, getBreedListVersion } from "./seo";
 
 const viteLogger = createLogger();
 
@@ -50,9 +50,17 @@ export async function setupVite(server: Server, app: Express) {
         `src="/src/main.tsx?v=${nanoid()}"`,
       );
 
-      const pageData = await getCachedPageData(url);
+      const [pageData, breedVersion] = await Promise.all([
+        getCachedPageData(url),
+        getBreedListVersion(),
+      ]);
       if (pageData) {
-        template = injectPageData(template, pageData);
+        template = injectPageData(template, pageData, breedVersion);
+      } else {
+        template = template.replace(
+          "</head>",
+          `    <script>window.__BREEDS_V__=${JSON.stringify(breedVersion)};</script>\n  </head>`,
+        );
       }
 
       const page = await vite.transformIndexHtml(url, template);

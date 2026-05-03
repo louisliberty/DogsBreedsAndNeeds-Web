@@ -56,3 +56,24 @@ A fully functional dog breed directory website featuring all 205 AKC-recognized 
 - `POST /api/admin/breeds` - Create breed (auth required)
 - `PUT /api/admin/breeds/:id` - Update breed (auth required)
 - `DELETE /api/admin/breeds/:id` - Delete breed (auth required)
+
+## Edge Caching for Breed Lists
+The `/api/breeds*` list endpoints use a versioned-URL strategy so shared/CDN caches can hold responses essentially forever while admin edits invalidate immediately.
+
+**Version source of truth:** A `breedListVersion` token is persisted in the `meta` table (`server/storage.ts`) so all server instances agree. `getBreedListVersion()` and `bumpBreedListVersion()` live in `server/seo.ts`, with a 5-second in-process memoization layer to avoid a DB roundtrip on every request. `bumpBreedListVersion()` writes a fresh token (timestamp + random hex) to the `meta` row.
+
+**Write path:** Every admin breed mutation (POST/PUT/DELETE `/api/admin/breeds*` in `server/routes.ts`) awaits `bumpBreedListVersion()`, returns the new value in the `X-Breeds-Version` response header, and also calls `clearSeoCache()` / clears `sitemapCache`.
+
+**Read path:** `GET /api/breeds` and `GET /api/breeds/count` consult `getBreedListVersion()` (memoized 5s); `GET /api/breeds/version` consults it with `{ fresh: true }` to bypass the memo.
+- If the request URL includes `?v=<token>` matching the current version, the response sets `Cache-Control: public, max-age=86400, s-maxage=31536000, immutable` — safe because the URL itself changes when the version changes.
+- If `v` is missing or stale, the response sets `Cache-Control: public, max-age=0, s-maxage=10, stale-while-revalidate=60, must-revalidate`, so any shared cache revalidates within ~10s.
+- `GET /api/breeds/version` is the authoritative invalidation channel and is therefore strongly fresh: `Cache-Control: no-store, Pragma: no-cache`. No CDN or browser ever caches it.
+- All breed-list responses also send `ETag: W/"breeds-<version>-<sha1(queryKey).slice(0,16)>"` (queryKey is hashed so user-controlled `search` text can't malform the header), `X-Breeds-Version`, and `Surrogate-Key: breeds`. Conditional requests with `If-None-Match` are answered with `304 Not Modified`. CDNs with cache-tag/surrogate-key purge (Fastly, Cloudflare Enterprise) can purge the `breeds` tag for instant invalidation.
+
+**Client integration:** SSR (`server/vite.ts`, `server/static.ts`) injects `<script>window.__BREEDS_V__="..."</script>` into every HTML response. `client/src/lib/queryClient.ts` exposes `getBreedsVersion()`, `setBreedsVersion()`, `markBreedsVersionVerified()`, `refreshBreedsVersion({ force? })`, and the async helper `withVerifiedBreedsVersion(url)`.
+
+**Freshness guarantee — per-fetch TTL revalidation:** The default TanStack Query fetcher pipes every `/api/breeds*` URL (other than `/api/breeds/version`) through `withVerifiedBreedsVersion`, which calls `refreshBreedsVersion()` before each fetch. `refreshBreedsVersion` is a no-op if a successful verification happened within the last 10 seconds (the `BREEDS_VERIFICATION_TTL_MS` constant, matched to the unversioned response's `s-maxage`); otherwise it round-trips `/api/breeds/version` (which is `no-store`, so always authoritative). When the returned token differs from the local one, it updates `window.__BREEDS_V__` and invalidates all `/api/breeds*` queries so observers refetch with the new token. This means even a long-open SPA can never stamp a stale token onto an immutable URL more than 10s after an admin edit — the worst-case staleness window is bounded by the TTL. `SearchAutocomplete` uses the same async helper for its custom fetch. `BreedsVersionSync` (mounted in `App.tsx`) additionally forces a refresh on mount, on `focus`, and on `visibilitychange` to `visible`.
+
+**Failure fallback:** If `/api/breeds/version` errors transiently, `refreshBreedsVersion` returns without advancing the verification timestamp (so the next call retries) and without throwing. `withVerifiedBreedsVersion` then detects no successful verification has ever occurred and falls back to the unversioned URL — short-cached and `must-revalidate`, never the immutable long-cached one — so breed-list queries never hang and never serve stale immutable data even when version discovery is broken.
+
+**Admin updates:** After admin mutations succeed, `client/src/pages/Admin.tsx` reads `X-Breeds-Version` from the response, updates `window.__BREEDS_V__`, and calls `markBreedsVersionVerified()` so the admin's own subsequent reads immediately use the new versioned URL.

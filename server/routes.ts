@@ -1,11 +1,12 @@
 import express, { type Express } from "express";
 import { createServer, type Server } from "http";
 import path from "path";
+import crypto from "crypto";
 import { storage } from "./storage";
 import { seedDatabase } from "./seed";
 import { insertBreedSchema, insertProductSchema, updateBreedSchema, insertQuizResultSchema, insertArticleSchema, updateArticleSchema, type Breed, type BreedLite } from "@shared/schema";
 import { ZodError } from "zod";
-import { clearSeoCache } from "./seo";
+import { clearSeoCache, getBreedListVersion, bumpBreedListVersion } from "./seo";
 
 let sitemapCache: { xml: string; expires: number } | null = null;
 const SITEMAP_TTL_MS = 60 * 60 * 1000;
@@ -119,10 +120,58 @@ export async function registerRoutes(
     return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&apos;");
   }
 
-  app.get("/api/breeds", async (_req, res) => {
+  function hashQueryKey(queryKey: string): string {
+    return crypto.createHash("sha1").update(queryKey).digest("hex").slice(0, 16);
+  }
+
+  async function applyBreedCacheHeaders(req: express.Request, res: express.Response, queryKey: string): Promise<boolean> {
+    const current = await getBreedListVersion();
+    const requested = typeof req.query.v === "string" ? req.query.v : null;
+    const matched = requested !== null && requested === current;
+    res.setHeader("X-Breeds-Version", current);
+    res.setHeader("Vary", "Accept-Encoding");
+    res.setHeader("Surrogate-Key", "breeds");
+    if (matched) {
+      res.setHeader(
+        "Cache-Control",
+        "public, max-age=86400, s-maxage=31536000, immutable",
+      );
+    } else {
+      res.setHeader(
+        "Cache-Control",
+        "public, max-age=0, s-maxage=10, stale-while-revalidate=60, must-revalidate",
+      );
+    }
+    const etag = `W/"breeds-${current}-${hashQueryKey(queryKey)}"`;
+    res.setHeader("ETag", etag);
+    const inm = req.headers["if-none-match"];
+    if (inm && inm === etag) {
+      res.status(304).end();
+      return true;
+    }
+    return false;
+  }
+
+  app.get("/api/breeds/version", async (_req, res) => {
     try {
-      const { group, search, limit, fields } = _req.query;
+      // Strongly fresh: never cache at the edge or in the browser. This is the
+      // authoritative invalidation channel, so any staleness here would let
+      // clients keep using old immutable /api/breeds?v=<old> URLs.
+      const version = await getBreedListVersion({ fresh: true });
+      res.setHeader("Cache-Control", "no-store");
+      res.setHeader("Pragma", "no-cache");
+      res.json({ version });
+    } catch (error) {
+      res.status(500).json({ message: "Failed to fetch breed list version" });
+    }
+  });
+
+  app.get("/api/breeds", async (req, res) => {
+    try {
+      const { group, search, limit, fields } = req.query;
       const lite = fields === "light";
+      const queryKey = `g=${group || ""}&s=${search || ""}&l=${limit || ""}&f=${lite ? "light" : "full"}`;
+      if (await applyBreedCacheHeaders(req, res, queryKey)) return;
       let breeds: Breed[] | BreedLite[];
       if (search && typeof search === "string") {
         breeds = await storage.searchBreeds(search);
@@ -137,15 +186,15 @@ export async function registerRoutes(
         const n = parseInt(limit);
         breeds = (breeds as Array<Breed | BreedLite>).slice(0, n) as Breed[] | BreedLite[];
       }
-      res.setHeader("Cache-Control", "public, max-age=60");
       res.json(breeds);
     } catch (error) {
       res.status(500).json({ message: "Failed to fetch breeds" });
     }
   });
 
-  app.get("/api/breeds/count", async (_req, res) => {
+  app.get("/api/breeds/count", async (req, res) => {
     try {
+      if (await applyBreedCacheHeaders(req, res, "count")) return;
       const count = await storage.getBreedCount();
       res.json({ count });
     } catch (error) {
@@ -378,8 +427,10 @@ export async function registerRoutes(
       if (!updated) {
         return res.status(404).json({ message: "Breed not found" });
       }
+      const newVersion = await bumpBreedListVersion();
       clearSeoCache();
       sitemapCache = null;
+      res.setHeader("X-Breeds-Version", newVersion);
       res.json(updated);
     } catch (error) {
       if (error instanceof ZodError) {
@@ -396,8 +447,10 @@ export async function registerRoutes(
         return res.status(401).json({ message: "Unauthorized" });
       }
       await storage.deleteBreed(parseInt(req.params.id));
+      const newVersion = await bumpBreedListVersion();
       clearSeoCache();
       sitemapCache = null;
+      res.setHeader("X-Breeds-Version", newVersion);
       res.json({ success: true });
     } catch (error) {
       res.status(500).json({ message: "Failed to delete breed" });
@@ -412,8 +465,10 @@ export async function registerRoutes(
       }
       const parsed = insertBreedSchema.parse(req.body);
       const breed = await storage.upsertBreed(parsed);
+      const newVersion = await bumpBreedListVersion();
       clearSeoCache();
       sitemapCache = null;
+      res.setHeader("X-Breeds-Version", newVersion);
       res.json(breed);
     } catch (error) {
       if (error instanceof ZodError) {

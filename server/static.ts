@@ -1,7 +1,7 @@
 import express, { type Express } from "express";
 import fs from "fs";
 import path from "path";
-import { getCachedPageData, injectPageData } from "./seo";
+import { getCachedPageData, injectPageData, getBreedListVersion } from "./seo";
 
 export function serveStatic(app: Express) {
   const distPath = path.resolve(__dirname, "public");
@@ -27,12 +27,20 @@ export function serveStatic(app: Express) {
   );
 
   app.use("/{*path}", async (req, res) => {
-    const pageData = await getCachedPageData(req.path);
+    const [pageData, breedVersion] = await Promise.all([
+      getCachedPageData(req.path),
+      getBreedListVersion(),
+    ]);
     if (pageData) {
       res.setHeader("Cache-Control", "public, max-age=600, s-maxage=3600");
-      res.send(injectPageData(indexHtml, pageData));
+      res.send(injectPageData(indexHtml, pageData, breedVersion));
     } else {
-      res.send(indexHtml);
+      res.send(
+        indexHtml.replace(
+          "</head>",
+          `    <script>window.__BREEDS_V__=${JSON.stringify(breedVersion)};</script>\n  </head>`,
+        ),
+      );
     }
   });
 }
