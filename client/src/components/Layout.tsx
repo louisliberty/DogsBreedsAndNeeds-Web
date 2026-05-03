@@ -60,7 +60,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     <div className="min-h-screen flex flex-col bg-background text-foreground">
       <header className="sticky top-0 z-50 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex h-16 items-center justify-between gap-4">
+          <div className="flex h-16 items-center justify-between gap-3">
             <Link href="/" data-testid="link-home-logo">
               <div className="flex items-center gap-2 cursor-pointer">
                 <Dog className="h-8 w-8 text-primary" />
@@ -68,7 +68,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               </div>
             </Link>
 
-            <div className="hidden lg:flex flex-1 justify-center max-w-md">
+            <div className="hidden md:flex flex-1 justify-center max-w-md mx-2">
               <SearchAutocomplete variant="desktop" />
             </div>
 
@@ -102,12 +102,15 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               </Button>
             </div>
           </div>
+
+          <div className="md:hidden pb-3" data-testid="header-search-mobile-row">
+            <SearchAutocomplete variant="mobile" />
+          </div>
         </div>
 
         {mobileMenuOpen && (
           <div className="md:hidden border-t" data-testid="nav-mobile">
-            <div className="px-4 py-3 space-y-2">
-              <SearchAutocomplete variant="mobile" onNavigate={() => setMobileMenuOpen(false)} />
+            <div className="px-4 py-3 space-y-1">
               {navLinks.map((link) => (
                 <Link key={link.href} href={link.href}>
                   <div

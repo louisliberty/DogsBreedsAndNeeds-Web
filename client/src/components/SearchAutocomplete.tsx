@@ -90,7 +90,7 @@ export function SearchAutocomplete({ variant = "desktop", onNavigate }: Props) {
     }
   };
 
-  const widthClass = variant === "desktop" ? "w-56 lg:w-72" : "w-full";
+  const widthClass = variant === "desktop" ? "w-full md:w-56 lg:w-72" : "w-full";
 
   return (
     <div ref={containerRef} className={`relative ${widthClass}`} data-testid={`search-autocomplete-${variant}`}>

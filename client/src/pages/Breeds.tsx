@@ -23,14 +23,22 @@ export default function Breeds() {
   );
   const searchString = useSearch();
   const params = new URLSearchParams(searchString);
-  const initialSearch = params.get("search") || "";
-  const initialGroup = params.get("group") || "";
+  const urlSearch = params.get("search") || "";
+  const urlGroup = params.get("group") || "";
 
-  const [searchQuery, setSearchQuery] = useState(initialSearch);
-  const [selectedGroup, setSelectedGroup] = useState(initialGroup);
+  const [searchQuery, setSearchQuery] = useState(urlSearch);
+  const [selectedGroup, setSelectedGroup] = useState(urlGroup);
   const [selectedSize, setSelectedSize] = useState("");
   const [selectedEnergy, setSelectedEnergy] = useState("");
-  const [showFilters, setShowFilters] = useState(!!initialGroup);
+  const [showFilters, setShowFilters] = useState(!!urlGroup);
+
+  useEffect(() => {
+    setSearchQuery(urlSearch);
+  }, [urlSearch]);
+  useEffect(() => {
+    setSelectedGroup(urlGroup);
+    if (urlGroup) setShowFilters(true);
+  }, [urlGroup]);
   const [compareSlugs, setCompareSlugs] = useState<string[]>([]);
   const [, navigate] = useLocation();
 
