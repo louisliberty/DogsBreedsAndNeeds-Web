@@ -3,7 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 import { Link, useLocation, useSearch } from "wouter";
 import {
   Plus, X as XIcon, Share2, Trophy, ArrowLeft, Search, ChevronDown,
-  Check, Minus, AlertCircle,
+  Check, Minus, AlertCircle, ArrowRight, Ruler, Heart, Scissors, Activity, Stethoscope, Users,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -24,6 +24,25 @@ import { useToast } from "@/hooks/use-toast";
 
 const MAX_BREEDS = 3;
 const MIN_BREEDS = 2;
+
+const POPULAR_COMPARISONS: { slugs: string[]; title: string; blurb: string }[] = [
+  { slugs: ["labrador-retriever", "golden-retriever"], title: "Labrador vs Golden Retriever", blurb: "America's two favorite family dogs, head to head." },
+  { slugs: ["french-bulldog", "boston-terrier"], title: "French Bulldog vs Boston Terrier", blurb: "Apartment-friendly companions with big personalities." },
+  { slugs: ["siberian-husky", "alaskan-malamute"], title: "Siberian Husky vs Alaskan Malamute", blurb: "Two stunning sled dogs — which fits your lifestyle?" },
+  { slugs: ["german-shepherd-dog", "belgian-malinois"], title: "German Shepherd vs Belgian Malinois", blurb: "The world's top working dogs compared." },
+  { slugs: ["border-collie", "australian-shepherd"], title: "Border Collie vs Australian Shepherd", blurb: "Brilliant herders for active owners." },
+  { slugs: ["rottweiler", "doberman-pinscher"], title: "Rottweiler vs Doberman", blurb: "Loyal protectors with very different temperaments." },
+  { slugs: ["beagle", "basset-hound"], title: "Beagle vs Basset Hound", blurb: "Family-friendly hounds with a great nose." },
+  { slugs: ["yorkshire-terrier", "maltese"], title: "Yorkshire Terrier vs Maltese", blurb: "Tiny lap dogs with luxurious coats." },
+];
+
+const TRAIT_GROUPS: { icon: typeof Ruler; label: string; traits: string[] }[] = [
+  { icon: Ruler, label: "Size & build", traits: ["Size", "Weight", "Height", "Lifespan"] },
+  { icon: Activity, label: "Energy & training", traits: ["Energy level", "Trainability", "Exercise needs", "Barking"] },
+  { icon: Users, label: "Family fit", traits: ["Good with kids", "Good with other dogs", "Good with strangers", "Apartment friendly"] },
+  { icon: Scissors, label: "Grooming & coat", traits: ["Grooming routine", "Shedding level", "Hypoallergenic"] },
+  { icon: Stethoscope, label: "Health & lifestyle", traits: ["Common health issues", "Ideal owner", "Not a good fit for"] },
+];
 
 type Tone = "good" | "ok" | "warn" | "neutral";
 
@@ -404,6 +423,101 @@ export default function Compare() {
               />
             ))}
           </div>
+        )}
+
+        {!isLoading && !isError && selectedBreeds.length === 0 && (
+          <>
+            <section className="mb-10" data-testid="section-popular-comparisons">
+              <div className="flex items-end justify-between gap-3 mb-4">
+                <div>
+                  <h2 className="text-xl sm:text-2xl font-bold" data-testid="text-popular-title">Popular Comparisons</h2>
+                  <p className="text-sm text-muted-foreground">Start with one of these head-to-heads people search most.</p>
+                </div>
+              </div>
+              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                {POPULAR_COMPARISONS.map((c) => {
+                  const href = `/compare?breeds=${c.slugs.join(",")}`;
+                  return (
+                    <Link key={c.slugs.join("-")} href={href}>
+                      <Card
+                        className="overflow-hidden h-full hover-elevate active-elevate-2 cursor-pointer transition-shadow"
+                        data-testid={`card-popular-${c.slugs.join("-vs-")}`}
+                      >
+                        <div className="grid grid-cols-2 bg-muted/30">
+                          {c.slugs.map((slug) => (
+                            <img
+                              key={slug}
+                              src={getBreedImage(slug)}
+                              alt={`${slug.replace(/-/g, " ")} portrait`}
+                              className="aspect-[4/3] w-full object-cover"
+                              loading="lazy"
+                              decoding="async"
+                            />
+                          ))}
+                        </div>
+                        <CardContent className="p-4">
+                          <div className="font-semibold leading-snug mb-1">{c.title}</div>
+                          <p className="text-xs text-muted-foreground line-clamp-2 mb-2">{c.blurb}</p>
+                          <div className="text-xs font-medium text-primary inline-flex items-center gap-1">
+                            Compare now <ArrowRight className="h-3.5 w-3.5" />
+                          </div>
+                        </CardContent>
+                      </Card>
+                    </Link>
+                  );
+                })}
+              </div>
+            </section>
+
+            <section className="mb-6" data-testid="section-what-we-compare">
+              <div className="mb-4">
+                <h2 className="text-xl sm:text-2xl font-bold" data-testid="text-traits-title">What you'll compare</h2>
+                <p className="text-sm text-muted-foreground">
+                  Every comparison covers 16+ traits across five categories so you can see real differences at a glance.
+                </p>
+              </div>
+              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                {TRAIT_GROUPS.map((g) => {
+                  const Icon = g.icon;
+                  return (
+                    <Card key={g.label} data-testid={`card-trait-group-${g.label.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}>
+                      <CardContent className="p-4">
+                        <div className="flex items-center gap-2 mb-3">
+                          <span className="inline-flex h-8 w-8 items-center justify-center rounded-md bg-primary/10 text-primary">
+                            <Icon className="h-4 w-4" />
+                          </span>
+                          <div className="font-semibold">{g.label}</div>
+                        </div>
+                        <div className="flex flex-wrap gap-1.5">
+                          {g.traits.map((t) => (
+                            <Badge key={t} variant="secondary" className="text-xs font-normal">{t}</Badge>
+                          ))}
+                        </div>
+                      </CardContent>
+                    </Card>
+                  );
+                })}
+                <Card className="bg-primary/5 border-primary/30" data-testid="card-trait-cta">
+                  <CardContent className="p-4 h-full flex flex-col justify-between gap-3">
+                    <div>
+                      <div className="flex items-center gap-2 mb-2">
+                        <Heart className="h-4 w-4 text-primary" />
+                        <div className="font-semibold">Not sure where to start?</div>
+                      </div>
+                      <p className="text-xs text-muted-foreground">
+                        Take a 2-minute quiz and we'll suggest breeds that match your lifestyle.
+                      </p>
+                    </div>
+                    <Link href="/quiz">
+                      <Button size="sm" variant="outline" className="w-full" data-testid="button-trait-quiz-cta">
+                        Take the breed quiz <ArrowRight className="ml-2 h-3.5 w-3.5" />
+                      </Button>
+                    </Link>
+                  </CardContent>
+                </Card>
+              </div>
+            </section>
+          </>
         )}
 
         {selectedBreeds.length >= MIN_BREEDS && (
