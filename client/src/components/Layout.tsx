@@ -2,6 +2,7 @@ import { Link, useLocation } from "wouter";
 import { Dog, Menu, X, Sun, Moon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
+import { SearchAutocomplete } from "@/components/SearchAutocomplete";
 
 function ThemeToggle() {
   const [dark, setDark] = useState(false);
@@ -45,14 +46,21 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     { href: "/find-a-breeder", label: "Find a Breeder" },
     { href: "/blog", label: "Blog" },
     { href: "/products", label: "Products" },
+    { href: "/about", label: "About" },
     { href: "/sitemap", label: "Sitemap" },
+  ];
+
+  const footerLegalLinks = [
+    { href: "/about", label: "About" },
+    { href: "/privacy", label: "Privacy Policy" },
+    { href: "/terms", label: "Terms of Service" },
   ];
 
   return (
     <div className="min-h-screen flex flex-col bg-background text-foreground">
       <header className="sticky top-0 z-50 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex h-16 items-center justify-between">
+          <div className="flex h-16 items-center justify-between gap-4">
             <Link href="/" data-testid="link-home-logo">
               <div className="flex items-center gap-2 cursor-pointer">
                 <Dog className="h-8 w-8 text-primary" />
@@ -60,11 +68,15 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               </div>
             </Link>
 
+            <div className="hidden lg:flex flex-1 justify-center max-w-md">
+              <SearchAutocomplete variant="desktop" />
+            </div>
+
             <nav className="hidden md:flex items-center gap-1" data-testid="nav-desktop">
               {navLinks.map((link) => (
                 <Link key={link.href} href={link.href}>
                   <span
-                    className={`px-3 py-2 rounded-md text-sm font-medium cursor-pointer transition-colors ${
+                    className={`px-2.5 py-2 rounded-md text-sm font-medium cursor-pointer transition-colors ${
                       location === link.href
                         ? "bg-primary text-primary-foreground"
                         : "hover:bg-accent"
@@ -94,7 +106,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
         {mobileMenuOpen && (
           <div className="md:hidden border-t" data-testid="nav-mobile">
-            <div className="px-4 py-3 space-y-1">
+            <div className="px-4 py-3 space-y-2">
+              <SearchAutocomplete variant="mobile" onNavigate={() => setMobileMenuOpen(false)} />
               {navLinks.map((link) => (
                 <Link key={link.href} href={link.href}>
                   <div
@@ -135,7 +148,19 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 {navLinks.map((link) => (
                   <li key={link.href}>
                     <Link href={link.href}>
-                      <span className="hover:text-primary cursor-pointer">{link.label}</span>
+                      <span className="hover:text-primary cursor-pointer" data-testid={`link-footer-${link.label.toLowerCase().replace(/\s+/g, "-")}`}>{link.label}</span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-3">Legal</h3>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                {footerLegalLinks.map((link) => (
+                  <li key={link.href}>
+                    <Link href={link.href}>
+                      <span className="hover:text-primary cursor-pointer" data-testid={`link-footer-legal-${link.label.toLowerCase().replace(/\s+/g, "-")}`}>{link.label}</span>
                     </Link>
                   </li>
                 ))}

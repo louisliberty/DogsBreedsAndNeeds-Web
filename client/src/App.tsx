@@ -19,6 +19,9 @@ import BlogPost from "@/pages/BlogPost";
 import Products from "@/pages/Products";
 import Sitemap from "@/pages/Sitemap";
 import Admin from "@/pages/Admin";
+import About from "@/pages/About";
+import Privacy from "@/pages/Privacy";
+import Terms from "@/pages/Terms";
 import NotFound from "@/pages/not-found";
 
 const breedsScrollStore = { position: 0 };
@@ -83,6 +86,9 @@ function Router() {
         <Route path="/blog/:slug" component={BlogPost} />
         <Route path="/products" component={Products} />
         <Route path="/sitemap" component={Sitemap} />
+        <Route path="/about" component={About} />
+        <Route path="/privacy" component={Privacy} />
+        <Route path="/terms" component={Terms} />
         <Route path="/admin" component={Admin} />
         <Route component={NotFound} />
       </Switch>

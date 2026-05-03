@@ -34,6 +34,9 @@ export async function registerRoutes(
         { loc: "/rescue", priority: "0.8", changefreq: "monthly" },
         { loc: "/blog", priority: "0.8", changefreq: "weekly" },
         { loc: "/products", priority: "0.7", changefreq: "weekly" },
+        { loc: "/about", priority: "0.6", changefreq: "monthly" },
+        { loc: "/privacy", priority: "0.3", changefreq: "yearly" },
+        { loc: "/terms", priority: "0.3", changefreq: "yearly" },
         { loc: "/sitemap", priority: "0.3", changefreq: "monthly" },
       ];
       const today = new Date().toISOString().split("T")[0];

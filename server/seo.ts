@@ -137,6 +137,55 @@ const staticPages: Record<string, Omit<PageData, "bodyHtml"> & { bodyHtml: strin
       <p>Browse dog food recommendations for every size and life stage, interactive toys for mental stimulation, grooming tools matched to coat type, training aids for puppies and adult dogs, and health supplements and essentials for long-term wellbeing.</p>
     `,
   },
+  "/about": {
+    title: "About Dog Breeds & Needs: Our Mission, Editorial Standards & Team",
+    description: "Learn about Dog Breeds & Needs — our mission, how we research breed information, our commitment to ethical sourcing, and the team behind the site.",
+    canonical: `${DOMAIN}/about`,
+    bodyHtml: `
+      <h1>About Dog Breeds &amp; Needs</h1>
+      <p>Dog Breeds &amp; Needs is the honest, in-depth resource for choosing, raising, and living with all 205 AKC-recognized dog breeds. Our mission is to help future and current dog owners make better decisions through thorough, balanced breed information that covers what's wonderful and what's hard about each breed.</p>
+      <h2>How We Research Breed Information</h2>
+      <p>Every breed profile starts with the official AKC standard and the relevant national breed club's published material. We then layer in peer-reviewed veterinary research on breed-specific health conditions, conversations with breed club members and breed-specific rescue volunteers, health screening guidance from the Orthopedic Foundation for Animals (OFA), and editorial review for clarity and practical usefulness. Selected breed profiles carry a Vet Reviewed badge, indicating that a licensed veterinarian has reviewed the medical and care information for accuracy.</p>
+      <h2>Our Commitment to Ethical Sourcing</h2>
+      <p>We give equal weight to two ethical paths: adopting from a reputable breed-specific rescue and buying from a responsible breeder. We never link to puppy mills, pet store puppies, or commercial breeders. Our breeder finder steers readers to AKC-registered breeders with verifiable health testing, and our rescue directory only lists 501(c)(3) breed-specific rescues with transparent operations.</p>
+      <h2>Our Team</h2>
+      <p>Our editorial team has spent more than a decade researching, writing, and reviewing breed information. Selected breed and care content is reviewed by licensed veterinarians for medical accuracy, and we work with breed club members and breed-specific rescue volunteers to capture nuance about temperament, training, and what life with each breed actually looks like.</p>
+    `,
+  },
+  "/privacy": {
+    title: "Privacy Policy | Dog Breeds & Needs",
+    description: "How Dog Breeds & Needs collects, uses, and protects your information — including cookies, analytics, email signups, and your data rights.",
+    canonical: `${DOMAIN}/privacy`,
+    bodyHtml: `
+      <h1>Privacy Policy</h1>
+      <p>DogBreedsAndNeeds.com respects your privacy. This Privacy Policy explains what information we collect when you visit dogbreedsandneeds.com, how we use that information, and the choices you have.</p>
+      <h2>Information We Collect</h2>
+      <p>We collect information you provide directly (such as your email when you sign up for breed tips or quiz results) and information collected automatically (such as IP address, browser type, pages viewed, and cookies that remember your preferences and power analytics).</p>
+      <h2>How We Use Information</h2>
+      <p>We use information to deliver and improve site content, send breed-specific tips when you opt in, analyze how the site is used, prevent abuse, and comply with legal obligations.</p>
+      <h2>Cookies, Advertising, and Affiliate Links</h2>
+      <p>We use first-party cookies for essential functionality and may use third-party analytics cookies. Some pages contain affiliate links to third-party retailers; if you click an affiliate link and make a purchase we may earn a commission at no extra cost to you. We may also display advertisements served by third-party ad networks.</p>
+      <h2>Your Rights and Contact</h2>
+      <p>Depending on your jurisdiction, you may have the right to access, correct, delete, or export the personal information we hold about you. Contact privacy@dogbreedsandneeds.com to exercise these rights or ask any questions.</p>
+    `,
+  },
+  "/terms": {
+    title: "Terms of Service | Dog Breeds & Needs",
+    description: "The terms governing your use of dogbreedsandneeds.com — content use, disclaimers, affiliate disclosure, and limitations of liability.",
+    canonical: `${DOMAIN}/terms`,
+    bodyHtml: `
+      <h1>Terms of Service</h1>
+      <p>These Terms of Service govern your use of dogbreedsandneeds.com. By accessing or using the site you agree to these Terms. If you do not agree, please do not use the site.</p>
+      <h2>Use of the Site and Intellectual Property</h2>
+      <p>You may use the site for personal, non-commercial purposes. All text, images, graphics, logos, and other content on the site are owned by Dog Breeds &amp; Needs or its licensors and are protected by copyright and other intellectual property laws.</p>
+      <h2>Editorial Content and Disclaimers</h2>
+      <p>The site provides general information about dog breeds, training, health, nutrition, and care. The information is provided for educational purposes only and is not a substitute for professional veterinary advice, diagnosis, or treatment. Always seek the advice of a qualified veterinarian with any questions regarding your dog's health or behavior. Breed information reflects general tendencies; individual dogs vary.</p>
+      <h2>Affiliate Disclosure and Third-Party Links</h2>
+      <p>Some product links on the site are affiliate links. If you click such a link and complete a purchase, we may earn a commission at no additional cost to you. Our editorial recommendations are made independently. The site contains links to third-party websites, breeders, rescues, and products; inclusion does not constitute endorsement and you assume all risk when interacting with third-party services.</p>
+      <h2>Limitation of Liability and Contact</h2>
+      <p>The site is provided on an "as is" basis without warranties of any kind. To the maximum extent permitted by law, Dog Breeds &amp; Needs and its contributors will not be liable for any indirect, incidental, special, consequential, or punitive damages arising out of or relating to your use of the site. Questions? Email legal@dogbreedsandneeds.com.</p>
+    `,
+  },
   "/sitemap": {
     title: "Sitemap: All Dog Breeds & Pages | Dog Breeds & Needs",
     description: "View the complete sitemap for Dog Breeds & Needs. Browse all 205 AKC breed pages organized by group, plus guides, products, and tools.",

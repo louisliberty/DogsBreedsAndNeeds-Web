@@ -4,7 +4,7 @@ import { useParams, Link } from "wouter";
 import {
   ArrowLeft, Heart, Zap, Brain, DogIcon, Activity, Stethoscope, Lightbulb, Search,
   Check, X as XIcon, Share2, Link as LinkIcon, ChevronRight, Home as HomeIcon,
-  ShieldCheck, Scale, AlertTriangle, PawPrint as PawPrintIcon,
+  Scale, AlertTriangle, PawPrint as PawPrintIcon,
 } from "lucide-react";
 import { SiFacebook, SiX } from "react-icons/si";
 import { breederFinderStore } from "@/App";
@@ -12,7 +12,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Skeleton } from "@/components/ui/skeleton";
-import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
+import { VetReviewedBadge } from "@/components/VetReviewedBadge";
 import {
   Accordion, AccordionContent, AccordionItem, AccordionTrigger,
 } from "@/components/ui/accordion";
@@ -303,18 +303,7 @@ export default function BreedDetail() {
                 <div className="flex flex-wrap items-center gap-3 mb-2">
                   <h1 className="text-3xl sm:text-4xl font-bold" data-testid="text-breed-name">{breed.name}</h1>
                   <Badge data-testid="badge-breed-popularity">#{breed.popularity} Most Popular</Badge>
-                  {breed.reviewedBy && (
-                    <Tooltip>
-                      <TooltipTrigger asChild>
-                        <Badge variant="default" className="bg-emerald-600 hover:bg-emerald-600 text-white" data-testid="badge-vet-reviewed">
-                          <ShieldCheck className="h-3.5 w-3.5 mr-1" /> Vet Reviewed
-                        </Badge>
-                      </TooltipTrigger>
-                      <TooltipContent>
-                        Reviewed by {breed.reviewedBy} for accuracy.
-                      </TooltipContent>
-                    </Tooltip>
-                  )}
+                  {breed.reviewedBy && <VetReviewedBadge reviewer={breed.reviewedBy} />}
                 </div>
                 <p className="text-xs text-muted-foreground mb-3" data-testid="text-breed-meta-line">
                   Last updated <time dateTime={new Date(breed.lastUpdated).toISOString()}>{lastUpdatedStr}</time>
