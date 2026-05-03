@@ -330,12 +330,19 @@ export default function BreedDetail() {
                   {breed.famousQuote}
                 </p>
                 <ShareButtons breed={breed} variant="compact" />
-                <div className="mt-3">
+                <div className="mt-3 flex flex-wrap gap-2">
                   <Link href={`/compare?breeds=${encodeURIComponent(breed.slug)}`}>
                     <Button variant="outline" size="sm" data-testid="button-compare-with-another">
                       <Scale className="h-4 w-4 mr-2" /> Compare with another breed
                     </Button>
                   </Link>
+                  {hasRescues && (
+                    <Link href={`/rescue/${breed.slug}`}>
+                      <Button variant="outline" size="sm" data-testid="button-hero-rescue">
+                        <Heart className="h-4 w-4 mr-2" /> Adopt a {breed.name}
+                      </Button>
+                    </Link>
+                  )}
                 </div>
               </div>
             </div>
