@@ -233,6 +233,15 @@ export default function Compare() {
   }, [allBreeds, slots]);
 
   useEffect(() => {
+    if (!allBreeds) return;
+    const valid = new Set(allBreeds.map((b) => b.slug));
+    const cleaned = slots.map((s) => (s && valid.has(s) ? s : null));
+    if (cleaned.some((v, i) => v !== slots[i])) {
+      setSlots(cleaned);
+    }
+  }, [allBreeds]);
+
+  useEffect(() => {
     const filled = slots.filter(Boolean) as string[];
     const params = new URLSearchParams();
     if (filled.length > 0) params.set("breeds", filled.join(","));
@@ -497,6 +506,17 @@ function ComparisonTable({ breeds }: { breeds: Breed[] }) {
       label: "Barking",
       render: (b) => b.barkingTendency,
       tone: (b, all) => toneByPosition(barkScore(b.barkingTendency), all.map((x) => barkScore(x.barkingTendency)), false),
+    },
+    {
+      label: "Friendliness",
+      render: (b) => {
+        const avg = (b.strangerFriendliness + b.goodWithKids + b.goodWithDogs) / 3;
+        return `${avg.toFixed(1)}/5`;
+      },
+      tone: (b, all) => {
+        const score = (x: Breed) => (x.strangerFriendliness + x.goodWithKids + x.goodWithDogs) / 3;
+        return toneByPosition(score(b), all.map(score), true);
+      },
     },
     {
       label: "Good with strangers",
