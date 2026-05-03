@@ -8,9 +8,20 @@ interface PageData {
   description: string;
   canonical: string;
   ogType?: string;
+  ogImage?: string;
+  ogImageAlt?: string;
   bodyHtml: string;
   jsonLd?: object[];
   noIndex?: boolean;
+}
+
+const DEFAULT_OG_IMAGE = `${DOMAIN}/og-default.png`;
+const DEFAULT_OG_IMAGE_ALT = "Dog Breeds & Needs - Complete Guide to All 205 AKC Dog Breeds";
+
+function toAbsoluteUrl(url: string): string {
+  if (/^https?:\/\//i.test(url)) return url;
+  if (url.startsWith("/")) return `${DOMAIN}${url}`;
+  return `${DOMAIN}/${url}`;
 }
 
 const staticPages: Record<string, Omit<PageData, "bodyHtml"> & { bodyHtml: string }> = {
@@ -641,6 +652,8 @@ export async function getPageData(url: string): Promise<PageData | null> {
           description: article.metaDescription,
           canonical: articleUrl,
           ogType: "article",
+          ogImage: article.featuredImage || undefined,
+          ogImageAlt: article.featuredImage ? article.title : undefined,
           bodyHtml: body,
           jsonLd,
         };
@@ -661,6 +674,8 @@ export async function getPageData(url: string): Promise<PageData | null> {
           description: `Learn everything about the ${breed.name}: temperament, size, exercise needs, health tips, and more. See if this ${breed.breedGroup} breed is right for you!`,
           canonical: `${DOMAIN}/breeds/${slug}`,
           ogType: "article",
+          ogImage: breed.imageUrl || undefined,
+          ogImageAlt: breed.imageUrl ? `${breed.name} dog breed` : undefined,
           bodyHtml: buildBreedBodyHtml(breed),
           jsonLd: buildBreedJsonLd(breed),
         };
@@ -693,6 +708,9 @@ export function injectPageData(html: string, data: PageData): string {
     `<meta name="robots" content="${robotsContent}" />`
   );
 
+  const ogImage = toAbsoluteUrl(data.ogImage || DEFAULT_OG_IMAGE);
+  const ogImageAlt = data.ogImageAlt || DEFAULT_OG_IMAGE_ALT;
+
   const headTagParts = [
     `<link rel="canonical" href="${escapeHtml(data.canonical)}" />`,
     `<meta property="og:title" content="${escapeHtml(data.title)}" />`,
@@ -700,6 +718,15 @@ export function injectPageData(html: string, data: PageData): string {
     `<meta property="og:url" content="${escapeHtml(data.canonical)}" />`,
     `<meta property="og:type" content="${data.ogType || "website"}" />`,
     `<meta property="og:site_name" content="Dog Breeds &amp; Needs" />`,
+    `<meta property="og:image" content="${escapeHtml(ogImage)}" />`,
+    `<meta property="og:image:width" content="1200" />`,
+    `<meta property="og:image:height" content="630" />`,
+    `<meta property="og:image:alt" content="${escapeHtml(ogImageAlt)}" />`,
+    `<meta name="twitter:card" content="summary_large_image" />`,
+    `<meta name="twitter:title" content="${escapeHtml(data.title)}" />`,
+    `<meta name="twitter:description" content="${escapeHtml(data.description)}" />`,
+    `<meta name="twitter:image" content="${escapeHtml(ogImage)}" />`,
+    `<meta name="twitter:image:alt" content="${escapeHtml(ogImageAlt)}" />`,
   ];
 
   if (data.jsonLd && data.jsonLd.length > 0) {

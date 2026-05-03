@@ -1,0 +1,8 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "XiaN-cnuw6wDR4l2SXl9Y"
+uri = "file://client/public/og-default.png"
+type = "image"
+title = "og default share card"
