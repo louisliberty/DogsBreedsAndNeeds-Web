@@ -38,7 +38,7 @@ const staticPages: Record<string, Omit<PageData, "bodyHtml"> & { bodyHtml: strin
         "@type": "Organization",
         name: "Dog Breeds & Needs",
         url: `${DOMAIN}/`,
-        logo: `${DOMAIN}/favicon.svg`,
+        logo: `${DOMAIN}/favicon.png`,
       },
     ],
     bodyHtml: `
