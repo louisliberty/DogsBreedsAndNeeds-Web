@@ -72,7 +72,12 @@ export default function FindABreeder() {
     return `https://marketplace.akc.org/puppies/${slug}`;
   };
 
-  const getBreedRescueUrl = (breedName: string) => {
+  const { data: rescueSlugsList } = useQuery<{ breedSlug: string }[]>({
+    queryKey: ["/api/rescues"],
+  });
+  const rescueSlugSet = new Set((rescueSlugsList || []).map((r) => r.breedSlug));
+
+  const getBreedRescueFallbackUrl = (breedName: string) => {
     const query = encodeURIComponent(`${breedName} breed rescue organization`);
     return `https://www.google.com/search?q=${query}`;
   };
@@ -176,14 +181,14 @@ export default function FindABreeder() {
                           <ExternalLink className="mr-1.5 h-3.5 w-3.5" /> AKC Marketplace
                         </Button>
                       </a>
-                      {selectedBreed.slug === "poodle" ? (
-                        <Link href="/poodle-rescue">
+                      {rescueSlugSet.has(selectedBreed.slug) ? (
+                        <Link href={`/rescue/${selectedBreed.slug}`}>
                           <Button size="sm" variant="outline" data-testid="button-breed-rescue">
-                            <Heart className="mr-1.5 h-3.5 w-3.5" /> Poodle Rescue
+                            <Heart className="mr-1.5 h-3.5 w-3.5" /> {selectedBreed.name} Rescues
                           </Button>
                         </Link>
                       ) : (
-                        <a href={getBreedRescueUrl(selectedBreed.name)} target="_blank" rel="noopener noreferrer">
+                        <a href={getBreedRescueFallbackUrl(selectedBreed.name)} target="_blank" rel="noopener noreferrer">
                           <Button size="sm" variant="outline" data-testid="button-breed-rescue">
                             <Heart className="mr-1.5 h-3.5 w-3.5" /> {selectedBreed.name} Rescue
                           </Button>

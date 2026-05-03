@@ -103,6 +103,27 @@ export const insertQuizResultSchema = createInsertSchema(quizResults, {
 export type InsertQuizResult = z.infer<typeof insertQuizResultSchema>;
 export type QuizResult = typeof quizResults.$inferSelect;
 
+export const rescueOrganizations = pgTable("rescue_organizations", {
+  id: serial("id").primaryKey(),
+  breedSlug: text("breed_slug").notNull(),
+  name: text("name").notNull(),
+  url: text("url"),
+  region: text("region").notNull(),
+  description: text("description").notNull().default(""),
+  phone: text("phone"),
+  email: text("email"),
+});
+
+export const insertRescueOrganizationSchema = createInsertSchema(rescueOrganizations, {
+  breedSlug: z.string().min(1),
+  name: z.string().min(1),
+  region: z.string().min(1),
+  url: z.string().url().nullish(),
+  email: z.string().email().nullish().or(z.literal("")),
+}).omit({ id: true });
+export type InsertRescueOrganization = z.infer<typeof insertRescueOrganizationSchema>;
+export type RescueOrganization = typeof rescueOrganizations.$inferSelect;
+
 export const insertBreedSchema = createInsertSchema(breeds, {
   contentQuality: z.enum(contentQualityLevels),
   faqs: z.array(breedFaqSchema),

@@ -1,5 +1,5 @@
 import { db } from "./db";
-import { breeds, products, meta, quizResults, type Breed, type InsertBreed, type Product, type InsertProduct, type QuizResult, type InsertQuizResult } from "@shared/schema";
+import { breeds, products, meta, quizResults, rescueOrganizations, type Breed, type InsertBreed, type Product, type InsertProduct, type QuizResult, type InsertQuizResult, type RescueOrganization, type InsertRescueOrganization } from "@shared/schema";
 import { eq, ilike, and, sql } from "drizzle-orm";
 
 export interface IStorage {
@@ -25,6 +25,12 @@ export interface IStorage {
   setMeta(key: string, value: string): Promise<void>;
 
   createQuizResult(data: InsertQuizResult): Promise<QuizResult>;
+
+  getAllRescues(): Promise<RescueOrganization[]>;
+  getRescuesByBreedSlug(slug: string): Promise<RescueOrganization[]>;
+  getRescueBreedSlugs(): Promise<string[]>;
+  insertRescue(data: InsertRescueOrganization): Promise<RescueOrganization>;
+  deleteAllRescues(): Promise<void>;
 }
 
 export class DatabaseStorage implements IStorage {
@@ -126,6 +132,28 @@ export class DatabaseStorage implements IStorage {
   async createQuizResult(data: InsertQuizResult): Promise<QuizResult> {
     const [result] = await db.insert(quizResults).values(data).returning();
     return result;
+  }
+
+  async getAllRescues(): Promise<RescueOrganization[]> {
+    return await db.select().from(rescueOrganizations).orderBy(rescueOrganizations.breedSlug, rescueOrganizations.name);
+  }
+
+  async getRescuesByBreedSlug(slug: string): Promise<RescueOrganization[]> {
+    return await db.select().from(rescueOrganizations).where(eq(rescueOrganizations.breedSlug, slug)).orderBy(rescueOrganizations.name);
+  }
+
+  async getRescueBreedSlugs(): Promise<string[]> {
+    const rows = await db.selectDistinct({ slug: rescueOrganizations.breedSlug }).from(rescueOrganizations);
+    return rows.map((r) => r.slug);
+  }
+
+  async insertRescue(data: InsertRescueOrganization): Promise<RescueOrganization> {
+    const [row] = await db.insert(rescueOrganizations).values(data).returning();
+    return row;
+  }
+
+  async deleteAllRescues(): Promise<void> {
+    await db.delete(rescueOrganizations);
   }
 }
 

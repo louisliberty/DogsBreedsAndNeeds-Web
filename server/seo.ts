@@ -113,6 +113,19 @@ const staticPages: Record<string, Omit<PageData, "bodyHtml"> & { bodyHtml: strin
       <p>Puppy mills prioritize volume over animal welfare, producing large numbers of puppies with little regard for health or socialization. Red flags include always having puppies available, multiple breeds for sale, no health documentation, refusal to allow facility visits, and listings on anonymous online marketplaces.</p>
     `,
   },
+  "/rescue": {
+    title: "Dog Breed Rescue Directory: Find Breed-Specific Rescues by Breed | Dog Breeds & Needs",
+    description: "Browse rescue organizations for 20+ popular dog breeds. Adopt a Golden Retriever, Labrador, German Shepherd, Bulldog, Beagle, and more from breed-specific rescues nationwide.",
+    canonical: `${DOMAIN}/rescue`,
+    bodyHtml: `
+      <h1>Dog Breed Rescue Directory</h1>
+      <p>Adoption is one of the most ethical ways to bring a dog into your family. Our rescue directory lists breed-specific rescue organizations for the most popular AKC breeds. Each rescue is a 501(c)(3) volunteer-run organization that takes in surrendered, abandoned, or owner-relinquished dogs and places them in carefully screened adoptive homes.</p>
+      <h2>Browse Rescues by Breed</h2>
+      <p>The directory covers 20+ popular breeds — including Golden Retriever, Labrador Retriever, German Shepherd, French Bulldog, Bulldog, Beagle, Dachshund, Yorkshire Terrier, Boxer, Siberian Husky, Border Collie, Shih Tzu, Australian Shepherd, Cavalier King Charles Spaniel, Doberman Pinscher, Great Dane, Rottweiler, Miniature Schnauzer, Pomeranian, Boston Terrier, and Poodle — with regional coverage across the United States.</p>
+      <h2>Why Adopt from a Breed-Specific Rescue?</h2>
+      <p>Breed-specific rescues understand the temperament, exercise needs, health concerns, and grooming requirements of their breed. They evaluate dogs in foster homes, match adopters carefully, and remain a lifelong resource. Most adoptable dogs are spayed or neutered, vaccinated, microchipped, and screened for breed-specific health conditions before placement.</p>
+    `,
+  },
   "/poodle-rescue": {
     title: "Poodle Rescue Organizations: Find a Poodle to Adopt Near You | Dog Breeds & Needs",
     description: "Directory of national Poodle rescue organizations across the United States. Find a Poodle rescue near you with contact information, email addresses, and websites.",
@@ -285,6 +298,51 @@ export async function getPageData(url: string): Promise<PageData | null> {
   const cleanWithoutTrailing = cleanUrl.replace(/\/$/, "");
   if (cleanWithoutTrailing && staticPages[cleanWithoutTrailing]) {
     return staticPages[cleanWithoutTrailing];
+  }
+
+  const rescueMatch = cleanUrl.match(/^\/rescue\/([a-z0-9-]+)$/);
+  if (rescueMatch) {
+    const slug = rescueMatch[1];
+    try {
+      const breed = await storage.getBreedBySlug(slug);
+      const rescues = await storage.getRescuesByBreedSlug(slug);
+      if (breed && rescues.length > 0) {
+        const e = escapeHtml;
+        const orgList = rescues
+          .map((r) => {
+            const link = r.url ? `<a href="${e(r.url)}" rel="nofollow">${e(r.name)}</a>` : e(r.name);
+            const contact = [r.email ? `email: ${e(r.email)}` : null, r.phone ? `phone: ${e(r.phone)}` : null]
+              .filter(Boolean)
+              .join(" · ");
+            return `<li>${link} (${e(r.region)})${r.description ? ` — ${e(r.description)}` : ""}${contact ? ` <em>${contact}</em>` : ""}</li>`;
+          })
+          .join("");
+        return {
+          title: `${breed.name} Rescue Organizations: Adopt a ${breed.name} Near You | Dog Breeds & Needs`,
+          description: `Directory of ${rescues.length} ${breed.name} rescue organizations across the United States. Find a ${breed.name} to adopt — contact info, regions served, and websites for each rescue.`,
+          canonical: `${DOMAIN}/rescue/${slug}`,
+          ogType: "article",
+          bodyHtml: `
+            <nav aria-label="Breadcrumb">
+              <ol>
+                <li><a href="${DOMAIN}/">Home</a></li>
+                <li><a href="${DOMAIN}/rescue">Rescue Directory</a></li>
+                <li>${e(breed.name)} Rescue</li>
+              </ol>
+            </nav>
+            <h1>${e(breed.name)} Rescue Organizations</h1>
+            <p>This directory lists ${rescues.length} ${e(breed.name)} rescue organizations across the United States. Each rescue places ${e(breed.name)} dogs in adoptive homes and is staffed primarily by volunteer fosters who understand the breed's specific needs.</p>
+            <h2>${e(breed.name)} Rescues</h2>
+            <ul>${orgList}</ul>
+            <h2>Why Adopt a ${e(breed.name)}?</h2>
+            <p>${e(breed.temperamentSummary)}</p>
+            <p><a href="${DOMAIN}/breeds/${e(slug)}">Read the full ${e(breed.name)} breed profile</a> to learn about temperament, exercise needs, grooming, training, and health before adopting.</p>
+          `,
+        };
+      }
+    } catch {
+      // fall through
+    }
   }
 
   const breedMatch = cleanUrl.match(/^\/breeds\/([a-z0-9-]+)$/);

@@ -3,6 +3,7 @@ import { breedSeedData } from "./breedData";
 import { productSeedData } from "./productData";
 import { computeCompletenessScore } from "@shared/schema";
 import { generateFaqs } from "./contentGenerator";
+import { rescueSeedData, RESCUE_SEED_VERSION } from "./rescueData";
 
 const SEED_VERSION = "v10-task2-faqs";
 const QUALITY_BACKFILL_VERSION = "v2-legacy-only";
@@ -19,6 +20,7 @@ export async function seedDatabase() {
       await runQualityBackfill();
     }
     await runFaqBackfill();
+    await seedRescues();
     return;
   }
 
@@ -61,6 +63,19 @@ export async function seedDatabase() {
   await storage.setMeta("seedVersion", SEED_VERSION);
   await runQualityBackfill();
   await runFaqBackfill();
+  await seedRescues();
+}
+
+async function seedRescues() {
+  const done = await storage.getMeta("rescueSeedVersion");
+  if (done === RESCUE_SEED_VERSION) return;
+  console.log(`Seeding rescue organizations (${RESCUE_SEED_VERSION})...`);
+  await storage.deleteAllRescues();
+  for (const rescue of rescueSeedData) {
+    await storage.insertRescue(rescue);
+  }
+  console.log(`Seeded ${rescueSeedData.length} rescue organizations across breeds`);
+  await storage.setMeta("rescueSeedVersion", RESCUE_SEED_VERSION);
 }
 
 // One-time FAQ backfill: ensures every breed has at least 5 FAQs, including

@@ -22,6 +22,7 @@ export async function registerRoutes(
   app.get("/sitemap.xml", async (_req, res) => {
     try {
       const breeds = await storage.getAllBreeds();
+      const rescueSlugs = await storage.getRescueBreedSlugs();
       const staticPages = [
         { loc: "", priority: "1.0", changefreq: "weekly" },
         { loc: "/breeds", priority: "0.9", changefreq: "weekly" },
@@ -29,7 +30,8 @@ export async function registerRoutes(
         { loc: "/dog-breed-selector", priority: "0.8", changefreq: "monthly" },
         { loc: "/ethical-sourcing", priority: "0.7", changefreq: "monthly" },
         { loc: "/find-a-breeder", priority: "0.8", changefreq: "monthly" },
-        { loc: "/poodle-rescue", priority: "0.7", changefreq: "monthly" },
+        { loc: "/rescue", priority: "0.8", changefreq: "monthly" },
+        { loc: "/poodle-rescue", priority: "0.5", changefreq: "yearly" },
         { loc: "/products", priority: "0.7", changefreq: "weekly" },
         { loc: "/sitemap", priority: "0.3", changefreq: "monthly" },
       ];
@@ -40,6 +42,9 @@ export async function registerRoutes(
       }
       for (const breed of breeds) {
         xml += `  <url>\n    <loc>${DOMAIN}/breeds/${breed.slug}</loc>\n    <lastmod>${today}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.6</priority>\n  </url>\n`;
+      }
+      for (const slug of rescueSlugs) {
+        xml += `  <url>\n    <loc>${DOMAIN}/rescue/${slug}</loc>\n    <lastmod>${today}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.6</priority>\n  </url>\n`;
       }
       xml += `</urlset>`;
       res.type("application/xml").send(xml);
@@ -139,6 +144,24 @@ export async function registerRoutes(
       res.json(product);
     } catch (error) {
       res.status(500).json({ message: "Failed to fetch product" });
+    }
+  });
+
+  app.get("/api/rescues", async (_req, res) => {
+    try {
+      const rescues = await storage.getAllRescues();
+      res.json(rescues);
+    } catch (error) {
+      res.status(500).json({ message: "Failed to fetch rescues" });
+    }
+  });
+
+  app.get("/api/rescues/:breedSlug", async (req, res) => {
+    try {
+      const rescues = await storage.getRescuesByBreedSlug(req.params.breedSlug);
+      res.json(rescues);
+    } catch (error) {
+      res.status(500).json({ message: "Failed to fetch rescues for breed" });
     }
   });
 
