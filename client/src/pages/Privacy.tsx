@@ -5,7 +5,7 @@ export default function Privacy() {
   useCanonical("/privacy");
   usePageMeta(
     "Privacy Policy | Dog Breeds & Needs",
-    "How Dog Breeds & Needs collects, uses, and protects your information — including cookies, analytics, email signups, and your data rights."
+    "How Dog Breeds & Needs collects, uses, and protects your information, including cookies, analytics, email signups, and your data rights."
   );
 
   return (

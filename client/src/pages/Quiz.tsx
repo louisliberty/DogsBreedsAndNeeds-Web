@@ -51,10 +51,10 @@ const questions: Question[] = [
     shortLabel: (v) =>
       ({ low: "prefer low-energy dogs", moderate: "want a moderately active dog", high: "want a high-energy dog", "very-high": "want a workout partner" }[v] || v),
     options: [
-      { label: "Mostly sedentary — I prefer relaxing at home", value: "low" },
-      { label: "Moderately active — daily walks and some outdoor time", value: "moderate" },
-      { label: "Very active — I run, hike, or exercise regularly", value: "high" },
-      { label: "Extremely active — I want a workout partner", value: "very-high" },
+      { label: "Mostly sedentary, I prefer relaxing at home", value: "low" },
+      { label: "Moderately active, daily walks and some outdoor time", value: "moderate" },
+      { label: "Very active, I run, hike, or exercise regularly", value: "high" },
+      { label: "Extremely active, I want a workout partner", value: "very-high" },
     ],
   },
   {
@@ -99,7 +99,7 @@ const questions: Question[] = [
     shortLabel: (v) =>
       ({ low: "want a low-maintenance coat", moderate: "are fine with weekly brushing", high: "don't mind daily grooming" }[v] || v),
     options: [
-      { label: "Minimal — low-maintenance preferred", value: "low" },
+      { label: "Minimal, low-maintenance preferred", value: "low" },
       { label: "Weekly brushing is fine", value: "moderate" },
       { label: "I don't mind daily grooming", value: "high" },
     ],
@@ -232,7 +232,7 @@ function buildExplanation(
     breedParts.length === 1
       ? breedParts[0]
       : breedParts.slice(0, -1).join(", ") + " and " + breedParts[breedParts.length - 1];
-  return `${userClause} — the ${breedName} ${breedClause}.`;
+  return `${userClause}, the ${breedName} ${breedClause}.`;
 }
 
 function QuizMode({
@@ -271,7 +271,7 @@ function QuizMode({
           </h1>
           <p className="text-muted-foreground">
             {isRefining
-              ? "Refine your answers — your previous picks are pre-filled."
+              ? "Refine your answers, your previous picks are pre-filled."
               : `Answer ${questions.length} quick questions to find your ideal match`}
           </p>
         </div>
@@ -352,7 +352,7 @@ function EmailCaptureCard({
     },
     onSuccess: () => {
       setSubmitted(true);
-      toast({ title: "Saved", description: "Your results are saved — we'll notify you when breed tips are ready." });
+      toast({ title: "Saved", description: "Your results are saved, we'll notify you when breed tips are ready." });
     },
     onError: () => {
       toast({ title: "Couldn't save", description: "Please check your email and try again.", variant: "destructive" });
@@ -365,7 +365,7 @@ function EmailCaptureCard({
         <CardContent className="p-6 flex items-center gap-3">
           <CheckCircle2 className="h-6 w-6 text-emerald-600 shrink-0" />
           <div>
-            <p className="font-semibold">Thanks — your results are saved.</p>
+            <p className="font-semibold">Thanks, your results are saved.</p>
             <p className="text-sm text-muted-foreground">
               We saved your top matches with {email} and will notify you when breed-specific tips for the {topMatches[0]?.name} are available. No spam, unsubscribe anytime.
             </p>
@@ -383,7 +383,7 @@ function EmailCaptureCard({
           <div>
             <h3 className="font-semibold">Save my results</h3>
             <p className="text-sm text-muted-foreground">
-              Optional — save your top matches and we'll notify you when breed-specific tips for the {topMatches[0]?.name} are available. No spam, unsubscribe anytime.
+              Optional, save your top matches and we'll notify you when breed-specific tips for the {topMatches[0]?.name} are available. No spam, unsubscribe anytime.
             </p>
           </div>
         </div>

@@ -44,11 +44,11 @@ const staticPages: Record<string, Omit<PageData, "bodyHtml"> & { bodyHtml: strin
     ],
     bodyHtml: `
       <h1>Dog Breeds &amp; Needs: Your Complete Guide to All 205 AKC Dog Breeds</h1>
-      <p>Welcome to DogBreedsAndNeeds.com — the most comprehensive guide to all 205 AKC-recognized dog breeds. Whether you're looking for a family companion, an active sporting dog, or a loyal working breed, our in-depth profiles cover temperament, size, exercise needs, grooming, health, and care for every breed recognized by the American Kennel Club.</p>
+      <p>Welcome to DogBreedsAndNeeds.com, the most comprehensive guide to all 205 AKC-recognized dog breeds. Whether you're looking for a family companion, an active sporting dog, or a loyal working breed, our in-depth profiles cover temperament, size, exercise needs, grooming, health, and care for every breed recognized by the American Kennel Club.</p>
       <h2>Explore All Dog Breeds</h2>
       <p>Browse detailed profiles for all 205 AKC-recognized breeds across seven breed groups: Sporting, Hound, Working, Terrier, Toy, Non-Sporting, and Herding. Each breed profile includes temperament ratings, size and weight ranges, lifespan, energy level, trainability, shedding level, and breed history.</p>
       <h2>Find Your Perfect Dog Breed</h2>
-      <p>Not sure which breed is right for you? Take our free dog breed selector quiz — answer 7 questions about your lifestyle, living situation, and activity level to get personalized breed matches.</p>
+      <p>Not sure which breed is right for you? Take our free dog breed selector quiz, answer 7 questions about your lifestyle, living situation, and activity level to get personalized breed matches.</p>
       <h2>Ethical Dog Sourcing</h2>
       <p>Learn how to find a responsible breeder, recognize red flags, and make an ethical choice when adding a dog to your family. Our ethical sourcing guide and breeder finder help you connect with AKC-registered breeders who prioritize health and temperament.</p>
     `,
@@ -66,11 +66,11 @@ const staticPages: Record<string, Omit<PageData, "bodyHtml"> & { bodyHtml: strin
   },
   "/compare": {
     title: "Compare Dog Breeds Side by Side: Temperament, Size, Energy & Care | Dog Breeds & Needs",
-    description: "Compare any 2 or 3 AKC dog breeds side by side. See temperament, size, energy, training, grooming, health, and exercise needs — and find the best match for your lifestyle.",
+    description: "Compare any 2 or 3 AKC dog breeds side by side. See temperament, size, energy, training, grooming, health, and exercise needs, and find the best match for your lifestyle.",
     canonical: `${DOMAIN}/compare`,
     bodyHtml: `
       <h1>Compare Dog Breeds Side by Side</h1>
-      <p>Compare any two or three AKC-recognized dog breeds side by side. The breed comparison tool puts temperament, size, weight, height, lifespan, energy level, trainability, barking tendency, friendliness, grooming needs, shedding, exercise minutes per day, common health issues, and ideal-owner profiles into a single table — color-coded so you can immediately see which breed is the best fit for your lifestyle.</p>
+      <p>Compare any two or three AKC-recognized dog breeds side by side. The breed comparison tool puts temperament, size, weight, height, lifespan, energy level, trainability, barking tendency, friendliness, grooming needs, shedding, exercise minutes per day, common health issues, and ideal-owner profiles into a single table, color-coded so you can immediately see which breed is the best fit for your lifestyle.</p>
       <h2>How to Use the Breed Comparison Tool</h2>
       <p>Pick two or three breeds using the search selectors above the comparison table. Each breed loads its complete trait profile and the table highlights which breed wins on each metric. A "Winner For You" summary calls out the best pick for kids, training, exercise, quiet households, low shedding, apartment living, and longevity.</p>
       <h2>Share Your Comparison</h2>
@@ -129,7 +129,7 @@ const staticPages: Record<string, Omit<PageData, "bodyHtml"> & { bodyHtml: strin
     canonical: `${DOMAIN}/find-a-breeder`,
     bodyHtml: `
       <h1>Find an Ethical Dog Breeder</h1>
-      <p>Search for AKC-registered, responsible breeders for your chosen breed. Unlike many industries, the responsible breeding world is intentionally decentralized — most ethical breeders participate in small, reputation-based communities centered around individual breeds. National and regional breed clubs establish breeding guidelines, health testing standards, and temperament expectations.</p>
+      <p>Search for AKC-registered, responsible breeders for your chosen breed. Unlike many industries, the responsible breeding world is intentionally decentralized, most ethical breeders participate in small, reputation-based communities centered around individual breeds. National and regional breed clubs establish breeding guidelines, health testing standards, and temperament expectations.</p>
       <h2>Breed-Specific Health Certifications</h2>
       <p>Every breed has different genetic risks. Responsible breeders perform breed-specific health tests before breeding. Common certifications include OFA hip and elbow evaluations, CAER eye exams, cardiac evaluations, and DNA tests for inherited conditions. The specific tests required vary by breed.</p>
       <h2>Signs of a Responsible Breeder</h2>
@@ -148,7 +148,7 @@ const staticPages: Record<string, Omit<PageData, "bodyHtml"> & { bodyHtml: strin
       <h2>About Poodle Rescue</h2>
       <p>Poodle rescue organizations take in surrendered, abandoned, and owner-relinquished Poodles and place them in foster homes while they await adoption. Rescue dogs are typically evaluated for health and temperament, spayed or neutered, vaccinated, and microchipped before adoption.</p>
       <h2>Why Adopt a Poodle?</h2>
-      <p>Poodles are highly intelligent, hypoallergenic, and come in three size varieties — Standard, Miniature, and Toy. They are known for their trainability, gentle temperament, and minimal shedding, making them excellent companions for families, singles, and seniors alike.</p>
+      <p>Poodles are highly intelligent, hypoallergenic, and come in three size varieties, Standard, Miniature, and Toy. They are known for their trainability, gentle temperament, and minimal shedding, making them excellent companions for families, singles, and seniors alike.</p>
     `,
   },
   "/products": {
@@ -157,14 +157,14 @@ const staticPages: Record<string, Omit<PageData, "bodyHtml"> & { bodyHtml: strin
     canonical: `${DOMAIN}/products`,
     bodyHtml: `
       <h1>Best Dog Products: Food, Toys, Grooming &amp; Health Picks</h1>
-      <p>Discover top-rated dog products handpicked for quality, safety, and value. Our product recommendations cover every category a dog owner needs — from nutritious food and interactive toys to grooming tools, training aids, and health essentials — with options suitable for every breed size.</p>
+      <p>Discover top-rated dog products handpicked for quality, safety, and value. Our product recommendations cover every category a dog owner needs, from nutritious food and interactive toys to grooming tools, training aids, and health essentials, with options suitable for every breed size.</p>
       <h2>Dog Product Categories</h2>
       <p>Browse dog food recommendations for every size and life stage, interactive toys for mental stimulation, grooming tools matched to coat type, training aids for puppies and adult dogs, and health supplements and essentials for long-term wellbeing.</p>
     `,
   },
   "/about": {
     title: "About Dog Breeds & Needs: Our Mission, Editorial Standards & Team",
-    description: "Learn about Dog Breeds & Needs — our mission, how we research breed information, our commitment to ethical sourcing, and the team behind the site.",
+    description: "Learn about Dog Breeds & Needs, our mission, how we research breed information, our commitment to ethical sourcing, and the team behind the site.",
     canonical: `${DOMAIN}/about`,
     bodyHtml: `
       <h1>About Dog Breeds &amp; Needs</h1>
@@ -179,7 +179,7 @@ const staticPages: Record<string, Omit<PageData, "bodyHtml"> & { bodyHtml: strin
   },
   "/privacy": {
     title: "Privacy Policy | Dog Breeds & Needs",
-    description: "How Dog Breeds & Needs collects, uses, and protects your information — including cookies, analytics, email signups, and your data rights.",
+    description: "How Dog Breeds & Needs collects, uses, and protects your information, including cookies, analytics, email signups, and your data rights.",
     canonical: `${DOMAIN}/privacy`,
     bodyHtml: `
       <h1>Privacy Policy</h1>
@@ -196,7 +196,7 @@ const staticPages: Record<string, Omit<PageData, "bodyHtml"> & { bodyHtml: strin
   },
   "/terms": {
     title: "Terms of Service | Dog Breeds & Needs",
-    description: "The terms governing your use of dogbreedsandneeds.com — content use, disclaimers, affiliate disclosure, and limitations of liability.",
+    description: "The terms governing your use of dogbreedsandneeds.com, content use, disclaimers, affiliate disclosure, and limitations of liability.",
     canonical: `${DOMAIN}/terms`,
     bodyHtml: `
       <h1>Terms of Service</h1>
@@ -273,7 +273,7 @@ function buildBreedBodyHtml(breed: Breed): string {
     ? `<p><em>Reviewed by ${e(breed.reviewedBy)} · Last updated ${new Date(breed.lastUpdated).toISOString().split("T")[0]}</em></p>`
     : `<p><em>Last updated ${new Date(breed.lastUpdated).toISOString().split("T")[0]}</em></p>`;
 
-  const imgTag = `<picture><source srcset="${DOMAIN}/breeds/${e(breed.slug)}.webp" type="image/webp" /><img src="${DOMAIN}/breeds/${e(breed.slug)}.png" alt="${e(breed.name)} — ${e(breed.sizeCategory)} ${e(breed.breedGroup)} dog breed portrait" width="1280" height="896" loading="lazy" decoding="async" /></picture>`;
+  const imgTag = `<picture><source srcset="${DOMAIN}/breeds/${e(breed.slug)}.webp" type="image/webp" /><img src="${DOMAIN}/breeds/${e(breed.slug)}.png" alt="${e(breed.name)}, ${e(breed.sizeCategory)} ${e(breed.breedGroup)} dog breed portrait" width="1280" height="896" loading="lazy" decoding="async" /></picture>`;
 
   return `
     ${breadcrumb}
@@ -389,7 +389,7 @@ export async function getPageData(url: string): Promise<PageData | null> {
       const base = staticPages["/breeds"];
       const e = escapeHtml;
       const listHtml = top.slice(0, 24).map((b) =>
-        `<li><a href="${DOMAIN}/breeds/${e(b.slug)}"><picture><source srcset="${DOMAIN}/breeds/${e(b.slug)}.webp" type="image/webp" /><img src="${DOMAIN}/breeds/${e(b.slug)}.png" alt="${e(b.name)} — ${e(b.sizeCategory)} ${e(b.breedGroup)} dog breed portrait" width="160" height="120" loading="lazy" decoding="async" /></picture> ${e(b.name)}</a> — ${e(b.breedGroup)} Group</li>`,
+        `<li><a href="${DOMAIN}/breeds/${e(b.slug)}"><picture><source srcset="${DOMAIN}/breeds/${e(b.slug)}.webp" type="image/webp" /><img src="${DOMAIN}/breeds/${e(b.slug)}.png" alt="${e(b.name)}, ${e(b.sizeCategory)} ${e(b.breedGroup)} dog breed portrait" width="160" height="120" loading="lazy" decoding="async" /></picture> ${e(b.name)}</a>, ${e(b.breedGroup)} Group</li>`,
       ).join("");
       const bodyHtml = `${base.bodyHtml}<h2>Browse Popular Breeds</h2><ul>${listHtml}</ul>`;
       return { ...base, bodyHtml, jsonLd: [breadcrumb, itemList] };
@@ -418,7 +418,7 @@ export async function getPageData(url: string): Promise<PageData | null> {
         .filter((b): b is typeof breeds[number] => Boolean(b))
         .sort((a, b) => a.name.localeCompare(b.name));
       const list = items
-        .map((b) => `<li><a href="${DOMAIN}/rescue/${e(b.slug)}"><picture><source srcset="${DOMAIN}/breeds/${e(b.slug)}.webp" type="image/webp" /><img src="${DOMAIN}/breeds/${e(b.slug)}.png" alt="${e(b.name)} — ${e(b.sizeCategory)} ${e(b.breedGroup)} dog breed portrait" width="120" height="90" loading="lazy" decoding="async" /></picture> ${e(b.name)} Rescues</a> — ${e(b.breedGroup)} Group</li>`)
+        .map((b) => `<li><a href="${DOMAIN}/rescue/${e(b.slug)}"><picture><source srcset="${DOMAIN}/breeds/${e(b.slug)}.webp" type="image/webp" /><img src="${DOMAIN}/breeds/${e(b.slug)}.png" alt="${e(b.name)}, ${e(b.sizeCategory)} ${e(b.breedGroup)} dog breed portrait" width="120" height="90" loading="lazy" decoding="async" /></picture> ${e(b.name)} Rescues</a>, ${e(b.breedGroup)} Group</li>`)
         .join("");
       const jsonLd: object[] = [
         {
@@ -475,7 +475,7 @@ export async function getPageData(url: string): Promise<PageData | null> {
             const contact = [r.email ? `email: ${e(r.email)}` : null, r.phone ? `phone: ${e(r.phone)}` : null]
               .filter(Boolean)
               .join(" · ");
-            return `<li>${link} (${e(r.region)})${r.description ? ` — ${e(r.description)}` : ""}${contact ? ` <em>${contact}</em>` : ""}</li>`;
+            return `<li>${link} (${e(r.region)})${r.description ? `, ${e(r.description)}` : ""}${contact ? ` <em>${contact}</em>` : ""}</li>`;
           })
           .join("");
         const rescueJsonLd: object[] = [
@@ -504,7 +504,7 @@ export async function getPageData(url: string): Promise<PageData | null> {
         ];
         return {
           title: `${breed.name} Rescue Organizations: Adopt a ${breed.name} Near You | Dog Breeds & Needs`,
-          description: `Directory of ${rescues.length} ${breed.name} rescue organizations across the United States. Find a ${breed.name} to adopt — contact info, regions served, and websites for each rescue.`,
+          description: `Directory of ${rescues.length} ${breed.name} rescue organizations across the United States. Find a ${breed.name} to adopt, contact info, regions served, and websites for each rescue.`,
           canonical: `${DOMAIN}/rescue/${slug}`,
           ogType: "article",
           jsonLd: rescueJsonLd,
@@ -538,7 +538,7 @@ export async function getPageData(url: string): Promise<PageData | null> {
       const list = articles
         .map(
           (a) =>
-            `<li><a href="${DOMAIN}/blog/${e(a.slug)}">${e(a.title)}</a> — ${e(a.category)}<br><span>${e(a.metaDescription)}</span></li>`,
+            `<li><a href="${DOMAIN}/blog/${e(a.slug)}">${e(a.title)}</a>, ${e(a.category)}<br><span>${e(a.metaDescription)}</span></li>`,
         )
         .join("");
       const blogJsonLd: object[] = [
@@ -567,7 +567,7 @@ export async function getPageData(url: string): Promise<PageData | null> {
       ];
       return {
         title: "Dog Care Blog: Breed Guides, Adoption & Lifestyle Articles | Dog Breeds & Needs",
-        description: "In-depth dog care articles: best apartment dogs, hypoallergenic breeds, first-time owner guides, ethical adoption, and more — written for real dog owners.",
+        description: "In-depth dog care articles: best apartment dogs, hypoallergenic breeds, first-time owner guides, ethical adoption, and more, written for real dog owners.",
         canonical: `${DOMAIN}/blog`,
         jsonLd: blogJsonLd,
         bodyHtml: `

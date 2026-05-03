@@ -92,7 +92,7 @@ function RescueHub() {
                       {getBreedImage(breed.slug) && (
                         <img
                           src={getBreedImage(breed.slug)}
-                          alt={`${breed.name} — ${breed.sizeCategory} ${breed.breedGroup} dog breed portrait`}
+                          alt={`${breed.name}, ${breed.sizeCategory} ${breed.breedGroup} dog breed portrait`}
                           className="w-14 h-14 rounded-lg object-cover shrink-0"
                           loading="lazy"
                           decoding="async"
@@ -151,7 +151,7 @@ function RescueBreed({ breedSlug }: { breedSlug: string }) {
       ? `${breed.name} Rescue Organizations: Adopt a ${breed.name} Near You | Dog Breeds & Needs`
       : "Breed Rescue Organizations | Dog Breeds & Needs",
     breed
-      ? `Directory of ${breed.name} rescue organizations across the United States. Find a ${breed.name} to adopt — contact info, regions served, and websites for each rescue.`
+      ? `Directory of ${breed.name} rescue organizations across the United States. Find a ${breed.name} to adopt, contact info, regions served, and websites for each rescue.`
       : "Browse breed-specific rescue organizations across the United States.",
   );
 
@@ -226,7 +226,7 @@ function RescueBreed({ breedSlug }: { breedSlug: string }) {
           <div className="flex justify-center mb-8">
             <img
               src={breedImage}
-              alt={`${breed.name} — ${breed.sizeCategory} ${breed.breedGroup} dog breed portrait`}
+              alt={`${breed.name}, ${breed.sizeCategory} ${breed.breedGroup} dog breed portrait`}
               className="w-48 h-36 rounded-xl object-cover"
               width={192}
               height={144}

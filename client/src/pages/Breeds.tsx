@@ -232,7 +232,7 @@ export default function Breeds() {
                         <div className="aspect-[4/3] overflow-hidden bg-muted">
                           <img
                             src={getBreedImage(breed.slug)}
-                            alt={`${breed.name} — ${breed.sizeCategory.toLowerCase()} ${breed.breedGroup.toLowerCase()} dog breed portrait`}
+                            alt={`${breed.name}, ${breed.sizeCategory.toLowerCase()} ${breed.breedGroup.toLowerCase()} dog breed portrait`}
                             className="w-full h-full object-cover"
                             loading="lazy"
                             decoding="async"

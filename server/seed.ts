@@ -125,8 +125,8 @@ async function runFaqBackfill() {
 }
 
 // One-time backfill: classify legacy/imported records that lack an explicit
-// content-quality tag. We preserve every explicit tier — including "templated"
-// for generator-produced seed content — so this only acts on records whose
+// content-quality tag. We preserve every explicit tier, including "templated"
+// for generator-produced seed content, so this only acts on records whose
 // quality is missing or set to an unexpected value (e.g. legacy imports).
 const KNOWN_QUALITIES = new Set(["templated", "draft", "reviewed", "verified"]);
 async function runQualityBackfill() {

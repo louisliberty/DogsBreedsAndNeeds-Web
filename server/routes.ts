@@ -73,7 +73,7 @@ export async function registerRoutes(
       }
       for (const breed of breeds) {
         const lastmod = new Date(breed.lastUpdated).toISOString().split("T")[0];
-        const imageEntry = `    <image:image>\n      <image:loc>${DOMAIN}/breeds/${breed.slug}.webp</image:loc>\n      <image:title>${escapeXml(breed.name)} — ${escapeXml(breed.sizeCategory)} ${escapeXml(breed.breedGroup)} dog breed portrait</image:title>\n    </image:image>\n`;
+        const imageEntry = `    <image:image>\n      <image:loc>${DOMAIN}/breeds/${breed.slug}.webp</image:loc>\n      <image:title>${escapeXml(breed.name)}, ${escapeXml(breed.sizeCategory)} ${escapeXml(breed.breedGroup)} dog breed portrait</image:title>\n    </image:image>\n`;
         xml += `  <url>\n    <loc>${DOMAIN}/breeds/${breed.slug}</loc>\n    <lastmod>${lastmod}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.6</priority>\n${imageEntry}  </url>\n`;
       }
       const breedBySlug = new Map(breeds.map((b) => [b.slug, b]));

@@ -36,7 +36,7 @@ export default function About() {
   useCanonical("/about");
   usePageMeta(
     "About Dog Breeds & Needs: Our Mission, Editorial Standards & Team",
-    "Learn about Dog Breeds & Needs — our mission, how we research breed information, our commitment to ethical sourcing, and the team behind the site."
+    "Learn about Dog Breeds & Needs, our mission, how we research breed information, our commitment to ethical sourcing, and the team behind the site."
   );
 
   return (
@@ -53,7 +53,7 @@ export default function About() {
           </CardHeader>
           <CardContent className="space-y-4 text-base leading-relaxed">
             <p>
-              Dog Breeds & Needs exists to help future and current dog owners make better decisions. Choosing a breed is one of the most consequential decisions in a person's life — the wrong fit creates years of stress for both human and dog, while the right fit shapes a decade or more of partnership.
+              Dog Breeds & Needs exists to help future and current dog owners make better decisions. Choosing a breed is one of the most consequential decisions in a person's life, the wrong fit creates years of stress for both human and dog, while the right fit shapes a decade or more of partnership.
             </p>
             <p>
               We believe every breed deserves an honest, complete profile that covers what's wonderful and what's hard. We do not write puff pieces. We do not hide the difficult traits. We treat readers as adults who can weigh tradeoffs.
@@ -93,7 +93,7 @@ export default function About() {
               We never link to puppy mills, pet store puppies, or commercial breeders. Our breeder finder steers readers to AKC-registered breeders with verifiable health testing. Our rescue directory only lists 501(c)(3) breed-specific rescues with transparent operations.
             </p>
             <p>
-              We do not accept payment from breeders or rescues for placement on the site. Affiliate links — when present — are clearly disclosed and never influence which breeders or rescues we recommend.
+              We do not accept payment from breeders or rescues for placement on the site. Affiliate links, when present, are clearly disclosed and never influence which breeders or rescues we recommend.
             </p>
           </CardContent>
         </Card>

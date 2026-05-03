@@ -20,7 +20,7 @@ export default function Blog() {
   useCanonical("/blog");
   usePageMeta(
     "Dog Care Blog: Breed Guides, Adoption & Lifestyle Articles | Dog Breeds & Needs",
-    "In-depth dog care articles: best apartment dogs, hypoallergenic breeds, first-time owner guides, ethical adoption, and more — written for real dog owners."
+    "In-depth dog care articles: best apartment dogs, hypoallergenic breeds, first-time owner guides, ethical adoption, and more, written for real dog owners."
   );
 
   const [search, setSearch] = useState("");

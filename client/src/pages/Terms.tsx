@@ -5,7 +5,7 @@ export default function Terms() {
   useCanonical("/terms");
   usePageMeta(
     "Terms of Service | Dog Breeds & Needs",
-    "The terms governing your use of dogbreedsandneeds.com — content use, disclaimers, affiliate disclosure, and limitations of liability."
+    "The terms governing your use of dogbreedsandneeds.com, content use, disclaimers, affiliate disclosure, and limitations of liability."
   );
 
   return (

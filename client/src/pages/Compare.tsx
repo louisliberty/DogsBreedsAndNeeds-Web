@@ -115,7 +115,7 @@ function BreedSelector({
                 {getBreedImage(selected.slug) ? (
                   <img
                     src={getBreedImage(selected.slug)}
-                    alt={`${selected.name} — ${selected.sizeCategory} ${selected.breedGroup} dog breed portrait`}
+                    alt={`${selected.name}, ${selected.sizeCategory} ${selected.breedGroup} dog breed portrait`}
                     className="w-full h-full object-cover"
                     loading="lazy"
                     decoding="async"
@@ -282,7 +282,7 @@ export default function Compare() {
       : "Compare Dog Breeds Side by Side | Dog Breeds & Needs",
     selectedBreeds.length >= 2
       ? `Compare ${selectedBreeds.map((b) => b.name).join(", ")} side by side: temperament, size, energy, training, grooming, health, and more.`
-      : "Compare any 2 or 3 AKC dog breeds side by side. See temperament, size, energy, training, grooming, health, and more — and find the best match for your lifestyle."
+      : "Compare any 2 or 3 AKC dog breeds side by side. See temperament, size, energy, training, grooming, health, and more, and find the best match for your lifestyle."
   );
 
   const setSlot = (idx: number, slug: string | null) => {
@@ -556,8 +556,8 @@ function ComparisonTable({ breeds }: { breeds: Breed[] }) {
       tone: (b, all) => toneByPosition(exerciseMinutes(b.energyLevel), all.map((x) => exerciseMinutes(x.energyLevel)), false),
     },
     { label: "Common health issues", render: (b) => b.commonHealthIssues },
-    { label: "Ideal for", render: (b) => b.idealOwnerProfile || "—" },
-    { label: "Not good for", render: (b) => b.notGoodFor || "—" },
+    { label: "Ideal for", render: (b) => b.idealOwnerProfile || "," },
+    { label: "Not good for", render: (b) => b.notGoodFor || "," },
   ];
 
   return (
@@ -574,7 +574,7 @@ function ComparisonTable({ breeds }: { breeds: Breed[] }) {
                       {getBreedImage(b.slug) && (
                         <img
                           src={getBreedImage(b.slug)}
-                          alt={`${b.name} — ${b.sizeCategory} ${b.breedGroup} dog breed portrait`}
+                          alt={`${b.name}, ${b.sizeCategory} ${b.breedGroup} dog breed portrait`}
                           className="h-10 w-10 rounded object-cover"
                           loading="lazy"
                           decoding="async"

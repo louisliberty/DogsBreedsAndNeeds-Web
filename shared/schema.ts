@@ -231,7 +231,7 @@ export function computeCompletenessScore(breed: Partial<Breed>): {
 
 // Heuristic for backfilling content quality on EXISTING records that have no
 // explicit quality marker yet. Note: freshly-generated/templated seed data should
-// always be tagged "templated" — only human-edited or human-reviewed content should
+// always be tagged "templated", only human-edited or human-reviewed content should
 // be promoted above that tier.
 export function inferContentQuality(breed: Partial<Breed>): "templated" | "draft" | "reviewed" | "verified" {
   if (breed.contentQuality === "verified") return "verified";

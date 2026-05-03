@@ -20,7 +20,7 @@ export const rescueSeedData: InsertRescueOrganization[] = [
 
   { breedSlug: "french-bulldog", name: "French Bulldog Rescue Network", url: "https://frenchbulldogrescue.org", region: "Nationwide", description: "The largest French Bulldog rescue in the United States; volunteer foster network in nearly every state.", phone: null, email: null },
   { breedSlug: "french-bulldog", name: "French Bulldog Village Rescue", url: "https://www.frenchbulldogvillage.org", region: "Nationwide", description: "501(c)(3) rescue specializing in Frenchies needing medical care, with a network of vetted fosters.", phone: null, email: null },
-  { breedSlug: "french-bulldog", name: "SNORT Rescue (Short Noses Only Rescue Team)", url: "https://snortrescue.org", region: "Northeast US", description: "Brachycephalic-breed rescue serving NY, NJ, PA, CT, and the broader Northeast — Frenchies, Bulldogs, Bostons, Pugs.", phone: null, email: null },
+  { breedSlug: "french-bulldog", name: "SNORT Rescue (Short Noses Only Rescue Team)", url: "https://snortrescue.org", region: "Northeast US", description: "Brachycephalic-breed rescue serving NY, NJ, PA, CT, and the broader Northeast, Frenchies, Bulldogs, Bostons, Pugs.", phone: null, email: null },
 
   { breedSlug: "bulldog", name: "Bulldog Club of America Rescue Network", url: "https://www.rescuebulldogs.org", region: "Nationwide", description: "The official rescue program of the Bulldog Club of America with regional coordinators in every state.", phone: null, email: null },
   { breedSlug: "bulldog", name: "Long Island Bulldog Rescue", url: "https://libr.org", region: "New York / Northeast", description: "All-volunteer Bulldog rescue serving the greater New York metro area and Northeast since 1999.", phone: null, email: null },

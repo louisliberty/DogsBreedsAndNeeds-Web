@@ -157,7 +157,7 @@ export default function FindABreeder() {
                     {getBreedImage(breed.slug) && (
                       <img
                         src={getBreedImage(breed.slug)}
-                        alt={`${breed.name} — ${breed.sizeCategory} ${breed.breedGroup} dog breed portrait`}
+                        alt={`${breed.name}, ${breed.sizeCategory} ${breed.breedGroup} dog breed portrait`}
                         className="w-12 h-12 rounded-lg object-cover"
                         loading="lazy"
                         decoding="async"
@@ -180,7 +180,7 @@ export default function FindABreeder() {
                   {getBreedImage(selectedBreed.slug) && (
                     <img
                       src={getBreedImage(selectedBreed.slug)}
-                      alt={`${selectedBreed.name} — ${selectedBreed.sizeCategory} ${selectedBreed.breedGroup} dog breed portrait`}
+                      alt={`${selectedBreed.name}, ${selectedBreed.sizeCategory} ${selectedBreed.breedGroup} dog breed portrait`}
                       className="w-24 h-24 rounded-xl object-cover"
                       decoding="async"
                       width={96}
@@ -305,7 +305,7 @@ export default function FindABreeder() {
                     <li>It does not certify health testing was done</li>
                     <li>It does not guarantee the puppy is healthy</li>
                     <li>It does not confirm the breeder is ethical</li>
-                    <li>Registration alone is not enough — always verify health certifications independently</li>
+                    <li>Registration alone is not enough, always verify health certifications independently</li>
                   </ul>
                 </div>
               </div>
@@ -325,7 +325,7 @@ export default function FindABreeder() {
             <CardContent>
               <div className="space-y-4">
                 {[
-                  { q: "What health tests have the parents had?", why: "Responsible breeders test for breed-specific genetic conditions. Ask for OFA, CERF, or PennHIP documentation — not just a vet checkup." },
+                  { q: "What health tests have the parents had?", why: "Responsible breeders test for breed-specific genetic conditions. Ask for OFA, CERF, or PennHIP documentation, not just a vet checkup." },
                   { q: "Can I visit and meet the mother (and ideally the father)?", why: "Seeing the parents tells you about temperament and living conditions. A refusal is a major red flag." },
                   { q: "How many litters does each female have per year?", why: "Ethical breeders typically breed a female no more than once per year, with lifetime limits. Over-breeding is harmful." },
                   { q: "What is your puppy socialization program?", why: "Puppies need early exposure to different people, sounds, and environments. Good breeders start this from birth." },
@@ -405,7 +405,7 @@ export default function FindABreeder() {
                   "Commits to taking back any dog they've bred at any point in its life",
                   "Is actively involved in breed clubs, dog shows, or working/performance events",
                   "Can explain why they chose this specific breeding pair and what they hoped to achieve",
-                  "Does not always have puppies available — waitlists are normal for quality breeders",
+                  "Does not always have puppies available, waitlists are normal for quality breeders",
                 ].map((item, i) => (
                   <div key={i} className="flex items-start gap-3">
                     <CheckCircle className="h-5 w-5 text-green-600 dark:text-green-400 shrink-0 mt-0.5" />
@@ -432,7 +432,7 @@ export default function FindABreeder() {
                   "Always has puppies available or breeds many different breeds at once",
                   "Won't let you visit the premises or see where the dogs live",
                   "Ships puppies sight-unseen without meeting the buyer first",
-                  "No health testing documentation — only claims the vet said the dogs are 'healthy'",
+                  "No health testing documentation, only claims the vet said the dogs are 'healthy'",
                   "Puppies available at unusually low prices or with aggressive 'limited time' discounts",
                   "Uses pressure tactics, urgency, or emotional manipulation to rush your decision",
                   "No written contract, health guarantee, or take-back policy",
@@ -460,7 +460,7 @@ export default function FindABreeder() {
             </CardHeader>
             <CardContent className="space-y-4 text-sm">
               <p>
-                Despite their clean storefronts, the vast majority of pet store puppies come from commercial breeding operations — commonly known as puppy mills. Here's why this matters:
+                Despite their clean storefronts, the vast majority of pet store puppies come from commercial breeding operations, commonly known as puppy mills. Here's why this matters:
               </p>
               <div className="space-y-3">
                 {[
