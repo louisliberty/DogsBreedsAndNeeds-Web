@@ -2,7 +2,7 @@ import { useState, useEffect, useMemo } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { Link, useLocation, useSearch } from "wouter";
 import {
-  Plus, X as XIcon, Share2, Trophy, ArrowLeft, Search,
+  Plus, X as XIcon, Share2, Trophy, ArrowLeft, Search, ChevronDown,
   Check, Minus, AlertCircle,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -149,11 +149,14 @@ function BreedSelector({
           <Popover open={open} onOpenChange={setOpen}>
             <PopoverTrigger asChild>
               <button
-                className="w-full aspect-square rounded-lg border-2 border-dashed border-border flex flex-col items-center justify-center gap-2 hover:border-primary hover:bg-primary/5 transition-colors"
+                className="w-full inline-flex items-center justify-between gap-2 rounded-md border border-input bg-background px-3 py-2 text-sm hover:border-primary hover:bg-primary/5 transition-colors"
                 data-testid={`button-add-breed-${index}`}
               >
-                <Plus className="h-8 w-8 text-muted-foreground" />
-                <span className="text-sm font-medium">Add a breed</span>
+                <span className="flex items-center gap-2 text-muted-foreground">
+                  <Plus className="h-4 w-4" />
+                  Add a breed
+                </span>
+                <ChevronDown className="h-4 w-4 text-muted-foreground shrink-0" />
               </button>
             </PopoverTrigger>
             <PopoverContent className="w-72 p-0" align="center">
