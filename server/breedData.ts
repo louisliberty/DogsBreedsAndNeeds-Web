@@ -1,6 +1,7 @@
 import type { InsertBreed } from "@shared/schema";
-import { inferContentQuality } from "@shared/schema";
+import { inferContentQuality, computeCompletenessScore } from "@shared/schema";
 import { expandFully, type CompactBreed } from "./contentGenerator";
+import { curatedContent } from "./curatedContent";
 
 function slugify(name: string): string {
   return name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
@@ -8,6 +9,9 @@ function slugify(name: string): string {
 
 function expand(b: CompactBreed): InsertBreed {
   const rich = expandFully(b);
+  const slug = slugify(b.name);
+  const curated = curatedContent[slug];
+  const merged = curated ? { ...rich, ...curated } : rich;
   const seeded: InsertBreed = {
     name: b.name,
     slug: slugify(b.name),
@@ -34,28 +38,35 @@ function expand(b: CompactBreed): InsertBreed {
     apartmentSuitable: b.apartment,
     exerciseNeeds: b.exercise,
     groomingFrequency: b.grooming,
-    groomingGuide: rich.groomingGuide,
+    groomingGuide: merged.groomingGuide,
     commonHealthIssues: b.health,
-    dietNotes: rich.dietNotes,
-    trainingNotes: rich.trainingNotes,
-    history: rich.history,
-    personalityDeepDive: rich.personalityDeepDive,
-    livingWith: rich.livingWith,
-    healthCareGuide: rich.healthCareGuide,
+    dietNotes: merged.dietNotes,
+    trainingNotes: merged.trainingNotes,
+    history: merged.history,
+    personalityDeepDive: merged.personalityDeepDive,
+    livingWith: merged.livingWith,
+    healthCareGuide: merged.healthCareGuide,
     funFact: b.funFact,
     famousQuote: `"Every ${b.name} owner knows the joy of this breed's unique personality."`,
     popularity: b.popularity,
-    contentQuality: "templated",
+    contentQuality: curated ? "draft" : "templated",
     lastUpdated: new Date(),
     reviewedBy: null,
-    funFacts: rich.funFacts,
-    commonMisconceptions: rich.commonMisconceptions,
-    idealOwnerProfile: rich.idealOwnerProfile,
-    notGoodFor: rich.notGoodFor,
+    funFacts: merged.funFacts,
+    commonMisconceptions: merged.commonMisconceptions,
+    idealOwnerProfile: merged.idealOwnerProfile,
+    notGoodFor: merged.notGoodFor,
   };
-  // Generated seed content is templated by definition. Editors promote to
-  // "draft" / "reviewed" / "verified" through the admin panel.
-  seeded.contentQuality = inferContentQuality(seeded);
+  // For curated entries, keep the explicit "draft" tag; for generated entries,
+  // confirm "templated" via the conservative heuristic.
+  if (!curated) {
+    seeded.contentQuality = inferContentQuality(seeded);
+  }
+  // Cross-check: a curated entry must still meet the completeness minimums.
+  if (curated && computeCompletenessScore(seeded).score < 100) {
+    console.warn(`Curated breed ${slug} fails completeness — falling back to templated`);
+    seeded.contentQuality = "templated";
+  }
   return seeded;
 }
 
