@@ -21,6 +21,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 import type { Breed } from "@shared/schema";
 import { useCanonical } from "@/hooks/useCanonical";
 import { usePageMeta } from "@/hooks/usePageMeta";
+import { useRobots } from "@/hooks/useRobots";
 import { useToast } from "@/hooks/use-toast";
 import { apiRequest } from "@/lib/queryClient";
 
@@ -562,6 +563,7 @@ export default function Quiz() {
   const search = useSearch();
   const isResultsRoute = location === "/dog-breed-selector/results";
   useCanonical(isResultsRoute ? "/dog-breed-selector/results" : "/dog-breed-selector");
+  useRobots(isResultsRoute ? "noindex, follow" : "index, follow");
 
   const { data: breeds, isLoading } = useQuery<Breed[]>({
     queryKey: ["/api/breeds"],

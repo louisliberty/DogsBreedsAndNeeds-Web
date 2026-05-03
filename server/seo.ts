@@ -10,6 +10,7 @@ interface PageData {
   ogType?: string;
   bodyHtml: string;
   jsonLd?: object[];
+  noIndex?: boolean;
 }
 
 const staticPages: Record<string, Omit<PageData, "bodyHtml"> & { bodyHtml: string }> = {
@@ -93,6 +94,7 @@ const staticPages: Record<string, Omit<PageData, "bodyHtml"> & { bodyHtml: strin
     title: "Your Dog Breed Quiz Results: Top 5 Personalized Matches | Dog Breeds & Needs",
     description: "See your top 5 personalized dog breed matches based on lifestyle, living situation, and preferences. Refine your answers, share results, or compare your matches.",
     canonical: `${DOMAIN}/dog-breed-selector/results`,
+    noIndex: true,
     bodyHtml: `
       <h1>Your Dog Breed Quiz Results</h1>
       <p>Your personalized top 5 dog breed matches are calculated from the lifestyle answers you provided in the breed selector quiz. Each match includes an explanation of which answers contributed to the recommendation, links to the full breed profile, and the option to compare your top picks side by side.</p>
@@ -208,6 +210,13 @@ const staticPages: Record<string, Omit<PageData, "bodyHtml"> & { bodyHtml: strin
       <h2>Limitation of Liability and Contact</h2>
       <p>The site is provided on an "as is" basis without warranties of any kind. To the maximum extent permitted by law, Dog Breeds &amp; Needs and its contributors will not be liable for any indirect, incidental, special, consequential, or punitive damages arising out of or relating to your use of the site. Questions? Email legal@dogbreedsandneeds.com.</p>
     `,
+  },
+  "/admin": {
+    title: "Admin: Breed Management | Dog Breeds & Needs",
+    description: "Admin panel for managing dog breed data on Dog Breeds & Needs.",
+    canonical: `${DOMAIN}/admin`,
+    noIndex: true,
+    bodyHtml: `<h1>Admin</h1>`,
   },
   "/sitemap": {
     title: "Sitemap: All Dog Breeds & Pages | Dog Breeds & Needs",
@@ -676,6 +685,12 @@ export function injectPageData(html: string, data: PageData): string {
   html = html.replace(
     `<meta name="description" content="${defaultDesc}" />`,
     `<meta name="description" content="${escapeHtml(data.description)}" />`
+  );
+
+  const robotsContent = data.noIndex ? "noindex, follow" : "index, follow";
+  html = html.replace(
+    `<meta name="robots" content="index, follow" />`,
+    `<meta name="robots" content="${robotsContent}" />`
   );
 
   const headTagParts = [

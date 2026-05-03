@@ -14,6 +14,7 @@ import type { Breed } from "@shared/schema";
 import { computeCompletenessScore, CONTENT_FIELD_MINIMUMS, contentQualityLevels } from "@shared/schema";
 import { useCanonical } from "@/hooks/useCanonical";
 import { usePageMeta } from "@/hooks/usePageMeta";
+import { useRobots } from "@/hooks/useRobots";
 import { MarkdownEditor } from "@/components/MarkdownEditor";
 import AdminArticles from "@/components/AdminArticles";
 
@@ -28,6 +29,7 @@ function qualityVariant(q: string): { variant: "default" | "secondary" | "outlin
 
 export default function Admin() {
   useCanonical("/admin");
+  useRobots("noindex, follow");
   usePageMeta(
     "Admin: Breed Management | Dog Breeds & Needs",
     "Admin panel for managing dog breed data on Dog Breeds & Needs."

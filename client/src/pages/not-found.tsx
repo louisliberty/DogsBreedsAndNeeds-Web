@@ -1,8 +1,18 @@
 import { Button } from "@/components/ui/button";
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 import { Dog, Home, Search, ArrowLeft } from "lucide-react";
+import { useCanonical } from "@/hooks/useCanonical";
+import { usePageMeta } from "@/hooks/usePageMeta";
+import { useRobots } from "@/hooks/useRobots";
 
 export default function NotFound() {
+  const [location] = useLocation();
+  useCanonical(location);
+  useRobots("noindex, follow");
+  usePageMeta(
+    "Page Not Found | Dog Breeds & Needs",
+    "The page you're looking for doesn't exist. Return home or browse all 205 AKC dog breeds."
+  );
   return (
     <div className="min-h-[70vh] flex items-center justify-center px-4">
       <div className="text-center max-w-lg">
