@@ -45,6 +45,7 @@ export default function Sitemap() {
                 { href: "/poodle-rescue", label: "Poodle Rescue Organizations" },
                 { href: "/blog", label: "Blog" },
                 { href: "/products", label: "Products" },
+                { href: "/products/how-we-choose", label: "How We Choose Products" },
                 { href: "/sitemap", label: "Sitemap" },
               ].map((link) => (
                 <li key={link.href}>
