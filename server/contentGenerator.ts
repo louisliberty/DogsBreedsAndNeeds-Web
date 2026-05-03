@@ -288,8 +288,9 @@ export function generateMisconceptions(b: CompactBreed): string {
     ? `A daily walk around the block is not "exercise" for a high-energy breed like the ${b.name}. They need real, sustained activity that engages both body and brain.`
     : b.energy === "Low"
     ? `Low energy doesn't mean zero exercise. Even calm breeds need consistent walks and mental stimulation to stay healthy and balanced.`
-    : ``;
-  return [groupMisc[b.group] ?? "", energyMisc].filter(Boolean).join(" ");
+    : `Don't assume a "moderate energy" label like the ${b.name}'s means a couch-potato dog — moderate-energy breeds still need consistent daily activity to stay balanced and prevent boredom-driven habits.`;
+  const breedSpecific = `One specific point worth correcting about the ${b.name}: their ${b.origin} origin and ${b.group.toLowerCase()}-group heritage shape behavior in ways the casual observer often misses, including their reaction to ${b.health.toLowerCase().split(",")[0].trim()} risks and the level of socialization they actually need from puppyhood onward.`;
+  return [groupMisc[b.group] ?? "", energyMisc, breedSpecific].filter(Boolean).join(" ");
 }
 
 export function generateIdealOwner(b: CompactBreed): string {
@@ -307,6 +308,7 @@ export function generateIdealOwner(b: CompactBreed): string {
   }
   if (b.kids >= 4) parts.push(`Families with respectful children are usually a great fit.`);
   if (b.apartment) parts.push(`Adaptable enough for apartment living when daily exercise is non-negotiable.`);
+  parts.push(`Above all, the ideal ${b.name} owner understands the breed's ${b.group.toLowerCase()}-group heritage from ${b.origin} and is prepared to honor those instincts with appropriate outlets, structure, and the kind of patient, daily commitment this breed deserves.`);
   return parts.join(" ");
 }
 
@@ -317,9 +319,13 @@ export function generateNotGoodFor(b: CompactBreed): string {
     parts.push(`Sedentary households or owners who travel frequently without a plan for daily, vigorous exercise.`);
   } else if (b.energy === "Low") {
     parts.push(`Marathon trainers or anyone looking for a long-distance running partner.`);
+  } else {
+    parts.push(`Owners at the extremes — people who want a true couch potato or a tireless endurance athlete should look at breeds outside the moderate-energy range.`);
   }
-  if (b.trainability === "Independent") {
-    parts.push(`Owners expecting instant obedience or unwilling to make training mutually motivating.`);
+  if (b.trainability === "Independent" || b.trainability === "Challenging") {
+    parts.push(`Owners expecting instant obedience or unwilling to make training mutually motivating; this breed reads coercion as a reason to disengage.`);
+  } else {
+    parts.push(`Anyone who plans to skip foundational obedience entirely — even an "easy" breed needs structure to thrive.`);
   }
   if (b.barking === "Frequent" || b.barking === "Vocal") {
     parts.push(`Apartment dwellers in noise-restrictive buildings, or owners who need long stretches of quiet for work-from-home calls.`);
@@ -328,6 +334,7 @@ export function generateNotGoodFor(b: CompactBreed): string {
     parts.push(`Owners who can't tolerate hair on furniture, clothing, and floors year-round.`);
   }
   if (b.kids <= 2) parts.push(`Households with very young or unsupervised children.`);
+  parts.push(`Anyone unwilling to research the specific health risks common in the ${b.name} (notably ${b.health.toLowerCase().split(",").slice(0, 2).join(" and ").trim()}) and budget for the preventive care that follows.`);
   return parts.join(" ");
 }
 

@@ -90,7 +90,19 @@ export const barkingTendencies = ["Rare", "Occasional", "Frequent", "Vocal"] as 
 export const productCategories = ["Food", "Toys", "Training", "Grooming", "Health"] as const;
 export const contentQualityLevels = ["templated", "draft", "reviewed", "verified"] as const;
 
-export const CONTENT_FIELD_MINIMUMS: Record<string, number> = {
+type LongFormField =
+  | "personalityDeepDive"
+  | "history"
+  | "livingWith"
+  | "healthCareGuide"
+  | "trainingNotes"
+  | "dietNotes"
+  | "groomingFrequency"
+  | "idealOwnerProfile"
+  | "notGoodFor"
+  | "commonMisconceptions";
+
+export const CONTENT_FIELD_MINIMUMS: Record<LongFormField, number> = {
   personalityDeepDive: 150,
   history: 100,
   livingWith: 80,
@@ -112,21 +124,30 @@ export function computeCompletenessScore(breed: Partial<Breed>): {
   score: number;
   missing: string[];
 } {
-  const fields = Object.keys(CONTENT_FIELD_MINIMUMS);
+  const fields = Object.keys(CONTENT_FIELD_MINIMUMS) as LongFormField[];
   let passed = 0;
   const missing: string[] = [];
   for (const field of fields) {
     const min = CONTENT_FIELD_MINIMUMS[field];
-    const value = (breed as any)[field] as string | undefined;
+    const value = breed[field] as string | undefined;
     if (wordCount(value) >= min) {
       passed++;
     } else {
       missing.push(field);
     }
   }
-  const facts = (breed as any).funFacts as string[] | undefined;
+  const facts = breed.funFacts as string[] | undefined;
   if (facts && facts.length >= 3) passed++;
   else missing.push("funFacts");
   const total = fields.length + 1;
   return { score: Math.round((passed / total) * 100), missing };
+}
+
+export function inferContentQuality(breed: Partial<Breed>): "templated" | "draft" | "reviewed" | "verified" {
+  if (breed.reviewedBy && breed.reviewedBy.trim().length > 0) {
+    return breed.contentQuality === "verified" ? "verified" : "reviewed";
+  }
+  const { score } = computeCompletenessScore(breed);
+  if (score >= 100) return "draft";
+  return "templated";
 }

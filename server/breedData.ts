@@ -1,4 +1,5 @@
 import type { InsertBreed } from "@shared/schema";
+import { inferContentQuality } from "@shared/schema";
 import { expandFully, type CompactBreed } from "./contentGenerator";
 
 function slugify(name: string): string {
@@ -7,7 +8,7 @@ function slugify(name: string): string {
 
 function expand(b: CompactBreed): InsertBreed {
   const rich = expandFully(b);
-  return {
+  const draft: InsertBreed = {
     name: b.name,
     slug: slugify(b.name),
     breedGroup: b.group,
@@ -43,7 +44,7 @@ function expand(b: CompactBreed): InsertBreed {
     funFact: b.funFact,
     famousQuote: `"Every ${b.name} owner knows the joy of this breed's unique personality."`,
     popularity: b.popularity,
-    contentQuality: "draft",
+    contentQuality: "templated",
     lastUpdated: new Date(),
     reviewedBy: null,
     funFacts: rich.funFacts,
@@ -51,6 +52,8 @@ function expand(b: CompactBreed): InsertBreed {
     idealOwnerProfile: rich.idealOwnerProfile,
     notGoodFor: rich.notGoodFor,
   };
+  draft.contentQuality = inferContentQuality(draft);
+  return draft;
 }
 
 const compactBreeds: CompactBreed[] = [

@@ -240,6 +240,11 @@ export default function Admin() {
                         <CheckCircle2 className="h-3 w-3" /> Reviewed by {current.reviewedBy}
                       </span>
                     )}
+                    {current.lastUpdated && (
+                      <span className="text-xs text-muted-foreground" data-testid="text-last-updated">
+                        Last updated: {new Date(current.lastUpdated).toLocaleString()}
+                      </span>
+                    )}
                   </div>
                 </div>
                 <Button variant="ghost" size="icon" onClick={() => { setEditingBreed(null); setEditData({}); }} data-testid="button-close-edit">
@@ -362,6 +367,17 @@ export default function Admin() {
                   minWords={CONTENT_FIELD_MINIMUMS.dietNotes}
                   rows={5}
                   testId="input-edit-diet"
+                />
+              </div>
+
+              <div>
+                <label className="text-sm font-medium">Grooming Guide</label>
+                <MarkdownEditor
+                  value={String(get("groomingFrequency") ?? "")}
+                  onChange={(v) => set({ groomingFrequency: v })}
+                  minWords={CONTENT_FIELD_MINIMUMS.groomingFrequency}
+                  rows={5}
+                  testId="input-edit-grooming"
                 />
               </div>
 
