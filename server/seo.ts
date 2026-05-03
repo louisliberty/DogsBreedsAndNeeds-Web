@@ -117,14 +117,7 @@ const staticPages: Record<string, Omit<PageData, "bodyHtml"> & { bodyHtml: strin
     title: "Dog Breed Rescue Directory: Find Breed-Specific Rescues by Breed | Dog Breeds & Needs",
     description: "Browse rescue organizations for 20+ popular dog breeds. Adopt a Golden Retriever, Labrador, German Shepherd, Bulldog, Beagle, and more from breed-specific rescues nationwide.",
     canonical: `${DOMAIN}/rescue`,
-    bodyHtml: `
-      <h1>Dog Breed Rescue Directory</h1>
-      <p>Adoption is one of the most ethical ways to bring a dog into your family. Our rescue directory lists breed-specific rescue organizations for the most popular AKC breeds. Each rescue is a 501(c)(3) volunteer-run organization that takes in surrendered, abandoned, or owner-relinquished dogs and places them in carefully screened adoptive homes.</p>
-      <h2>Browse Rescues by Breed</h2>
-      <p>The directory covers 20+ popular breeds — including Golden Retriever, Labrador Retriever, German Shepherd, French Bulldog, Bulldog, Beagle, Dachshund, Yorkshire Terrier, Boxer, Siberian Husky, Border Collie, Shih Tzu, Australian Shepherd, Cavalier King Charles Spaniel, Doberman Pinscher, Great Dane, Rottweiler, Miniature Schnauzer, Pomeranian, Boston Terrier, and Poodle — with regional coverage across the United States.</p>
-      <h2>Why Adopt from a Breed-Specific Rescue?</h2>
-      <p>Breed-specific rescues understand the temperament, exercise needs, health concerns, and grooming requirements of their breed. They evaluate dogs in foster homes, match adopters carefully, and remain a lifelong resource. Most adoptable dogs are spayed or neutered, vaccinated, microchipped, and screened for breed-specific health conditions before placement.</p>
-    `,
+    bodyHtml: "",
   },
   "/poodle-rescue": {
     title: "Poodle Rescue Organizations: Find a Poodle to Adopt Near You | Dog Breeds & Needs",
@@ -298,6 +291,37 @@ export async function getPageData(url: string): Promise<PageData | null> {
   const cleanWithoutTrailing = cleanUrl.replace(/\/$/, "");
   if (cleanWithoutTrailing && staticPages[cleanWithoutTrailing]) {
     return staticPages[cleanWithoutTrailing];
+  }
+
+  if (cleanUrl === "/rescue" || cleanUrl === "/rescue/") {
+    try {
+      const slugs = await storage.getRescueBreedSlugs();
+      const breeds = await storage.getAllBreeds();
+      const breedBySlug = new Map(breeds.map((b) => [b.slug, b]));
+      const e = escapeHtml;
+      const items = slugs
+        .map((s) => breedBySlug.get(s))
+        .filter((b): b is typeof breeds[number] => Boolean(b))
+        .sort((a, b) => a.name.localeCompare(b.name));
+      const list = items
+        .map((b) => `<li><a href="${DOMAIN}/rescue/${e(b.slug)}">${e(b.name)} Rescues</a> — ${e(b.breedGroup)} Group</li>`)
+        .join("");
+      return {
+        title: "Dog Breed Rescue Directory: Find Breed-Specific Rescues by Breed | Dog Breeds & Needs",
+        description: `Browse rescue organizations for ${items.length}+ popular dog breeds. Adopt a Golden Retriever, Labrador, German Shepherd, Bulldog, Beagle, and more from breed-specific rescues nationwide.`,
+        canonical: `${DOMAIN}/rescue`,
+        bodyHtml: `
+          <h1>Dog Breed Rescue Directory</h1>
+          <p>Adoption is one of the most ethical ways to bring a dog into your family. Our rescue directory lists breed-specific rescue organizations for the most popular AKC breeds. Each rescue is a 501(c)(3) volunteer-run organization that takes in surrendered, abandoned, or owner-relinquished dogs and places them in carefully screened adoptive homes.</p>
+          <h2>Browse Rescues by Breed</h2>
+          <ul>${list}</ul>
+          <h2>Why Adopt from a Breed-Specific Rescue?</h2>
+          <p>Breed-specific rescues understand the temperament, exercise needs, health concerns, and grooming requirements of their breed. They evaluate dogs in foster homes, match adopters carefully, and remain a lifelong resource. Most adoptable dogs are spayed or neutered, vaccinated, microchipped, and screened for breed-specific health conditions before placement.</p>
+        `,
+      };
+    } catch {
+      // fall through to static body
+    }
   }
 
   const rescueMatch = cleanUrl.match(/^\/rescue\/([a-z0-9-]+)$/);
