@@ -1,0 +1,377 @@
+[
+ {
+  "name": "Open Farm Grass-Fed Beef Recipe",
+  "category": "Food & Treats",
+  "description": "Pasture-raised beef recipe with humanely-sourced meat, non-GMO produce, and traceable ingredients you can look up by lot number.",
+  "imageUrl": "/images/products/product_food.webp",
+  "suitableSizes": "Small,Medium,Large,Giant",
+  "whyRecommended": "One of the few dog food brands publishing full ingredient traceability. Every protein is third-party certified humane.",
+  "sponsored": false,
+  "brand": "Open Farm",
+  "editorsNote": "If you only upgrade one thing in your dog's diet, make it the protein source. Open Farm's transparency is the gold standard.",
+  "editorsPick": true,
+  "priceTier": "$$$",
+  "bestFor": [
+   "Adult dogs",
+   "Sensitive stomachs",
+   "Owners who care about sourcing"
+  ],
+  "tags": [
+   "Non-GMO",
+   "Single-protein",
+   "Human-grade",
+   "Recyclable packaging"
+  ],
+  "retailers": [
+   {
+    "url": "https://openfarmpet.com/products/grass-fed-beef-dry-dog-food",
+    "retailer": "Open Farm"
+   },
+   {
+    "url": "https://www.chewy.com/s?query=Open%20Farm%20Grass-Fed%20Beef%20Dry%20Dog%20Food",
+    "retailer": "Chewy"
+   }
+  ]
+ },
+ {
+  "name": "The Honest Kitchen Whole Grain Chicken Clusters",
+  "category": "Food & Treats",
+  "description": "Human-grade dehydrated kibble made in a human food facility with cage-free chicken and whole grains. Just add water.",
+  "imageUrl": "/images/products/product_food.webp",
+  "suitableSizes": "Small,Medium,Large",
+  "whyRecommended": "Human-grade certification means the entire facility meets standards for human food — a much higher bar than typical pet food.",
+  "sponsored": false,
+  "brand": "The Honest Kitchen",
+  "editorsNote": "Great middle ground for owners who want fresh-quality nutrition without the freezer footprint of frozen food.",
+  "editorsPick": true,
+  "priceTier": "$$$",
+  "bestFor": [
+   "Picky eaters",
+   "Adult dogs",
+   "Travel"
+  ],
+  "tags": [
+   "Human-grade",
+   "Non-GMO",
+   "Recyclable packaging"
+  ],
+  "retailers": [
+   {
+    "url": "https://www.thehonestkitchen.com/products/whole-grain-chicken-clusters",
+    "retailer": "The Honest Kitchen"
+   },
+   {
+    "url": "https://www.chewy.com/s?query=Honest%20Kitchen%20Whole%20Grain%20Chicken%20Clusters",
+    "retailer": "Chewy"
+   }
+  ]
+ },
+ {
+  "name": "Stella & Chewy's Freeze-Dried Dinner Patties",
+  "category": "Food & Treats",
+  "description": "95% raw cage-free poultry, grass-fed beef, or wild-caught fish. Freeze-dried to lock in nutrients with no synthetic preservatives.",
+  "imageUrl": "/images/products/product_food.webp",
+  "suitableSizes": "Small,Medium,Large",
+  "whyRecommended": "Closest you can get to a true raw diet without the food-safety risk or freezer space. Excellent for transitioning off ultra-processed kibble.",
+  "sponsored": false,
+  "brand": "Stella & Chewy's",
+  "editorsNote": null,
+  "editorsPick": false,
+  "priceTier": "$$$",
+  "bestFor": [
+   "Adult dogs",
+   "Topper for picky eaters"
+  ],
+  "tags": [
+   "Single-protein",
+   "Grain-free",
+   "Limited ingredient"
+  ],
+  "retailers": [
+   {
+    "url": "https://www.chewy.com/s?query=Stella%20Chewys%20Freeze-Dried%20Dinner%20Patties",
+    "retailer": "Chewy"
+   }
+  ]
+ },
+ {
+  "name": "West Paw Hurley Tough Chew Toy",
+  "category": "Toys & Enrichment",
+  "description": "Recyclable, BPA-free, latex-free chew toy made in Montana from West Paw's proprietary Zogoflex material. Floats and is dishwasher-safe.",
+  "imageUrl": "/images/products/product_toys.webp",
+  "suitableSizes": "Small,Medium,Large,Giant",
+  "whyRecommended": "B-Corp certified, made in the USA, and one of the only toy manufacturers that takes back worn-out toys to recycle into new ones.",
+  "sponsored": false,
+  "brand": "West Paw",
+  "editorsNote": "Our test dog destroys plush toys in minutes; the Hurley has lasted 18 months and counting. The closed-loop recycling program is a real bonus.",
+  "editorsPick": true,
+  "priceTier": "$$",
+  "bestFor": [
+   "Power chewers",
+   "Fetch",
+   "Outdoor play"
+  ],
+  "tags": [
+   "Made in USA",
+   "B-Corp",
+   "BPA-free",
+   "Recyclable packaging",
+   "Recycled materials"
+  ],
+  "retailers": [
+   {
+    "url": "https://www.westpaw.com/products/hurley",
+    "retailer": "West Paw"
+   },
+   {
+    "url": "https://www.amazon.com/s?k=West%20Paw%20Hurley%20dog%20chew%20toy&tag=PLACEHOLDER-AFFILIATE-ID",
+    "retailer": "Amazon"
+   }
+  ]
+ },
+ {
+  "name": "Planet Dog Orbee-Tuff Snoop Treat Dispenser",
+  "category": "Toys & Enrichment",
+  "description": "Flexible, treat-dispensing puzzle toy made from non-toxic, BPA-free Orbee-Tuff material. A portion of each sale funds service-dog programs.",
+  "imageUrl": "/images/products/product_toys.webp",
+  "suitableSizes": "Small,Medium,Large",
+  "whyRecommended": "Mental enrichment that's safer than hard plastic puzzles. The flexible material means it can be tossed, chewed, and slow-fed without breaking.",
+  "sponsored": false,
+  "brand": "Planet Dog",
+  "editorsNote": null,
+  "editorsPick": true,
+  "priceTier": "$$",
+  "bestFor": [
+   "Bored dogs",
+   "Slow feeding",
+   "Anxious dogs"
+  ],
+  "tags": [
+   "BPA-free",
+   "Phthalate-free"
+  ],
+  "retailers": [
+   {
+    "url": "https://www.amazon.com/s?k=Planet%20Dog%20Orbee-Tuff%20Snoop%20treat%20dispenser&tag=PLACEHOLDER-AFFILIATE-ID",
+    "retailer": "Amazon"
+   }
+  ]
+ },
+ {
+  "name": "Wild One Harness",
+  "category": "Leashes & Harnesses",
+  "description": "Lightweight, padded step-in harness made from recycled, water-resistant materials with a no-pull front clip and reflective trim.",
+  "imageUrl": "/images/products/product_leashes.webp",
+  "suitableSizes": "Small,Medium,Large",
+  "whyRecommended": "Designed by a vet-led team, with recycled materials throughout and packaging that's plastic-free. Comfortable enough for all-day wear.",
+  "sponsored": false,
+  "brand": "Wild One",
+  "editorsNote": "The padded chest plate is genuinely better than most harnesses twice the price. Pairs beautifully with their matching leash.",
+  "editorsPick": true,
+  "priceTier": "$$",
+  "bestFor": [
+   "Daily walks",
+   "Pullers in training",
+   "Sensitive skin"
+  ],
+  "tags": [
+   "Recycled materials",
+   "Plastic-free",
+   "Phthalate-free"
+  ],
+  "retailers": [
+   {
+    "url": "https://www.wildone.com/products/harness",
+    "retailer": "Wild One"
+   },
+   {
+    "url": "https://www.amazon.com/s?k=Wild%20One%20dog%20harness&tag=PLACEHOLDER-AFFILIATE-ID",
+    "retailer": "Amazon"
+   }
+  ]
+ },
+ {
+  "name": "Found My Animal Rope Leash",
+  "category": "Leashes & Harnesses",
+  "description": "Hand-spliced cotton rope leash made in Brooklyn, NY. A portion of every sale funds shelter and rescue partners.",
+  "imageUrl": "/images/products/product_leashes.webp",
+  "suitableSizes": "Small,Medium,Large,Giant",
+  "whyRecommended": "Built to last decades, not seasons. Plant-based materials and a clear charitable model that's been running for over a decade.",
+  "sponsored": false,
+  "brand": "Found My Animal",
+  "editorsNote": null,
+  "editorsPick": false,
+  "priceTier": "$$$",
+  "bestFor": [
+   "Strong pullers",
+   "Long walks",
+   "Owners who want one leash for life"
+  ],
+  "tags": [
+   "Made in USA",
+   "Plant-based",
+   "Cruelty-free"
+  ],
+  "retailers": [
+   {
+    "url": "https://www.foundmyanimal.com/collections/leashes/products/rope-leash",
+    "retailer": "Found My Animal"
+   }
+  ]
+ },
+ {
+  "name": "Earth Rated Compostable Poop Bags",
+  "category": "Cleanup",
+  "description": "USDA-certified plant-based, home-compostable poop bags. Leak-proof, lavender-scented or unscented options.",
+  "imageUrl": "/images/products/product_cleanup.webp",
+  "suitableSizes": "Small,Medium,Large,Giant",
+  "whyRecommended": "One of the only certified-compostable poop bag brands that actually breaks down at home (most 'biodegradable' bags don't).",
+  "sponsored": false,
+  "brand": "Earth Rated",
+  "editorsNote": "If you switch one thing for the planet this year, make it your poop bags. Earth Rated also runs a 1% for the Planet membership.",
+  "editorsPick": true,
+  "priceTier": "$",
+  "bestFor": [
+   "Daily walks",
+   "Eco-conscious owners"
+  ],
+  "tags": [
+   "Plant-based",
+   "Compostable",
+   "Plastic-free",
+   "B-Corp"
+  ],
+  "retailers": [
+   {
+    "url": "https://www.amazon.com/s?k=Earth%20Rated%20compostable%20poop%20bags&tag=PLACEHOLDER-AFFILIATE-ID",
+    "retailer": "Amazon"
+   },
+   {
+    "url": "https://www.chewy.com/s?query=Earth%20Rated%20compostable%20poop%20bags",
+    "retailer": "Chewy"
+   }
+  ]
+ },
+ {
+  "name": "Bocce's Bakery Training Treats",
+  "category": "Food & Treats",
+  "description": "Limited-ingredient, soft training treats baked in Brooklyn with whole foods like peanut butter, banana, and oatmeal — no preservatives.",
+  "imageUrl": "/images/products/product_food.webp",
+  "suitableSizes": "Small,Medium,Large",
+  "whyRecommended": "Most training treats are loaded with mystery ingredients. Bocce's keeps the ingredient list to under 10 recognizable items.",
+  "sponsored": false,
+  "brand": "Bocce's Bakery",
+  "editorsNote": null,
+  "editorsPick": false,
+  "priceTier": "$",
+  "bestFor": [
+   "Puppies",
+   "Training sessions",
+   "Sensitive stomachs"
+  ],
+  "tags": [
+   "Limited ingredient",
+   "Made in USA",
+   "Non-GMO"
+  ],
+  "retailers": [
+   {
+    "url": "https://www.amazon.com/s?k=Bocces%20Bakery%20training%20treats&tag=PLACEHOLDER-AFFILIATE-ID",
+    "retailer": "Amazon"
+   }
+  ]
+ },
+ {
+  "name": "4-Legger Organic Hypoallergenic Shampoo",
+  "category": "Grooming & Coat Care",
+  "description": "USDA-certified organic dog shampoo with aloe and lemongrass. Free of synthetic detergents, parabens, and artificial fragrance.",
+  "imageUrl": "/images/products/product_grooming.webp",
+  "suitableSizes": "Small,Medium,Large,Giant",
+  "whyRecommended": "Genuinely USDA-certified organic — most 'natural' dog shampoos still contain synthetic surfactants. Safe for sensitive skin.",
+  "sponsored": false,
+  "brand": "4-Legger",
+  "editorsNote": "A go-to for owners of breeds with skin allergies. Rinses out cleanly and doesn't leave residue.",
+  "editorsPick": true,
+  "priceTier": "$$",
+  "bestFor": [
+   "Sensitive skin",
+   "Allergy-prone breeds",
+   "Puppies"
+  ],
+  "tags": [
+   "Organic",
+   "Cruelty-free",
+   "Made in USA",
+   "Plant-based"
+  ],
+  "retailers": [
+   {
+    "url": "https://www.amazon.com/s?k=4-Legger%20organic%20hypoallergenic%20dog%20shampoo&tag=PLACEHOLDER-AFFILIATE-ID",
+    "retailer": "Amazon"
+   },
+   {
+    "url": "https://4-legger.com/products/usda-certified-organic-hypoallergenic-shampoo",
+    "retailer": "4-Legger"
+   }
+  ]
+ },
+ {
+  "name": "Big Barker Orthopedic Dog Bed",
+  "category": "Beds & Crates",
+  "description": "10-year warranty orthopedic bed engineered for large and giant breeds. Made in the USA from CertiPUR-US-certified foam that won't flatten.",
+  "imageUrl": "/images/products/product_beds.webp",
+  "suitableSizes": "Large,Giant",
+  "whyRecommended": "Independently studied by the University of Pennsylvania School of Veterinary Medicine and shown to improve joint comfort in large dogs.",
+  "sponsored": false,
+  "brand": "Big Barker",
+  "editorsNote": "The 10-year warranty is unheard of in pet beds. If you have a large-breed dog with hip or joint concerns, this is the bed to buy.",
+  "editorsPick": true,
+  "priceTier": "$$$",
+  "bestFor": [
+   "Senior dogs",
+   "Large breeds",
+   "Joint issues"
+  ],
+  "tags": [
+   "Made in USA"
+  ],
+  "retailers": [
+   {
+    "url": "https://bigbarker.com/products/the-big-barker-headrest-edition",
+    "retailer": "Big Barker"
+   }
+  ]
+ },
+ {
+  "name": "Pet Honesty Multivitamin Soft Chews",
+  "category": "Health & Supplements",
+  "description": "10-in-1 daily multivitamin chew with glucosamine, omega-3s, probiotics, and antioxidants. NASC-certified facility.",
+  "imageUrl": "/images/products/product_health.webp",
+  "suitableSizes": "Small,Medium,Large,Giant",
+  "whyRecommended": "Made in an NASC-quality-seal facility (the National Animal Supplement Council's gold standard) with no artificial preservatives.",
+  "sponsored": false,
+  "brand": "Pet Honesty",
+  "editorsNote": null,
+  "editorsPick": false,
+  "priceTier": "$$",
+  "bestFor": [
+   "Adult dogs",
+   "Senior dogs",
+   "Coat & joint support"
+  ],
+  "tags": [
+   "Made in USA",
+   "Vet-formulated"
+  ],
+  "retailers": [
+   {
+    "url": "https://www.amazon.com/s?k=Pet%20Honesty%2010-in-1%20multivitamin%20soft%20chews&tag=PLACEHOLDER-AFFILIATE-ID",
+    "retailer": "Amazon"
+   },
+   {
+    "url": "https://pethonesty.com/products/10-for-1-multivitamin-chews",
+    "retailer": "Pet Honesty"
+   }
+  ]
+ }
+]
