@@ -89,7 +89,7 @@ function footer() {
       <div><h2>Get a Dog</h2>${list(GET_A_DOG)}</div>
       <div><h2>Legal</h2>${list(LEGAL)}</div>
     </div>
-    <div class="footer-bottom">DogBreedsAndNeeds.com - All 205 AKC-Recognized Dog Breeds</div>
+    <div class="footer-bottom">© ${new Date().getFullYear()} Dog Breeds &amp; Needs · All 205 AKC-Recognized Dog Breeds</div>
   </div>
 </footer>`;
 }
