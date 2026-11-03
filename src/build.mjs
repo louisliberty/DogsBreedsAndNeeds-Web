@@ -93,4 +93,8 @@ xml += "</urlset>\n";
 writeFileSync(path.join(DIST, "sitemap.xml"), xml);
 writeFileSync(path.join(DIST, "robots.txt"), `User-agent: *\nAllow: /\n\nSitemap: ${DOMAIN}/sitemap.xml\n`);
 
+// 6. version.txt — lets you (or a deploy check) confirm which commit is live
+const commit = (process.env.GITHUB_SHA || "local").slice(0, 7);
+writeFileSync(path.join(DIST, "version.txt"), `${commit} ${new Date().toISOString()}\n`);
+
 console.log(`Built ${pages.length} pages into dist/ in ${Date.now() - started}ms`);
