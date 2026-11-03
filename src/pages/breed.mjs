@@ -69,7 +69,7 @@ function breedPage(b) {
         ${b.yearRecognized ? h`<span class="badge">AKC since ${b.yearRecognized}</span>` : ""}
         ${b.hypoallergenic ? h`<span class="badge badge-secondary">Hypoallergenic</span>` : ""}
       </div>
-      <p class="quote">${b.famousQuote}</p>
+      ${b.edited ? h`<p class="tagline">${b.famousQuote}</p>` : ""}
       ${shareButtons(b)}
       <div class="btn-row mt-3">
         <a href="/compare?breeds=${b.slug}" class="btn btn-outline btn-sm">${icon("scale")} Compare with another breed</a>
@@ -180,7 +180,9 @@ function breedPage(b) {
   return {
     path: `/breeds/${b.slug}`,
     title: `${b.name}: Breed Info, Temperament & Care Guide | Dog Breeds & Needs`,
-    description: `Learn everything about the ${b.name}: temperament, size, exercise needs, health tips, and more. See if this ${b.breedGroup} breed is right for you!`,
+    description: b.edited
+      ? `${b.famousQuote} ${b.name} temperament, care, health and FAQs.`
+      : `Learn everything about the ${b.name}: temperament, size, exercise needs, health tips, and more. See if this ${b.breedGroup} breed is right for you!`,
     ogType: "article",
     ogImage: breedImg(b.slug),
     ogImageW: 1280,

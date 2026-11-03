@@ -4,7 +4,7 @@
   "slug": "labrador-retriever",
   "breedGroup": "Sporting",
   "originCountry": "Canada",
-  "yearRecognized": null,
+  "yearRecognized": 1917,
   "sizeCategory": "Large",
   "weightRange": "55-80 lbs",
   "heightRange": "21.5-24.5 in",
@@ -25,63 +25,60 @@
   "exerciseNeeds": "60+ minutes daily of vigorous exercise",
   "groomingFrequency": "Weekly brushing, more during shedding season",
   "commonHealthIssues": "Hip dysplasia, elbow dysplasia, eye conditions",
-  "dietNotes": "Feed a high-quality, AAFCO-certified diet appropriate for the Labrador Retriever's life stage and large size. Active Labrador Retrievers burn meaningful calories, match portions to their actual workload, not generic feeding-chart numbers. Large and giant breeds need a \"large breed\" puppy formula until growth completes (12–24 months) to support proper joint development.",
-  "trainingNotes": "Labrador Retrievers are eager to learn and quick to pick up new commands. Positive-reinforcement methods, food, play, and genuine praise, work far better than corrections; this breed in particular shuts down or grows resistant under harsh handling. Because of their high energy, training sessions are most productive after exercise, not before, a tired Labrador Retriever learns faster than a fresh one. Early, frequent, and varied socialization between 8 and 16 weeks is critical, especially given their naturally social disposition toward strangers. Their generally measured vocalizations make impulse-control training easier than with more vocal breeds.",
-  "history": "Despite the name, the Labrador Retriever did not develop in Labrador but on the island of Newfoundland in the 1500s and 1600s, descended from the now-extinct St. John's Water Dog. Local fishermen used the dogs to haul in nets and retrieve fish that escaped lines, and the breed's webbed feet, water-resistant double coat, and otter-like tail all trace to that working role.\n\nEnglish nobles visiting Newfoundland in the early 1800s brought the dogs back to Britain, where the Earls of Malmesbury and the Dukes of Buccleuch refined them as gun dogs. The Kennel Club recognized the breed in 1903 and the AKC in 1917. Since 1991, the Labrador has been the most registered breed in the United States, a reign that ended only in 2022 when the French Bulldog briefly took the top spot.",
+  "dietNotes": "Feed a complete diet for large breeds and measure every meal; Labs rarely self-regulate. Large-breed puppy food keeps growth steady and protects developing joints. You should be able to feel the ribs easily and see a waist from above; if you can't, cut back by about 10% and recheck in a month. Count treats as part of the day's food, and use a slow-feeder bowl for dogs that inhale meals. Working field Labs in hunting season need more food than the same dog in summer.",
+  "trainingNotes": "Labs are among the easiest breeds to train because they are food-driven and want to work with you. That food drive is your best tool: short sessions paid in kibble from the daily ration teach a lot without adding calories. The hard parts are impulse control and manners at size: jumping on people, pulling on the leash, and grabbing things off counters. Teach a solid 'sit to greet', loose-leash walking, and 'leave it' early, before your puppy weighs 70 pounds. Retrieving games are a natural reward, and many Labs excel at dock diving, field work, and therapy-dog work once they have the basics.",
+  "history": "Despite the name, the Labrador Retriever did not develop in Labrador but on the island of Newfoundland in the 1500s and 1600s, descended from the now-extinct St. John's Water Dog. Local fishermen used the dogs to haul in nets and retrieve fish that escaped lines, and the breed's webbed feet, water-resistant double coat, and otter-like tail all trace to that working role.\n\nEnglish nobles visiting Newfoundland in the early 1800s brought the dogs back to Britain, where the Earls of Malmesbury and the Dukes of Buccleuch refined them as gun dogs. The Kennel Club recognized the breed in 1903 and the AKC in 1917. The Labrador was the most registered breed in the United States every year from 1991 until 2022, when the French Bulldog overtook it.",
   "personalityDeepDive": "The Labrador Retriever is the rare breed that earns its reputation honestly. Bred from Newfoundland water dogs to retrieve cold-water nets and ducks, the Lab carries an enthusiasm for life that does not dim with age, eight-year-olds still belly-flop into ponds with the same conviction as eight-month-olds.\n\nLabs are biddable, but their biddability is fueled by appetite and partnership rather than blind obedience. They want to do the thing with you. That makes them outstanding service dogs, search-and-rescue dogs, and detection dogs, but it also explains why a bored, lonely Lab is a destructive Lab. They eat shoes, drywall, and entire bags of birdseed when their brains are not occupied.\n\nSocially they are almost indiscriminately friendly, most Labs greet strangers as long-lost relatives. That openness is part of why they make poor guard dogs but exceptional family companions. With children they are patient and self-correcting, and with other dogs they are usually appeasing rather than confrontational. The cost of all that sociability is separation anxiety; Labs do not thrive when left alone for long stretches.",
-  "livingWith": "Plan on 60+ minutes of meaningful daily activity, broken into multiple sessions if possible. They are not well-suited to apartment life. They thrive with a securely fenced yard and ready access to outdoor space.\n\nWithin the household, expect a dog who is excellent with kids when both are taught to respect each other and generally great with cats. On the noise front, they bark occasionally, usually with reason, important to factor in if you have close neighbors or work-from-home calls.\n\nTheir lifespan is typical for a dog this size, expect a full decade or so of companionship with attentive care.",
-  "healthCareGuide": "The Labrador Retriever has an average lifespan of 11-13 years, which is their lifespan is typical for a dog this size, expect a full decade or so of companionship with attentive care.\n\nBreed-specific concerns to discuss with your vet include: hip dysplasia, elbow dysplasia, eye conditions. Reputable breeders screen breeding stock for these conditions, so always ask to see health clearances before committing to a puppy.\n\nBeyond breed-specific issues, follow the standards of good preventative care: a core vaccine schedule, year-round parasite prevention, regular dental cleaning, and an annual senior workup once your dog passes the midpoint of their expected lifespan. Large and giant breeds are particularly susceptible to bloat (gastric torsion); learn the symptoms, feed two smaller meals per day instead of one large meal, and consider a prophylactic gastropexy if your vet recommends it.",
+  "livingWith": "A Lab is a big, strong, enthusiastic dog that wants to be in the middle of everything. Expect one to follow you room to room, greet every visitor as a long-lost friend, and treat the kitchen as its office. Counter-surfing and trash-raiding are near-universal, so a Lab household learns to close the pantry and put the bin behind a door.\n\nPuppies and adolescents are destructive chewers until about two years old; durable chew toys and a crate are survival tools, not optional extras. Most Labs love water and will find every puddle on a walk. A fenced yard helps, but the yard is not exercise: Labs left alone outside get bored and dig, and they do far better with walks, fetch, swimming, and time with their people.",
+  "healthCareGuide": "Ask any breeder for OFA hip and elbow results and a current eye exam on both parents, plus DNA results for exercise-induced collapse (EIC), progressive retinal atrophy (prcd-PRA), and centronuclear myopathy (CNM). EIC shows up in otherwise fit young Labs that wobble or collapse after intense retrieving; affected dogs can live normally once their owners know to avoid that kind of frenzy.\n\nObesity is the biggest everyday health risk. Many Labs carry a POMC gene variant linked to stronger hunger and lower energy use, which is why the breed is famous for begging. Keeping a Lab lean measurably protects its joints and extends its life. Watch older dogs for lipomas (usually harmless fatty lumps, but have new lumps checked) and for laryngeal paralysis, which shows up as noisy breathing and tiring quickly in heat. Ear infections are common after swimming, so dry the ears afterward.",
   "funFact": "Labs have been the most popular dog breed in America for over 30 years.",
-  "famousQuote": "\"Every Labrador Retriever owner knows the joy of this breed's unique personality.\"",
+  "famousQuote": "A water dog turned family dog: endlessly willing, food-obsessed, and happiest with a job and a crowd.",
   "popularity": 1,
-  "lastUpdated": "2026-05-03 01:07:05.484",
+  "lastUpdated": "2026-11-03 07:45:44.774",
   "funFacts": [
-   "Labs have been the most popular dog breed in America for over 30 years.",
-   "The Labrador Retriever originated in Canada, where the breed was developed for purposes that still influence their behavior today.",
-   "As a Sporting Group breed, the Labrador Retriever shares structural and temperamental traits with other breeds developed for the same kind of work.",
-   "A typical Labrador Retriever lifespan is 11-13 years, meaning families should plan for that full commitment when bringing one home."
+   "The Labrador was the AKC's most registered breed for 31 straight years, from 1991 to 2021.",
+   "Labs have a thick, tapering 'otter tail' that they use like a rudder when swimming.",
+   "Researchers found that many Labs carry a POMC gene mutation tied to hunger, which helps explain the breed's famous appetite.",
+   "Labradors are one of the most widely used breeds for guide dog programs around the world."
   ],
-  "commonMisconceptions": "Sporting breeds aren't automatically calm \"family dogs.\" Field-bred lines especially carry serious drive and require real exercise, picking the wrong line for your lifestyle is a common mismatch. A daily walk around the block is not \"exercise\" for a high-energy breed like the Labrador Retriever. They need real, sustained activity that engages both body and brain. One specific point worth correcting about the Labrador Retriever: their Canada origin and sporting-group heritage shape behavior in ways the casual observer often misses, including their reaction to hip dysplasia risks and the level of socialization they actually need from puppyhood onward.",
-  "idealOwnerProfile": "Households with space, strong handling skills, and a tolerance for a big physical presence. People with active lifestyles, runners, hikers, dog-sport enthusiasts, who can deliver daily, vigorous exercise. First-time and seasoned owners alike, provided they commit to consistent positive-reinforcement training. Families with respectful children are usually a great fit. Above all, the ideal Labrador Retriever owner understands the breed's sporting-group heritage from Canada and is prepared to honor those instincts with appropriate outlets, structure, and the kind of patient, daily commitment this breed deserves.",
-  "notGoodFor": "Tiny apartments without easy outdoor access or owners who can't physically manage a strong dog on leash. Sedentary households or owners who travel frequently without a plan for daily, vigorous exercise. Anyone who plans to skip foundational obedience entirely, even an \"easy\" breed needs structure to thrive. Owners who can't tolerate hair on furniture, clothing, and floors year-round. Anyone unwilling to research the specific health risks common in the Labrador Retriever (notably hip dysplasia and  elbow dysplasia) and budget for the preventive care that follows.",
-  "groomingGuide": "Weekly brushing, more during shedding season. Coat care is centered on weekly brushing, more during shedding season. Short coats are forgiving but still benefit from a weekly rubber-curry session for skin health. Their short coat sheds heavily; regular brushing and a quality vacuum are non-negotiable parts of life with this breed. Trim nails every 3–4 weeks, check ears weekly for redness or odor, and brush teeth daily or use vet-approved dental chews.",
+  "commonMisconceptions": "The idea that a Lab is automatically a calm family dog. Young Labs are boisterous, mouthy, and strong, and many end up in shelters at 9 to 18 months because nobody planned for that stage. Another myth is that chocolate and yellow Labs differ in temperament; coat color says little about behavior, while working field lines versus show lines say a lot. Field-bred Labs tend to be leaner and more driven, show-bred Labs stockier and often mellower.",
+  "idealOwnerProfile": "Active families and individuals who want a social, trainable dog and will include it in daily life: walks, hikes, swimming, and plenty of company. First-time owners do well with Labs if they commit to training and exercise from day one.",
+  "notGoodFor": "People who want a calm dog right away (Labs stay puppyish for two to three years), anyone gone 10 hours a day with no help, very house-proud owners who hate dog hair, and homes where food and trash can't be kept out of reach.",
+  "groomingGuide": "The short double coat is easy to care for but sheds steadily all year and heavily twice a year. A rubber curry brush or deshedding tool once or twice a week keeps hair under control; daily during the spring and fall blowouts. Bathe only when dirty, and rinse off salt or chlorine after swims. Dry the ears after water, trim nails every few weeks, and brush teeth several times a week.",
   "faqs": [
    {
-    "answer": "Yes, the Labrador Retriever is generally an excellent family dog. With children they are excellent with children, and they bark occasionally, usually with reason. As with any breed, success depends on early socialization, supervised interactions, and teaching children how to respect the dog's space.",
-    "question": "Is the Labrador Retriever a good family dog?"
+    "question": "Are Labrador Retrievers good family dogs?",
+    "answer": "Yes, Labs are one of the best-known family breeds: friendly, tolerant, and eager to please. The catch is size and energy. A young Lab can knock over a toddler by accident, so supervise early interactions and invest in training before your puppy is full grown."
    },
    {
-    "answer": "Plan on 60+ minutes of meaningful daily activity, broken into multiple sessions if possible. Plan for daily, structured activity rather than relying on backyard time alone, under-exercised Labrador Retrievers commonly develop boredom-driven habits like chewing, digging, or excessive vocalization.",
-    "question": "How much exercise does a Labrador Retriever need?"
+    "question": "Why is my Lab always hungry?",
+    "answer": "Many Labs carry a variant of the POMC gene that affects appetite and energy use, so they genuinely feel hungrier than other dogs. Measure meals, count treats, and use food-puzzle toys rather than giving in to begging. A lean Lab lives longer and has fewer joint problems."
    },
    {
-    "answer": "Labrador Retrievers are eager to learn and quick to pick up new commands. Positive-reinforcement methods, food, play, and genuine praise, work far better than corrections. Start training in puppyhood and keep sessions short and frequent.",
-    "question": "Are Labrador Retrievers easy to train?"
+    "question": "How much exercise does a Labrador need?",
+    "answer": "Most adult Labs need at least an hour of real exercise a day, such as brisk walks, fetch, or swimming, plus some training or puzzle work. Field-bred Labs often need more. A Lab without enough exercise usually finds its own entertainment, typically chewing or digging."
    },
    {
-    "answer": "Their short coat sheds heavily; regular brushing and a quality vacuum are non-negotiable parts of life with this breed.",
-    "question": "How much do Labrador Retrievers shed?"
+    "question": "Do Labradors shed a lot?",
+    "answer": "Yes. Labs have a dense double coat that sheds year-round and blows out heavily in spring and fall. Brushing once or twice a week, and daily during heavy shedding, keeps it manageable, but expect hair on clothes and floors."
    },
    {
-    "answer": "The typical Labrador Retriever lifespan is 11-13 years. Their lifespan is typical for a dog this size, expect a full decade or so of companionship with attentive care. Common breed-specific health concerns to discuss with your vet include: hip dysplasia, elbow dysplasia, eye conditions.",
-    "question": "What is the lifespan of a Labrador Retriever?"
+    "question": "What is the difference between English and American Labs?",
+    "answer": "They are the same breed. 'English' usually means show-line Labs, which are stockier with broader heads and often calmer. 'American' usually means field-line Labs, which are taller, leaner, and higher drive. Choose based on the energy level you can live with."
    },
    {
-    "answer": "They are not well-suited to apartment life. They thrive with a securely fenced yard and ready access to outdoor space.",
-    "question": "Can Labrador Retrievers live in an apartment?"
-   },
-   {
-    "answer": "The Labrador Retriever is excellent with other dogs. Early, ongoing socialization between 8 and 16 weeks is critical, and adult introductions should always be on neutral ground with both dogs on loose leashes.",
-    "question": "Is the Labrador Retriever good with other dogs?"
+    "question": "How long do Labrador Retrievers live?",
+    "answer": "Most Labs live 11 to 13 years. Keeping them lean is the single biggest thing owners can do; a well-known lifelong study found Labs fed to stay slim lived about two years longer than their littermates."
    }
-  ]
+  ],
+  "edited": true
  },
  {
   "name": "French Bulldog",
   "slug": "french-bulldog",
   "breedGroup": "Non-Sporting",
   "originCountry": "France",
-  "yearRecognized": null,
+  "yearRecognized": 1898,
   "sizeCategory": "Small",
   "weightRange": "16-28 lbs",
   "heightRange": "11-13 in",
@@ -102,63 +99,60 @@
   "exerciseNeeds": "Short daily walks and play sessions",
   "groomingFrequency": "Weekly brushing, regular facial fold cleaning",
   "commonHealthIssues": "Brachycephalic syndrome, spinal disorders, allergies",
-  "dietNotes": "Feed a high-quality, AAFCO-certified diet appropriate for the French Bulldog's life stage and small size. Because their energy level is moderate, it's easy for this breed to become overweight; measure portions and skip the constant treat-feeding. Small breeds can be prone to hypoglycemia as puppies, multiple smaller meals per day during the first six months helps prevent it.",
-  "trainingNotes": "French Bulldogs are trainable with patience, consistency, and motivating rewards. Positive-reinforcement methods, food, play, and genuine praise, work far better than corrections; this breed in particular shuts down or grows resistant under harsh handling. Their moderate energy means short, focused 10–15 minute training sessions yield the best results. Early, frequent, and varied socialization between 8 and 16 weeks is critical, especially given their naturally social disposition toward strangers. Their generally measured vocalizations make impulse-control training easier than with more vocal breeds.",
+  "dietNotes": "French Bulldogs gain weight easily and extra pounds make breathing and back problems worse, so measure meals and keep them lean. Many have food sensitivities that show up as itchy skin or loose stools; if that happens, work with your vet on an elimination diet rather than switching foods repeatedly. Smaller kibble or a slow-feeder bowl helps flat-faced dogs that gulp air while eating.",
+  "trainingNotes": "Frenchies are smart and food-motivated but have a stubborn streak, so keep sessions short, upbeat, and paid well. House training can take longer than with many breeds; a consistent schedule and crate help. Teach a calm 'settle' and use a harness, never a collar, for walks, because pressure on the throat makes breathing harder. Avoid long training sessions in warm weather, and stop if breathing gets loud.",
   "history": "French Bulldogs descend from the toy-sized English Bulldogs of 19th-century Nottingham, where lacemakers kept them as companions and lap-warmers. When the Industrial Revolution displaced lacemaking, many of those craftsmen migrated to Normandy and brought their small bulldogs with them. In France the breed was crossed with local ratters and possibly small terriers, producing the upright 'bat ears' that distinguish the modern Frenchie from its English cousin.\n\nBy the late 1800s, the Bouledogue Français was the fashionable companion of Parisian café society, courtesans, and bohemian artists, including Toulouse-Lautrec, who featured them in his work. American visitors brought the breed home in the 1890s and the AKC recognized it in 1898. Today the French Bulldog is the most-registered breed in the United States.",
   "personalityDeepDive": "The French Bulldog is a small dog with the personality of a comedian who knows their audience. Frenchies are alert without being yappy, affectionate without being clingy in the high-strung way some toy breeds are, and stubborn in a way that is more amused than defiant. They will not run a marathon with you, but they will absolutely judge your outfit choices.\n\nThey form intense bonds with their household and read human emotion unusually well, many Frenchie owners describe their dog tracking them from room to room not out of anxiety but out of social interest. With strangers they are typically welcoming, with children patient (assuming the children are taught to respect the dog's brachycephalic limits), and with other pets generally easy.\n\nThe flip side: French Bulldogs do not handle isolation, heat, strenuous exercise, or rough handling. They are companion dogs in the most literal sense, bred for and best suited to lives spent close to people, in climate-controlled homes, with thoughtful daily activity rather than athletic challenge.",
-  "livingWith": "Plan on 30–60 minutes of daily activity, enough to take the edge off and keep them content. They can adapt to apartment living when their daily activity needs are met, but a tired dog is the real prerequisite, not square footage.\n\nWithin the household, expect a dog who is excellent with kids when both are taught to respect each other and generally great with cats. On the noise front, they bark occasionally, usually with reason, important to factor in if you have close neighbors or work-from-home calls.\n\nTheir lifespan is typical for a dog this size, expect a full decade or so of companionship with attentive care.",
-  "healthCareGuide": "The French Bulldog has an average lifespan of 10-12 years, which is their lifespan is typical for a dog this size, expect a full decade or so of companionship with attentive care.\n\nBreed-specific concerns to discuss with your vet include: brachycephalic syndrome, spinal disorders, allergies. Reputable breeders screen breeding stock for these conditions, so always ask to see health clearances before committing to a puppy.\n\nBeyond breed-specific issues, follow the standards of good preventative care: a core vaccine schedule, year-round parasite prevention, regular dental cleaning, and an annual senior workup once your dog passes the midpoint of their expected lifespan. Small breeds are particularly prone to dental disease; daily brushing or a vet-approved dental routine is one of the highest-impact things you can do for their long-term health.",
+  "livingWith": "Frenchies are made for small spaces: they are quiet compared with most small breeds, need modest exercise, and are content to spend much of the day near you on the couch. What they cannot handle is heat. Their flat faces make it hard to cool down by panting, so summer walks happen early and late, cars are never left with the dog inside, and air conditioning is a necessity in hot climates.\n\nThey are poor swimmers because of their heavy front ends, so pools and lakes need a fence or a dog life jacket. Many snore loudly and some are gassy. Frenchies are social and do not like long hours alone; boredom shows up as chewing or demand barking. Stairs and jumping off furniture are hard on their backs, so ramps or steps help.",
+  "healthCareGuide": "French Bulldogs carry real breed-linked health risks, so choose a breeder carefully and budget for vet care. Brachycephalic obstructive airway syndrome (BOAS) narrows the nostrils and airway; ask breeders for a BOAS functional grade on the parents and choose puppies with open nostrils. Loud breathing at rest is not 'cute', it is a sign of airway strain, and surgery to widen nostrils or shorten the soft palate can help a lot.\n\nSpinal problems are common, including malformed vertebrae and intervertebral disc disease; sudden pain, wobbliness, or reluctance to move are emergencies. Skin allergies, fold infections, and ear infections are frequent. Frenchies are higher risk under anesthesia, so pick a vet experienced with flat-faced breeds. Pet insurance taken out while young is worth considering for this breed.",
   "funFact": "French Bulldogs can't swim well due to their front-heavy structure.",
-  "famousQuote": "\"Every French Bulldog owner knows the joy of this breed's unique personality.\"",
+  "famousQuote": "A clownish, affectionate apartment companion with big bat ears and health needs every owner should plan for.",
   "popularity": 2,
-  "lastUpdated": "2026-05-03 01:07:05.484",
+  "lastUpdated": "2026-11-03 07:45:44.774",
   "funFacts": [
-   "French Bulldogs can't swim well due to their front-heavy structure.",
-   "The French Bulldog originated in France, where the breed was developed for purposes that still influence their behavior today.",
-   "As a Non-Sporting Group breed, the French Bulldog shares structural and temperamental traits with other breeds developed for the same kind of work.",
-   "A typical French Bulldog lifespan is 10-12 years, meaning families should plan for that full commitment when bringing one home."
+   "The French Bulldog overtook the Labrador in 2022 to become the most registered breed in the United States.",
+   "Their upright 'bat ears' were nearly bred out until American fanciers insisted on keeping them in the breed standard.",
+   "Most French Bulldog litters are delivered by C-section because the puppies' large heads make natural birth difficult.",
+   "A French Bulldog named Gamin de Pycombe was aboard the Titanic; he was insured for an enormous sum for the time."
   ],
-  "commonMisconceptions": "Because the Non-Sporting Group is so diverse, generalizations about them rarely hold. Each breed in this group has its own purpose and needs, assuming one Non-Sporting breed is like another is a setup for surprise. Don't assume a \"moderate energy\" label like the French Bulldog's means a couch-potato dog, moderate-energy breeds still need consistent daily activity to stay balanced and prevent boredom-driven habits. One specific point worth correcting about the French Bulldog: their France origin and non-sporting-group heritage shape behavior in ways the casual observer often misses, including their reaction to brachycephalic syndrome risks and the level of socialization they actually need from puppyhood onward.",
-  "idealOwnerProfile": "Apartment dwellers, seniors, and families with older (gentle) children. Owners who want a steady companion without committing to high-octane daily workouts. First-time and seasoned owners alike, provided they commit to consistent positive-reinforcement training. Families with respectful children are usually a great fit. Adaptable enough for apartment living when daily exercise is non-negotiable. Above all, the ideal French Bulldog owner understands the breed's non-sporting-group heritage from France and is prepared to honor those instincts with appropriate outlets, structure, and the kind of patient, daily commitment this breed deserves.",
-  "notGoodFor": "Households where rough-and-tumble large dogs or very active toddlers might injure them. Owners at the extremes, people who want a true couch potato or a tireless endurance athlete should look at breeds outside the moderate-energy range. Anyone who plans to skip foundational obedience entirely, even an \"easy\" breed needs structure to thrive. Anyone unwilling to research the specific health risks common in the French Bulldog (notably brachycephalic syndrome and  spinal disorders) and budget for the preventive care that follows.",
-  "groomingGuide": "Weekly brushing, regular facial fold cleaning. Coat care is centered on weekly brushing, regular facial fold cleaning. Short coats are forgiving but still benefit from a weekly rubber-curry session for skin health. Their short coat sheds very little, which suits owners who prefer a tidier home, though \"low-shedding\" never means \"no maintenance.\" Trim nails every 3–4 weeks, check ears weekly for redness or odor, and brush teeth daily or use vet-approved dental chews.",
+  "commonMisconceptions": "That their snorting and snoring is normal and harmless. Noisy breathing at rest usually means the airway is partly blocked, and it often gets worse with age and weight. Another misconception is that a cheaper or 'rare color' Frenchie is a bargain: unusual colors such as merle are not part of the breed standard and are often bred by people who skip health testing.",
+  "idealOwnerProfile": "City and apartment dwellers who are home a lot, want a funny, affectionate companion, and have the budget and patience for a breed with known health needs. Good for relaxed households and many seniors.",
+  "notGoodFor": "Hot climates without air conditioning, owners who want a running or hiking partner, homes with unfenced pools, and anyone not prepared for potentially high vet bills.",
+  "groomingGuide": "The short coat needs only a weekly brush, but the face needs daily attention. Wipe and dry the facial wrinkles and the tail pocket (if your dog has one) to prevent yeast and bacterial infections. Clean the ears weekly, trim nails every two to three weeks, and brush teeth often, since crowded teeth trap plaque.",
   "faqs": [
    {
-    "answer": "Yes, the French Bulldog is generally an excellent family dog. With children they are excellent with children, and they bark occasionally, usually with reason. As with any breed, success depends on early socialization, supervised interactions, and teaching children how to respect the dog's space.",
-    "question": "Is the French Bulldog a good family dog?"
+    "question": "Are French Bulldogs healthy?",
+    "answer": "They have more health risks than many breeds, mainly breathing problems from their flat faces, spinal disease, and allergies. Picking a breeder who health-tests and breeds for open nostrils and moderate features, keeping the dog lean, and avoiding heat make a big difference."
    },
    {
-    "answer": "Plan on 30–60 minutes of daily activity, enough to take the edge off and keep them content. Plan for daily, structured activity rather than relying on backyard time alone, under-exercised French Bulldogs commonly develop boredom-driven habits like chewing, digging, or excessive vocalization.",
-    "question": "How much exercise does a French Bulldog need?"
+    "question": "Can French Bulldogs swim?",
+    "answer": "Most cannot swim well. Their heavy front end and short legs make them sink, and they tire quickly. Always use a dog life jacket near water and fence off pools."
    },
    {
-    "answer": "French Bulldogs are trainable with patience, consistency, and motivating rewards. Positive-reinforcement methods, food, play, and genuine praise, work far better than corrections. Start training in puppyhood and keep sessions short and frequent.",
-    "question": "Are French Bulldogs easy to train?"
+    "question": "Are French Bulldogs good for apartments?",
+    "answer": "Yes, they are one of the best apartment breeds: small, generally quiet, and happy with short walks and indoor play. They do need air conditioning in warm weather and do not like being left alone all day."
    },
    {
-    "answer": "Their short coat sheds very little, which suits owners who prefer a tidier home, though \"low-shedding\" never means \"no maintenance.\"",
-    "question": "How much do French Bulldogs shed?"
+    "question": "Do French Bulldogs bark a lot?",
+    "answer": "Frenchies are usually quiet compared with other small breeds. They do make plenty of other noises, snorts, grumbles, and snoring, and some will bark at the door or when bored."
    },
    {
-    "answer": "The typical French Bulldog lifespan is 10-12 years. Their lifespan is typical for a dog this size, expect a full decade or so of companionship with attentive care. Common breed-specific health concerns to discuss with your vet include: brachycephalic syndrome, spinal disorders, allergies.",
-    "question": "What is the lifespan of a French Bulldog?"
+    "question": "How hot is too hot for a French Bulldog?",
+    "answer": "Flat-faced dogs overheat quickly, so be cautious from the mid-70s °F, especially with humidity. Walk early and late, carry water, and stop at the first sign of heavy, noisy breathing. Heatstroke is an emergency."
    },
    {
-    "answer": "They can adapt to apartment living when their daily activity needs are met, but a tired dog is the real prerequisite, not square footage.",
-    "question": "Can French Bulldogs live in an apartment?"
-   },
-   {
-    "answer": "The French Bulldog is generally great with other dogs. Early, ongoing socialization between 8 and 16 weeks is critical, and adult introductions should always be on neutral ground with both dogs on loose leashes.",
-    "question": "Is the French Bulldog good with other dogs?"
+    "question": "Why are French Bulldogs so expensive?",
+    "answer": "Litters are small, many dams need artificial insemination and a C-section, and responsible breeders pay for health testing. Very cheap puppies usually mean those steps were skipped, which often leads to higher vet bills later."
    }
-  ]
+  ],
+  "edited": true
  },
  {
   "name": "Golden Retriever",
   "slug": "golden-retriever",
   "breedGroup": "Sporting",
   "originCountry": "Scotland",
-  "yearRecognized": null,
+  "yearRecognized": 1925,
   "sizeCategory": "Large",
   "weightRange": "55-75 lbs",
   "heightRange": "21.5-24 in",
@@ -179,63 +173,60 @@
   "exerciseNeeds": "60+ minutes of daily activity",
   "groomingFrequency": "Regular brushing 2-3 times per week",
   "commonHealthIssues": "Hip dysplasia, cancer, heart disease",
-  "dietNotes": "Feed a high-quality, AAFCO-certified diet appropriate for the Golden Retriever's life stage and large size. Active Golden Retrievers burn meaningful calories, match portions to their actual workload, not generic feeding-chart numbers. Large and giant breeds need a \"large breed\" puppy formula until growth completes (12–24 months) to support proper joint development.",
-  "trainingNotes": "Golden Retrievers are eager to learn and quick to pick up new commands. Positive-reinforcement methods, food, play, and genuine praise, work far better than corrections; this breed in particular shuts down or grows resistant under harsh handling. Because of their high energy, training sessions are most productive after exercise, not before, a tired Golden Retriever learns faster than a fresh one. Early, frequent, and varied socialization between 8 and 16 weeks is critical, especially given their naturally social disposition toward strangers. Their generally measured vocalizations make impulse-control training easier than with more vocal breeds.",
+  "dietNotes": "Feed a complete large-breed diet and measure portions; Goldens put on weight easily, especially after spay or neuter and in middle age. Large-breed puppy formulas help keep growth steady while bones develop. Check body condition monthly: ribs easy to feel, a visible waist. Talk with your vet before choosing grain-free or exotic-protein diets.",
+  "trainingNotes": "Goldens learn quickly and respond best to praise, play, and food. They are sensitive, so harsh corrections backfire. Start with impulse control and polite greetings, because a friendly 70-pound dog jumping on people is still a problem. Teach a strong recall early; their love of other dogs and people can override listening. Retrieving, scent games, obedience, and therapy-dog work all suit the breed well.",
   "history": "The Golden Retriever was developed in the Scottish Highlands in the 1860s by Dudley Marjoribanks, the first Lord Tweedmouth, who wanted a retriever suited to the wet, rugged terrain of his Guisachan estate. He crossed a yellow Wavy-Coated Retriever named Nous with a Tweed Water Spaniel named Belle, and the four resulting puppies founded the line. Subsequent crosses included Irish Setter, more Tweed Water Spaniel, and Bloodhound for tracking ability.\n\nTweedmouth's meticulous breeding records, kept from 1835 to 1890, document the entire foundation of the modern breed. The Kennel Club recognized the Golden Retriever as a distinct breed in 1911, originally classed as 'Retriever, Yellow or Golden,' and the AKC followed in 1925.",
   "personalityDeepDive": "Golden Retrievers carry a steadiness that is almost unfair to other breeds. They are biddable without being servile, sociable without being scattered, and energetic without the obsessive intensity of a working Lab line. The Golden seems to operate from a baseline assumption that everyone, human, dog, mail carrier, vacuum cleaner, is, on balance, probably fine.\n\nThat temperament is not accidental. The breed was developed for soft-mouth retrieval and family companionship simultaneously, and a century of selection for both has produced a dog who can switch from a 90-minute upland hunt to nap-time-on-the-rug-with-the-toddler in the same afternoon. They are exceptional with children, often patient past the point most breeds would correct.\n\nThe trade-offs: Goldens are needy. They are velcro dogs who genuinely struggle with extended isolation. They are mouthy well into adolescence and need consistent bite-inhibition work. And they are slow to mature mentally, often acting puppy-brained until three or four years old, which surprises owners expecting a calm 'family dog' from month six.",
-  "livingWith": "Plan on 60+ minutes of meaningful daily activity, broken into multiple sessions if possible. They are not well-suited to apartment life. They thrive with a securely fenced yard and ready access to outdoor space.\n\nWithin the household, expect a dog who is excellent with kids when both are taught to respect each other and generally great with cats. On the noise front, they bark occasionally, usually with reason, important to factor in if you have close neighbors or work-from-home calls.\n\nTheir lifespan is typical for a dog this size, expect a full decade or so of companionship with attentive care.",
-  "healthCareGuide": "The Golden Retriever has an average lifespan of 10-12 years, which is their lifespan is typical for a dog this size, expect a full decade or so of companionship with attentive care.\n\nBreed-specific concerns to discuss with your vet include: hip dysplasia, cancer, heart disease. Reputable breeders screen breeding stock for these conditions, so always ask to see health clearances before committing to a puppy.\n\nBeyond breed-specific issues, follow the standards of good preventative care: a core vaccine schedule, year-round parasite prevention, regular dental cleaning, and an annual senior workup once your dog passes the midpoint of their expected lifespan. Large and giant breeds are particularly susceptible to bloat (gastric torsion); learn the symptoms, feed two smaller meals per day instead of one large meal, and consider a prophylactic gastropexy if your vet recommends it.",
+  "livingWith": "Goldens are people dogs through and through. They want to be with the family, greet guests warmly, and are rarely good watchdogs. That sociability means they do poorly when left alone for long days, and lonely Goldens chew, bark, or dig. Plan for at least an hour of exercise daily: walks, retrieving, swimming, and sniffing all count.\n\nThe long coat brings mud, water, and hair indoors, and Goldens love both water and dirt. They stay puppyish for years, so expect enthusiasm, mouthing, and a strong urge to carry things (often your socks) well into adulthood. They usually get along with children, other dogs, and cats when raised with them.",
+  "healthCareGuide": "Cancer is the leading health concern in Goldens; hemangiosarcoma and lymphoma are seen far more often than in most breeds. The Morris Animal Foundation's Golden Retriever Lifetime Study, which follows thousands of dogs, exists largely because of this. Regular senior checkups, prompt attention to new lumps, pale gums, or sudden weakness, and a lean body all help.\n\nAsk breeders for OFA hip and elbow results, a cardiac exam (for subvalvular aortic stenosis), and an annual eye exam on both parents; pigmentary uveitis is an eye condition seen in the breed that can lead to glaucoma. Ear infections and hot spots are common because the coat traps moisture, and hypothyroidism appears in middle age. Ask your vet before choosing a grain-free diet; the FDA has investigated a possible link between some of those diets and heart disease, and Goldens were among the breeds reported.",
   "funFact": "Golden Retrievers have such soft mouths they can carry a raw egg without breaking it.",
-  "famousQuote": "\"Every Golden Retriever owner knows the joy of this breed's unique personality.\"",
+  "famousQuote": "Gentle, sociable, and forever puppyish: a family retriever whose biggest needs are company, exercise, and a good brush.",
   "popularity": 3,
-  "lastUpdated": "2026-05-03 01:07:05.485",
+  "lastUpdated": "2026-11-03 07:45:44.774",
   "funFacts": [
-   "Golden Retrievers have such soft mouths they can carry a raw egg without breaking it.",
-   "The Golden Retriever originated in Scotland, where the breed was developed for purposes that still influence their behavior today.",
-   "As a Sporting Group breed, the Golden Retriever shares structural and temperamental traits with other breeds developed for the same kind of work.",
-   "A typical Golden Retriever lifespan is 10-12 years, meaning families should plan for that full commitment when bringing one home."
+   "The breed traces back to one yellow Wavy-Coated Retriever named Nous, bought in 1865 by Lord Tweedmouth in Scotland.",
+   "Goldens are known for a 'soft mouth' and can carry an egg without breaking it.",
+   "The Golden Retriever Lifetime Study, begun in 2012, follows over 3,000 Goldens to learn why so many develop cancer.",
+   "Goldens are a favorite for guide, service, therapy, and search-and-rescue work because they are both friendly and easy to train."
   ],
-  "commonMisconceptions": "Sporting breeds aren't automatically calm \"family dogs.\" Field-bred lines especially carry serious drive and require real exercise, picking the wrong line for your lifestyle is a common mismatch. A daily walk around the block is not \"exercise\" for a high-energy breed like the Golden Retriever. They need real, sustained activity that engages both body and brain. One specific point worth correcting about the Golden Retriever: their Scotland origin and sporting-group heritage shape behavior in ways the casual observer often misses, including their reaction to hip dysplasia risks and the level of socialization they actually need from puppyhood onward.",
-  "idealOwnerProfile": "Households with space, strong handling skills, and a tolerance for a big physical presence. People with active lifestyles, runners, hikers, dog-sport enthusiasts, who can deliver daily, vigorous exercise. First-time and seasoned owners alike, provided they commit to consistent positive-reinforcement training. Families with respectful children are usually a great fit. Above all, the ideal Golden Retriever owner understands the breed's sporting-group heritage from Scotland and is prepared to honor those instincts with appropriate outlets, structure, and the kind of patient, daily commitment this breed deserves.",
-  "notGoodFor": "Tiny apartments without easy outdoor access or owners who can't physically manage a strong dog on leash. Sedentary households or owners who travel frequently without a plan for daily, vigorous exercise. Anyone who plans to skip foundational obedience entirely, even an \"easy\" breed needs structure to thrive. Owners who can't tolerate hair on furniture, clothing, and floors year-round. Anyone unwilling to research the specific health risks common in the Golden Retriever (notably hip dysplasia and  cancer) and budget for the preventive care that follows.",
-  "groomingGuide": "Regular brushing 2-3 times per week. Coat care is centered on regular brushing 2-3 times per week. Long coats mat quickly without consistent attention; line-brushing weekly prevents painful tangles. Their long coat sheds heavily; regular brushing and a quality vacuum are non-negotiable parts of life with this breed. Trim nails every 3–4 weeks, check ears weekly for redness or odor, and brush teeth daily or use vet-approved dental chews.",
+  "commonMisconceptions": "That Goldens are calm from day one. They are typically energetic and mouthy until two or three years old. People also assume any Golden is healthy because the breed is so popular, but cancer rates are high and responsible breeders health-test for hips, elbows, eyes, and hearts. 'English cream' Goldens are the same breed with a lighter coat, not a separate or healthier type.",
+  "idealOwnerProfile": "Families and active people who are home a good part of the day, enjoy walks and outdoor time, don't mind dog hair, and want an affectionate, trainable companion. A good choice for first-time owners willing to train.",
+  "notGoodFor": "Anyone who needs a guard dog, people away from home all day, small apartments without daily outdoor exercise, and households that can't tolerate shedding and muddy paws.",
+  "groomingGuide": "Brush two to three times a week with a slicker brush and a metal comb, paying attention to the feathering behind the ears, legs, and tail, where mats form. Daily brushing during seasonal sheds keeps the hair off the furniture. Trim the hair on the feet and around the ears for neatness and airflow, but do not shave the double coat. Dry the ears after swimming.",
   "faqs": [
    {
-    "answer": "Yes, the Golden Retriever is generally an excellent family dog. With children they are excellent with children, and they bark occasionally, usually with reason. As with any breed, success depends on early socialization, supervised interactions, and teaching children how to respect the dog's space.",
-    "question": "Is the Golden Retriever a good family dog?"
+    "question": "Golden Retriever or Labrador: which is better for a family?",
+    "answer": "Both are excellent family dogs. Goldens tend to be a little softer and more sensitive, with a long coat that needs more brushing. Labs are usually a bit more robust and food-driven, with a short coat that still sheds heavily. Energy levels are similar."
    },
    {
-    "answer": "Plan on 60+ minutes of meaningful daily activity, broken into multiple sessions if possible. Plan for daily, structured activity rather than relying on backyard time alone, under-exercised Golden Retrievers commonly develop boredom-driven habits like chewing, digging, or excessive vocalization.",
-    "question": "How much exercise does a Golden Retriever need?"
+    "question": "When do Golden Retrievers calm down?",
+    "answer": "Most Goldens settle noticeably between two and three years old, though many stay playful all their lives. Daily exercise and training make the puppy and adolescent years much easier."
    },
    {
-    "answer": "Golden Retrievers are eager to learn and quick to pick up new commands. Positive-reinforcement methods, food, play, and genuine praise, work far better than corrections. Start training in puppyhood and keep sessions short and frequent.",
-    "question": "Are Golden Retrievers easy to train?"
+    "question": "Do Golden Retrievers shed a lot?",
+    "answer": "Yes. Their double coat sheds year-round and heavily in spring and fall. Brushing two to three times a week, and daily during heavy sheds, keeps it manageable."
    },
    {
-    "answer": "Their long coat sheds heavily; regular brushing and a quality vacuum are non-negotiable parts of life with this breed.",
-    "question": "How much do Golden Retrievers shed?"
+    "question": "Are Golden Retrievers prone to cancer?",
+    "answer": "Unfortunately, yes. Cancer is the leading cause of death in Goldens. Keep your dog lean, schedule regular checkups, and have any new lumps, pale gums, or sudden lethargy checked promptly."
    },
    {
-    "answer": "The typical Golden Retriever lifespan is 10-12 years. Their lifespan is typical for a dog this size, expect a full decade or so of companionship with attentive care. Common breed-specific health concerns to discuss with your vet include: hip dysplasia, cancer, heart disease.",
-    "question": "What is the lifespan of a Golden Retriever?"
+    "question": "Are Golden Retrievers good for first-time owners?",
+    "answer": "Yes, they are one of the most forgiving breeds for beginners, as long as you can provide daily exercise, training, and company. Their size and puppy energy still take work."
    },
    {
-    "answer": "They are not well-suited to apartment life. They thrive with a securely fenced yard and ready access to outdoor space.",
-    "question": "Can Golden Retrievers live in an apartment?"
-   },
-   {
-    "answer": "The Golden Retriever is excellent with other dogs. Early, ongoing socialization between 8 and 16 weeks is critical, and adult introductions should always be on neutral ground with both dogs on loose leashes.",
-    "question": "Is the Golden Retriever good with other dogs?"
+    "question": "How much exercise does a Golden Retriever need?",
+    "answer": "Plan on at least an hour a day of activity such as walks, retrieving, or swimming, plus some training or puzzle games. Young Goldens from field lines may need more."
    }
-  ]
+  ],
+  "edited": true
  },
  {
   "name": "German Shepherd Dog",
   "slug": "german-shepherd-dog",
   "breedGroup": "Herding",
   "originCountry": "Germany",
-  "yearRecognized": null,
+  "yearRecognized": 1908,
   "sizeCategory": "Large",
   "weightRange": "50-90 lbs",
   "heightRange": "22-26 in",
@@ -256,63 +247,60 @@
   "exerciseNeeds": "90+ minutes of vigorous daily exercise",
   "groomingFrequency": "Brushing 3-4 times per week",
   "commonHealthIssues": "Hip dysplasia, degenerative myelopathy, bloat",
-  "dietNotes": "Feed a high-quality, AAFCO-certified diet appropriate for the German Shepherd Dog's life stage and large size. Active German Shepherd Dogs burn meaningful calories, match portions to their actual workload, not generic feeding-chart numbers. Large and giant breeds need a \"large breed\" puppy formula until growth completes (12–24 months) to support proper joint development.",
-  "trainingNotes": "German Shepherd Dogs are eager to learn and quick to pick up new commands. Positive-reinforcement methods, food, play, and genuine praise, work far better than corrections; this breed in particular shuts down or grows resistant under harsh handling. Because of their high energy, training sessions are most productive after exercise, not before, a tired German Shepherd Dog learns faster than a fresh one. Early, frequent, and varied socialization between 8 and 16 weeks is critical, especially given their more reserved disposition toward strangers. Specifically work on a \"quiet\" cue from puppyhood, left untrained, this breed's vocal nature can become a real lifestyle issue.",
+  "dietNotes": "Feed a complete large-breed diet, measured. Large-breed puppy food supports steady growth. To lower bloat risk, feed two or more smaller meals a day rather than one large one, and avoid intense exercise right before and after eating. Ongoing digestive upset or weight loss can be a sign of EPI and should be checked by a vet.",
+  "trainingNotes": "GSDs learn fast and thrive with clear, consistent training. Reward-based methods work very well; heavy-handed corrections tend to create anxiety or defensiveness. Early, broad socialization is essential so that natural wariness of strangers does not become fear or aggression. Give them a job: obedience, tracking, herding, nosework, or protection sports with a qualified club. Working-line dogs in particular need daily structured work.",
   "history": "Captain Max von Stephanitz founded the German Shepherd in 1899 with a single goal: to standardize the best of Germany's regional herding dogs into a versatile working breed. At a dog show in Karlsruhe he bought a wolf-like working dog he renamed Horand von Grafrath, registered him as the first German Shepherd, and built the modern breed from his descendants.\n\nVon Stephanitz pivoted the breed toward police and military work as German agriculture industrialized, and within twenty years GSDs were serving in both World Wars as messengers, sentries, and casualty searchers. American soldiers brought them home, where the breed's screen appearances, Strongheart, Rin Tin Tin, cemented its global popularity. The AKC has recognized the breed since 1908.",
   "personalityDeepDive": "The German Shepherd Dog is, behaviorally, two dogs in one body. With its family the GSD is profoundly affectionate, almost dependent, a breed that does not just like being near its people, it requires it. With outsiders the same dog is reserved at best, suspicious by default, and capable of decisive protective action when it judges the situation warrants.\n\nThis duality is a feature, not a bug. It is why the breed dominates police, military, and protection work worldwide. It is also why a GSD raised without rigorous, ongoing socialization can drift into reactivity and fear-based aggression, the same intensity that makes them excellent guardians makes them excellent worriers.\n\nMentally they are among the most trainable dogs ever bred, but that intelligence is restless. A GSD without a job will invent one, and the job they invent is usually 'patrol the house and bark at anything new.' They thrive on structured work, obedience, tracking, herding, protection sport, and on a clear, consistent relationship with a handler they trust.",
-  "livingWith": "Plan on 60+ minutes of meaningful daily activity, broken into multiple sessions if possible. They are not well-suited to apartment life. They thrive with a securely fenced yard and ready access to outdoor space.\n\nWithin the household, expect a dog who is generally great with kids and friendly with cats when properly socialized. On the noise front, they're vocal and quick to alert you to anything new, important to factor in if you have close neighbors or work-from-home calls.\n\nTheir relatively short lifespan means owners should commit to making every year count and budget for early-onset health monitoring.",
-  "healthCareGuide": "The German Shepherd Dog has an average lifespan of 7-10 years, which is their relatively short lifespan means owners should commit to making every year count and budget for early-onset health monitoring.\n\nBreed-specific concerns to discuss with your vet include: hip dysplasia, degenerative myelopathy, bloat. Reputable breeders screen breeding stock for these conditions, so always ask to see health clearances before committing to a puppy.\n\nBeyond breed-specific issues, follow the standards of good preventative care: a core vaccine schedule, year-round parasite prevention, regular dental cleaning, and an annual senior workup once your dog passes the midpoint of their expected lifespan. Large and giant breeds are particularly susceptible to bloat (gastric torsion); learn the symptoms, feed two smaller meals per day instead of one large meal, and consider a prophylactic gastropexy if your vet recommends it.",
+  "livingWith": "German Shepherds attach strongly to their family and want to be involved in everything, which also makes them prone to separation stress if left alone for long hours. They are natural watchdogs and will announce visitors; that protectiveness needs to be guided with training, not encouraged.\n\nExpect a lot of hair: GSDs shed constantly and blow their undercoat twice a year. They need daily physical exercise and, just as importantly, mental work such as training, tracking, or puzzle games. An under-exercised Shepherd may pace, chew, bark, or become overly reactive. A securely fenced yard helps, as do clear house rules that everyone follows.",
+  "healthCareGuide": "Ask for OFA or PennHIP hip and elbow evaluations on both parents; dysplasia is common in the breed. A DNA test for degenerative myelopathy (DM), a progressive spinal disease that causes hind-end weakness in older dogs, is also widely available. Bloat (gastric dilatation-volvulus) is a risk for this deep-chested breed: know the signs (swollen belly, retching without producing anything, restlessness) and ask your vet about a preventive gastropexy during spay or neuter.\n\nOther conditions seen in GSDs include exocrine pancreatic insufficiency (weight loss despite eating, pale bulky stools), perianal fistulas, allergies, and hemangiosarcoma. Young Shepherds can have growing pains called panosteitis, causing limping that shifts between legs.",
   "funFact": "German Shepherds are the preferred breed for police and military work worldwide.",
-  "famousQuote": "\"Every German Shepherd Dog owner knows the joy of this breed's unique personality.\"",
+  "famousQuote": "A loyal, intelligent working dog that bonds deeply and needs a real job, firm structure, and plenty of brushing.",
   "popularity": 4,
-  "lastUpdated": "2026-05-03 01:07:05.485",
+  "lastUpdated": "2026-11-03 07:45:44.774",
   "funFacts": [
-   "German Shepherds are the preferred breed for police and military work worldwide.",
-   "The German Shepherd Dog originated in Germany, where the breed was developed for purposes that still influence their behavior today.",
-   "As a Herding Group breed, the German Shepherd Dog shares structural and temperamental traits with other breeds developed for the same kind of work.",
-   "A typical German Shepherd Dog lifespan is 7-10 years, meaning families should plan for that full commitment when bringing one home."
+   "Founder Max von Stephanitz's motto for the breed was 'Utility and intelligence.'",
+   "Rin Tin Tin, a German Shepherd rescued from a World War I battlefield, starred in more than two dozen Hollywood films.",
+   "After World War I, the breed was renamed 'Alsatian Wolf Dog' in Britain to avoid anti-German sentiment.",
+   "German Shepherds were among the first dogs trained as guide dogs for the blind."
   ],
-  "commonMisconceptions": "People assume any herding dog will \"just adapt\" to a sedentary household. They won't, under-stimulated herding breeds frequently develop nipping, spinning, and obsessive behaviors. They need a job, even a structured one like nose work or trick training. A daily walk around the block is not \"exercise\" for a high-energy breed like the German Shepherd Dog. They need real, sustained activity that engages both body and brain. One specific point worth correcting about the German Shepherd Dog: their Germany origin and herding-group heritage shape behavior in ways the casual observer often misses, including their reaction to hip dysplasia risks and the level of socialization they actually need from puppyhood onward.",
-  "idealOwnerProfile": "Households with space, strong handling skills, and a tolerance for a big physical presence. People with active lifestyles, runners, hikers, dog-sport enthusiasts, who can deliver daily, vigorous exercise. First-time and seasoned owners alike, provided they commit to consistent positive-reinforcement training. Families with respectful children are usually a great fit. Above all, the ideal German Shepherd Dog owner understands the breed's herding-group heritage from Germany and is prepared to honor those instincts with appropriate outlets, structure, and the kind of patient, daily commitment this breed deserves.",
-  "notGoodFor": "Tiny apartments without easy outdoor access or owners who can't physically manage a strong dog on leash. Sedentary households or owners who travel frequently without a plan for daily, vigorous exercise. Anyone who plans to skip foundational obedience entirely, even an \"easy\" breed needs structure to thrive. Apartment dwellers in noise-restrictive buildings, or owners who need long stretches of quiet for work-from-home calls. Owners who can't tolerate hair on furniture, clothing, and floors year-round. Anyone unwilling to research the specific health risks common in the German Shepherd Dog (notably hip dysplasia and  degenerative myelopathy) and budget for the preventive care that follows.",
-  "groomingGuide": "Brushing 3-4 times per week. Coat care is centered on brushing 3-4 times per week. Never shave a double coat, it disrupts the breed's natural temperature regulation and rarely grows back correctly. Expect heavy year-round shedding from their double coat with two intense \"blowout\" seasons each year, invest in a good vacuum and a deshedding tool. Trim nails every 3–4 weeks, check ears weekly for redness or odor, and brush teeth daily or use vet-approved dental chews.",
+  "commonMisconceptions": "That German Shepherds are naturally aggressive. Well-bred, well-socialized GSDs are confident and discerning, not reactive. Another myth is that the sloped back seen in some show dogs is correct or healthy; extreme angulation is controversial within the breed, and many breeders favor a straighter, more functional topline.",
+  "idealOwnerProfile": "Experienced or committed owners who want a loyal, trainable partner and can provide daily exercise, training, and leadership. Great for active households, dog-sport enthusiasts, and people who want a capable watchdog.",
+  "notGoodFor": "Owners who are away most of the day, people who dislike shedding, households unable to commit to socialization and ongoing training, and anyone wanting a low-energy dog.",
+  "groomingGuide": "Brush three to four times a week with an undercoat rake and slicker brush, and daily during the twice-yearly coat blow. Do not shave the coat; it protects against both heat and cold. Bathe occasionally, trim nails regularly (many GSDs dislike it, so start young), and check ears weekly.",
   "faqs": [
    {
-    "answer": "Yes, the German Shepherd Dog is generally an excellent family dog. With children they are generally great with children, and they're vocal and quick to alert you to anything new. As with any breed, success depends on early socialization, supervised interactions, and teaching children how to respect the dog's space.",
-    "question": "Is the German Shepherd Dog a good family dog?"
+    "question": "Are German Shepherds aggressive?",
+    "answer": "Not by nature. They are protective and reserved with strangers, which can turn into fear or aggression if a dog is poorly bred or under-socialized. Early socialization, training, and a stable breeding background produce confident, friendly dogs."
    },
    {
-    "answer": "Plan on 60+ minutes of meaningful daily activity, broken into multiple sessions if possible. Plan for daily, structured activity rather than relying on backyard time alone, under-exercised German Shepherd Dogs commonly develop boredom-driven habits like chewing, digging, or excessive vocalization.",
-    "question": "How much exercise does a German Shepherd Dog need?"
+    "question": "Are German Shepherds good with kids?",
+    "answer": "Well-socialized GSDs are often devoted, gentle family dogs. Their size and energy mean supervision with small children is important, and kids should learn to respect the dog's space."
    },
    {
-    "answer": "German Shepherd Dogs are eager to learn and quick to pick up new commands. Positive-reinforcement methods, food, play, and genuine praise, work far better than corrections. Start training in puppyhood and keep sessions short and frequent.",
-    "question": "Are German Shepherd Dogs easy to train?"
+    "question": "How much do German Shepherds shed?",
+    "answer": "A lot. The double coat sheds every day and blows out heavily twice a year. Frequent brushing and a good vacuum are part of life with a Shepherd."
    },
    {
-    "answer": "Expect heavy year-round shedding from their double coat with two intense \"blowout\" seasons each year, invest in a good vacuum and a deshedding tool.",
-    "question": "How much do German Shepherd Dogs shed?"
+    "question": "What is the difference between working and show line German Shepherds?",
+    "answer": "Working lines are bred for drive and performance in police, protection, and sport work; they tend to have more energy and a straighter back. Show lines are bred for appearance and are often calmer, with more angulation. Both need training and exercise."
    },
    {
-    "answer": "The typical German Shepherd Dog lifespan is 7-10 years. Their relatively short lifespan means owners should commit to making every year count and budget for early-onset health monitoring. Common breed-specific health concerns to discuss with your vet include: hip dysplasia, degenerative myelopathy, bloat.",
-    "question": "What is the lifespan of a German Shepherd Dog?"
+    "question": "How much exercise does a German Shepherd need?",
+    "answer": "Plan on 90 minutes or more of activity a day, mixing physical exercise with training or scent work. Mental exercise matters as much as running for this breed."
    },
    {
-    "answer": "They are not well-suited to apartment life. They thrive with a securely fenced yard and ready access to outdoor space.",
-    "question": "Can German Shepherd Dogs live in an apartment?"
-   },
-   {
-    "answer": "The German Shepherd Dog is friendly with other dogs when properly socialized. Early, ongoing socialization between 8 and 16 weeks is critical, and adult introductions should always be on neutral ground with both dogs on loose leashes.",
-    "question": "Is the German Shepherd Dog good with other dogs?"
+    "question": "Can German Shepherds be left alone?",
+    "answer": "Adult GSDs can manage a few hours alone if they are well exercised and crate- or room-trained, but long daily absences often lead to anxiety and destructive behavior. They are best for homes where someone is around for much of the day."
    }
-  ]
+  ],
+  "edited": true
  },
  {
   "name": "Poodle",
   "slug": "poodle",
   "breedGroup": "Non-Sporting",
   "originCountry": "Germany",
-  "yearRecognized": null,
+  "yearRecognized": 1887,
   "sizeCategory": "Medium",
   "weightRange": "40-70 lbs",
   "heightRange": "15+ in",
@@ -333,57 +321,53 @@
   "exerciseNeeds": "60+ minutes daily",
   "groomingFrequency": "Professional grooming every 4-6 weeks",
   "commonHealthIssues": "Hip dysplasia, progressive retinal atrophy, bloat",
-  "dietNotes": "Feed a high-quality, AAFCO-certified diet appropriate for the Poodle's life stage and medium size. Active Poodles burn meaningful calories, match portions to their actual workload, not generic feeding-chart numbers. Small breeds can be prone to hypoglycemia as puppies, multiple smaller meals per day during the first six months helps prevent it.",
-  "trainingNotes": "Poodles are eager to learn and quick to pick up new commands. Positive-reinforcement methods, food, play, and genuine praise, work far better than corrections; this breed in particular shuts down or grows resistant under harsh handling. Because of their high energy, training sessions are most productive after exercise, not before, a tired Poodle learns faster than a fresh one. Early, frequent, and varied socialization between 8 and 16 weeks is critical, especially given their naturally social disposition toward strangers. Their generally measured vocalizations make impulse-control training easier than with more vocal breeds.",
+  "dietNotes": "Feed a complete diet sized to the variety: Toy and Miniature Poodles need small-breed kibble and frequent small meals as puppies to prevent low blood sugar, while Standards should eat large-breed puppy food and two meals a day to reduce bloat risk. Measure meals; Poodles are prone to weight gain if overfed.",
+  "trainingNotes": "Poodles are among the easiest breeds to train and excel at obedience, agility, rally, and tricks. Keep sessions varied and fun; they get bored with repetition. Positive reinforcement works best because they are sensitive to harsh handling. Socialize widely as a puppy so that natural reserve does not become shyness. Get them used to grooming early: handling feet, ears, and face, and standing on a table.",
   "history": "Although the Poodle is France's national dog, the breed almost certainly originated in Germany as a duck-hunting water retriever, where the working trim, harsh single coat, and webbed feet served the cold marsh work the breed was bred for. The name derives from the German pudeln, 'to splash in water.'\n\nFrench breeders refined the Standard Poodle into a circus performer, truffle hunter, and royal companion through the 17th and 18th centuries; the Toy and Miniature varieties were bred down from the Standard rather than up from smaller dogs. The Poodle Club of America was founded in 1896, and the breed is one of the few recognized in three distinct size varieties, all judged to the same standard apart from height.",
   "personalityDeepDive": "Poodles suffer from a public-relations problem: the show clip makes them look frivolous, and they are anything but. The Poodle is a working water retriever, that is what 'pudel' means in German, 'to splash', and the famous continental clip was a functional working trim, with pom-poms left on joints to insulate them in cold water.\n\nBehaviorally they are among the most trainable, problem-solving dogs in existence, routinely placing in the top three of every canine cognition study. That intelligence cuts both ways. Poodles get bored faster than most owners can devise enrichment, and a bored Poodle invents games, opening doors, defeating crate latches, manipulating other household pets, that are often funnier in retrospect than at the time.\n\nSocially they are warm with their people, polite-to-aloof with strangers, and generally good with other dogs. Standards tend toward dignified goofballs, Miniatures toward bright comedians, and Toys toward intense, devoted lap-dogs. All three sizes share the same fundamental temperament: smart, sensitive, and easily wounded by harsh handling.",
-  "livingWith": "Plan on 60+ minutes of meaningful daily activity, broken into multiple sessions if possible. They can adapt to apartment living when their daily activity needs are met, but a tired dog is the real prerequisite, not square footage.\n\nWithin the household, expect a dog who is generally great with kids and generally great with cats. On the noise front, they bark occasionally, usually with reason, important to factor in if you have close neighbors or work-from-home calls.\n\nTheir lifespan is typical for a dog this size, expect a full decade or so of companionship with attentive care.",
-  "healthCareGuide": "The Poodle has an average lifespan of 10-18 years, which is their lifespan is typical for a dog this size, expect a full decade or so of companionship with attentive care.\n\nBreed-specific concerns to discuss with your vet include: hip dysplasia, progressive retinal atrophy, bloat. Reputable breeders screen breeding stock for these conditions, so always ask to see health clearances before committing to a puppy.\n\nBeyond breed-specific issues, follow the standards of good preventative care: a core vaccine schedule, year-round parasite prevention, regular dental cleaning, and an annual senior workup once your dog passes the midpoint of their expected lifespan. Watch their weight closely, even a few extra pounds shortens lifespan and worsens any joint or cardiac issues.",
+  "livingWith": "Behind the fancy show clips, the Poodle is an athletic, clever dog that wants activity and attention. Standards need real exercise, such as long walks, running, swimming, and retrieving; Miniatures and Toys need less but still enjoy play and training. All three sizes are sensitive and people-oriented, and many dislike being left alone for long periods.\n\nTheir intelligence is a double-edged sword: a bored Poodle invents its own games and quickly learns how to get your attention. Daily training or puzzle toys help a lot. Poodles are often reserved with strangers and can be alert barkers, but they are usually gentle and devoted with their families.",
+  "healthCareGuide": "Health concerns differ by size. In Standard Poodles, watch for Addison's disease (vague signs like weakness and vomiting), sebaceous adenitis (a skin condition that causes hair loss), bloat, and hip dysplasia; ask breeders for hip evaluations and a skin biopsy or SA screening where available. Miniature and Toy Poodles are more prone to progressive retinal atrophy (PRA), luxating kneecaps, and Legg-Calvé-Perthes disease of the hip.\n\nGood breeders DNA-test for PRA, test eyes annually, and can explain what they screen for in their size variety. Dental disease is common in the smaller sizes, so brush teeth often. Ear infections are common because hair grows inside the ear canal.",
   "funFact": "Poodles are the second most intelligent dog breed and were originally water retrievers.",
-  "famousQuote": "\"Every Poodle owner knows the joy of this breed's unique personality.\"",
+  "famousQuote": "A brilliant, athletic water retriever in three sizes, with a low-shedding coat that needs professional care.",
   "popularity": 5,
-  "lastUpdated": "2026-05-03 01:07:05.485",
+  "lastUpdated": "2026-11-03 07:45:44.774",
   "funFacts": [
-   "Poodles are the second most intelligent dog breed and were originally water retrievers.",
-   "The Poodle originated in Germany, where the breed was developed for purposes that still influence their behavior today.",
-   "As a Non-Sporting Group breed, the Poodle shares structural and temperamental traits with other breeds developed for the same kind of work.",
-   "The Poodle is considered one of the lower-shedding breeds, which makes them a more workable choice for some allergy sufferers, though no dog is truly hypoallergenic.",
-   "A typical Poodle lifespan is 10-18 years, meaning families should plan for that full commitment when bringing one home."
+   "The name comes from the German 'pudel' or 'pudelin', meaning to splash in water.",
+   "The traditional show clip leaves hair over the chest and joints to keep a swimming dog warm while lightening the rest of the coat.",
+   "Poodles come in three AKC sizes, Standard, Miniature, and Toy, judged by the same standard except for height.",
+   "Standard Poodles have competed in the Iditarod sled dog race."
   ],
-  "commonMisconceptions": "Because the Non-Sporting Group is so diverse, generalizations about them rarely hold. Each breed in this group has its own purpose and needs, assuming one Non-Sporting breed is like another is a setup for surprise. A daily walk around the block is not \"exercise\" for a high-energy breed like the Poodle. They need real, sustained activity that engages both body and brain. One specific point worth correcting about the Poodle: their Germany origin and non-sporting-group heritage shape behavior in ways the casual observer often misses, including their reaction to hip dysplasia risks and the level of socialization they actually need from puppyhood onward.",
-  "idealOwnerProfile": "Active individuals or families with moderate space. People with active lifestyles, runners, hikers, dog-sport enthusiasts, who can deliver daily, vigorous exercise. First-time and seasoned owners alike, provided they commit to consistent positive-reinforcement training. Families with respectful children are usually a great fit. Adaptable enough for apartment living when daily exercise is non-negotiable. Above all, the ideal Poodle owner understands the breed's non-sporting-group heritage from Germany and is prepared to honor those instincts with appropriate outlets, structure, and the kind of patient, daily commitment this breed deserves.",
-  "notGoodFor": "Owners looking for a tiny lap dog or a giant guardian. Sedentary households or owners who travel frequently without a plan for daily, vigorous exercise. Anyone who plans to skip foundational obedience entirely, even an \"easy\" breed needs structure to thrive. Anyone unwilling to research the specific health risks common in the Poodle (notably hip dysplasia and  progressive retinal atrophy) and budget for the preventive care that follows.",
-  "groomingGuide": "Professional grooming every 4-6 weeks. Coat care is centered on professional grooming every 4-6 weeks. Curly coats need regular professional grooming and detangling between sessions to stay healthy. Their curly coat sheds very little, which suits owners who prefer a tidier home, though \"low-shedding\" never means \"no maintenance.\" Trim nails every 3–4 weeks, check ears weekly for redness or odor, and brush teeth daily or use vet-approved dental chews.",
+  "commonMisconceptions": "That Poodles are fussy or delicate. They were bred as retrievers and are tough, athletic, and outdoorsy. Another misconception is that 'hypoallergenic' means allergy-free; Poodles shed very little, which helps many allergy sufferers, but no dog is completely allergen-free.",
+  "idealOwnerProfile": "People who want a smart, trainable, low-shedding dog and are happy to budget for regular grooming. Standards suit active families; Miniatures and Toys suit smaller homes and less active owners. Often a good fit for allergy sufferers.",
+  "notGoodFor": "Owners unwilling to pay for or learn grooming, people who want a dog that can be left alone for long hours, and anyone who wants a low-energy dog but chooses a Standard.",
+  "groomingGuide": "Poodle hair grows continuously and mats if neglected. Plan on professional grooming every four to six weeks and brushing several times a week between appointments, combing right down to the skin. Many pet owners choose a short 'sporting' or 'puppy' clip that is much easier to maintain than show trims. Pluck or trim ear hair as advised by your vet and check ears weekly.",
   "faqs": [
    {
-    "answer": "Yes, the Poodle is generally an excellent family dog. With children they are generally great with children, and they bark occasionally, usually with reason. As with any breed, success depends on early socialization, supervised interactions, and teaching children how to respect the dog's space.",
-    "question": "Is the Poodle a good family dog?"
+    "question": "Are Poodles hypoallergenic?",
+    "answer": "Poodles shed very little, so less dander ends up around the house, and many people with dog allergies tolerate them well. No breed is completely allergen-free, so spend time with Poodles before committing if allergies are a concern."
    },
    {
-    "answer": "Plan on 60+ minutes of meaningful daily activity, broken into multiple sessions if possible. Plan for daily, structured activity rather than relying on backyard time alone, under-exercised Poodles commonly develop boredom-driven habits like chewing, digging, or excessive vocalization.",
-    "question": "How much exercise does a Poodle need?"
+    "question": "What is the difference between Standard, Miniature, and Toy Poodles?",
+    "answer": "Size. Standards are over 15 inches at the shoulder, Miniatures 10 to 15 inches, and Toys 10 inches or under. Standards are the most athletic; smaller sizes need less space and exercise but have their own health concerns."
    },
    {
-    "answer": "Poodles are eager to learn and quick to pick up new commands. Positive-reinforcement methods, food, play, and genuine praise, work far better than corrections. Start training in puppyhood and keep sessions short and frequent.",
-    "question": "Are Poodles easy to train?"
+    "question": "How often do Poodles need grooming?",
+    "answer": "Every four to six weeks with a professional groomer, plus brushing at home several times a week. A short clip makes home care much easier."
    },
    {
-    "answer": "Their curly coat sheds very little, which suits owners who prefer a tidier home, though \"low-shedding\" never means \"no maintenance.\" The Poodle is considered a lower-shedding breed, which can make them a more workable choice for some allergy sufferers, though no dog is truly hypoallergenic.",
-    "question": "How much do Poodles shed?"
+    "question": "Are Poodles smart?",
+    "answer": "Very. Poodles are consistently ranked among the most intelligent and trainable breeds. That also means they need mental stimulation to stay out of trouble."
    },
    {
-    "answer": "The typical Poodle lifespan is 10-18 years. Their lifespan is typical for a dog this size, expect a full decade or so of companionship with attentive care. Common breed-specific health concerns to discuss with your vet include: hip dysplasia, progressive retinal atrophy, bloat.",
-    "question": "What is the lifespan of a Poodle?"
+    "question": "Are Poodles good family dogs?",
+    "answer": "Yes. Poodles are affectionate, playful, and gentle with their families. Standards are sturdy enough for active households with children; Toys are fragile and better with older kids."
    },
    {
-    "answer": "They can adapt to apartment living when their daily activity needs are met, but a tired dog is the real prerequisite, not square footage.",
-    "question": "Can Poodles live in an apartment?"
-   },
-   {
-    "answer": "The Poodle is generally great with other dogs. Early, ongoing socialization between 8 and 16 weeks is critical, and adult introductions should always be on neutral ground with both dogs on loose leashes.",
-    "question": "Is the Poodle good with other dogs?"
+    "question": "Why do Poodles have that famous haircut?",
+    "answer": "The classic clip started as a practical trim for working water dogs: hair was left over the chest and joints for warmth and removed elsewhere to help them swim. Pet Poodles can wear any clip; many owners choose a simple short trim."
    }
-  ]
+  ],
+  "edited": true
  },
  {
   "name": "Bulldog",
