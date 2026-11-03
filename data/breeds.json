@@ -1114,7 +1114,7 @@
   "slug": "boxer",
   "breedGroup": "Working",
   "originCountry": "Germany",
-  "yearRecognized": null,
+  "yearRecognized": 1904,
   "sizeCategory": "Large",
   "weightRange": "50-80 lbs",
   "heightRange": "21.5-25 in",
@@ -1135,63 +1135,60 @@
   "exerciseNeeds": "60-90 minutes daily",
   "groomingFrequency": "Weekly brushing",
   "commonHealthIssues": "Cancer, heart conditions, hip dysplasia",
-  "dietNotes": "Feed a high-quality, AAFCO-certified diet appropriate for the Boxer's life stage and large size. Active Boxers burn meaningful calories, match portions to their actual workload, not generic feeding-chart numbers. Large and giant breeds need a \"large breed\" puppy formula until growth completes (12–24 months) to support proper joint development.",
-  "trainingNotes": "Boxers are trainable with patience, consistency, and motivating rewards. Positive-reinforcement methods, food, play, and genuine praise, work far better than corrections; this breed in particular shuts down or grows resistant under harsh handling. Because of their very high energy, training sessions are most productive after exercise, not before, a tired Boxer learns faster than a fresh one. Early, frequent, and varied socialization between 8 and 16 weeks is critical, especially given their more reserved disposition toward strangers. Their generally measured vocalizations make impulse-control training easier than with more vocal breeds.",
-  "history": "The Boxer's lineage traces back to Germany, where the breed was developed for pulling, guarding, hauling, and protecting human livelihood. Centuries of selective work shaped the temperament, structure, and instincts you see in the breed today, and many of those original drives remain, even in dogs that will spend their lives as family companions.\n\nAs a member of the Working Group, bred for guarding, pulling carts, and other demanding jobs that require physical and mental strength, the Boxer carries hallmark traits of the group, visible in everything from how they move to how they read situations. Today the Boxer ranks among the most popular breeds in America, a reflection of how well their working heritage has translated into modern family life.\n\nAn often-cited piece of breed history: Boxers got their name because they tend to play by standing on hind legs and 'boxing' with front paws.",
-  "personalityDeepDive": "Owners who live with the Boxer consistently describe them as fun-loving, bright and active, a personality shaped by generations of purposeful breeding. In daily life this shows up as near-tireless drive that demands serious daily outlets, paired with a temperament that is trainable with patience, consistency, and motivating rewards.\n\nWith family they are excellent with children, friendly with other dogs when properly socialized, and friendly with new people when properly socialized; they bark occasionally, usually with reason. They are not well-suited to apartment life. They thrive with a securely fenced yard and ready access to outdoor space.\n\nTheir large size means everything from food bills to leash control matters; they're a real physical presence in the home. Above all, the Boxer thrives when their physical and mental needs are taken seriously, under-stimulated, even the gentlest individuals can develop frustrating habits, while a well-exercised, mentally engaged Boxer is genuinely one of the best companions you can ask for.",
-  "livingWith": "At least 90 minutes of vigorous daily activity is the bare minimum, and ideally a job or sport to channel their drive. They are not well-suited to apartment life. They thrive with a securely fenced yard and ready access to outdoor space.\n\nWithin the household, expect a dog who is excellent with kids when both are taught to respect each other and friendly with cats when properly socialized. On the noise front, they bark occasionally, usually with reason, important to factor in if you have close neighbors or work-from-home calls.\n\nTheir lifespan is typical for a dog this size, expect a full decade or so of companionship with attentive care.",
-  "healthCareGuide": "The Boxer has an average lifespan of 10-12 years, which is their lifespan is typical for a dog this size, expect a full decade or so of companionship with attentive care.\n\nBreed-specific concerns to discuss with your vet include: cancer, heart conditions, hip dysplasia. Reputable breeders screen breeding stock for these conditions, so always ask to see health clearances before committing to a puppy.\n\nBeyond breed-specific issues, follow the standards of good preventative care: a core vaccine schedule, year-round parasite prevention, regular dental cleaning, and an annual senior workup once your dog passes the midpoint of their expected lifespan. Large and giant breeds are particularly susceptible to bloat (gastric torsion); learn the symptoms, feed two smaller meals per day instead of one large meal, and consider a prophylactic gastropexy if your vet recommends it.",
+  "dietNotes": "Feed a quality large-breed diet in measured portions, ideally split into two meals to reduce bloat risk. Keep Boxers lean and athletic. Discuss diet choices with your vet given the breed's heart risk.",
+  "trainingNotes": "Boxers are intelligent but can be stubborn and easily distracted. Use short, positive, play-based sessions. Focus early on impulse control: not jumping on people, calm greetings, and loose-leash walking. Socialize widely so their protective instincts stay balanced. Agility, obedience, and active games are good outlets.",
+  "history": "The Boxer was developed in Germany in the late 1800s from the Bullenbeisser, a powerful hunting mastiff used to hold large game, crossed with English Bulldogs. Breeders in Munich founded the first Boxer club in 1895 and set out to create a strong, agile, and steady working dog.\n\nBoxers served as messenger, guard, and pack dogs in World War I and were among the early breeds trained for police work in Germany. American soldiers returning from World War II helped make the breed popular in the US. The AKC recognized the Boxer in 1904.",
+  "personalityDeepDive": "Boxers are playful, affectionate, and full of personality. They often stay puppyish for years, bouncing, clowning, and doing the famous 'kidney bean' wiggle when excited. With their families they are loving and loyal, and many are excellent with children.\n\nThey also have guardian instincts: alert, watchful with strangers, and willing to protect their home. That combination makes them good family watchdogs, but early training and socialization are essential.\n\nBoxers have lots of energy and need daily exercise and play. They can be stubborn and easily bored, so training should be fun and varied. When their needs are met, they are funny, loving companions that want to be part of everything.",
+  "livingWith": "Boxers are strong, energetic, and people-focused. They jump, play rough, and may knock over small children by accident, so manners training is important. They need daily vigorous exercise and do best with a fenced yard.\n\nTheir short muzzle makes them sensitive to heat; exercise in cooler parts of the day and provide shade and water. They also get cold easily. Expect some drool and snoring. Boxers do not like being left alone for long periods.",
+  "healthCareGuide": "Boxer cardiomyopathy (arrhythmogenic right ventricular cardiomyopathy, ARVC) is a major concern. Ask breeders about annual Holter monitor testing of the parents and DNA testing for the known variant, and screen your own dog as an adult. Subvalvular aortic stenosis also occurs.\n\nCancer, including mast cell tumors and lymphoma, is common; have any new lump checked promptly. Other issues include hip dysplasia, hypothyroidism, degenerative myelopathy, and slow-healing corneal ulcers. White Boxers have a higher risk of deafness.",
   "funFact": "Boxers got their name because they tend to play by standing on hind legs and 'boxing' with front paws.",
-  "famousQuote": "\"Every Boxer owner knows the joy of this breed's unique personality.\"",
+  "famousQuote": "A bouncy, goofy, devoted family dog with a guardian's alertness and a puppy's energy well into adulthood.",
   "popularity": 16,
-  "lastUpdated": "2026-05-03 01:07:05.487",
+  "lastUpdated": "2026-11-03 07:51:50.269",
   "funFacts": [
-   "Boxers got their name because they tend to play by standing on hind legs and 'boxing' with front paws.",
-   "The Boxer originated in Germany, where the breed was developed for purposes that still influence their behavior today.",
-   "As a Working Group breed, the Boxer shares structural and temperamental traits with other breeds developed for the same kind of work.",
-   "A typical Boxer lifespan is 10-12 years, meaning families should plan for that full commitment when bringing one home."
+   "Boxers are famous for the 'kidney bean' dance, curling their bodies into a C-shape when excited.",
+   "One popular theory says the breed's name comes from the way Boxers use their front paws when playing, like a boxer sparring.",
+   "The first Boxer club was founded in Munich in 1895.",
+   "Boxers were among the first breeds used for police work in Germany."
   ],
-  "commonMisconceptions": "Working breeds are often mistaken for guard-only dogs or \"tough\" breeds suited to anyone strong. In reality they're sensitive, deeply bonded animals that suffer in homes that treat them as security equipment instead of family. A daily walk around the block is not \"exercise\" for a high-energy breed like the Boxer. They need real, sustained activity that engages both body and brain. One specific point worth correcting about the Boxer: their Germany origin and working-group heritage shape behavior in ways the casual observer often misses, including their reaction to cancer risks and the level of socialization they actually need from puppyhood onward.",
-  "idealOwnerProfile": "Households with space, strong handling skills, and a tolerance for a big physical presence. People with active lifestyles, runners, hikers, dog-sport enthusiasts, who can deliver daily, vigorous exercise. First-time and seasoned owners alike, provided they commit to consistent positive-reinforcement training. Families with respectful children are usually a great fit. Above all, the ideal Boxer owner understands the breed's working-group heritage from Germany and is prepared to honor those instincts with appropriate outlets, structure, and the kind of patient, daily commitment this breed deserves.",
-  "notGoodFor": "Tiny apartments without easy outdoor access or owners who can't physically manage a strong dog on leash. Sedentary households or owners who travel frequently without a plan for daily, vigorous exercise. Anyone who plans to skip foundational obedience entirely, even an \"easy\" breed needs structure to thrive. Anyone unwilling to research the specific health risks common in the Boxer (notably cancer and  heart conditions) and budget for the preventive care that follows.",
-  "groomingGuide": "Weekly brushing. Coat care is centered on weekly brushing. Short coats are forgiving but still benefit from a weekly rubber-curry session for skin health. Their short coat sheds at a manageable level with consistent brushing. Trim nails every 3–4 weeks, check ears weekly for redness or odor, and brush teeth daily or use vet-approved dental chews.",
+  "commonMisconceptions": "That Boxers are aggressive because of their muscular look. Most are goofy and affectionate, with a protective side that needs guidance. Another misconception is that they settle quickly; many Boxers stay playful and bouncy until three years old or longer.",
+  "idealOwnerProfile": "Active families who want a playful, loyal, protective dog and can provide daily exercise, training, and plenty of time together.",
+  "notGoodFor": "Sedentary owners, people away all day, hot climates without air conditioning, and homes with frail people who might be knocked over by an exuberant dog.",
+  "groomingGuide": "The short coat needs just a weekly brush. Wipe the facial folds and keep the ears clean. Trim nails regularly and brush teeth several times a week. Wipe drool as needed.",
   "faqs": [
    {
-    "answer": "Yes, the Boxer is generally an excellent family dog. With children they are excellent with children, and they bark occasionally, usually with reason. As with any breed, success depends on early socialization, supervised interactions, and teaching children how to respect the dog's space.",
-    "question": "Is the Boxer a good family dog?"
+    "question": "Are Boxers good family dogs?",
+    "answer": "Yes. Boxers are affectionate, playful, and often excellent with children. Their size and energy mean training and supervision with little ones are important."
    },
    {
-    "answer": "At least 90 minutes of vigorous daily activity is the bare minimum, and ideally a job or sport to channel their drive. Plan for daily, structured activity rather than relying on backyard time alone, under-exercised Boxers commonly develop boredom-driven habits like chewing, digging, or excessive vocalization.",
-    "question": "How much exercise does a Boxer need?"
+    "question": "How much exercise does a Boxer need?",
+    "answer": "About 60 to 90 minutes a day, including vigorous play or running and some training. Avoid hard exercise in hot weather."
    },
    {
-    "answer": "Boxers are trainable with patience, consistency, and motivating rewards. Positive-reinforcement methods, food, play, and genuine praise, work far better than corrections. Start training in puppyhood and keep sessions short and frequent.",
-    "question": "Are Boxers easy to train?"
+    "question": "When do Boxers calm down?",
+    "answer": "Many Boxers stay puppyish until two or three years old, and some are playful their whole lives. Exercise and training help them settle at home."
    },
    {
-    "answer": "Their short coat sheds at a manageable level with consistent brushing.",
-    "question": "How much do Boxers shed?"
+    "question": "What heart problems do Boxers have?",
+    "answer": "Boxer cardiomyopathy (ARVC) and subvalvular aortic stenosis are seen in the breed. Ask breeders about cardiac screening, and have your dog checked regularly with a Holter monitor as an adult."
    },
    {
-    "answer": "The typical Boxer lifespan is 10-12 years. Their lifespan is typical for a dog this size, expect a full decade or so of companionship with attentive care. Common breed-specific health concerns to discuss with your vet include: cancer, heart conditions, hip dysplasia.",
-    "question": "What is the lifespan of a Boxer?"
+    "question": "Do Boxers drool?",
+    "answer": "Some do, especially after drinking or when excited, though usually less than larger mastiff breeds."
    },
    {
-    "answer": "They are not well-suited to apartment life. They thrive with a securely fenced yard and ready access to outdoor space.",
-    "question": "Can Boxers live in an apartment?"
-   },
-   {
-    "answer": "The Boxer is friendly with other dogs when properly socialized. Early, ongoing socialization between 8 and 16 weeks is critical, and adult introductions should always be on neutral ground with both dogs on loose leashes.",
-    "question": "Is the Boxer good with other dogs?"
+    "question": "Are Boxers good guard dogs?",
+    "answer": "They are alert and protective, making them good watchdogs. With proper socialization, they are friendly with welcome visitors."
    }
-  ]
+  ],
+  "edited": true
  },
  {
   "name": "Miniature Schnauzer",
   "slug": "miniature-schnauzer",
   "breedGroup": "Terrier",
   "originCountry": "Germany",
-  "yearRecognized": null,
+  "yearRecognized": 1926,
   "sizeCategory": "Small",
   "weightRange": "11-20 lbs",
   "heightRange": "12-14 in",
@@ -1212,64 +1209,60 @@
   "exerciseNeeds": "45-60 minutes daily",
   "groomingFrequency": "Regular hand-stripping or clipping every 6-8 weeks",
   "commonHealthIssues": "Pancreatitis, urinary stones, eye problems",
-  "dietNotes": "Feed a high-quality, AAFCO-certified diet appropriate for the Miniature Schnauzer's life stage and small size. Active Miniature Schnauzers burn meaningful calories, match portions to their actual workload, not generic feeding-chart numbers. Small breeds can be prone to hypoglycemia as puppies, multiple smaller meals per day during the first six months helps prevent it.",
-  "trainingNotes": "Miniature Schnauzers are eager to learn and quick to pick up new commands. Positive-reinforcement methods, food, play, and genuine praise, work far better than corrections; this breed in particular shuts down or grows resistant under harsh handling. Because of their high energy, training sessions are most productive after exercise, not before, a tired Miniature Schnauzer learns faster than a fresh one. Early, frequent, and varied socialization between 8 and 16 weeks is critical, especially given their more reserved disposition toward strangers. Specifically work on a \"quiet\" cue from puppyhood, left untrained, this breed's vocal nature can become a real lifestyle issue.",
-  "history": "The Miniature Schnauzer's lineage traces back to Germany, where the breed was developed for going to ground after rats, foxes, and other vermin that threatened farms and homes. Centuries of selective work shaped the temperament, structure, and instincts you see in the breed today, and many of those original drives remain, even in dogs that will spend their lives as family companions.\n\nAs a member of the Terrier Group, developed to dig out and dispatch vermin with bold, tenacious courage, the Miniature Schnauzer carries hallmark traits of the group, visible in everything from how they move to how they read situations. Today the Miniature Schnauzer ranks among the most popular breeds in America, a reflection of how well their working heritage has translated into modern family life.\n\nAn often-cited piece of breed history: Miniature Schnauzers were bred down from Standard Schnauzers to be farm ratters.",
-  "personalityDeepDive": "Owners who live with the Miniature Schnauzer consistently describe them as friendly, smart and obedient, a personality shaped by generations of purposeful breeding. In daily life this shows up as strong daily energy that needs consistent, vigorous activity, paired with a temperament that is eager to learn and quick to pick up new commands.\n\nWith family they are generally great with children, generally great with other dogs, and friendly with new people when properly socialized; they're vocal and quick to alert you to anything new. They can adapt to apartment living when their daily activity needs are met, but a tired dog is the real prerequisite, not square footage.\n\nTheir compact size makes them easy to transport and accommodate, though it also means they can be fragile around very young children or large, rough-playing dogs. Above all, the Miniature Schnauzer thrives when their physical and mental needs are taken seriously, under-stimulated, even the gentlest individuals can develop frustrating habits, while a well-exercised, mentally engaged Miniature Schnauzer is genuinely one of the best companions you can ask for.",
-  "livingWith": "Plan on 60+ minutes of meaningful daily activity, broken into multiple sessions if possible. They can adapt to apartment living when their daily activity needs are met, but a tired dog is the real prerequisite, not square footage.\n\nWithin the household, expect a dog who is generally great with kids and friendly with cats when properly socialized. On the noise front, they're vocal and quick to alert you to anything new, important to factor in if you have close neighbors or work-from-home calls.\n\nTheir long lifespan means a 12-to-16-year commitment is realistic, a meaningful chapter of any owner's life.",
-  "healthCareGuide": "The Miniature Schnauzer has an average lifespan of 12-15 years, which is their long lifespan means a 12-to-16-year commitment is realistic, a meaningful chapter of any owner's life.\n\nBreed-specific concerns to discuss with your vet include: pancreatitis, urinary stones, eye problems. Reputable breeders screen breeding stock for these conditions, so always ask to see health clearances before committing to a puppy.\n\nBeyond breed-specific issues, follow the standards of good preventative care: a core vaccine schedule, year-round parasite prevention, regular dental cleaning, and an annual senior workup once your dog passes the midpoint of their expected lifespan. Small breeds are particularly prone to dental disease; daily brushing or a vet-approved dental routine is one of the highest-impact things you can do for their long-term health.",
+  "dietNotes": "Feed a quality small-breed diet that is moderate in fat, in measured portions. Avoid fatty treats and table scraps, which can trigger pancreatitis. Fresh water and a diet your vet recommends can help prevent bladder stones.",
+  "trainingNotes": "Mini Schnauzers are smart and quick to learn but can be stubborn. Use short, reward-based training sessions. Teach a quiet cue early to manage barking, and practice recall in safe areas. Socialize them with people and dogs from puppyhood. They enjoy obedience, agility, earthdog, and trick training.",
+  "history": "The Miniature Schnauzer was developed in Germany in the late 1800s by crossing the Standard Schnauzer, a farm dog and ratter, with smaller breeds such as the Affenpinscher and possibly the Poodle. Farmers wanted a smaller dog that could keep barns and yards free of rats.\n\nThe first recorded Miniature Schnauzer, a black female named Findel, dates to 1888. The breed came to the US after World War I and the AKC recognized it in 1926. In the US it is shown in the Terrier Group, although it was not bred from British terriers.",
+  "personalityDeepDive": "Miniature Schnauzers are lively, bright, and affectionate. They love being with their families and are usually good with children and other dogs. They are alert watchdogs and will bark at anything unusual.\n\nThey have a spirited, sometimes stubborn side and a strong prey drive toward small animals. They enjoy games, walks, and learning, and many are quite playful well into old age.\n\nMini Schnauzers are adaptable and do well in apartments or houses, provided they get exercise and attention. They are a great choice for people who want a small, sturdy dog with plenty of personality and a low-shedding coat.",
+  "livingWith": "Mini Schnauzers adapt to most homes and are a good size for apartments, though they are vocal and will alert to sounds. They need daily walks and play and enjoy being involved in family activities.\n\nThey can chase squirrels, cats, and other small animals, so keep them on leash or in a fenced yard. Their beards collect food and water, so expect a damp face after meals.",
+  "healthCareGuide": "Miniature Schnauzers are prone to high blood fats (hyperlipidemia) and pancreatitis; avoid fatty foods and table scraps, and see a vet promptly for vomiting, belly pain, or lethargy. Bladder stones are also common, so watch for straining, frequent urination, or blood in the urine.\n\nAsk breeders about eye exams (cataracts and progressive retinal atrophy occur) and DNA tests such as myotonia congenita. Diabetes, liver shunts, and a skin condition called Schnauzer comedo syndrome (blackheads along the back) are also seen.",
   "funFact": "Miniature Schnauzers were bred down from Standard Schnauzers to be farm ratters.",
-  "famousQuote": "\"Every Miniature Schnauzer owner knows the joy of this breed's unique personality.\"",
+  "famousQuote": "A sturdy, bearded little farm dog: smart, spirited, low-shedding, and always on alert.",
   "popularity": 17,
-  "lastUpdated": "2026-05-03 01:07:05.487",
+  "lastUpdated": "2026-11-03 07:51:50.269",
   "funFacts": [
-   "Miniature Schnauzers were bred down from Standard Schnauzers to be farm ratters.",
-   "The Miniature Schnauzer originated in Germany, where the breed was developed for purposes that still influence their behavior today.",
-   "As a Terrier Group breed, the Miniature Schnauzer shares structural and temperamental traits with other breeds developed for the same kind of work.",
-   "The Miniature Schnauzer is considered one of the lower-shedding breeds, which makes them a more workable choice for some allergy sufferers, though no dog is truly hypoallergenic.",
-   "A typical Miniature Schnauzer lifespan is 12-15 years, meaning families should plan for that full commitment when bringing one home."
+   "'Schnauzer' comes from the German word 'Schnauze', meaning snout or muzzle.",
+   "The first recorded Miniature Schnauzer was a black female named Findel, in 1888.",
+   "The breed's signature beard and eyebrows are called 'furnishings'.",
+   "Miniature Schnauzers come in three AKC colors: salt and pepper, black and silver, and solid black."
   ],
-  "commonMisconceptions": "Terriers are often misread as small lap dogs because of their size. In personality they're tenacious, prey-driven, and quick to react, closer to a working dog in a small package than a true companion-bred toy. A daily walk around the block is not \"exercise\" for a high-energy breed like the Miniature Schnauzer. They need real, sustained activity that engages both body and brain. One specific point worth correcting about the Miniature Schnauzer: their Germany origin and terrier-group heritage shape behavior in ways the casual observer often misses, including their reaction to pancreatitis risks and the level of socialization they actually need from puppyhood onward.",
-  "idealOwnerProfile": "Apartment dwellers, seniors, and families with older (gentle) children. People with active lifestyles, runners, hikers, dog-sport enthusiasts, who can deliver daily, vigorous exercise. First-time and seasoned owners alike, provided they commit to consistent positive-reinforcement training. Families with respectful children are usually a great fit. Adaptable enough for apartment living when daily exercise is non-negotiable. Above all, the ideal Miniature Schnauzer owner understands the breed's terrier-group heritage from Germany and is prepared to honor those instincts with appropriate outlets, structure, and the kind of patient, daily commitment this breed deserves.",
-  "notGoodFor": "Households where rough-and-tumble large dogs or very active toddlers might injure them. Sedentary households or owners who travel frequently without a plan for daily, vigorous exercise. Anyone who plans to skip foundational obedience entirely, even an \"easy\" breed needs structure to thrive. Apartment dwellers in noise-restrictive buildings, or owners who need long stretches of quiet for work-from-home calls. Anyone unwilling to research the specific health risks common in the Miniature Schnauzer (notably pancreatitis and  urinary stones) and budget for the preventive care that follows.",
-  "groomingGuide": "Regular hand-stripping or clipping every 6-8 weeks. Coat care is centered on regular hand-stripping or clipping every 6-8 weeks. A proper wiry coat is hand-stripped every few months; clipping changes the texture and color over time. Their wiry coat sheds very little, which suits owners who prefer a tidier home, though \"low-shedding\" never means \"no maintenance.\" Trim nails every 3–4 weeks, check ears weekly for redness or odor, and brush teeth daily or use vet-approved dental chews.",
+  "commonMisconceptions": "That they are typical terriers because they are shown in the AKC Terrier Group. Their background is German farm and ratting dogs, and they are generally less scrappy with other dogs than many terriers. Another misconception is that their low-shedding coat means low grooming; it actually needs regular professional care.",
+  "idealOwnerProfile": "Singles, couples, families, and seniors who want a small, sturdy, low-shedding companion with lots of personality, and who can keep up with grooming.",
+  "notGoodFor": "Owners who want a quiet dog, households with pet rodents, and people unwilling to budget for regular grooming.",
+  "groomingGuide": "The wiry double coat sheds very little but needs regular care: brush several times a week and clip or hand-strip every five to eight weeks. Clean the beard daily and comb out furnishings on the legs. Trim nails, clean ears, and brush teeth regularly.",
   "faqs": [
    {
-    "answer": "Yes, the Miniature Schnauzer is generally an excellent family dog. With children they are generally great with children, and they're vocal and quick to alert you to anything new. As with any breed, success depends on early socialization, supervised interactions, and teaching children how to respect the dog's space.",
-    "question": "Is the Miniature Schnauzer a good family dog?"
+    "question": "Do Miniature Schnauzers shed?",
+    "answer": "Very little. Their wiry coat sheds minimally, which many people with allergies appreciate. It does need regular brushing and grooming."
    },
    {
-    "answer": "Plan on 60+ minutes of meaningful daily activity, broken into multiple sessions if possible. Plan for daily, structured activity rather than relying on backyard time alone, under-exercised Miniature Schnauzers commonly develop boredom-driven habits like chewing, digging, or excessive vocalization.",
-    "question": "How much exercise does a Miniature Schnauzer need?"
+    "question": "Are Miniature Schnauzers good with kids?",
+    "answer": "Yes, they are typically playful and sturdy enough for families with children who are gentle and respectful."
    },
    {
-    "answer": "Miniature Schnauzers are eager to learn and quick to pick up new commands. Positive-reinforcement methods, food, play, and genuine praise, work far better than corrections. Start training in puppyhood and keep sessions short and frequent.",
-    "question": "Are Miniature Schnauzers easy to train?"
+    "question": "Do Miniature Schnauzers bark a lot?",
+    "answer": "They can. They are alert watchdogs and will announce visitors and noises. Training and enough exercise help."
    },
    {
-    "answer": "Their wiry coat sheds very little, which suits owners who prefer a tidier home, though \"low-shedding\" never means \"no maintenance.\" The Miniature Schnauzer is considered a lower-shedding breed, which can make them a more workable choice for some allergy sufferers, though no dog is truly hypoallergenic.",
-    "question": "How much do Miniature Schnauzers shed?"
+    "question": "What health problems do Miniature Schnauzers have?",
+    "answer": "Common issues include pancreatitis, high blood fats, bladder stones, diabetes, and eye problems. A low-fat diet and regular vet checks help."
    },
    {
-    "answer": "The typical Miniature Schnauzer lifespan is 12-15 years. Their long lifespan means a 12-to-16-year commitment is realistic, a meaningful chapter of any owner's life. Common breed-specific health concerns to discuss with your vet include: pancreatitis, urinary stones, eye problems.",
-    "question": "What is the lifespan of a Miniature Schnauzer?"
+    "question": "How often do Miniature Schnauzers need grooming?",
+    "answer": "Every five to eight weeks for a clip or hand-strip, plus brushing several times a week and daily beard cleaning."
    },
    {
-    "answer": "They can adapt to apartment living when their daily activity needs are met, but a tired dog is the real prerequisite, not square footage.",
-    "question": "Can Miniature Schnauzers live in an apartment?"
-   },
-   {
-    "answer": "The Miniature Schnauzer is generally great with other dogs. Early, ongoing socialization between 8 and 16 weeks is critical, and adult introductions should always be on neutral ground with both dogs on loose leashes.",
-    "question": "Is the Miniature Schnauzer good with other dogs?"
+    "question": "How long do Miniature Schnauzers live?",
+    "answer": "Typically 12 to 15 years."
    }
-  ]
+  ],
+  "edited": true
  },
  {
   "name": "Cane Corso",
   "slug": "cane-corso",
   "breedGroup": "Working",
   "originCountry": "Italy",
-  "yearRecognized": null,
+  "yearRecognized": 2010,
   "sizeCategory": "Giant",
   "weightRange": "88-120 lbs",
   "heightRange": "23.5-27.5 in",
@@ -1290,63 +1283,60 @@
   "exerciseNeeds": "60+ minutes of vigorous daily activity",
   "groomingFrequency": "Weekly brushing",
   "commonHealthIssues": "Hip dysplasia, bloat, eye problems",
-  "dietNotes": "Feed a high-quality, AAFCO-certified diet appropriate for the Cane Corso's life stage and giant size. Active Cane Corsos burn meaningful calories, match portions to their actual workload, not generic feeding-chart numbers. Large and giant breeds need a \"large breed\" puppy formula until growth completes (12–24 months) to support proper joint development.",
-  "trainingNotes": "Cane Corsos are trainable with patience, consistency, and motivating rewards. Positive-reinforcement methods, food, play, and genuine praise, work far better than corrections; this breed in particular shuts down or grows resistant under harsh handling. Because of their high energy, training sessions are most productive after exercise, not before, a tired Cane Corso learns faster than a fresh one. Early, frequent, and varied socialization between 8 and 16 weeks is critical, especially given their more reserved disposition toward strangers. Their generally measured vocalizations make impulse-control training easier than with more vocal breeds.",
-  "history": "The Cane Corso's lineage traces back to Italy, where the breed was developed for pulling, guarding, hauling, and protecting human livelihood. Centuries of selective work shaped the temperament, structure, and instincts you see in the breed today, and many of those original drives remain, even in dogs that will spend their lives as family companions.\n\nAs a member of the Working Group, bred for guarding, pulling carts, and other demanding jobs that require physical and mental strength, the Cane Corso carries hallmark traits of the group, visible in everything from how they move to how they read situations. Today the Cane Corso ranks among the most popular breeds in America, a reflection of how well their working heritage has translated into modern family life.\n\nAn often-cited piece of breed history: Cane Corsos are descendants of Roman war dogs called Canis Pugnax.",
-  "personalityDeepDive": "Owners who live with the Cane Corso consistently describe them as affectionate, intelligent and majestic, a personality shaped by generations of purposeful breeding. In daily life this shows up as strong daily energy that needs consistent, vigorous activity, paired with a temperament that is trainable with patience, consistency, and motivating rewards.\n\nWith family they are friendly with children when properly socialized, cautious around other dogs and benefits from careful introductions, and cautious around new people and benefits from careful introductions; they bark occasionally, usually with reason. They are not well-suited to apartment life. They thrive with a securely fenced yard and ready access to outdoor space.\n\nTheir giant stature reshapes daily life, from the size of their bed and crate to the cost of vet care and food. Above all, the Cane Corso thrives when their physical and mental needs are taken seriously, under-stimulated, even the gentlest individuals can develop frustrating habits, while a well-exercised, mentally engaged Cane Corso is genuinely one of the best companions you can ask for.",
-  "livingWith": "Plan on 60+ minutes of meaningful daily activity, broken into multiple sessions if possible. They are not well-suited to apartment life. They thrive with a securely fenced yard and ready access to outdoor space.\n\nWithin the household, expect a dog who is friendly with kids when properly socialized and cautious around cats and benefits from careful introductions. On the noise front, they bark occasionally, usually with reason, important to factor in if you have close neighbors or work-from-home calls.\n\nTheir lifespan is typical for a dog this size, expect a full decade or so of companionship with attentive care.",
-  "healthCareGuide": "The Cane Corso has an average lifespan of 9-12 years, which is their lifespan is typical for a dog this size, expect a full decade or so of companionship with attentive care.\n\nBreed-specific concerns to discuss with your vet include: hip dysplasia, bloat, eye problems. Reputable breeders screen breeding stock for these conditions, so always ask to see health clearances before committing to a puppy.\n\nBeyond breed-specific issues, follow the standards of good preventative care: a core vaccine schedule, year-round parasite prevention, regular dental cleaning, and an annual senior workup once your dog passes the midpoint of their expected lifespan. Large and giant breeds are particularly susceptible to bloat (gastric torsion); learn the symptoms, feed two smaller meals per day instead of one large meal, and consider a prophylactic gastropexy if your vet recommends it.",
+  "dietNotes": "Feed a quality large- or giant-breed diet, with a large-breed puppy formula during growth to support healthy bone development. Split food into two or more meals a day to reduce bloat risk. Keep the dog lean.",
+  "trainingNotes": "Training and socialization should start the day the puppy comes home and continue throughout life. Use consistent, fair, reward-based training. Expose the puppy to many people, places, and situations. Professional guidance from a trainer experienced with guardian breeds is strongly recommended.",
+  "history": "The Cane Corso descends from Roman molossian dogs that served in war and as estate guardians. In rural southern Italy, the breed worked for centuries as a farm guardian, cattle driver, and hunter of large game such as wild boar.\n\nAs farming changed in the 20th century, the breed nearly disappeared. Italian enthusiasts revived it in the 1970s and 1980s, founding the breed society Società Amatori Cane Corso in 1983. The Cane Corso was recognized internationally in the 1990s and by the AKC in 2010.",
+  "personalityDeepDive": "Cane Corsos are intelligent, confident, and deeply loyal. With their family they are often calm and affectionate; with strangers they are watchful and reserved. They were bred to make decisions as guardians, so they are naturally protective.\n\nThat protectiveness is the core of the breed and needs careful management. A well-bred, well-socialized Corso is stable and discerning. A poorly raised one can be dangerous due to its size and strength.\n\nCorsos need structure, training, exercise, and a confident owner. They thrive with a job such as obedience, tracking, or protection sports with responsible clubs. They are not a dog for first-time owners or casual homes.",
+  "livingWith": "Cane Corsos need space, secure fencing, and daily exercise. They are large, powerful dogs, so leash manners and reliable obedience are essential. Visitors should be introduced carefully, and many owners manage guests by crating or separating the dog.\n\nSome landlords, homeowners' associations, and insurers restrict the breed. Corsos may not tolerate other dogs of the same sex. They are relatively quiet indoors but will alert to anything unusual.",
+  "healthCareGuide": "Ask breeders for OFA hip and elbow results and eye exams on both parents. Hip and elbow dysplasia are common. Bloat is a serious risk for this deep-chested breed; learn the signs and consider a preventive gastropexy.\n\nEyelid problems such as entropion, ectropion, and cherry eye are seen, along with demodectic mange in young dogs and idiopathic epilepsy. Keep them lean to protect their joints, and avoid overheating.",
   "funFact": "Cane Corsos are descendants of Roman war dogs called Canis Pugnax.",
-  "famousQuote": "\"Every Cane Corso owner knows the joy of this breed's unique personality.\"",
+  "famousQuote": "A powerful Italian mastiff and serious guardian, loyal and calm with its family, that needs an experienced, committed owner.",
   "popularity": 18,
-  "lastUpdated": "2026-05-03 01:07:05.487",
+  "lastUpdated": "2026-11-03 07:51:50.269",
   "funFacts": [
-   "Cane Corsos are descendants of Roman war dogs called Canis Pugnax.",
-   "The Cane Corso originated in Italy, where the breed was developed for purposes that still influence their behavior today.",
-   "As a Working Group breed, the Cane Corso shares structural and temperamental traits with other breeds developed for the same kind of work.",
-   "A typical Cane Corso lifespan is 9-12 years, meaning families should plan for that full commitment when bringing one home."
+   "'Cane Corso' is often translated as 'guardian dog', possibly from the Latin 'cohors', meaning guardian or enclosure.",
+   "The breed nearly vanished in the mid-20th century before Italian enthusiasts revived it.",
+   "Cane Corsos were used to hunt wild boar in southern Italy.",
+   "The AKC recognized the Cane Corso in 2010."
   ],
-  "commonMisconceptions": "Working breeds are often mistaken for guard-only dogs or \"tough\" breeds suited to anyone strong. In reality they're sensitive, deeply bonded animals that suffer in homes that treat them as security equipment instead of family. A daily walk around the block is not \"exercise\" for a high-energy breed like the Cane Corso. They need real, sustained activity that engages both body and brain. One specific point worth correcting about the Cane Corso: their Italy origin and working-group heritage shape behavior in ways the casual observer often misses, including their reaction to hip dysplasia risks and the level of socialization they actually need from puppyhood onward.",
-  "idealOwnerProfile": "Experienced owners with significant space, strong physical handling ability, and the budget for outsized food and vet costs. People with active lifestyles, runners, hikers, dog-sport enthusiasts, who can deliver daily, vigorous exercise. First-time and seasoned owners alike, provided they commit to consistent positive-reinforcement training. Above all, the ideal Cane Corso owner understands the breed's working-group heritage from Italy and is prepared to honor those instincts with appropriate outlets, structure, and the kind of patient, daily commitment this breed deserves.",
-  "notGoodFor": "First-time owners, small living spaces, or anyone underestimating the cost of feeding, vet care, and joint support. Sedentary households or owners who travel frequently without a plan for daily, vigorous exercise. Anyone who plans to skip foundational obedience entirely, even an \"easy\" breed needs structure to thrive. Anyone unwilling to research the specific health risks common in the Cane Corso (notably hip dysplasia and  bloat) and budget for the preventive care that follows.",
-  "groomingGuide": "Weekly brushing. Coat care is centered on weekly brushing. Short coats are forgiving but still benefit from a weekly rubber-curry session for skin health. Their short coat sheds at a manageable level with consistent brushing. Trim nails every 3–4 weeks, check ears weekly for redness or odor, and brush teeth daily or use vet-approved dental chews.",
+  "commonMisconceptions": "That Cane Corsos are simply big, friendly dogs. They are serious guardians bred to protect, which requires management. Another misconception is that they are aggressive by nature; well-bred, well-socialized Corsos are stable and discerning.",
+  "idealOwnerProfile": "Experienced, confident owners who want a loyal guardian and will commit to lifelong training, socialization, and secure containment.",
+  "notGoodFor": "First-time owners, busy households with frequent visitors, renters with breed restrictions, homes with small children unless the owner is very experienced, and anyone who can't physically handle a 100-pound dog.",
+  "groomingGuide": "The short coat needs weekly brushing and sheds more in spring and fall. Trim nails regularly, clean ears, check eyelids for irritation, and brush teeth several times a week.",
   "faqs": [
    {
-    "answer": "The Cane Corso can work in the right family, but they are friendly with children when properly socialized. Households with very young or unsupervised children should look at a more universally child-tolerant breed. As with any breed, success depends on early socialization, supervised interactions, and teaching children how to respect the dog's space.",
-    "question": "Is the Cane Corso a good family dog?"
+    "question": "Are Cane Corsos good family dogs?",
+    "answer": "They can be loyal and affectionate with their own families, but they are serious guardians that need experienced handling, training, and careful management with children and visitors."
    },
    {
-    "answer": "Plan on 60+ minutes of meaningful daily activity, broken into multiple sessions if possible. Plan for daily, structured activity rather than relying on backyard time alone, under-exercised Cane Corsos commonly develop boredom-driven habits like chewing, digging, or excessive vocalization.",
-    "question": "How much exercise does a Cane Corso need?"
+    "question": "Are Cane Corsos aggressive?",
+    "answer": "They are protective by nature. With good breeding, early socialization, and training they are stable and discerning. Poorly raised Corsos can be dangerous because of their size and power."
    },
    {
-    "answer": "Cane Corsos are trainable with patience, consistency, and motivating rewards. Positive-reinforcement methods, food, play, and genuine praise, work far better than corrections. Start training in puppyhood and keep sessions short and frequent.",
-    "question": "Are Cane Corsos easy to train?"
+    "question": "How much exercise does a Cane Corso need?",
+    "answer": "About an hour or more of daily exercise plus training and mental work."
    },
    {
-    "answer": "Their short coat sheds at a manageable level with consistent brushing.",
-    "question": "How much do Cane Corsos shed?"
+    "question": "Are Cane Corsos good for first-time owners?",
+    "answer": "Generally not. Their size, strength, and guarding instincts make them better suited to experienced owners."
    },
    {
-    "answer": "The typical Cane Corso lifespan is 9-12 years. Their lifespan is typical for a dog this size, expect a full decade or so of companionship with attentive care. Common breed-specific health concerns to discuss with your vet include: hip dysplasia, bloat, eye problems.",
-    "question": "What is the lifespan of a Cane Corso?"
+    "question": "How big do Cane Corsos get?",
+    "answer": "Males are typically 25 to 27.5 inches tall at the shoulder and females 23.5 to 26 inches, with weight in proportion, often around 90 to 120 pounds."
    },
    {
-    "answer": "They are not well-suited to apartment life. They thrive with a securely fenced yard and ready access to outdoor space.",
-    "question": "Can Cane Corsos live in an apartment?"
-   },
-   {
-    "answer": "The Cane Corso is cautious around other dogs and benefits from careful introductions. Early, ongoing socialization between 8 and 16 weeks is critical, and adult introductions should always be on neutral ground with both dogs on loose leashes.",
-    "question": "Is the Cane Corso good with other dogs?"
+    "question": "Do Cane Corsos shed?",
+    "answer": "Yes, moderately. Their short double coat sheds year-round and more heavily in spring and fall."
    }
-  ]
+  ],
+  "edited": true
  },
  {
   "name": "Great Dane",
   "slug": "great-dane",
   "breedGroup": "Working",
   "originCountry": "Germany",
-  "yearRecognized": null,
+  "yearRecognized": 1887,
   "sizeCategory": "Giant",
   "weightRange": "110-175 lbs",
   "heightRange": "28-32 in",
@@ -1367,63 +1357,60 @@
   "exerciseNeeds": "45-60 minutes daily moderate exercise",
   "groomingFrequency": "Weekly brushing",
   "commonHealthIssues": "Bloat, hip dysplasia, heart disease",
-  "dietNotes": "Feed a high-quality, AAFCO-certified diet appropriate for the Great Dane's life stage and giant size. Because their energy level is moderate, it's easy for this breed to become overweight; measure portions and skip the constant treat-feeding. Large and giant breeds need a \"large breed\" puppy formula until growth completes (12–24 months) to support proper joint development.",
-  "trainingNotes": "Great Danes are eager to learn and quick to pick up new commands. Positive-reinforcement methods, food, play, and genuine praise, work far better than corrections; this breed in particular shuts down or grows resistant under harsh handling. Their moderate energy means short, focused 10–15 minute training sessions yield the best results. Early, frequent, and varied socialization between 8 and 16 weeks is critical, especially given their naturally social disposition toward strangers. Their generally measured vocalizations make impulse-control training easier than with more vocal breeds.",
-  "history": "The Great Dane's lineage traces back to Germany, where the breed was developed for pulling, guarding, hauling, and protecting human livelihood. Centuries of selective work shaped the temperament, structure, and instincts you see in the breed today, and many of those original drives remain, even in dogs that will spend their lives as family companions.\n\nAs a member of the Working Group, bred for guarding, pulling carts, and other demanding jobs that require physical and mental strength, the Great Dane carries hallmark traits of the group, visible in everything from how they move to how they read situations. Today the Great Dane ranks among the most popular breeds in America, a reflection of how well their working heritage has translated into modern family life.\n\nAn often-cited piece of breed history: Great Danes hold the record for the tallest dog ever, Zeus stood 44 inches at the shoulder.",
-  "personalityDeepDive": "Owners who live with the Great Dane consistently describe them as friendly, patient and dependable, a personality shaped by generations of purposeful breeding. In daily life this shows up as balanced energy, playful when invited, calm when at rest, paired with a temperament that is eager to learn and quick to pick up new commands.\n\nWith family they are excellent with children, generally great with other dogs, and generally great with new people; they bark occasionally, usually with reason. They generally prefer a home with some outdoor space, though they can manage in larger apartments with committed daily exercise.\n\nTheir giant stature reshapes daily life, from the size of their bed and crate to the cost of vet care and food. Above all, the Great Dane thrives when their physical and mental needs are taken seriously, under-stimulated, even the gentlest individuals can develop frustrating habits, while a well-exercised, mentally engaged Great Dane is genuinely one of the best companions you can ask for.",
-  "livingWith": "Plan on 30–60 minutes of daily activity, enough to take the edge off and keep them content. They generally prefer a home with some outdoor space, though they can manage in larger apartments with committed daily exercise.\n\nWithin the household, expect a dog who is excellent with kids when both are taught to respect each other and friendly with cats when properly socialized. On the noise front, they bark occasionally, usually with reason, important to factor in if you have close neighbors or work-from-home calls.\n\nTheir relatively short lifespan means owners should commit to making every year count and budget for early-onset health monitoring.",
-  "healthCareGuide": "The Great Dane has an average lifespan of 7-10 years, which is their relatively short lifespan means owners should commit to making every year count and budget for early-onset health monitoring.\n\nBreed-specific concerns to discuss with your vet include: bloat, hip dysplasia, heart disease. Reputable breeders screen breeding stock for these conditions, so always ask to see health clearances before committing to a puppy.\n\nBeyond breed-specific issues, follow the standards of good preventative care: a core vaccine schedule, year-round parasite prevention, regular dental cleaning, and an annual senior workup once your dog passes the midpoint of their expected lifespan. Large and giant breeds are particularly susceptible to bloat (gastric torsion); learn the symptoms, feed two smaller meals per day instead of one large meal, and consider a prophylactic gastropexy if your vet recommends it.",
+  "dietNotes": "Feed a giant-breed puppy formula to support slow, steady growth, and avoid calcium supplements unless your vet recommends them. Divide food into two or three meals a day and avoid vigorous exercise around mealtimes to reduce bloat risk. Keep adults lean.",
+  "trainingNotes": "Start training early, while the puppy is still small enough to manage. Focus on leash manners, polite greetings, and a solid 'off'. Use positive, consistent methods; Danes are sensitive and shut down with harsh handling. Socialize widely to build confidence.",
+  "history": "Despite the name, the Great Dane was developed in Germany, where it is called the Deutsche Dogge. Its ancestors were powerful boarhounds kept by German nobility to hunt wild boar and guard estates. Over time, breeders refined the dog into a more elegant estate guardian and companion.\n\nGermany declared the Great Dane its national dog in 1876. The breed came to the US in the late 1800s, and the AKC recognized it in 1887.",
+  "personalityDeepDive": "Great Danes are known as gentle giants. Most are affectionate, easygoing, and want to lean on their people or sit in laps they don't fit in. They are typically friendly with visitors once introduced, and usually good with children and other pets.\n\nThey can be sensitive and respond best to calm, positive training. Their size makes good manners essential: a jumping Dane can easily knock people over.\n\nAdult Danes are usually calm indoors, though puppies and adolescents are clumsy and energetic. They are good watchdogs thanks to their deep bark and imposing size, but rarely aggressive.",
+  "livingWith": "Great Danes need space to move around, a big car, and a big bed. Despite their size, many adapt to apartments if they get daily walks, but stairs and tight spaces can be a challenge. Their tails can clear coffee tables.\n\nPuppies grow fast and should not be over-exercised; avoid forced running and repetitive jumping until growth plates close. Expect drool, especially after drinking. Costs for food, medication, and equipment are higher than for most breeds.",
+  "healthCareGuide": "Bloat (gastric dilatation-volvulus) is a leading cause of death in Great Danes. Learn the signs (swollen belly, retching without vomiting, restlessness) and talk to your vet about a preventive gastropexy, often done during spay or neuter.\n\nAsk breeders for OFA hip results, a cardiac exam, eye exam, and thyroid results. Dilated cardiomyopathy, wobbler syndrome, and osteosarcoma are seen in the breed. Great Danes have a relatively short lifespan, typically 7 to 10 years.",
   "funFact": "Great Danes hold the record for the tallest dog ever, Zeus stood 44 inches at the shoulder.",
-  "famousQuote": "\"Every Great Dane owner knows the joy of this breed's unique personality.\"",
+  "famousQuote": "A gentle giant: affectionate, calm, and surprisingly sensitive, with a short lifespan and real giant-breed health needs.",
   "popularity": 19,
-  "lastUpdated": "2026-05-03 01:07:05.487",
+  "lastUpdated": "2026-11-03 07:51:50.269",
   "funFacts": [
-   "Great Danes hold the record for the tallest dog ever, Zeus stood 44 inches at the shoulder.",
-   "The Great Dane originated in Germany, where the breed was developed for purposes that still influence their behavior today.",
-   "As a Working Group breed, the Great Dane shares structural and temperamental traits with other breeds developed for the same kind of work.",
-   "A typical Great Dane lifespan is 7-10 years, meaning families should plan for that full commitment when bringing one home."
+   "Germany declared the Great Dane its national dog in 1876.",
+   "Great Danes have repeatedly held the Guinness World Record for the tallest dog.",
+   "Scooby-Doo and Marmaduke are both Great Danes.",
+   "In Germany the breed is called the Deutsche Dogge, meaning German mastiff."
   ],
-  "commonMisconceptions": "Working breeds are often mistaken for guard-only dogs or \"tough\" breeds suited to anyone strong. In reality they're sensitive, deeply bonded animals that suffer in homes that treat them as security equipment instead of family. Don't assume a \"moderate energy\" label like the Great Dane's means a couch-potato dog, moderate-energy breeds still need consistent daily activity to stay balanced and prevent boredom-driven habits. One specific point worth correcting about the Great Dane: their Germany origin and working-group heritage shape behavior in ways the casual observer often misses, including their reaction to bloat risks and the level of socialization they actually need from puppyhood onward.",
-  "idealOwnerProfile": "Experienced owners with significant space, strong physical handling ability, and the budget for outsized food and vet costs. Owners who want a steady companion without committing to high-octane daily workouts. First-time and seasoned owners alike, provided they commit to consistent positive-reinforcement training. Families with respectful children are usually a great fit. Above all, the ideal Great Dane owner understands the breed's working-group heritage from Germany and is prepared to honor those instincts with appropriate outlets, structure, and the kind of patient, daily commitment this breed deserves.",
-  "notGoodFor": "First-time owners, small living spaces, or anyone underestimating the cost of feeding, vet care, and joint support. Owners at the extremes, people who want a true couch potato or a tireless endurance athlete should look at breeds outside the moderate-energy range. Anyone who plans to skip foundational obedience entirely, even an \"easy\" breed needs structure to thrive. Anyone unwilling to research the specific health risks common in the Great Dane (notably bloat and  hip dysplasia) and budget for the preventive care that follows.",
-  "groomingGuide": "Weekly brushing. Coat care is centered on weekly brushing. Short coats are forgiving but still benefit from a weekly rubber-curry session for skin health. Their short coat sheds at a manageable level with consistent brushing. Trim nails every 3–4 weeks, check ears weekly for redness or odor, and brush teeth daily or use vet-approved dental chews.",
+  "commonMisconceptions": "That giant dogs need huge amounts of exercise. Adult Danes need moderate daily exercise and are often couch potatoes. Another misconception is that more food means a bigger, healthier dog; overfeeding puppies can cause bone and joint problems.",
+  "idealOwnerProfile": "People with space and budget for a giant dog who want a gentle, affectionate companion and can manage training, health care, and a shorter lifespan.",
+  "notGoodFor": "Small homes with lots of stairs, tight budgets, owners who can't handle a very large dog, and people who want a dog for jogging.",
+  "groomingGuide": "The short coat needs a weekly brush and sheds moderately. Wipe drool as needed, clean ears, trim nails regularly (long nails affect a giant dog's posture), and brush teeth several times a week.",
   "faqs": [
    {
-    "answer": "Yes, the Great Dane is generally an excellent family dog. With children they are excellent with children, and they bark occasionally, usually with reason. As with any breed, success depends on early socialization, supervised interactions, and teaching children how to respect the dog's space.",
-    "question": "Is the Great Dane a good family dog?"
+    "question": "How long do Great Danes live?",
+    "answer": "Typically 7 to 10 years, shorter than most breeds. Good care, a lean body, and attention to bloat and heart health help."
    },
    {
-    "answer": "Plan on 30–60 minutes of daily activity, enough to take the edge off and keep them content. Plan for daily, structured activity rather than relying on backyard time alone, under-exercised Great Danes commonly develop boredom-driven habits like chewing, digging, or excessive vocalization.",
-    "question": "How much exercise does a Great Dane need?"
+    "question": "Are Great Danes good family dogs?",
+    "answer": "Yes. They are usually gentle and patient, but their size means supervision with small children and training to avoid knocking people over."
    },
    {
-    "answer": "Great Danes are eager to learn and quick to pick up new commands. Positive-reinforcement methods, food, play, and genuine praise, work far better than corrections. Start training in puppyhood and keep sessions short and frequent.",
-    "question": "Are Great Danes easy to train?"
+    "question": "How much exercise does a Great Dane need?",
+    "answer": "About 45 to 60 minutes of moderate exercise a day for adults. Puppies should avoid forced running and repetitive jumping while they grow."
    },
    {
-    "answer": "Their short coat sheds at a manageable level with consistent brushing.",
-    "question": "How much do Great Danes shed?"
+    "question": "Can Great Danes live in apartments?",
+    "answer": "Some do well if they get daily walks, but they need room to move and stretch out. Stairs and elevators can be challenging."
    },
    {
-    "answer": "The typical Great Dane lifespan is 7-10 years. Their relatively short lifespan means owners should commit to making every year count and budget for early-onset health monitoring. Common breed-specific health concerns to discuss with your vet include: bloat, hip dysplasia, heart disease.",
-    "question": "What is the lifespan of a Great Dane?"
+    "question": "What is bloat in Great Danes?",
+    "answer": "Bloat is when the stomach fills with gas and may twist. It is a life-threatening emergency. Signs include a swollen belly, unproductive retching, and restlessness."
    },
    {
-    "answer": "They generally prefer a home with some outdoor space, though they can manage in larger apartments with committed daily exercise.",
-    "question": "Can Great Danes live in an apartment?"
-   },
-   {
-    "answer": "The Great Dane is generally great with other dogs. Early, ongoing socialization between 8 and 16 weeks is critical, and adult introductions should always be on neutral ground with both dogs on loose leashes.",
-    "question": "Is the Great Dane good with other dogs?"
+    "question": "How big do Great Danes get?",
+    "answer": "Males are typically 30 to 32 inches tall and 140 to 175 pounds; females 28 to 30 inches and 110 to 140 pounds."
    }
-  ]
+  ],
+  "edited": true
  },
  {
   "name": "Shih Tzu",
   "slug": "shih-tzu",
   "breedGroup": "Toy",
   "originCountry": "China",
-  "yearRecognized": null,
+  "yearRecognized": 1969,
   "sizeCategory": "Small",
   "weightRange": "9-16 lbs",
   "heightRange": "9-10.5 in",
@@ -1444,57 +1431,53 @@
   "exerciseNeeds": "Short daily walks",
   "groomingFrequency": "Daily brushing for long coats, regular grooming",
   "commonHealthIssues": "Brachycephalic syndrome, patellar luxation, eye issues",
-  "dietNotes": "Feed a high-quality, AAFCO-certified diet appropriate for the Shih Tzu's life stage and small size. Because their energy level is moderate, it's easy for this breed to become overweight; measure portions and skip the constant treat-feeding. Small breeds can be prone to hypoglycemia as puppies, multiple smaller meals per day during the first six months helps prevent it.",
-  "trainingNotes": "Shih Tzus are trainable with patience, consistency, and motivating rewards. Positive-reinforcement methods, food, play, and genuine praise, work far better than corrections; this breed in particular shuts down or grows resistant under harsh handling. Their moderate energy means short, focused 10–15 minute training sessions yield the best results. Early, frequent, and varied socialization between 8 and 16 weeks is critical, especially given their naturally social disposition toward strangers. Their generally measured vocalizations make impulse-control training easier than with more vocal breeds.",
-  "history": "The Shih Tzu's lineage traces back to China, where the breed was developed for serving as devoted companion animals to royalty, merchants, and city dwellers alike. Centuries of selective work shaped the temperament, structure, and instincts you see in the breed today, and many of those original drives remain, even in dogs that will spend their lives as family companions.\n\nAs a member of the Toy Group, bred specifically as devoted human companions and lap dogs, the Shih Tzu carries hallmark traits of the group, visible in everything from how they move to how they read situations. Today the Shih Tzu ranks among the most popular breeds in America, a reflection of how well their working heritage has translated into modern family life.\n\nAn often-cited piece of breed history: Shih Tzus were bred as palace pets for Chinese emperors and were hidden from the outside world for centuries.",
-  "personalityDeepDive": "Owners who live with the Shih Tzu consistently describe them as affectionate, playful and outgoing, a personality shaped by generations of purposeful breeding. In daily life this shows up as balanced energy, playful when invited, calm when at rest, paired with a temperament that is trainable with patience, consistency, and motivating rewards.\n\nWith family they are generally great with children, generally great with other dogs, and excellent with new people; they bark occasionally, usually with reason. They can adapt to apartment living when their daily activity needs are met, but a tired dog is the real prerequisite, not square footage.\n\nTheir compact size makes them easy to transport and accommodate, though it also means they can be fragile around very young children or large, rough-playing dogs. Above all, the Shih Tzu thrives when their physical and mental needs are taken seriously, under-stimulated, even the gentlest individuals can develop frustrating habits, while a well-exercised, mentally engaged Shih Tzu is genuinely one of the best companions you can ask for.",
-  "livingWith": "Plan on 30–60 minutes of daily activity, enough to take the edge off and keep them content. They can adapt to apartment living when their daily activity needs are met, but a tired dog is the real prerequisite, not square footage.\n\nWithin the household, expect a dog who is generally great with kids and generally great with cats. On the noise front, they bark occasionally, usually with reason, important to factor in if you have close neighbors or work-from-home calls.\n\nTheir lifespan is typical for a dog this size, expect a full decade or so of companionship with attentive care.",
-  "healthCareGuide": "The Shih Tzu has an average lifespan of 10-18 years, which is their lifespan is typical for a dog this size, expect a full decade or so of companionship with attentive care.\n\nBreed-specific concerns to discuss with your vet include: brachycephalic syndrome, patellar luxation, eye issues. Reputable breeders screen breeding stock for these conditions, so always ask to see health clearances before committing to a puppy.\n\nBeyond breed-specific issues, follow the standards of good preventative care: a core vaccine schedule, year-round parasite prevention, regular dental cleaning, and an annual senior workup once your dog passes the midpoint of their expected lifespan. Small breeds are particularly prone to dental disease; daily brushing or a vet-approved dental routine is one of the highest-impact things you can do for their long-term health.",
+  "dietNotes": "Feed a quality small-breed diet in measured portions; Shih Tzus can gain weight easily. Some prefer smaller kibble shapes that are easier for flat-faced dogs to pick up. Dental chews and regular brushing help prevent dental disease.",
+  "trainingNotes": "Shih Tzus respond best to gentle, positive training with food rewards. Keep sessions short and fun. Be patient with house training; a crate and consistent schedule help. Socialize them early so they are confident and friendly.",
+  "history": "The Shih Tzu was developed as a palace companion in imperial China, likely from small dogs gifted by Tibetan lamas and crossed with breeds such as the Pekingese. The name means 'lion' in Chinese, and the dogs were prized for resembling the lions of Buddhist tradition.\n\nThe breed nearly disappeared in China after the fall of the imperial court and later the revolution of 1949. The modern Shih Tzu descends from a small number of dogs brought to England and Europe in the 1930s and earlier, often said to number just fourteen. The AKC recognized the breed in 1969.",
+  "personalityDeepDive": "Shih Tzus were bred purely as companions, and it shows. They are affectionate, friendly, and happiest in their people's company, whether on a lap or following you around.\n\nThey tend to be outgoing with visitors and usually get along with other dogs and pets. They can have a stubborn streak and are not always eager to obey, but they are playful and enjoy short games and walks.\n\nShih Tzus adapt well to many living situations, from apartments to houses, and from active families to quiet seniors, as long as they get attention and care.",
+  "livingWith": "Shih Tzus are well suited to apartments and quiet homes. They need short walks and indoor play. Their flat faces make them sensitive to heat, so exercise in cooler parts of the day.\n\nTheir coat needs regular care, and many owners choose a short puppy cut. House training can be slow, so be consistent. They can be good with gentle children but are small enough to be injured by rough play.",
+  "healthCareGuide": "Shih Tzus are a brachycephalic breed and can have breathing problems and heat intolerance. Their prominent eyes are prone to injuries, corneal ulcers, and dry eye; see a vet quickly for squinting or redness.\n\nOther common issues include luxating kneecaps, intervertebral disc disease, dental disease, and ear infections. Ask breeders about eye exams, patellar evaluations, and kidney health; renal dysplasia occurs in the breed.",
   "funFact": "Shih Tzus were bred as palace pets for Chinese emperors and were hidden from the outside world for centuries.",
-  "famousQuote": "\"Every Shih Tzu owner knows the joy of this breed's unique personality.\"",
+  "famousQuote": "A cheerful 'little lion dog' bred purely as a companion: affectionate, adaptable, and happiest on your lap.",
   "popularity": 20,
-  "lastUpdated": "2026-05-03 01:07:05.487",
+  "lastUpdated": "2026-11-03 07:51:50.269",
   "funFacts": [
-   "Shih Tzus were bred as palace pets for Chinese emperors and were hidden from the outside world for centuries.",
-   "The Shih Tzu originated in China, where the breed was developed for purposes that still influence their behavior today.",
-   "As a Toy Group breed, the Shih Tzu shares structural and temperamental traits with other breeds developed for the same kind of work.",
-   "The Shih Tzu is considered one of the lower-shedding breeds, which makes them a more workable choice for some allergy sufferers, though no dog is truly hypoallergenic.",
-   "A typical Shih Tzu lifespan is 10-18 years, meaning families should plan for that full commitment when bringing one home."
+   "Shih Tzu means 'lion' in Chinese; the breed is often called the 'little lion dog'.",
+   "All modern Shih Tzus are said to descend from about fourteen dogs used to rebuild the breed in the 20th century.",
+   "Shih Tzus were bred purely as companions in the Chinese imperial palace.",
+   "The breed's hair-like coat comes in almost every color and pattern."
   ],
-  "commonMisconceptions": "Toy breeds are not fragile decorations. Treating them like accessories produces neurotic, anxious, snappy adults. They are real dogs and need socialization, training, and exercise like any other breed. Don't assume a \"moderate energy\" label like the Shih Tzu's means a couch-potato dog, moderate-energy breeds still need consistent daily activity to stay balanced and prevent boredom-driven habits. One specific point worth correcting about the Shih Tzu: their China origin and toy-group heritage shape behavior in ways the casual observer often misses, including their reaction to brachycephalic syndrome risks and the level of socialization they actually need from puppyhood onward.",
-  "idealOwnerProfile": "Apartment dwellers, seniors, and families with older (gentle) children. Owners who want a steady companion without committing to high-octane daily workouts. First-time and seasoned owners alike, provided they commit to consistent positive-reinforcement training. Families with respectful children are usually a great fit. Adaptable enough for apartment living when daily exercise is non-negotiable. Above all, the ideal Shih Tzu owner understands the breed's toy-group heritage from China and is prepared to honor those instincts with appropriate outlets, structure, and the kind of patient, daily commitment this breed deserves.",
-  "notGoodFor": "Households where rough-and-tumble large dogs or very active toddlers might injure them. Owners at the extremes, people who want a true couch potato or a tireless endurance athlete should look at breeds outside the moderate-energy range. Anyone who plans to skip foundational obedience entirely, even an \"easy\" breed needs structure to thrive. Anyone unwilling to research the specific health risks common in the Shih Tzu (notably brachycephalic syndrome and  patellar luxation) and budget for the preventive care that follows.",
-  "groomingGuide": "Daily brushing for long coats, regular grooming. Coat care is centered on daily brushing for long coats, regular grooming. Long coats mat quickly without consistent attention; line-brushing weekly prevents painful tangles. Their long coat sheds very little, which suits owners who prefer a tidier home, though \"low-shedding\" never means \"no maintenance.\" Trim nails every 3–4 weeks, check ears weekly for redness or odor, and brush teeth daily or use vet-approved dental chews.",
+  "commonMisconceptions": "That a low-shedding coat means low maintenance. The coat grows continuously and mats without regular care. Another misconception is that Shih Tzus are fragile toy dogs; they are actually sturdy for their size.",
+  "idealOwnerProfile": "Apartment dwellers, seniors, and families with gentle children who want an affectionate, adaptable companion and are prepared for grooming and eye care.",
+  "notGoodFor": "Owners who want an athletic jogging partner, hot climates without air conditioning, and people unwilling to keep up with grooming.",
+  "groomingGuide": "A long coat needs daily brushing and regular baths; most pet owners choose a puppy cut every four to eight weeks. Keep hair out of the eyes with a topknot or trim. Clean around the eyes daily, check ears, trim nails, and brush teeth regularly.",
   "faqs": [
    {
-    "answer": "Yes, the Shih Tzu is generally an excellent family dog. With children they are generally great with children, and they bark occasionally, usually with reason. As with any breed, success depends on early socialization, supervised interactions, and teaching children how to respect the dog's space.",
-    "question": "Is the Shih Tzu a good family dog?"
+    "question": "Do Shih Tzus shed?",
+    "answer": "Very little. Their hair-like coat sheds minimally but needs regular brushing and grooming to prevent mats."
    },
    {
-    "answer": "Plan on 30–60 minutes of daily activity, enough to take the edge off and keep them content. Plan for daily, structured activity rather than relying on backyard time alone, under-exercised Shih Tzus commonly develop boredom-driven habits like chewing, digging, or excessive vocalization.",
-    "question": "How much exercise does a Shih Tzu need?"
+    "question": "Are Shih Tzus good with kids?",
+    "answer": "Yes, with gentle children. They are affectionate and playful but small enough to be hurt by rough play."
    },
    {
-    "answer": "Shih Tzus are trainable with patience, consistency, and motivating rewards. Positive-reinforcement methods, food, play, and genuine praise, work far better than corrections. Start training in puppyhood and keep sessions short and frequent.",
-    "question": "Are Shih Tzus easy to train?"
+    "question": "How often do Shih Tzus need grooming?",
+    "answer": "Every four to eight weeks for a trim, plus brushing several times a week and daily cleaning around the eyes."
    },
    {
-    "answer": "Their long coat sheds very little, which suits owners who prefer a tidier home, though \"low-shedding\" never means \"no maintenance.\" The Shih Tzu is considered a lower-shedding breed, which can make them a more workable choice for some allergy sufferers, though no dog is truly hypoallergenic.",
-    "question": "How much do Shih Tzus shed?"
+    "question": "Are Shih Tzus hard to house-train?",
+    "answer": "They can take longer than some breeds. A consistent schedule, crate training, and lots of praise help."
    },
    {
-    "answer": "The typical Shih Tzu lifespan is 10-18 years. Their lifespan is typical for a dog this size, expect a full decade or so of companionship with attentive care. Common breed-specific health concerns to discuss with your vet include: brachycephalic syndrome, patellar luxation, eye issues.",
-    "question": "What is the lifespan of a Shih Tzu?"
+    "question": "Do Shih Tzus have breathing problems?",
+    "answer": "Their short muzzles can cause breathing issues and heat sensitivity. Keep them cool, lean, and see a vet if breathing is noisy at rest."
    },
    {
-    "answer": "They can adapt to apartment living when their daily activity needs are met, but a tired dog is the real prerequisite, not square footage.",
-    "question": "Can Shih Tzus live in an apartment?"
-   },
-   {
-    "answer": "The Shih Tzu is generally great with other dogs. Early, ongoing socialization between 8 and 16 weeks is critical, and adult introductions should always be on neutral ground with both dogs on loose leashes.",
-    "question": "Is the Shih Tzu good with other dogs?"
+    "question": "How long do Shih Tzus live?",
+    "answer": "Shih Tzus often live 10 to 16 years, and some longer."
    }
-  ]
+  ],
+  "edited": true
  },
  {
   "name": "Siberian Husky",
