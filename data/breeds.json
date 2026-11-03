@@ -374,7 +374,7 @@
   "slug": "bulldog",
   "breedGroup": "Non-Sporting",
   "originCountry": "England",
-  "yearRecognized": null,
+  "yearRecognized": 1886,
   "sizeCategory": "Medium",
   "weightRange": "40-50 lbs",
   "heightRange": "14-15 in",
@@ -395,63 +395,60 @@
   "exerciseNeeds": "Short daily walks, avoid overheating",
   "groomingFrequency": "Weekly brushing, daily facial fold cleaning",
   "commonHealthIssues": "Brachycephalic syndrome, hip dysplasia, skin infections",
-  "dietNotes": "Feed a high-quality, AAFCO-certified diet appropriate for the Bulldog's life stage and medium size. Because their energy level is low, it's easy for this breed to become overweight; measure portions and skip the constant treat-feeding. Small breeds can be prone to hypoglycemia as puppies, multiple smaller meals per day during the first six months helps prevent it.",
-  "trainingNotes": "Bulldogs are trainable with patience, consistency, and motivating rewards. Positive-reinforcement methods, food, play, and genuine praise, work far better than corrections; this breed in particular shuts down or grows resistant under harsh handling. Their low energy means short, focused 10–15 minute training sessions yield the best results. Early, frequent, and varied socialization between 8 and 16 weeks is critical, especially given their naturally social disposition toward strangers. Their generally measured vocalizations make impulse-control training easier than with more vocal breeds.",
+  "dietNotes": "Bulldogs gain weight easily, and extra weight makes breathing and joint problems worse, so measure meals and limit treats. Many have food-related skin allergies; consistent, high-quality food and a vet-guided elimination trial work better than frequent switching. A wide, shallow bowl or slow feeder helps them eat with less air-gulping.",
+  "trainingNotes": "Bulldogs learn readily but are not always motivated to comply. Keep sessions short, use food rewards, and make training feel like their idea. Focus on a reliable 'come', walking on a loose leash in a harness, and calm greetings. Avoid long or intense training in warm weather. Early socialization helps their naturally easygoing temperament shine.",
   "history": "The Bulldog's name is a literal job description: a dog used in bull-baiting, the brutal English blood sport in which dogs were set on a tethered bull. After Britain banned bull-baiting in the Cruelty to Animals Act of 1835, the breed faced extinction, there was no market for an aggressive, athletic working bulldog without the sport.\n\nA small group of fanciers, led by Bill George of London, deliberately re-bred the dog as a companion: keeping the iconic appearance but selecting hard against aggression, drive, and athleticism. The Bulldog Club, founded in 1875, is the oldest single-breed club in the world. The modern Bulldog is the result of that 19th-century reinvention, a wholly different temperament wearing a familiar face.",
   "personalityDeepDive": "The modern Bulldog is one of the most temperamentally transformed breeds in history. Their ancestors were bred to seize and hold bulls by the nose in the blood sport of bull-baiting; the dog you see today, after 150 years of selection for companionship, is so different in temperament that it is barely the same animal. Modern Bulldogs are placid, affectionate, sometimes faintly comic, and generally devoted to their humans in a slow-moving, undramatic way.\n\nThey are not lazy in the cliché sense, they will rouse themselves for a walk, a meal, or a familiar visitor, but they have no interest in athleticism, repetition, or pointless effort. A Bulldog will figure out the minimum required to satisfy you and then do exactly that, watching you with mild patience. Many owners describe living with a Bulldog as 'cohabiting with a small philosopher.'\n\nWith children they are famously gentle and patient. With other pets they are usually easy, especially if raised together. Their stubbornness is real but not malicious, it is the stubbornness of a dog who simply does not see the urgency.",
-  "livingWith": "Short daily walks plus light play are usually enough; over-exertion can do more harm than good. They can adapt to apartment living when their daily activity needs are met, but a tired dog is the real prerequisite, not square footage.\n\nWithin the household, expect a dog who is excellent with kids when both are taught to respect each other and friendly with cats when properly socialized. On the noise front, they bark occasionally, usually with reason, important to factor in if you have close neighbors or work-from-home calls.\n\nTheir relatively short lifespan means owners should commit to making every year count and budget for early-onset health monitoring.",
-  "healthCareGuide": "The Bulldog has an average lifespan of 8-10 years, which is their relatively short lifespan means owners should commit to making every year count and budget for early-onset health monitoring.\n\nBreed-specific concerns to discuss with your vet include: brachycephalic syndrome, hip dysplasia, skin infections. Reputable breeders screen breeding stock for these conditions, so always ask to see health clearances before committing to a puppy.\n\nBeyond breed-specific issues, follow the standards of good preventative care: a core vaccine schedule, year-round parasite prevention, regular dental cleaning, and an annual senior workup once your dog passes the midpoint of their expected lifespan. Watch their weight closely, even a few extra pounds shortens lifespan and worsens any joint or cardiac issues.",
+  "livingWith": "Modern Bulldogs are calm, affectionate, and happy with short walks and long naps, which makes them well suited to apartments and quieter homes. They are generally gentle with children and patient with visitors, though some are stubborn about doing what you ask.\n\nThe big lifestyle limits are heat and water. Bulldogs overheat easily, so exercise happens in cool parts of the day and air conditioning is essential in warm weather. They cannot swim and sink quickly, so pools need a fence. Expect snoring, drool, and gas, and plan for daily care of the facial folds. Stairs and jumping can be hard on their joints.",
+  "healthCareGuide": "The Bulldog's shape brings well-documented health problems, so research breeders carefully. Brachycephalic airway syndrome causes noisy breathing, heat intolerance, and sometimes collapse; look for puppies with open nostrils and parents who breathe quietly at rest. Hip and elbow problems are common in the breed, so ask about OFA results, and ask about cardiac and tracheal evaluations too.\n\nSkin fold infections, allergies, cherry eye (a prolapsed tear gland), and entropion (inward-rolling eyelids) are frequent. Many Bulldogs need a C-section to give birth. Anesthesia carries extra risk, so choose a vet familiar with flat-faced breeds. Pet insurance taken out early is worth considering.",
   "funFact": "Bulldogs are the mascot of more universities than any other breed.",
-  "famousQuote": "\"Every Bulldog owner knows the joy of this breed's unique personality.\"",
+  "famousQuote": "A sweet-natured, laid-back couch companion with a famous face, a stubborn streak, and serious heat sensitivity.",
   "popularity": 6,
-  "lastUpdated": "2026-05-03 01:07:05.485",
+  "lastUpdated": "2026-11-03 07:47:45.584",
   "funFacts": [
-   "Bulldogs are the mascot of more universities than any other breed.",
-   "The Bulldog originated in England, where the breed was developed for purposes that still influence their behavior today.",
-   "As a Non-Sporting Group breed, the Bulldog shares structural and temperamental traits with other breeds developed for the same kind of work.",
-   "A typical Bulldog lifespan is 8-10 years, meaning families should plan for that full commitment when bringing one home."
+   "Handsome Dan, Yale's Bulldog mascot since 1889, is considered the first live college mascot in the United States.",
+   "The Bulldog Club, founded in England in 1875, is often called the oldest single-breed club in the world.",
+   "Winston Churchill was nicknamed 'the British Bulldog' for his determination.",
+   "The Bulldog is a longtime unofficial mascot of the US Marine Corps."
   ],
-  "commonMisconceptions": "Because the Non-Sporting Group is so diverse, generalizations about them rarely hold. Each breed in this group has its own purpose and needs, assuming one Non-Sporting breed is like another is a setup for surprise. Low energy doesn't mean zero exercise. Even calm breeds need consistent walks and mental stimulation to stay healthy and balanced. One specific point worth correcting about the Bulldog: their England origin and non-sporting-group heritage shape behavior in ways the casual observer often misses, including their reaction to brachycephalic syndrome risks and the level of socialization they actually need from puppyhood onward.",
-  "idealOwnerProfile": "Active individuals or families with moderate space. Owners who want a steady companion without committing to high-octane daily workouts. First-time and seasoned owners alike, provided they commit to consistent positive-reinforcement training. Families with respectful children are usually a great fit. Adaptable enough for apartment living when daily exercise is non-negotiable. Above all, the ideal Bulldog owner understands the breed's non-sporting-group heritage from England and is prepared to honor those instincts with appropriate outlets, structure, and the kind of patient, daily commitment this breed deserves.",
-  "notGoodFor": "Owners looking for a tiny lap dog or a giant guardian. Marathon trainers or anyone looking for a long-distance running partner. Anyone who plans to skip foundational obedience entirely, even an \"easy\" breed needs structure to thrive. Anyone unwilling to research the specific health risks common in the Bulldog (notably brachycephalic syndrome and  hip dysplasia) and budget for the preventive care that follows.",
-  "groomingGuide": "Weekly brushing, daily facial fold cleaning. Coat care is centered on weekly brushing, daily facial fold cleaning. Short coats are forgiving but still benefit from a weekly rubber-curry session for skin health. Their short coat sheds at a manageable level with consistent brushing. Trim nails every 3–4 weeks, check ears weekly for redness or odor, and brush teeth daily or use vet-approved dental chews.",
+  "commonMisconceptions": "That a Bulldog is a tough, low-maintenance dog because it looks sturdy. In reality the breed needs daily fold care, careful heat management, and often surgery or specialist care. Another myth is that heavy snorting is normal; noisy breathing at rest is a sign of airway restriction worth discussing with a vet.",
+  "idealOwnerProfile": "Relaxed households, apartment dwellers, and families who want a gentle, low-energy companion and are prepared for regular skin care and higher-than-average vet costs.",
+  "notGoodFor": "Hot or humid climates without air conditioning, active owners wanting a jogging or hiking partner, homes with unfenced water, and anyone on a tight budget for vet care.",
+  "groomingGuide": "Brush the short coat weekly. Clean and thoroughly dry the facial wrinkles daily, and check the tail pocket under a screw tail for moisture and redness. Clean ears weekly, trim nails regularly (many Bulldogs don't wear them down on walks), and brush teeth several times a week.",
   "faqs": [
    {
-    "answer": "Yes, the Bulldog is generally an excellent family dog. With children they are excellent with children, and they bark occasionally, usually with reason. As with any breed, success depends on early socialization, supervised interactions, and teaching children how to respect the dog's space.",
-    "question": "Is the Bulldog a good family dog?"
+    "question": "Are Bulldogs good family dogs?",
+    "answer": "Yes. Bulldogs are usually gentle, patient, and affectionate with children. They are not very active, so they suit families who want a mellow companion rather than a playmate for long outdoor adventures."
    },
    {
-    "answer": "Short daily walks plus light play are usually enough; over-exertion can do more harm than good. Plan for daily, structured activity rather than relying on backyard time alone, under-exercised Bulldogs commonly develop boredom-driven habits like chewing, digging, or excessive vocalization.",
-    "question": "How much exercise does a Bulldog need?"
+    "question": "Can Bulldogs swim?",
+    "answer": "No. Their heavy bodies and short legs make them sink. Fence off pools and always use a dog life jacket near water."
    },
    {
-    "answer": "Bulldogs are trainable with patience, consistency, and motivating rewards. Positive-reinforcement methods, food, play, and genuine praise, work far better than corrections. Start training in puppyhood and keep sessions short and frequent.",
-    "question": "Are Bulldogs easy to train?"
+    "question": "Why do Bulldogs breathe so loudly?",
+    "answer": "Their shortened skull often narrows the nostrils and airway, a condition called brachycephalic airway syndrome. Loud breathing, especially at rest, should be checked by a vet; surgery can help some dogs breathe much more easily."
    },
    {
-    "answer": "Their short coat sheds at a manageable level with consistent brushing.",
-    "question": "How much do Bulldogs shed?"
+    "question": "How much exercise does a Bulldog need?",
+    "answer": "Short, gentle walks of 15 to 30 minutes a day plus indoor play are enough for most Bulldogs. Avoid exercise in heat and stop at the first sign of heavy breathing."
    },
    {
-    "answer": "The typical Bulldog lifespan is 8-10 years. Their relatively short lifespan means owners should commit to making every year count and budget for early-onset health monitoring. Common breed-specific health concerns to discuss with your vet include: brachycephalic syndrome, hip dysplasia, skin infections.",
-    "question": "What is the lifespan of a Bulldog?"
+    "question": "Do Bulldogs need special grooming?",
+    "answer": "Their coat is easy, but their wrinkles, tail pocket, and ears need regular cleaning and drying to prevent infections. Many owners do a quick wipe of the face every day."
    },
    {
-    "answer": "They can adapt to apartment living when their daily activity needs are met, but a tired dog is the real prerequisite, not square footage.",
-    "question": "Can Bulldogs live in an apartment?"
-   },
-   {
-    "answer": "The Bulldog is friendly with other dogs when properly socialized. Early, ongoing socialization between 8 and 16 weeks is critical, and adult introductions should always be on neutral ground with both dogs on loose leashes.",
-    "question": "Is the Bulldog good with other dogs?"
+    "question": "How long do Bulldogs live?",
+    "answer": "Most Bulldogs live about 8 to 10 years. Keeping them lean, cool, and under regular vet care gives them the best chance at a long, comfortable life."
    }
-  ]
+  ],
+  "edited": true
  },
  {
   "name": "Rottweiler",
   "slug": "rottweiler",
   "breedGroup": "Working",
   "originCountry": "Germany",
-  "yearRecognized": null,
+  "yearRecognized": 1931,
   "sizeCategory": "Large",
   "weightRange": "80-135 lbs",
   "heightRange": "22-27 in",
@@ -472,63 +469,60 @@
   "exerciseNeeds": "60+ minutes daily including mental stimulation",
   "groomingFrequency": "Weekly brushing",
   "commonHealthIssues": "Hip dysplasia, osteosarcoma, heart conditions",
-  "dietNotes": "Feed a high-quality, AAFCO-certified diet appropriate for the Rottweiler's life stage and large size. Active Rottweilers burn meaningful calories, match portions to their actual workload, not generic feeding-chart numbers. Large and giant breeds need a \"large breed\" puppy formula until growth completes (12–24 months) to support proper joint development.",
-  "trainingNotes": "Rottweilers are eager to learn and quick to pick up new commands. Positive-reinforcement methods, food, play, and genuine praise, work far better than corrections; this breed in particular shuts down or grows resistant under harsh handling. Because of their high energy, training sessions are most productive after exercise, not before, a tired Rottweiler learns faster than a fresh one. Early, frequent, and varied socialization between 8 and 16 weeks is critical, especially given their more reserved disposition toward strangers. Their generally measured vocalizations make impulse-control training easier than with more vocal breeds.",
-  "history": "Rottweilers descend from the Roman cattle-driving mastiffs that accompanied the legions across the Alps. When the Romans established a settlement at what is now Rottweil, in the German state of Baden-Württemberg, their drover dogs interbred with local stock. For more than a thousand years afterward, Rottweil's butchers used the dogs to drive cattle to market and pull carts of meat, and to guard the day's earnings on the trip home.\n\nThe rise of railways in the 1800s nearly ended the breed; cattle no longer needed driving. Police and military work in the early 20th century resurrected it. The Rottweiler was officially recognized by the German Kennel Club in 1901 and by the AKC in 1931.",
+  "dietNotes": "Feed a large-breed diet with measured portions, and use a large-breed puppy formula until growth finishes, which can take up to two years. Keeping a Rottweiler slim protects its hips, elbows, and knees. Split food into two meals a day to reduce bloat risk.",
+  "trainingNotes": "Rottweilers are intelligent and eager to work with a fair, consistent handler. Use reward-based training and clear rules; harsh methods can create conflict with a powerful dog. Socialize widely and early with people, dogs, and places so that natural protectiveness stays balanced. Group classes are valuable. Many Rotties excel in obedience, rally, tracking, herding, and carting.",
+  "history": "Rottweilers descend from the Roman cattle-driving mastiffs that accompanied the legions across the Alps. When the Romans established a settlement at what is now Rottweil, in the German state of Baden-Württemberg, their drover dogs interbred with local stock. For centuries afterward, Rottweil's butchers used the dogs to drive cattle to market and pull carts of meat, earning them the name Rottweiler Metzgerhund, the butcher's dog of Rottweil.\n\nThe rise of railways in the 1800s nearly ended the breed, since cattle no longer needed driving. Police and military work in the early 20th century revived it. A first breed standard was written in 1901, the German breed club ADRK was founded in 1921, and the AKC recognized the Rottweiler in 1931.",
   "personalityDeepDive": "Rottweilers are confident, deliberate, and confidently affectionate with their people in a way that often surprises owners expecting a one-dimensional guard dog. A well-raised Rottweiler is calm in the house, watchful at the door, playful with familiar children, and distinctly unimpressed by everyday novelty, they reserve reaction for situations that genuinely warrant it.\n\nThis is a breed that thinks. Rottweilers do not respond well to repetition for its own sake, and harsh corrections from someone they have not learned to trust will shut them down or, in poorly socialized lines, escalate. They want a fair handler and a clear job, and given both they are among the most rewarding breeds to train.\n\nWith strangers they are reserved by default. That reserve is not the same as aggression, but it does mean a Rottweiler needs deliberate, ongoing socialization from puppyhood through their second year. They are physically powerful enough that mistakes carry consequences, which is why responsible Rottweiler ownership is genuinely a higher bar than average dog ownership.",
-  "livingWith": "Plan on 60+ minutes of meaningful daily activity, broken into multiple sessions if possible. They are not well-suited to apartment life. They thrive with a securely fenced yard and ready access to outdoor space.\n\nWithin the household, expect a dog who is generally great with kids and cautious around cats and benefits from careful introductions. On the noise front, they bark occasionally, usually with reason, important to factor in if you have close neighbors or work-from-home calls.\n\nTheir lifespan is typical for a dog this size, expect a full decade or so of companionship with attentive care.",
-  "healthCareGuide": "The Rottweiler has an average lifespan of 9-10 years, which is their lifespan is typical for a dog this size, expect a full decade or so of companionship with attentive care.\n\nBreed-specific concerns to discuss with your vet include: hip dysplasia, osteosarcoma, heart conditions. Reputable breeders screen breeding stock for these conditions, so always ask to see health clearances before committing to a puppy.\n\nBeyond breed-specific issues, follow the standards of good preventative care: a core vaccine schedule, year-round parasite prevention, regular dental cleaning, and an annual senior workup once your dog passes the midpoint of their expected lifespan. Large and giant breeds are particularly susceptible to bloat (gastric torsion); learn the symptoms, feed two smaller meals per day instead of one large meal, and consider a prophylactic gastropexy if your vet recommends it.",
+  "livingWith": "Rottweilers are loyal, affectionate with their families, and naturally watchful with strangers. They often lean against their people and follow them around the house. Their size and strength mean everyday manners, such as not jumping, walking nicely, and settling when visitors arrive, are essential.\n\nThey need daily exercise and a job for their minds, such as obedience, tracking, or carting. A securely fenced yard is important. Be aware that some landlords, homeowners' associations, and insurers restrict the breed, so check before you commit. Rotties tend to be quiet indoors and are not big barkers, but they will alert you to anything unusual.",
+  "healthCareGuide": "Ask for OFA hip and elbow results, a cardiac exam (subvalvular aortic stenosis occurs in the breed), and an eye exam on both parents, plus a DNA test for juvenile laryngeal paralysis and polyneuropathy (JLPP). Osteosarcoma (bone cancer) is more common in Rottweilers than most breeds; lameness that does not improve, especially in a middle-aged dog, should be checked promptly.\n\nCruciate ligament tears are common in big, active dogs, and keeping your Rottweiler lean reduces the risk. Bloat is also possible, so learn the warning signs. Rottweilers can be prone to weight gain, which adds stress to their joints.",
   "funFact": "Rottweilers were used to pull carts of butchered meat to market in Germany.",
-  "famousQuote": "\"Every Rottweiler owner knows the joy of this breed's unique personality.\"",
+  "famousQuote": "A calm, powerful guardian that is devoted to its family and needs early training, socialization, and a confident owner.",
   "popularity": 7,
-  "lastUpdated": "2026-05-03 01:07:05.485",
+  "lastUpdated": "2026-11-03 07:47:45.584",
   "funFacts": [
-   "Rottweilers were used to pull carts of butchered meat to market in Germany.",
-   "The Rottweiler originated in Germany, where the breed was developed for purposes that still influence their behavior today.",
-   "As a Working Group breed, the Rottweiler shares structural and temperamental traits with other breeds developed for the same kind of work.",
-   "A typical Rottweiler lifespan is 9-10 years, meaning families should plan for that full commitment when bringing one home."
+   "Butchers in Rottweil reportedly tied money pouches around their dogs' necks on the way home from market to keep the cash safe from thieves.",
+   "In 1910, Rottweilers were officially recognized as police dogs in Germany.",
+   "The breed's name comes from the town of Rottweil, one of the oldest towns in the German state of Baden-Württemberg.",
+   "Rottweilers were among the breeds used as messenger, ambulance, and guard dogs during World War I."
   ],
-  "commonMisconceptions": "Working breeds are often mistaken for guard-only dogs or \"tough\" breeds suited to anyone strong. In reality they're sensitive, deeply bonded animals that suffer in homes that treat them as security equipment instead of family. A daily walk around the block is not \"exercise\" for a high-energy breed like the Rottweiler. They need real, sustained activity that engages both body and brain. One specific point worth correcting about the Rottweiler: their Germany origin and working-group heritage shape behavior in ways the casual observer often misses, including their reaction to hip dysplasia risks and the level of socialization they actually need from puppyhood onward.",
-  "idealOwnerProfile": "Households with space, strong handling skills, and a tolerance for a big physical presence. People with active lifestyles, runners, hikers, dog-sport enthusiasts, who can deliver daily, vigorous exercise. First-time and seasoned owners alike, provided they commit to consistent positive-reinforcement training. Families with respectful children are usually a great fit. Above all, the ideal Rottweiler owner understands the breed's working-group heritage from Germany and is prepared to honor those instincts with appropriate outlets, structure, and the kind of patient, daily commitment this breed deserves.",
-  "notGoodFor": "Tiny apartments without easy outdoor access or owners who can't physically manage a strong dog on leash. Sedentary households or owners who travel frequently without a plan for daily, vigorous exercise. Anyone who plans to skip foundational obedience entirely, even an \"easy\" breed needs structure to thrive. Anyone unwilling to research the specific health risks common in the Rottweiler (notably hip dysplasia and  osteosarcoma) and budget for the preventive care that follows.",
-  "groomingGuide": "Weekly brushing. Coat care is centered on weekly brushing. Short coats are forgiving but still benefit from a weekly rubber-curry session for skin health. Their short coat sheds at a manageable level with consistent brushing. Trim nails every 3–4 weeks, check ears weekly for redness or odor, and brush teeth daily or use vet-approved dental chews.",
+  "commonMisconceptions": "That Rottweilers are inherently aggressive. A well-bred, well-socialized Rottweiler is calm, confident, and good-natured, while reserved with strangers. Problems usually come from poor breeding, lack of socialization, or being kept as a yard guard without training. Another myth is that tough handling is needed; Rotties respond best to clear, fair, reward-based training.",
+  "idealOwnerProfile": "Confident, consistent owners who want a loyal guardian and companion and will invest in socialization, training, and daily exercise. Suits experienced owners and committed first-timers who work with a good trainer.",
+  "notGoodFor": "People who want a dog that greets every stranger like a friend, households unable to commit to ongoing training, renters with breed restrictions, and owners who cannot physically manage a large, strong dog.",
+  "groomingGuide": "Brush the short double coat weekly with a rubber curry or bristle brush, more often during seasonal shedding. Trim nails regularly (a large dog's long nails affect posture), clean ears, and brush teeth several times a week. Bathe as needed.",
   "faqs": [
    {
-    "answer": "Yes, the Rottweiler is generally an excellent family dog. With children they are generally great with children, and they bark occasionally, usually with reason. As with any breed, success depends on early socialization, supervised interactions, and teaching children how to respect the dog's space.",
-    "question": "Is the Rottweiler a good family dog?"
+    "question": "Are Rottweilers aggressive?",
+    "answer": "Not by nature. They are protective and naturally reserved with strangers, so early socialization and training are essential. Well-bred, well-raised Rottweilers are calm and steady."
    },
    {
-    "answer": "Plan on 60+ minutes of meaningful daily activity, broken into multiple sessions if possible. Plan for daily, structured activity rather than relying on backyard time alone, under-exercised Rottweilers commonly develop boredom-driven habits like chewing, digging, or excessive vocalization.",
-    "question": "How much exercise does a Rottweiler need?"
+    "question": "Are Rottweilers good with children?",
+    "answer": "Many Rottweilers are affectionate and patient with children in their own family. Because of their size and strength, always supervise young children and teach both the dog and kids good manners."
    },
    {
-    "answer": "Rottweilers are eager to learn and quick to pick up new commands. Positive-reinforcement methods, food, play, and genuine praise, work far better than corrections. Start training in puppyhood and keep sessions short and frequent.",
-    "question": "Are Rottweilers easy to train?"
+    "question": "How much exercise does a Rottweiler need?",
+    "answer": "About an hour or more a day of walks, play, and training. Mental work like obedience or scent games is as important as physical exercise."
    },
    {
-    "answer": "Their short coat sheds at a manageable level with consistent brushing.",
-    "question": "How much do Rottweilers shed?"
+    "question": "Do Rottweilers shed?",
+    "answer": "Yes, moderately. Their short double coat sheds year-round and more in spring and fall. Weekly brushing is usually enough."
    },
    {
-    "answer": "The typical Rottweiler lifespan is 9-10 years. Their lifespan is typical for a dog this size, expect a full decade or so of companionship with attentive care. Common breed-specific health concerns to discuss with your vet include: hip dysplasia, osteosarcoma, heart conditions.",
-    "question": "What is the lifespan of a Rottweiler?"
+    "question": "Are Rottweilers good for first-time owners?",
+    "answer": "They can be, if you commit to training classes, socialization, and consistent rules from day one. They are a better fit for confident owners than for people who want a low-effort dog."
    },
    {
-    "answer": "They are not well-suited to apartment life. They thrive with a securely fenced yard and ready access to outdoor space.",
-    "question": "Can Rottweilers live in an apartment?"
-   },
-   {
-    "answer": "The Rottweiler is friendly with other dogs when properly socialized. Early, ongoing socialization between 8 and 16 weeks is critical, and adult introductions should always be on neutral ground with both dogs on loose leashes.",
-    "question": "Is the Rottweiler good with other dogs?"
+    "question": "How long do Rottweilers live?",
+    "answer": "Most live 9 to 10 years. Keeping them lean and watching for lameness, a possible sign of bone cancer, are important parts of their care."
    }
-  ]
+  ],
+  "edited": true
  },
  {
   "name": "Beagle",
   "slug": "beagle",
   "breedGroup": "Hound",
   "originCountry": "England",
-  "yearRecognized": null,
+  "yearRecognized": 1885,
   "sizeCategory": "Small",
   "weightRange": "20-30 lbs",
   "heightRange": "13-15 in",
@@ -549,63 +543,60 @@
   "exerciseNeeds": "60 minutes daily with sniff walks",
   "groomingFrequency": "Weekly brushing",
   "commonHealthIssues": "Epilepsy, hypothyroidism, intervertebral disc disease",
-  "dietNotes": "Feed a high-quality, AAFCO-certified diet appropriate for the Beagle's life stage and small size. Active Beagles burn meaningful calories, match portions to their actual workload, not generic feeding-chart numbers. Small breeds can be prone to hypoglycemia as puppies, multiple smaller meals per day during the first six months helps prevent it.",
-  "trainingNotes": "Beagles are trainable with patience, consistency, and motivating rewards. Positive-reinforcement methods, food, play, and genuine praise, work far better than corrections; this breed in particular shuts down or grows resistant under harsh handling. Because of their high energy, training sessions are most productive after exercise, not before, a tired Beagle learns faster than a fresh one. Early, frequent, and varied socialization between 8 and 16 weeks is critical, especially given their naturally social disposition toward strangers. Specifically work on a \"quiet\" cue from puppyhood, left untrained, this breed's vocal nature can become a real lifestyle issue.",
+  "dietNotes": "Measure meals and count treats; Beagles will eat almost anything and gain weight quickly. Use puzzle feeders or scatter feeding to slow them down and give them something to do with their nose. Keep chocolate, grapes, raisins, xylitol, and medications well out of reach.",
+  "trainingNotes": "Beagles are smart but independent, and their nose often outranks your voice. Food rewards work very well; keep sessions short and fun. Recall is the hardest skill, so practice in enclosed areas and never rely on it near roads. Scent games, tracking, and nosework channel their instincts in a healthy way. Crate training helps with house training and prevents raids on the kitchen.",
   "history": "Hounds resembling modern Beagles have existed in England since at least the 1500s, when noblemen kept packs of small scenthounds for hare hunting on foot, a more accessible sport than mounted fox-hunting. The 'Pocket Beagle,' standing only about 9 inches tall, was popular at the court of Elizabeth I.\n\nThe modern Beagle was largely developed in 19th-century England, where Reverend Phillip Honeywood's pack in Essex established the foundation for the breed as we know it. American breeders later refined the type, and the National Beagle Club was founded in 1888. Today the Beagle remains the most popular hound breed in the United States and serves widely as a detection dog in agricultural inspection at airports, same nose, different job.",
   "personalityDeepDive": "The Beagle is a scenthound packed into a compact, kid-friendly body, and most of what makes Beagles delightful and most of what makes Beagles maddening trace back to the same hardware: their nose. A Beagle on a scent is functionally deaf to recall, leashed or not. They are not stupid, they are not stubborn, they are simply running a process that evolution has prioritized over your voice.\n\nIn the house they are merry, gregarious, and genuinely good with children and other dogs (Beagles were bred to hunt in packs, so dog-tolerance is wired in). They are vocal, the breed has three distinct vocalizations including the famous bayed 'song', and that vocalization is not easy to train out.\n\nFood is the other Beagle universal. They are food-motivated to the point of mischief; a Beagle will counter-surf, garbage-mine, and reverse-engineer cabinet latches in pursuit of calories. That same food drive makes them highly trainable when training is structured around it.",
-  "livingWith": "Plan on 60+ minutes of meaningful daily activity, broken into multiple sessions if possible. They can adapt to apartment living when their daily activity needs are met, but a tired dog is the real prerequisite, not square footage.\n\nWithin the household, expect a dog who is excellent with kids when both are taught to respect each other and friendly with cats when properly socialized. On the noise front, they are highly vocal, expect baying, howling, or talkative chatter, important to factor in if you have close neighbors or work-from-home calls.\n\nTheir lifespan is typical for a dog this size, expect a full decade or so of companionship with attentive care.",
-  "healthCareGuide": "The Beagle has an average lifespan of 10-15 years, which is their lifespan is typical for a dog this size, expect a full decade or so of companionship with attentive care.\n\nBreed-specific concerns to discuss with your vet include: epilepsy, hypothyroidism, intervertebral disc disease. Reputable breeders screen breeding stock for these conditions, so always ask to see health clearances before committing to a puppy.\n\nBeyond breed-specific issues, follow the standards of good preventative care: a core vaccine schedule, year-round parasite prevention, regular dental cleaning, and an annual senior workup once your dog passes the midpoint of their expected lifespan. Small breeds are particularly prone to dental disease; daily brushing or a vet-approved dental routine is one of the highest-impact things you can do for their long-term health.",
+  "livingWith": "Beagles are cheerful, social dogs that get along with almost everyone, including children and other dogs. They were bred to hunt in packs, so they dislike being alone and may howl or bay when bored. Neighbors in apartments or townhouses may notice.\n\nTheir nose runs their lives. A Beagle on a scent can ignore you completely, so walks happen on leash and yards need secure fencing (they dig and squeeze through gaps). They are notorious food thieves: secure the trash, counters, and backpacks. Long 'sniffari' walks are the best exercise, because sniffing tires a Beagle out like nothing else.",
+  "healthCareGuide": "Ask breeders about hip evaluations, eye exams, and DNA tests for Musladin-Lueke syndrome (MLS) and other breed-specific conditions. Idiopathic epilepsy occurs in the breed; seizures usually start between one and five years old and can be managed with medication.\n\nHypothyroidism, intervertebral disc disease, cherry eye, and ear infections are common, the latter because of their long, floppy ears. Obesity is a constant risk given the breed's appetite, and it worsens back and joint problems.",
   "funFact": "Beagles have about 220 million scent receptors compared to our 5 million.",
-  "famousQuote": "\"Every Beagle owner knows the joy of this breed's unique personality.\"",
+  "famousQuote": "A merry, food-loving scenthound that is great with families and ruled entirely by its nose.",
   "popularity": 8,
-  "lastUpdated": "2026-05-03 01:07:05.486",
+  "lastUpdated": "2026-11-03 07:47:45.584",
   "funFacts": [
-   "Beagles have about 220 million scent receptors compared to our 5 million.",
-   "The Beagle originated in England, where the breed was developed for purposes that still influence their behavior today.",
-   "As a Hound Group breed, the Beagle shares structural and temperamental traits with other breeds developed for the same kind of work.",
-   "A typical Beagle lifespan is 10-15 years, meaning families should plan for that full commitment when bringing one home."
+   "Snoopy from Peanuts is the world's most famous Beagle.",
+   "The USDA's 'Beagle Brigade' uses Beagles at airports to sniff out prohibited food and plants in luggage.",
+   "The AKC recognizes two Beagle sizes: under 13 inches and 13 to 15 inches tall.",
+   "President Lyndon B. Johnson kept Beagles named Him and Her at the White House."
   ],
-  "commonMisconceptions": "Hounds are not stubborn or unintelligent, they're independent. Their nose or sight drives them, and traditional obedience methods built for biddable breeds simply work less well; they need motivation that competes with their hardwired instincts. A daily walk around the block is not \"exercise\" for a high-energy breed like the Beagle. They need real, sustained activity that engages both body and brain. One specific point worth correcting about the Beagle: their England origin and hound-group heritage shape behavior in ways the casual observer often misses, including their reaction to epilepsy risks and the level of socialization they actually need from puppyhood onward.",
-  "idealOwnerProfile": "Apartment dwellers, seniors, and families with older (gentle) children. People with active lifestyles, runners, hikers, dog-sport enthusiasts, who can deliver daily, vigorous exercise. First-time and seasoned owners alike, provided they commit to consistent positive-reinforcement training. Families with respectful children are usually a great fit. Adaptable enough for apartment living when daily exercise is non-negotiable. Above all, the ideal Beagle owner understands the breed's hound-group heritage from England and is prepared to honor those instincts with appropriate outlets, structure, and the kind of patient, daily commitment this breed deserves.",
-  "notGoodFor": "Households where rough-and-tumble large dogs or very active toddlers might injure them. Sedentary households or owners who travel frequently without a plan for daily, vigorous exercise. Anyone who plans to skip foundational obedience entirely, even an \"easy\" breed needs structure to thrive. Apartment dwellers in noise-restrictive buildings, or owners who need long stretches of quiet for work-from-home calls. Anyone unwilling to research the specific health risks common in the Beagle (notably epilepsy and  hypothyroidism) and budget for the preventive care that follows.",
-  "groomingGuide": "Weekly brushing. Coat care is centered on weekly brushing. Short coats are forgiving but still benefit from a weekly rubber-curry session for skin health. Their short coat sheds at a manageable level with consistent brushing. Trim nails every 3–4 weeks, check ears weekly for redness or odor, and brush teeth daily or use vet-approved dental chews.",
+  "commonMisconceptions": "That Beagles are low-maintenance because they are small and friendly. They need plenty of exercise, are hard to keep off food, and can be vocal. Another misconception is that a Beagle that doesn't come when called is being disobedient; it is following its breeding, so secure fencing and leashes are the answer.",
+  "idealOwnerProfile": "Active, patient families who want a friendly, sociable dog, can provide daily walks, and have a securely fenced yard. Great with kids and other dogs.",
+  "notGoodFor": "Apartments with thin walls, people who want off-leash hiking companions, owners who are away all day, and homes where food can't be kept out of reach.",
+  "groomingGuide": "The short coat sheds moderately and needs weekly brushing. Check and clean the ears weekly, since long ears trap moisture and debris. Trim nails regularly and brush teeth several times a week. Bathe when they find something smelly to roll in, which Beagles often do.",
   "faqs": [
    {
-    "answer": "Yes, the Beagle is generally an excellent family dog. With children they are excellent with children, and they are highly vocal, expect baying, howling, or talkative chatter. As with any breed, success depends on early socialization, supervised interactions, and teaching children how to respect the dog's space.",
-    "question": "Is the Beagle a good family dog?"
+    "question": "Are Beagles good family dogs?",
+    "answer": "Yes. Beagles are friendly, playful, and gentle with children, and usually get along with other dogs. They do best with families who are home often and enjoy walks."
    },
    {
-    "answer": "Plan on 60+ minutes of meaningful daily activity, broken into multiple sessions if possible. Plan for daily, structured activity rather than relying on backyard time alone, under-exercised Beagles commonly develop boredom-driven habits like chewing, digging, or excessive vocalization.",
-    "question": "How much exercise does a Beagle need?"
+    "question": "Do Beagles bark a lot?",
+    "answer": "They can. Beagles bark, bay, and howl, especially when bored, lonely, or following a scent. Enough exercise and company reduce it, but they are not a quiet breed."
    },
    {
-    "answer": "Beagles are trainable with patience, consistency, and motivating rewards. Positive-reinforcement methods, food, play, and genuine praise, work far better than corrections. Start training in puppyhood and keep sessions short and frequent.",
-    "question": "Are Beagles easy to train?"
+    "question": "Can Beagles be off leash?",
+    "answer": "Rarely safely. Once a Beagle catches a scent, it may follow it for miles and ignore calls. Use a leash or long line outside fenced areas."
    },
    {
-    "answer": "Their short coat sheds at a manageable level with consistent brushing.",
-    "question": "How much do Beagles shed?"
+    "question": "How much exercise does a Beagle need?",
+    "answer": "About an hour a day, ideally including walks where they can sniff. Scent games at home are a great way to tire them out mentally."
    },
    {
-    "answer": "The typical Beagle lifespan is 10-15 years. Their lifespan is typical for a dog this size, expect a full decade or so of companionship with attentive care. Common breed-specific health concerns to discuss with your vet include: epilepsy, hypothyroidism, intervertebral disc disease.",
-    "question": "What is the lifespan of a Beagle?"
+    "question": "Are Beagles easy to train?",
+    "answer": "They are clever and food-motivated, which helps, but their independence and nose make some skills, especially recall, challenging. Short, rewarding sessions work best."
    },
    {
-    "answer": "They can adapt to apartment living when their daily activity needs are met, but a tired dog is the real prerequisite, not square footage.",
-    "question": "Can Beagles live in an apartment?"
-   },
-   {
-    "answer": "The Beagle is excellent with other dogs. Early, ongoing socialization between 8 and 16 weeks is critical, and adult introductions should always be on neutral ground with both dogs on loose leashes.",
-    "question": "Is the Beagle good with other dogs?"
+    "question": "How long do Beagles live?",
+    "answer": "Beagles typically live 10 to 15 years. Keeping them at a healthy weight is one of the most important things owners can do."
    }
-  ]
+  ],
+  "edited": true
  },
  {
   "name": "Dachshund",
   "slug": "dachshund",
   "breedGroup": "Hound",
   "originCountry": "Germany",
-  "yearRecognized": null,
+  "yearRecognized": 1885,
   "sizeCategory": "Small",
   "weightRange": "16-32 lbs",
   "heightRange": "8-9 in",
@@ -626,63 +617,60 @@
   "exerciseNeeds": "Moderate daily walks, avoid jumping",
   "groomingFrequency": "Weekly brushing",
   "commonHealthIssues": "Intervertebral disc disease, obesity, dental issues",
-  "dietNotes": "Feed a high-quality, AAFCO-certified diet appropriate for the Dachshund's life stage and small size. Because their energy level is moderate, it's easy for this breed to become overweight; measure portions and skip the constant treat-feeding. Small breeds can be prone to hypoglycemia as puppies, multiple smaller meals per day during the first six months helps prevent it.",
-  "trainingNotes": "Dachshunds are intelligent but stubborn, they want to know why a request matters. Positive-reinforcement methods, food, play, and genuine praise, work far better than corrections; this breed in particular shuts down or grows resistant under harsh handling. Their moderate energy means short, focused 10–15 minute training sessions yield the best results. Early, frequent, and varied socialization between 8 and 16 weeks is critical, especially given their more reserved disposition toward strangers. Specifically work on a \"quiet\" cue from puppyhood, left untrained, this breed's vocal nature can become a real lifestyle issue.",
+  "dietNotes": "Weight control is the most important part of feeding a Dachshund, because even a few extra pounds put strain on the spine. Measure every meal, choose a small-breed diet, and keep treats small. Dental chews and regular tooth brushing help with the breed's tendency toward dental disease.",
+  "trainingNotes": "Dachshunds are smart and independent, bred to make decisions underground without human help. Keep training short, fun, and food-based, and be patient with house training; a consistent schedule and crate help a lot. Socialize early to reduce suspicion of strangers. Earthdog trials and scent games suit their instincts. Teach a calm 'off' for furniture to protect their backs.",
   "history": "The Dachshund was developed in Germany at least four hundred years ago, the name literally means 'badger dog' (Dachs + Hund). Foresters bred them with elongated bodies and powerful front digging feet specifically to follow badgers, foxes, and rabbits into their burrows and either drive them out or hold them at bay until the hunter could dig down.\n\nStandards were used on badgers, the Miniature variety on rabbits and smaller game. Both wirehaired and longhaired coats were developed by crossing the original smooths with terriers and spaniels respectively, in the 19th century. The breed was nearly wiped out in the United States during World War I due to anti-German sentiment but recovered to become one of the most popular breeds in the country, where it now serves almost entirely as a companion.",
   "personalityDeepDive": "Dachshunds are scenthounds in a small, elongated body bred to confront badgers underground, and that origin story explains almost everything about the breed's behavior. They are bold beyond their size, deeply prey-driven, and selectively deaf to commands they would prefer to ignore, qualities that were essential when working alone in a tunnel against a 30-pound mustelid, and slightly less ideal in a modern living room.\n\nWith their household Dachshunds are devoted, often choosing one person to attach to most intensely. They are surprisingly good with respectful children and bonded family dogs, but they can be touchy with strangers and outright hostile with unfamiliar dogs, especially same-sex. Early, ongoing socialization is non-negotiable.\n\nThey are vocal, the bark is famously large for the body, and they are persistent diggers, owing to that badger-tunneling heritage. Owners who try to suppress the digging entirely usually fail; owners who provide a sandpit or designated dig zone usually succeed. Dachshunds reward owners who work with their instincts rather than against them.",
-  "livingWith": "Plan on 30–60 minutes of daily activity, enough to take the edge off and keep them content. They can adapt to apartment living when their daily activity needs are met, but a tired dog is the real prerequisite, not square footage.\n\nWithin the household, expect a dog who is friendly with kids when properly socialized and friendly with cats when properly socialized. On the noise front, they're vocal and quick to alert you to anything new, important to factor in if you have close neighbors or work-from-home calls.\n\nTheir long lifespan means a 12-to-16-year commitment is realistic, a meaningful chapter of any owner's life.",
-  "healthCareGuide": "The Dachshund has an average lifespan of 12-16 years, which is their long lifespan means a 12-to-16-year commitment is realistic, a meaningful chapter of any owner's life.\n\nBreed-specific concerns to discuss with your vet include: intervertebral disc disease, obesity, dental issues. Reputable breeders screen breeding stock for these conditions, so always ask to see health clearances before committing to a puppy.\n\nBeyond breed-specific issues, follow the standards of good preventative care: a core vaccine schedule, year-round parasite prevention, regular dental cleaning, and an annual senior workup once your dog passes the midpoint of their expected lifespan. Small breeds are particularly prone to dental disease; daily brushing or a vet-approved dental routine is one of the highest-impact things you can do for their long-term health.",
+  "livingWith": "Dachshunds are loyal and affectionate with their people and often bond strongly to one person. They are bold, curious, and can be wary of strangers, which makes them surprisingly loud watchdogs. Many love to burrow under blankets.\n\nTheir long back is the main thing to plan around. Discourage jumping on and off furniture, use ramps or steps, carry them on stairs when possible, and support both ends of the body when lifting. Keep them lean. They enjoy walks and sniffing but are not built for long runs. Some are hard to house-train and dislike rain and cold.",
+  "healthCareGuide": "Intervertebral disc disease (IVDD) is the breed's biggest health risk; a large share of Dachshunds develop back problems in their lifetime. Signs include a hunched back, reluctance to move, crying out when picked up, wobbliness, or sudden weakness in the back legs, which is an emergency. Lean body weight and ramps reduce strain.\n\nOther concerns include progressive retinal atrophy (especially in miniature longhairs, with a DNA test available), Lafora disease (a form of epilepsy in miniature wirehairs, also DNA-testable), dental disease, and Cushing's disease in older dogs. Ask breeders what they test for in their variety.",
   "funFact": "Dachshunds were originally bred to hunt badgers; their name means 'badger dog' in German.",
-  "famousQuote": "\"Every Dachshund owner knows the joy of this breed's unique personality.\"",
+  "famousQuote": "A bold, clever little badger hound with a long back to protect and a big personality to match.",
   "popularity": 9,
-  "lastUpdated": "2026-05-03 01:07:05.486",
+  "lastUpdated": "2026-11-03 07:47:45.584",
   "funFacts": [
-   "Dachshunds were originally bred to hunt badgers; their name means 'badger dog' in German.",
-   "The Dachshund originated in Germany, where the breed was developed for purposes that still influence their behavior today.",
-   "As a Hound Group breed, the Dachshund shares structural and temperamental traits with other breeds developed for the same kind of work.",
-   "A typical Dachshund lifespan is 12-16 years, meaning families should plan for that full commitment when bringing one home."
+   "'Dachshund' means 'badger dog' in German.",
+   "A striped Dachshund named Waldi was the first official Olympic mascot, for the 1972 Munich Games.",
+   "Dachshunds come in three coat types, smooth, longhaired, and wirehaired, and two sizes, standard and miniature.",
+   "Pablo Picasso's Dachshund, Lump, appears in several of his paintings."
   ],
-  "commonMisconceptions": "Hounds are not stubborn or unintelligent, they're independent. Their nose or sight drives them, and traditional obedience methods built for biddable breeds simply work less well; they need motivation that competes with their hardwired instincts. Don't assume a \"moderate energy\" label like the Dachshund's means a couch-potato dog, moderate-energy breeds still need consistent daily activity to stay balanced and prevent boredom-driven habits. One specific point worth correcting about the Dachshund: their Germany origin and hound-group heritage shape behavior in ways the casual observer often misses, including their reaction to intervertebral disc disease risks and the level of socialization they actually need from puppyhood onward.",
-  "idealOwnerProfile": "Apartment dwellers, seniors, and families with older (gentle) children. Owners who want a steady companion without committing to high-octane daily workouts. Experienced dog owners comfortable with independent thinkers and patient enough to make training feel like partnership rather than command-and-obey. Adaptable enough for apartment living when daily exercise is non-negotiable. Above all, the ideal Dachshund owner understands the breed's hound-group heritage from Germany and is prepared to honor those instincts with appropriate outlets, structure, and the kind of patient, daily commitment this breed deserves.",
-  "notGoodFor": "Households where rough-and-tumble large dogs or very active toddlers might injure them. Owners at the extremes, people who want a true couch potato or a tireless endurance athlete should look at breeds outside the moderate-energy range. Owners expecting instant obedience or unwilling to make training mutually motivating; this breed reads coercion as a reason to disengage. Apartment dwellers in noise-restrictive buildings, or owners who need long stretches of quiet for work-from-home calls. Anyone unwilling to research the specific health risks common in the Dachshund (notably intervertebral disc disease and  obesity) and budget for the preventive care that follows.",
-  "groomingGuide": "Weekly brushing. Coat care is centered on weekly brushing. Short coats are forgiving but still benefit from a weekly rubber-curry session for skin health. Their short coat sheds very little, which suits owners who prefer a tidier home, though \"low-shedding\" never means \"no maintenance.\" Trim nails every 3–4 weeks, check ears weekly for redness or odor, and brush teeth daily or use vet-approved dental chews.",
+  "commonMisconceptions": "That their small size means they are a lap dog only. Dachshunds were bred to hunt badgers and remain brave, determined, and tenacious. Another myth is that back problems are just bad luck; genetics play a big part, but keeping a Dachshund lean and limiting jumping makes a real difference.",
+  "idealOwnerProfile": "People who want a small but spirited companion with plenty of personality, and who will manage weight and protect the dog's back. Good for apartments and homes with older children.",
+  "notGoodFor": "Homes with lots of stairs and no plan to manage them, families with very young children who may lift the dog incorrectly, and owners who want a quiet dog that never barks.",
+  "groomingGuide": "Grooming depends on coat: smooths need a weekly wipe or brush, longhairs need brushing several times a week to prevent tangles, and wirehairs need brushing plus hand-stripping a few times a year. All need regular nail trims, ear checks, and frequent tooth brushing.",
   "faqs": [
    {
-    "answer": "The Dachshund can work in the right family, but they are friendly with children when properly socialized. Households with very young or unsupervised children should look at a more universally child-tolerant breed. As with any breed, success depends on early socialization, supervised interactions, and teaching children how to respect the dog's space.",
-    "question": "Is the Dachshund a good family dog?"
+    "question": "Are Dachshunds prone to back problems?",
+    "answer": "Yes. Their long spine makes them prone to intervertebral disc disease. Keep them lean, use ramps for furniture and cars, avoid lots of stairs, and seek vet help immediately for back pain or weakness."
    },
    {
-    "answer": "Plan on 30–60 minutes of daily activity, enough to take the edge off and keep them content. Plan for daily, structured activity rather than relying on backyard time alone, under-exercised Dachshunds commonly develop boredom-driven habits like chewing, digging, or excessive vocalization.",
-    "question": "How much exercise does a Dachshund need?"
+    "question": "Are Dachshunds good with kids?",
+    "answer": "They can be with respectful, older children. Young kids may pick them up incorrectly or play roughly, which can injure a Dachshund's back or make the dog defensive."
    },
    {
-    "answer": "Dachshunds are intelligent but stubborn, they want to know why a request matters. Positive-reinforcement methods, food, play, and genuine praise, work far better than corrections. Start training in puppyhood and keep sessions short and frequent.",
-    "question": "Are Dachshunds easy to train?"
+    "question": "Do Dachshunds bark a lot?",
+    "answer": "Often, yes. They are alert watchdogs with a surprisingly loud bark. Training and enough mental stimulation can help."
    },
    {
-    "answer": "Their short coat sheds very little, which suits owners who prefer a tidier home, though \"low-shedding\" never means \"no maintenance.\"",
-    "question": "How much do Dachshunds shed?"
+    "question": "What is the difference between standard and miniature Dachshunds?",
+    "answer": "Size. Standards usually weigh 16 to 32 pounds; miniatures weigh 11 pounds or less as adults. Temperament and care are similar."
    },
    {
-    "answer": "The typical Dachshund lifespan is 12-16 years. Their long lifespan means a 12-to-16-year commitment is realistic, a meaningful chapter of any owner's life. Common breed-specific health concerns to discuss with your vet include: intervertebral disc disease, obesity, dental issues.",
-    "question": "What is the lifespan of a Dachshund?"
+    "question": "Are Dachshunds hard to house-train?",
+    "answer": "They have a reputation for it. A consistent schedule, crate training, lots of praise, and patience, especially in bad weather, usually get the job done."
    },
    {
-    "answer": "They can adapt to apartment living when their daily activity needs are met, but a tired dog is the real prerequisite, not square footage.",
-    "question": "Can Dachshunds live in an apartment?"
-   },
-   {
-    "answer": "The Dachshund is friendly with other dogs when properly socialized. Early, ongoing socialization between 8 and 16 weeks is critical, and adult introductions should always be on neutral ground with both dogs on loose leashes.",
-    "question": "Is the Dachshund good with other dogs?"
+    "question": "How long do Dachshunds live?",
+    "answer": "Dachshunds often live 12 to 16 years, making them one of the longer-lived breeds."
    }
-  ]
+  ],
+  "edited": true
  },
  {
   "name": "German Shorthaired Pointer",
   "slug": "german-shorthaired-pointer",
   "breedGroup": "Sporting",
   "originCountry": "Germany",
-  "yearRecognized": null,
+  "yearRecognized": 1930,
   "sizeCategory": "Large",
   "weightRange": "45-70 lbs",
   "heightRange": "21-25 in",
@@ -703,56 +691,53 @@
   "exerciseNeeds": "90+ minutes of vigorous daily exercise",
   "groomingFrequency": "Weekly brushing",
   "commonHealthIssues": "Hip dysplasia, bloat, eye conditions",
-  "dietNotes": "Feed a high-quality, AAFCO-certified diet appropriate for the German Shorthaired Pointer's life stage and large size. Active German Shorthaired Pointers burn meaningful calories, match portions to their actual workload, not generic feeding-chart numbers. Large and giant breeds need a \"large breed\" puppy formula until growth completes (12–24 months) to support proper joint development.",
-  "trainingNotes": "German Shorthaired Pointers are eager to learn and quick to pick up new commands. Positive-reinforcement methods, food, play, and genuine praise, work far better than corrections; this breed in particular shuts down or grows resistant under harsh handling. Because of their very high energy, training sessions are most productive after exercise, not before, a tired German Shorthaired Pointer learns faster than a fresh one. Early, frequent, and varied socialization between 8 and 16 weeks is critical, especially given their naturally social disposition toward strangers. Their generally measured vocalizations make impulse-control training easier than with more vocal breeds.",
+  "dietNotes": "Working GSPs burn a lot of calories, so feed a quality diet matched to their activity, increasing during hunting season and reducing when less active. Feed two meals a day, and avoid hard exercise right before and after meals to lower bloat risk.",
+  "trainingNotes": "GSPs are smart, eager, and fast learners, but their drive can make them easily distracted. Exercise before training sessions, use food and play rewards, and build reliable recall with a long line before trusting them off leash. Field work, hunt tests, agility, dock diving, canicross, and nosework are excellent outlets.",
   "history": "The German Shorthaired Pointer was deliberately engineered in the late 19th century by German hunters who wanted one dog that could do the work of several, point, retrieve on land, retrieve from water, track wounded game, and live calmly in the home. They crossed the older German Bird Dog with English Pointers (for nose and style), various scenthounds (for tracking), and water dogs (for retrieving from cold rivers).\n\nThe breed was formally established in the 1870s and the German studbook was opened in 1872. GSPs were imported to the United States in the 1920s and rapidly became one of the most popular hunting breeds in the country, recognized by the AKC in 1930. The breed remains a serious working gun dog as well as a companion.",
   "personalityDeepDive": "The German Shorthaired Pointer is one of the most genuinely versatile gun dogs ever developed, and that versatility shows up in the living room as relentless, joyful intensity. GSPs do not have an off switch the way most breeds do; they have a brief pause between activities. An adult GSP needs an hour or more of real cardiovascular exercise daily, and 'real' means running, not strolling. Without it they unravel, pacing, chewing, stealing, vocalizing.\n\nGiven adequate work, the same dog is affectionate, biddable, and remarkably soft. GSPs bond intensely to their primary person and tend to follow them from room to room. They are usually excellent with children, generally good with familiar dogs, and complicated around cats and small mammals, the prey drive is real and persists into old age.\n\nThey are also one of the more sensitive sporting breeds; harsh corrections damage them quickly. The right owner is athletic, patient, and willing to make the dog a daily project rather than an occasional one. The wrong owner produces a wonderful dog turned into an anxious wreck.",
-  "livingWith": "At least 90 minutes of vigorous daily activity is the bare minimum, and ideally a job or sport to channel their drive. They are not well-suited to apartment life. They thrive with a securely fenced yard and ready access to outdoor space.\n\nWithin the household, expect a dog who is excellent with kids when both are taught to respect each other and friendly with cats when properly socialized. On the noise front, they bark occasionally, usually with reason, important to factor in if you have close neighbors or work-from-home calls.\n\nTheir lifespan is typical for a dog this size, expect a full decade or so of companionship with attentive care.",
-  "healthCareGuide": "The German Shorthaired Pointer has an average lifespan of 10-12 years, which is their lifespan is typical for a dog this size, expect a full decade or so of companionship with attentive care.\n\nBreed-specific concerns to discuss with your vet include: hip dysplasia, bloat, eye conditions. Reputable breeders screen breeding stock for these conditions, so always ask to see health clearances before committing to a puppy.\n\nBeyond breed-specific issues, follow the standards of good preventative care: a core vaccine schedule, year-round parasite prevention, regular dental cleaning, and an annual senior workup once your dog passes the midpoint of their expected lifespan. Large and giant breeds are particularly susceptible to bloat (gastric torsion); learn the symptoms, feed two smaller meals per day instead of one large meal, and consider a prophylactic gastropexy if your vet recommends it.",
+  "livingWith": "GSPs are friendly, family-loving dogs with huge energy. They are happiest running, hunting, swimming, or joining you on long hikes and runs. Without that outlet, they become restless, destructive, and vocal. A fenced yard is valuable, but a GSP will not exercise itself; it needs you.\n\nThey have strong prey drive, so cats, chickens, and squirrels may be targets unless they were raised together, and some will jump surprisingly high fences. Indoors, a well-exercised GSP is affectionate and often wants to be on the couch with you. Many are clingy and do not like long periods alone.",
+  "healthCareGuide": "Ask breeders for OFA hip results, an eye exam, a cardiac exam, and DNA tests for cone degeneration, von Willebrand disease (a bleeding disorder), and exfoliative cutaneous lupus erythematosus (a skin disease). Bloat is a risk for this deep-chested breed, so learn the signs and consider a preventive gastropexy.\n\nActive GSPs are prone to cuts, torn nails, and foxtails in the field, so check feet, ears, and coat after outings. Lick granulomas and anxiety-related behaviors can develop in under-exercised dogs.",
   "funFact": "German Shorthaired Pointers are one of the most versatile sporting breeds.",
-  "famousQuote": "\"Every German Shorthaired Pointer owner knows the joy of this breed's unique personality.\"",
+  "famousQuote": "A tireless, versatile hunting dog that is affectionate at home but needs serious daily exercise to stay sane.",
   "popularity": 10,
-  "lastUpdated": "2026-05-03 01:07:05.486",
+  "lastUpdated": "2026-11-03 07:47:45.584",
   "funFacts": [
-   "German Shorthaired Pointers are one of the most versatile sporting breeds.",
-   "The German Shorthaired Pointer originated in Germany, where the breed was developed for purposes that still influence their behavior today.",
-   "As a Sporting Group breed, the German Shorthaired Pointer shares structural and temperamental traits with other breeds developed for the same kind of work.",
-   "A typical German Shorthaired Pointer lifespan is 10-12 years, meaning families should plan for that full commitment when bringing one home."
+   "A German Shorthaired Pointer named CJ won Best in Show at the Westminster Kennel Club Dog Show in 2016.",
+   "GSPs have webbed feet, making them strong swimmers and water retrievers.",
+   "The breed was designed as an all-purpose gun dog that could point, retrieve, and track on land and in water.",
+   "Their coat colors include solid liver and liver and white in patches, ticking, or roan."
   ],
-  "commonMisconceptions": "Sporting breeds aren't automatically calm \"family dogs.\" Field-bred lines especially carry serious drive and require real exercise, picking the wrong line for your lifestyle is a common mismatch. A daily walk around the block is not \"exercise\" for a high-energy breed like the German Shorthaired Pointer. They need real, sustained activity that engages both body and brain. One specific point worth correcting about the German Shorthaired Pointer: their Germany origin and sporting-group heritage shape behavior in ways the casual observer often misses, including their reaction to hip dysplasia risks and the level of socialization they actually need from puppyhood onward.",
-  "idealOwnerProfile": "Households with space, strong handling skills, and a tolerance for a big physical presence. People with active lifestyles, runners, hikers, dog-sport enthusiasts, who can deliver daily, vigorous exercise. First-time and seasoned owners alike, provided they commit to consistent positive-reinforcement training. Families with respectful children are usually a great fit. Above all, the ideal German Shorthaired Pointer owner understands the breed's sporting-group heritage from Germany and is prepared to honor those instincts with appropriate outlets, structure, and the kind of patient, daily commitment this breed deserves.",
-  "notGoodFor": "Tiny apartments without easy outdoor access or owners who can't physically manage a strong dog on leash. Sedentary households or owners who travel frequently without a plan for daily, vigorous exercise. Anyone who plans to skip foundational obedience entirely, even an \"easy\" breed needs structure to thrive. Anyone unwilling to research the specific health risks common in the German Shorthaired Pointer (notably hip dysplasia and  bloat) and budget for the preventive care that follows.",
-  "groomingGuide": "Weekly brushing. Coat care is centered on weekly brushing. Short coats are forgiving but still benefit from a weekly rubber-curry session for skin health. Their short coat sheds at a manageable level with consistent brushing. Trim nails every 3–4 weeks, check ears weekly for redness or odor, and brush teeth daily or use vet-approved dental chews.",
+  "commonMisconceptions": "That a big backyard is enough exercise. GSPs need structured, vigorous activity with their people. Another misconception is that they are only hunting dogs; with enough exercise they are loving family pets and great with children.",
+  "idealOwnerProfile": "Hunters, runners, hikers, and very active families who want an affectionate, trainable dog and can give it at least 90 minutes of vigorous exercise every day.",
+  "notGoodFor": "Apartment living without lots of outdoor time, sedentary households, homes with small pets the dog wasn't raised with, and people who are away for most of the day.",
+  "groomingGuide": "The short coat is easy: brush weekly with a rubber curry or hound glove. Trim nails regularly, check and clean ears after swimming, and inspect feet and coat for burrs and ticks after time outdoors.",
   "faqs": [
    {
-    "answer": "Yes, the German Shorthaired Pointer is generally an excellent family dog. With children they are excellent with children, and they bark occasionally, usually with reason. As with any breed, success depends on early socialization, supervised interactions, and teaching children how to respect the dog's space.",
-    "question": "Is the German Shorthaired Pointer a good family dog?"
+    "question": "How much exercise does a German Shorthaired Pointer need?",
+    "answer": "A lot: at least 90 minutes of vigorous activity a day, such as running, hiking, swimming, or field work. Mental work and training help too."
    },
    {
-    "answer": "At least 90 minutes of vigorous daily activity is the bare minimum, and ideally a job or sport to channel their drive. Plan for daily, structured activity rather than relying on backyard time alone, under-exercised German Shorthaired Pointers commonly develop boredom-driven habits like chewing, digging, or excessive vocalization.",
-    "question": "How much exercise does a German Shorthaired Pointer need?"
+    "question": "Are German Shorthaired Pointers good family dogs?",
+    "answer": "Yes, for active families. GSPs are affectionate and usually great with children, but their energy can be overwhelming for small kids or busy households that can't exercise them."
    },
    {
-    "answer": "German Shorthaired Pointers are eager to learn and quick to pick up new commands. Positive-reinforcement methods, food, play, and genuine praise, work far better than corrections. Start training in puppyhood and keep sessions short and frequent.",
-    "question": "Are German Shorthaired Pointers easy to train?"
+    "question": "Do GSPs get along with cats?",
+    "answer": "Some do if raised with them, but their strong prey drive makes small animals a risk. Introduce carefully and supervise."
    },
    {
-    "answer": "Their short coat sheds at a manageable level with consistent brushing.",
-    "question": "How much do German Shorthaired Pointers shed?"
+    "question": "Can a GSP live in an apartment?",
+    "answer": "It's difficult. They need much more exercise than most apartment dwellers can provide, though it's possible with a very active owner."
    },
    {
-    "answer": "The typical German Shorthaired Pointer lifespan is 10-12 years. Their lifespan is typical for a dog this size, expect a full decade or so of companionship with attentive care. Common breed-specific health concerns to discuss with your vet include: hip dysplasia, bloat, eye conditions.",
-    "question": "What is the lifespan of a German Shorthaired Pointer?"
+    "question": "Do German Shorthaired Pointers shed?",
+    "answer": "Moderately. The short coat sheds year-round but is easy to care for with a weekly brushing."
    },
    {
-    "answer": "They are not well-suited to apartment life. They thrive with a securely fenced yard and ready access to outdoor space.",
-    "question": "Can German Shorthaired Pointers live in an apartment?"
-   },
-   {
-    "answer": "The German Shorthaired Pointer is generally great with other dogs. Early, ongoing socialization between 8 and 16 weeks is critical, and adult introductions should always be on neutral ground with both dogs on loose leashes.",
-    "question": "Is the German Shorthaired Pointer good with other dogs?"
+    "question": "Are GSPs easy to train?",
+    "answer": "They learn quickly and love to work, but they are easily distracted by scents and birds. Consistent training with high-value rewards works best."
    }
-  ]
+  ],
+  "edited": true
  },
  {
   "name": "Pembroke Welsh Corgi",
